@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QodeX Esoteric Features Preview</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+            background: linear-gradient(135deg, #0A0A0F 0%, #1a1a2e 50%, #0A0A0F 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            color: #fff;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #E5C158 0%, #F4D678 50%, #E5C158 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .brand {
+            font-size: 12px;
+            color: #E5C158;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .screens-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            width: 100%;
+            justify-items: center;
+        }
+
+        .iphone-frame {
+            width: 393px;
+            height: 852px;
+            background: #000;
+            border-radius: 55px;
+            padding: 12px;
+            box-shadow: 
+                0 0 0 2px #333,
+                0 25px 50px -12px rgba(0, 0, 0, 0.8),
+                0 0 60px rgba(229, 193, 88, 0.1);
+            position: relative;
+        }
+
+        .iphone-notch {
+            position: absolute;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 126px;
+            height: 35px;
+            background: #000;
+            border-radius: 0 0 20px 20px;
+            z-index: 100;
+        }
+
+        .iphone-screen {
+            width: 100%;
+            height: 100%;
+            background: #0A0A0F;
+            border-radius: 45px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .screen-header {
+            padding: 60px 24px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .screen-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #E5C158;
+        }
+
+        .screen-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, rgba(229, 193, 88, 0.2), rgba(229, 193, 88, 0.05));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            border: 1px solid rgba(229, 193, 88, 0.3);
+        }
+
+        /* Sidereal Astrology Screen */
+        .astrology-content {
+            padding: 0 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .zodiac-wheel {
+            width: 280px;
+            height: 280px;
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .zodiac-ring {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(229, 193, 88, 0.3);
+        }
+
+        .zodiac-ring.outer {
+            width: 280px;
+            height: 280px;
+            top: 0;
+            left: 0;
+        }
+
+        .zodiac-ring.inner {
+            width: 220px;
+            height: 220px;
+            top: 30px;
+            left: 30px;
+            border-color: rgba(229, 193, 88, 0.15);
+        }
+
+        .zodiac-ring.center {
+            width: 100px;
+            height: 100px;
+            top: 90px;
+            left: 90px;
+            border: none;
+            background: radial-gradient(circle, rgba(229, 193, 88, 0.2), transparent);
+        }
+
+        .zodiac-symbols {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation: rotate 60s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .zodiac-symbol {
+            position: absolute;
+            font-size: 16px;
+            color: #E5C158;
+            cursor: pointer;
+            transition: transform 0.3s, text-shadow 0.3s;
+        }
+
+        .zodiac-symbol:hover {
+            transform: scale(1.3);
+            text-shadow: 0 0 10px #E5C158;
+        }
+
+        .nakshatra-label {
+            position: absolute;
+            font-size: 8px;
+            color: rgba(229, 193, 88, 0.6);
+        }
+
+        .astrology-info {
+            background: rgba(229, 193, 88, 0.1);
+            border-radius: 16px;
+            padding: 16px;
+            width: 100%;
+            margin-top: 20px;
+            border: 1px solid rgba(229, 193, 88, 0.2);
+        }
+
+        .astrology-info h3 {
+            font-size: 14px;
+            color: #E5C158;
+            margin-bottom: 8px;
+        }
+
+        .astrology-info p {
+            font-size: 12px;
+            color: #aaa;
+            line-height: 1.5;
+        }
+
+        /* Tarot Screen */
+        .tarot-content {
+            padding: 0 24px;
+        }
+
+        .tarot-spread {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .tarot-row {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .tarot-card {
+            width: 70px;
+            height: 120px;
+            background: linear-gradient(135deg, #1a1a2e, #2a1a3e);
+            border-radius: 8px;
+            border: 1px solid rgba(229, 193, 88, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tarot-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent, rgba(229, 193, 88, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tarot-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(229, 193, 88, 0.3);
+        }
+
+        .tarot-card:hover::before {
+            opacity: 1;
+        }
+
+        .tarot-card.flipped .card-back {
+            display: none;
+        }
+
+        .tarot-card.flipped .card-front {
+            display: flex;
+        }
+
+        .card-back {
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(229, 193, 88, 0.1),
+                rgba(229, 193, 88, 0.1) 5px,
+                rgba(229, 193, 88, 0.2) 5px,
+                rgba(229, 193, 88, 0.2) 10px
+            );
+            border-radius: 8px;
+        }
+
+        .card-front {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #E5C158;
+        }
+
+        .card-name {
+            font-size: 8px;
+            color: #aaa;
+            margin-top: 4px;
+            text-align: center;
+        }
+
+        .tarot-controls {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .tarot-btn {
+            background: linear-gradient(135deg, #E5C158, #D4A838);
+            color: #0A0A0F;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .tarot-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(229, 193, 88, 0.4);
+        }
+
+        /* Periodic Table Screen */
+        .periodic-content {
+            padding: 0 16px;
+        }
+
+        .periodic-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 4px;
+            margin-top: 10px;
+        }
+
+        .element {
+            aspect-ratio: 1;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .element:hover {
+            transform: scale(1.1);
+            z-index: 10;
+        }
+
+        .element-symbol {
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .element-number {
+            font-size: 8px;
+            color: #888;
+        }
+
+        .element-gold {
+            background: linear-gradient(135deg, #E5C158, #D4A838);
+            color: #0A0A0F;
+            box-shadow: 0 0 20px rgba(229, 193, 88, 0.5);
+            animation: goldPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes goldPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(229, 193, 88, 0.5); }
+            50% { box-shadow: 0 0 30px rgba(229, 193, 88, 0.8); }
+        }
+
+        .element-gold .element-number {
+            color: rgba(10, 10, 15, 0.7);
+        }
+
+        .periodic-info {
+            background: rgba(229, 193, 88, 0.1);
+            border-radius: 12px;
+            padding: 12px;
+            margin-top: 15px;
+            border: 1px solid rgba(229, 193, 88, 0.2);
+        }
+
+        .periodic-info h3 {
+            color: #E5C158;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .periodic-info p {
+            font-size: 11px;
+            color: #aaa;
+        }
+
+        /* Sacred Geometry Screen */
+        .sacred-content {
+            padding: 0 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .flower-of-life {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            margin: 10px 0;
+        }
+
+        .flower-circles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .flower-circle {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border: 1px solid rgba(229, 193, 88, 0.4);
+            border-radius: 50%;
+            transition: all 0.5s;
+        }
+
+        .flower-circle:hover {
+            border-color: #E5C158;
+            box-shadow: 0 0 15px rgba(229, 193, 88, 0.5);
+            background: rgba(229, 193, 88, 0.05);
+        }
+
+        .flower-circle.center {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .sacred-labels {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .sacred-label {
+            background: rgba(229, 193, 88, 0.1);
+            border-radius: 10px;
+            padding: 12px;
+            text-align: center;
+            border: 1px solid rgba(229, 193, 88, 0.2);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .sacred-label:hover {
+            background: rgba(229, 193, 88, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .sacred-label h4 {
+            font-size: 12px;
+            color: #E5C158;
+            margin-bottom: 4px;
+        }
+
+        .sacred-label span {
+            font-size: 10px;
+            color: #888;
+        }
+
+        /* Kabbalah Screen */
+        .kabbalah-content {
+            padding: 0 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .tree-of-life {
+            width: 300px;
+            height: 380px;
+            position: relative;
+            margin-top: 10px;
+        }
+
+        .sephirah {
+            position: absolute;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(229, 193, 88, 0.2), rgba(229, 193, 88, 0.05));
+            border: 2px solid rgba(229, 193, 88, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 12px;
+            color: #E5C158;
+        }
+
+        .sephirah:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 20px rgba(229, 193, 88, 0.5);
+            background: linear-gradient(135deg, rgba(229, 193, 88, 0.4), rgba(229, 193, 88, 0.1));
+        }
+
+        .sephirah.crown { top: 10px; left: 50%; transform: translateX(-50%); }
+        .sephirah.wisdom { top: 80px; left: 20%; }
+        .sephirah.understanding { top: 80px; right: 20%; }
+        .sephirah.mercy { top: 150px; left: 15%; }
+        .sephirah.severity { top: 150px; right: 15%; }
+        .sephirah.beauty { top: 150px; left: 50%; transform: translateX(-50%); }
+        .sephirah.victory { top: 220px; left: 15%; }
+        .sephirah.splendor { top: 220px; right: 15%; }
+        .sephirah.foundation { top: 220px; left: 50%; transform: translateX(-50%); }
+        .sephirah.kingdom { top: 300px; left: 50%; transform: translateX(-50%); }
+
+        .path-line {
+            position: absolute;
+            background: rgba(229, 193, 88, 0.3);
+            height: 2px;
+            transform-origin: left center;
+        }
+
+        .kabbalah-info {
+            background: rgba(229, 193, 88, 0.1);
+            border-radius: 12px;
+            padding: 12px;
+            margin-top: 10px;
+            width: 100%;
+            border: 1px solid rgba(229, 193, 88, 0.2);
+        }
+
+        .kabbalah-info h3 {
+            color: #E5C158;
+            font-size: 13px;
+            margin-bottom: 4px;
+        }
+
+        .kabbalah-info p {
+            font-size: 11px;
+            color: #aaa;
+        }
+
+        /* Playing Cards Screen */
+        .cards-content {
+            padding: 0 24px;
+        }
+
+        .cards-spread {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cards-row {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .playing-card {
+            width: 60px;
+            height: 90px;
+            background: #fff;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .playing-card:hover {
+            transform: translateY(-8px) rotate(2deg);
+            box-shadow: 0 10px 30px rgba(229, 193, 88, 0.3);
+        }
+
+        .playing-card .suit {
+            font-size: 24px;
+            line-height: 1;
+        }
+
+        .playing-card .rank {
+            position: absolute;
+            font-size: 12px;
+            font-weight: 700;
+            color: #0A0A0F;
+        }
+
+        .playing-card .rank.top {
+            top: 4px;
+            left: 4px;
+        }
+
+        .playing-card .rank.bottom {
+            bottom: 4px;
+            right: 4px;
+            transform: rotate(180deg);
+        }
+
+        .playing-card.red .suit,
+        .playing-card.red .rank {
+            color: #d32f2f;
+        }
+
+        .playing-card.black .suit,
+        .playing-card.black .rank {
+            color: #0A0A0F;
+        }
+
+        .cards-controls {
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .cards-btn {
+            background: transparent;
+            color: #E5C158;
+            border: 1px solid #E5C158;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .cards-btn:hover {
+            background: rgba(229, 193, 88, 0.2);
+            transform: scale(1.05);
+        }
+
+        /* Screen Label */
+        .screen-label {
+            text-align: center;
+            margin-top: 15px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Interactive Tabs */
+        .tab-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .tab {
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: rgba(229, 193, 88, 0.1);
+            border: 1px solid rgba(229, 193, 88, 0.3);
+            color: #E5C158;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 13px;
+        }
+
+        .tab:hover, .tab.active {
+            background: rgba(229, 193, 88, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .iphone-wrapper {
+            display: none;
+        }
+
+        .iphone-wrapper.active {
+            display: block;
+        }
+
+        @media (max-width: 450px) {
+            .iphone-frame {
+                width: 350px;
+                height: 700px;
+            }
+            
+            .screens-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="brand">@Qodex_Numerology.il</div>
+        <h1>Esoteric Features</h1>
+        <p>Interactive Preview</p>
+    </div>
+
+    <div class="tab-container">
+        <div class="tab active" onclick="showScreen('astrology')">Astrology</div>
+        <div class="tab" onclick="showScreen('tarot')">Tarot</div>
+        <div class="tab" onclick="showScreen('periodic')">Periodic</div>
+        <div class="tab" onclick="showScreen('sacred')">Sacred Geometry</div>
+        <div class="tab" onclick="showScreen('kabbalah')">Kabbalah</div>
+        <div class="tab" onclick="showScreen('cards')">Playing Cards</div>
+    </div>
+
+    <div class="screens-container">
+        <!-- Sidereal Astrology Screen -->
+        <div class="iphone-wrapper active" id="screen-astrology">
+            <div class="iphone-frame">
+                <div class="iphone-notch"></div>
+                <div class="iphone-screen">
+                    <div class="screen-header">
+                        <h2 class="screen-title">Sidereal Astrology</h2>
+                        <div class="screen-icon">✦</div>
+                    </div>
+                    <div class="astrology-content">
+                        <div class="zodiac-wheel">
+                            <div class="zodiac-ring outer"></div>
+                            <div class="zodiac-ring inner"></div>
+                            <div class="zodiac-ring center"></div>
+                            <div class="zodiac-symbols" id="zodiac-symbols">
+                                <!-- Generated by JS -->
+                            </div>
+                        </div>
+                        <div class="astrology-info">
+                            <h3 id="astro-title">♈ Aries</h3>
+                            <p id="astro-desc">The first sign of the zodiac. Associated with leadership, courage, and new beginnings. Ruled by Mars.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="screen-label">SiderealAstrologyView</div>
+        </div>
+
+        <!-- Tarot Screen -->
+        <div class="iphone-wrapper" id="screen-tarot">
+            <div class="iphone-frame">
+                <div class="iphone-notch"></div>
+                <div class="iphone-screen">
+                    <div class="screen-header">
+                        <h2 class="screen-title">Tarot Reading</h2>
+                        <div class="screen-icon">🌙</div>
+                    </div>
+                    <div class="tarot-content">
+                        <div class="tarot-spread">
+                            <div class="tarot-row">
+                                <div class="tarot-card" onclick="flipCard(this)">
+                                    <div class="card-back"></div>
+                                    <div class="card-front">
+                                        🌞
+                                        <span class="card-name">The Sun</span>
+                                    </div>
+                                </div>
+                                <div class="tarot-card" onclick="flipCard(this)">
+                                    <div class="card-back"></div>
+                                    <div class="card-front">
+                                        🌙
+                                        <span class="card-name">The Moon</span>
+                                    </div>
+                                </div>
+                                <div class="tarot-card" onclick="flipCard(this)">
+                                    <div class="card-back"></div>
+                                    <div class="card-front">
+                                        ⭐
+                                        <span class="card-name">The Star</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tarot-row">
+                                <div class="tarot-card" onclick="flipCard(this)">
+                                    <div class="card-back"></div>
+                                    <div class="card-front">
+                                        💀
+                                        <span class="card-name">Death</span>
+                                    </div>
+                                </div>
+                                <div class="tarot-card" onclick="flipCard(this)">
+                                    <div class="card-back"></div>
+                                    <div class="card-front">
+                                        🗼
+                                        <span class="card-name">Tower</span>
+                                    </div>
+                                </div>
+                                <div class="tarot-card" onclick="flipCard(this)">
+                                    <div class="card-back"></div>
+                                    <div class="card-front">
+                                        🎡
+                                        <span class="card-name">Wheel</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tarot-row">
+                                <div class="tarot-card" onclick="flipCard(this)">
+                                    <div class="card-back"></div>
+                                    <div class="card-front">
+                                        🧙
+                                        <span class="card-name">Magician</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tarot-controls">
+                            <button class="tarot-btn" onclick="resetTarot()">Shuffle & Deal</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="screen-label">TarotView</div>
+        </div>
+
+        <!-- Periodic Table Screen -->
+        <div class="iphone-wrapper" id="screen-periodic">
+            <div class="iphone-frame">
+                <div class="iphone-notch"></div>
+                <div class="iphone-screen">
+                    <div class="screen-header">
+                        <h2 class="screen-title">Elements</h2>
+                        <div class="screen-icon">⚗️</div>
+                    </div>
+                    <div class="periodic-content">
+                        <div class="periodic-grid" id="periodic-grid">
+                            <!-- Generated by JS -->
+                        </div>
+                        <div class="periodic-info">
+                            <h3 id="element-name">Gold (Au)</h3>
+                            <p id="element-desc">Atomic number 79. The metal of the sun. Associated with purity, wealth, and spiritual enlightenment. In esoteric traditions, gold represents the perfected soul.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="screen-label">PeriodicTableView</div>
+        </div>
+
+        <!-- Sacred Geometry Screen -->
+        <div class="iphone-wrapper" id="screen-sacred">
+            <div class="iphone-frame">
+                <div class="iphone-notch"></div>
+                <div class="iphone-screen">
+                    <div class="screen-header">
+                        <h2 class="screen-title">Sacred Geometry</h2>
+                        <div class="screen-icon">🔮</div>
+                    </div>
+                    <div class="sacred-content">
+                        <div class="flower-of-life" id="flower-container">
+                            <svg class="flower-circles" viewBox="0 0 300 300">
+                                <!-- Center -->
+                                <circle cx="150" cy="150" r="40" fill="none" stroke="rgba(229,193,88,0.4)" stroke-width="1" class="flower-circle-svg"/>
+                                <!-- Inner ring -->
+                                <circle cx="150" cy="90" r="40" fill="none" stroke="rgba(229,193,88,0.4)" stroke-width="1" class="flower-circle-svg"/>
+                                <circle cx="202" cy="120" r="40" fill="none" stroke="rgba(229,193,88,0.4)" stroke-width="1" class="flower-circle-svg"/>
+                                <circle cx="202" cy="180" r="40" fill="none" stroke="rgba(229,193,88,0.4)" stroke-width="1" class="flower-circle-svg"/>
+                                <circle cx="150" cy="210" r="40" fill="none" stroke="rgba(229,193,88,0.4)" stroke-width="1" class="flower-circle-svg"/>
+                                <circle cx="98" cy="180" r="40" fill="none" stroke="rgba(229,193,88,0.4)" stroke-width="1" class="flower-circle-svg"/>
+                                <circle cx="98" cy="120" r="40" fill="none" stroke="rgba(229,193,88,0.4)" stroke-width="1" class="flower-circle-svg"/>
+                            </svg>
+                        </div>
+                        <div class="sacred-labels">
+                            <div class="sacred-label" onclick="animateSacred('flower')">
+                                <h4>Flower of Life</h4>
+                                <span>Creation Pattern</span>
+                            </div>
+                            <div class="sacred-label" onclick="animateSacred('seed')">
+                                <h4>Seed of Life</h4>
+                                <span>Genesis</span>
+                            </div>
+                            <div class="sacred-label" onclick="animateSacred('tree')">
+                                <h4>Tree of Life</h4>
+                                <span>Interconnection</span>
+                            </div>
+                            <div class="sacred-label" onclick="animateSacred('metatron')">
+                                <h4>Metatron's Cube</h4>
+                                <span>All Platonic Solids</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="screen-label">SacredGeometryView</div>
+        </div>
+
+        <!-- Kabbalah Screen -->
+        <div class="iphone-wrapper" id="screen-kabbalah">
+            <div class="iphone-frame">
+                <div class="iphone-notch"></div>
+                <div class="iphone-screen">
+                    <div class="screen-header">
+                        <h2 class="screen-title">Tree of Life</h2>
+                        <div class="screen-icon">🌳</div>
+                    </div>
+                    <div class="kabbalah-content">
+                        <div class="tree-of-life">
+                            <svg width="300" height="380" style="position: absolute; top: 0; left: 0;">
+                                <!-- Path lines -->
+                                <line x1="150" y1="32" x2="75" y2="102" stroke="rgba(229,193,88,0.3)" stroke-width="2"/>
+                                <line x1="150" y1="32" x2="225" y2="102" stroke="rgba(229,193,88,0.3)" stroke-width="2"/>
+                                <line x1="75" y1="102" x2="225" y2="102" stroke="rgba(229,193,88,0.3)" stroke-width="2"/>
+                                <line x1="75" y1="102" x2="52" y2="172" stroke="rgba(229,193,88,0.3)" stroke-width="2"/>
+                                <line x1="225" y1="102" x2="248" y2="172" stroke="rgba(229,193,88,0.3)" stroke-width="2"/>
+                                <line x1="75" y1="102" x2="150" y2="172" stroke="rgba(229,193,88,0.3)" stroke-width="2"/>
+                                <line x1="225" y1="102" x2="150" y2="172" stroke="rgba(229,193,88,0.3)" stroke-width="2"/>
+                                <line x1="52" y1="172" x2="248" y2="172" stroke="rgba(229,193,88,0.3)" stroke-width="2"/>
+                                <line x1="52" y1="172" x2="52" y2="242" stroke="rgba(229,193,88,0.3)" stroke-width="2"/>
+                                <line x1="248" y1="172" x2="248" y2="242" stroke="rgba(229,193,88,0.3)" stroke-width="2"/>
+                                <line x1="52" y1="172" x2="150" y2="242" stroke="rgba(229,193,88,0.3)" stroke-width="2"/>
+                                <line x1="248" y1="172" x2="150" y2="242" stroke="rgba(229,193,88,0.3)" stroke-width="2"/>
+                                <line x1="150" y1="172" x2="52" y2="242" stroke="rgba(229,193,88,0.3)" stroke-width="2"/>
+                                <line x1="150" y1="172" x2="248" y2="242" stroke="rgba(229,193,88,0.3)" stroke-width="2"/>
+                                <line x1="52" y1="242" x2="248" y2="242" stroke="rgba(229,193,88,0.3)" stroke-width="2"/>
+                                <line x1="52" y1="242" x2="150" y2="322" stroke="rgba(229,193,88,0.3)" stroke-width="2"/>
+                                <line x1="248" y1="242" x2="150" y2="322" stroke="rgba(229,193,88,0.3)" stroke-width="2"/>
+                                <line x1="150" y1="242" x2="150" y2="322" stroke="rgba(229,193,88,0.3)" stroke-width="2"/>
+                            </svg>
+                            <div class="sephirah crown" onclick="showSephirah('Keter')">1</div>
+                            <div class="sephirah wisdom" onclick="showSephirah('Chokhmah')">2</div>
+                            <div class="sephirah understanding" onclick="showSephirah('Binah')">3</div>
+                            <div class="sephirah mercy" onclick="showSephirah('Chesed')">4</div>
+                            <div class="sephirah severity" onclick="showSephirah('Gevurah')">5</div>
+                            <div class="sephirah beauty" onclick="showSephirah('Tiferet')">6</div>
+                            <div class="sephirah victory" onclick="showSephirah('Netzach')">7</div>
+                            <div class="sephirah splendor" onclick="showSephirah('Hod')">8</div>
+                            <div class="sephirah foundation" onclick="showSephirah('Yesod')">9</div>
+                            <div class="sephirah kingdom" onclick="showSephirah('Malkuth')">10</div>
+                        </div>
+                        <div class="kabbalah-info">
+                            <h3 id="sephirah-name">Click a Sephirah</h3>
+                            <p id="sephirah-desc">Explore the 10 divine emanations of the Tree of Life.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="screen-label">KabbalahView</div>
+        </div>
+
+        <!-- Playing Cards Screen -->
+        <div class="iphone-wrapper" id="screen-cards">
+            <div class="iphone-frame">
+                <div class="iphone-notch"></div>
+                <div class="iphone-screen">
+                    <div class="screen-header">
+                        <h2 class="screen-title">Card Reading</h2>
+                        <div class="screen-icon">🎴</div>
+                    </div>
+                    <div class="cards-content">
+                        <div class="cards-spread">
+                            <div class="cards-row">
+                                <div class="playing-card red" onclick="selectCard(this)">
+                                    <span class="rank top">A</span>
+                                    <span class="suit">♥</span>
+                                    <span class="rank bottom">A</span>
+                                </div>
+                                <div class="playing-card black" onclick="selectCard(this)">
+                                    <span class="rank top">K</span>
+                                    <span class="suit">♠</span>
+                                    <span class="rank bottom">K</span>
+                                </div>
+                                <div class="playing-card red" onclick="selectCard(this)">
+                                    <span class="rank top">Q</span>
+                                    <span class="suit">♦</span>
+                                    <span class="rank bottom">Q</span>
+                                </div>
+                            </div>
+                            <div class="cards-row">
+                                <div class="playing-card black" onclick="selectCard(this)">
+                                    <span class="rank top">J</span>
+                                    <span class="suit">♣</span>
+                                    <span class="rank bottom">J</span>
+                                </div>
+                                <div class="playing-card red" onclick="selectCard(this)">
+                                    <span class="rank top">10</span>
+                                    <span class="suit">♥</span>
+                                    <span class="rank bottom">10</span>
+                                </div>
+                                <div class="playing-card black" onclick="selectCard(this)">
+                                    <span class="rank top">9</span>
+                                    <span class="suit">♠</span>
+                                    <span class="rank bottom">9</span>
+                                </div>
+                            </div>
+                            <div class="cards-row">
+                                <div class="playing-card red" onclick="selectCard(this)">
+                                    <span class="rank top">8</span>
+                                    <span class="suit">♦</span>
+                                    <span class="rank bottom">8</span>
+                                </div>
+                                <div class="playing-card black" onclick="selectCard(this)">
+                                    <span class="rank top">7</span>
+                                    <span class="suit">♣</span>
+                                    <span class="rank bottom">7</span>
+                                </div>
+                                <div class="playing-card red" onclick="selectCard(this)">
+                                    <span class="rank top">6</span>
+                                    <span class="suit">♥</span>
+                                    <span class="rank bottom">6</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cards-controls">
+                            <button class="cards-btn" onclick="shuffleCards()">New Spread</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="screen-label">PlayingCardsView</div>
+        </div>
+    </div>
+
+    <script>
+        // Screen switching
+        function showScreen(screenName) {
+            document.querySelectorAll('.iphone-wrapper').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+            document.getElementById('screen-' + screenName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Sidereal Astrology - Generate zodiac symbols
+        const zodiacSigns = [
+            { symbol: '♈', name: 'Aries', desc: 'The first sign. Leadership, courage, new beginnings. Ruled by Mars.' },
+            { symbol: '♉', name: 'Taurus', desc: 'Earth sign. Stability, sensuality, material abundance. Ruled by Venus.' },
+            { symbol: '♊', name: 'Gemini', desc: 'Air sign. Communication, duality, adaptability. Ruled by Mercury.' },
+            { symbol: '♋', name: 'Cancer', desc: 'Water sign. Emotion, intuition, nurturing. Ruled by the Moon.' },
+            { symbol: '♌', name: 'Leo', desc: 'Fire sign. Creativity, confidence, generosity. Ruled by the Sun.' },
+            { symbol: '♍', name: 'Virgo', desc: 'Earth sign. Analysis, service, perfection. Ruled by Mercury.' },
+            { symbol: '♎', name: 'Libra', desc: 'Air sign. Balance, harmony, relationships. Ruled by Venus.' },
+            { symbol: '♏', name: 'Scorpio', desc: 'Water sign. Transformation, depth, mystery. Ruled by Pluto/Mars.' },
+            { symbol: '♐', name: 'Sagittarius', desc: 'Fire sign. Adventure, philosophy, expansion. Ruled by Jupiter.' },
+            { symbol: '♑', name: 'Capricorn', desc: 'Earth sign. Ambition, discipline, mastery. Ruled by Saturn.' },
+            { symbol: '♒', name: 'Aquarius', desc: 'Air sign. Innovation, humanitarianism, rebellion. Ruled by Uranus/Saturn.' },
+            { symbol: '♓', name: 'Pisces', desc: 'Water sign. Spirituality, dreams, compassion. Ruled by Neptune/Jupiter.' }
+        ];
+
+        function generateZodiacWheel() {
+            const container = document.getElementById('zodiac-symbols');
+            const radius = 110;
+            zodiacSigns.forEach((sign, i) => {
+                const angle = (i * 30 - 90) * Math.PI / 180;
+                const x = 140 + radius * Math.cos(angle);
+                const y = 140 + radius * Math.sin(angle);
+                const el = document.createElement('div');
+                el.className = 'zodiac-symbol';
+                el.style.left = x + 'px';
+                el.style.top = y + 'px';
+                el.textContent = sign.symbol;
+                el.onclick = () => showAstroInfo(sign);
+                container.appendChild(el);
+            });
+        }
+
+        function showAstroInfo(sign) {
+            document.getElementById('astro-title').textContent = sign.symbol + ' ' + sign.name;
+            document.getElementById('astro-desc').textContent = sign.desc;
+        }
+
+        // Tarot
+        function flipCard(card) {
+            card.classList.toggle('flipped');
+        }
+
+        function resetTarot() {
+            document.querySelectorAll('.tarot-card').forEach(card => {
+                card.classList.remove('flipped');
+            });
+            setTimeout(() => {
+                document.querySelectorAll('.tarot-card').forEach((card, i) => {
+                    setTimeout(() => card.classList.add('flipped'), i * 100);
+                });
+            }, 500);
+        }
+
+        // Periodic Table
+        const elements = [
+            { n: 1, s: 'H', name: 'Hydrogen' }, { n: 2, s: 'He', name: 'Helium' },
+            { n: 3, s: 'Li', name: 'Lithium' }, { n: 4, s: 'Be', name: 'Beryllium' },
+            { n: 5, s: 'B', name: 'Boron' }, { n: 6, s: 'C', name: 'Carbon' },
+            { n: 7, s: 'N', name: 'Nitrogen' }, { n: 8, s: 'O', name: 'Oxygen' },
+            { n: 9, s: 'F', name: 'Fluorine' }, { n: 10, s: 'Ne', name: 'Neon' },
+            { n: 11, s: 'Na', name: 'Sodium' }, { n: 12, s: 'Mg', name: 'Magnesium' },
+            { n: 13, s: 'Al', name: 'Aluminum' }, { n: 14, s: 'Si', name: 'Silicon' },
+            { n: 15, s: 'P', name: 'Phosphorus' }, { n: 16, s: 'S', name: 'Sulfur' },
+            { n: 17, s: 'Cl', name: 'Chlorine' }, { n: 18, s: 'Ar', name: 'Argon' },
+            { n: 19, s: 'K', name: 'Potassium' }, { n: 20, s: 'Ca', name: 'Calcium' },
+            { n: 26, s: 'Fe', name: 'Iron' }, { n: 29, s: 'Cu', name: 'Copper' },
+            { n: 47, s: 'Ag', name: 'Silver' }, { n: 79, s: 'Au', name: 'Gold', gold: true },
+            { n: 80, s: 'Hg', name: 'Mercury' }, { n: 82, s: 'Pb', name: 'Lead' },
+            { n: 92, s: 'U', name: 'Uranium' }, { n: 94, s: 'Pu', name: 'Plutonium' }
+        ];
+
+        function generatePeriodicTable() {
+            const container = document.getElementById('periodic-grid');
+            elements.forEach(el => {
+                const div = document.createElement('div');
+                div.className = 'element' + (el.gold ? ' element-gold' : '');
+                div.innerHTML = `<span class="element-number">${el.n}</span><span class="element-symbol">${el.s}</span>`;
+                div.onclick = () => showElementInfo(el);
+                container.appendChild(div);
+            });
+        }
+
+        function showElementInfo(el) {
+            document.getElementById('element-name').textContent = el.name + ' (' + el.s + ')';
+            if (el.gold) {
+                document.getElementById('element-desc').textContent = 'Atomic number 79. The metal of the sun. Associated with purity, wealth, and spiritual enlightenment. In esoteric traditions, gold represents the perfected soul.';
+            } else {
+                const descs = {
+                    'H': 'The lightest element. Represents new beginnings and potential.',
+                    'He': 'Noble gas. Symbolizes elevation and transcendence.',
+                    'Fe': 'The metal of Mars. Strength, willpower, and protection.',
+                    'Cu': 'The metal of Venus. Love, beauty, and artistic expression.',
+                    'Ag': 'The metal of the Moon. Intuition, emotions, and reflection.',
+                    'Hg': 'The metal of Mercury. Communication, transformation, and alchemy.'
+                };
+                document.getElementById('element-desc').textContent = descs[el.s] || 'Atomic number ' + el.n + '. Part of the cosmic blueprint.';
+            }
+        }
+
+        // Sacred Geometry
+        function animateSacred(type) {
+            const circles = document.querySelectorAll('.flower-circle-svg');
+            circles.forEach((circle, i) => {
+                circle.style.transition = 'all 0.5s';
+                circle.style.transform = 'scale(0.8)';
+                setTimeout(() => {
+                    circle.style.transform = 'scale(1)';
+                }, i * 50);
+            });
+        }
+
+        // Kabbalah
+        const sephiroth = {
+            'Keter': 'The Crown - Divine Will, pure consciousness, the source of all creation.',
+            'Chokhmah': 'Wisdom - Intuitive insight, the flash of inspiration, masculine force.',
+            'Binah': 'Understanding - Contemplation, analysis, the womb of creation, feminine force.',
+            'Chesed': 'Mercy - Loving-kindness, expansion, grace, benevolence.',
+            'Gevurah': 'Severity - Strength, discipline, judgment, boundaries.',
+            'Tiferet': 'Beauty - Harmony, balance, compassion, integration of mercy and severity.',
+            'Netzach': 'Victory - Eternity, endurance, emotion, art, persistence.',
+            'Hod': 'Splendor - Humility, intellect, communication, submission.',
+            'Yesod': 'Foundation - Connection, subconscious, dreams, the etheric realm.',
+            'Malkuth': 'Kingdom - Manifestation, physical reality, the material world, presence.'
+        };
+
+        function showSephirah(name) {
+            document.getElementById('sephirah-name').textContent = name;
+            document.getElementById('sephirah-desc').textContent = sephiroth[name];
+        }
+
+        // Playing Cards
+        const cardRanks = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
+        const suits = [
+            { symbol: '♥', color: 'red', name: 'Hearts' },
+            { symbol: '♦', color: 'red', name: 'Diamonds' },
+            { symbol: '♠', color: 'black', name: 'Spades' },
+            { symbol: '♣', color: 'black', name: 'Clubs' }
+        ];
+
+        function selectCard(card) {
+            document.querySelectorAll('.playing-card').forEach(c => c.style.transform = '');
+            card.style.transform = 'translateY(-15px) rotate(0deg) scale(1.1)';
+            card.style.boxShadow = '0 15px 40px rgba(229, 193, 88, 0.4)';
+        }
+
+        function shuffleCards() {
+            const cards = document.querySelectorAll('.playing-card');
+            cards.forEach(card => {
+                card.style.transform = 'scale(0)';
+                setTimeout(() => {
+                    const rank = cardRanks[Math.floor(Math.random() * cardRanks.length)];
+                    const suit = suits[Math.floor(Math.random() * suits.length)];
+                    card.className = 'playing-card ' + suit.color;
+                    card.innerHTML = `
+                        <span class="rank top">${rank}</span>
+                        <span class="suit">${suit.symbol}</span>
+                        <span class="rank bottom">${rank}</span>
+                    `;
+                    card.onclick = function() { selectCard(this); };
+                    card.style.transform = 'scale(1)';
+                }, 200);
+            });
+        }
+
+        // Initialize
+        generateZodiacWheel();
+        generatePeriodicTable();
+
+        // Initial animations
+        setTimeout(() => {
+            document.querySelectorAll('.tarot-card').forEach((card, i) => {
+                setTimeout(() => card.classList.add('flipped'), i * 100);
+            });
+        }, 1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+/* QodeX iOS App - Chinese Simplified (zh-Hans) Localization */
+
+/* App Info */
+"app_name" = "QodeX";
+
+/* Welcome Screen */
+"welcome_title" = "发现你的数字";
+"welcome_subtitle" = "只需2分钟，解锁你的数字命理秘密";
+"get_started" = "开始";
+
+/* Tab Bar / Navigation */
+"today_view" = "今日";
+"chart_view" = "命盘";
+"community_view" = "社区";
+"learn_view" = "学习";
+"profile_view" = "个人资料";
+
+/* Chart / Numerology Terms */
+"life_path" = "生命灵数";
+"expression_number" = "表现数字";
+"soul_urge" = "内心渴望";
+
+/* Features */
+"daily_reading" = "每日解读";
+"power_hours" = "能量时辰";
+"compatibility" = "配对";
+
+/* Settings & Premium */
+"settings" = "设置";
+"premium" = "高级版";
+"unlock_full" = "解锁完整命盘";
+
+/* Common Actions */
+"continue" = "继续";
+"save" = "保存";
+"share" = "分享";
+"done" = "完成";
+"cancel" = "取消";
+"ok" = "确定";

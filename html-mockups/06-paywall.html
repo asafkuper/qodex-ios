@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QodeX - Paywall</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+            background: #0A0A0F;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 414px;
+            height: 896px;
+            background: linear-gradient(180deg, #1a0a2e 0%, #0A0A0F 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Header */
+        .header {
+            padding: 60px 24px 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .close-btn {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            color: #fff;
+        }
+        
+        /* Scrollable Content */
+        .scroll-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 0 24px 40px;
+        }
+        
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 20px 0 32px;
+        }
+        
+        .crown-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #D4AF37 0%, #F4D03F 100%);
+            border-radius: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 36px;
+            margin: 0 auto 20px;
+        }
+        
+        .hero-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+        
+        .hero-subtitle {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        /* Toggle */
+        .billing-toggle {
+            display: flex;
+            gap: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            padding: 4px;
+            margin-bottom: 24px;
+        }
+        
+        .toggle-btn {
+            flex: 1;
+            padding: 12px;
+            border-radius: 10px;
+            border: none;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .toggle-btn.inactive {
+            background: transparent;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .toggle-btn.active {
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+        }
+        
+        .badge {
+            background: #D4AF37;
+            color: #0A0A0F;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin-left: 8px;
+        }
+        
+        /* Tier Cards */
+        .tier-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid transparent;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .tier-card.selected {
+            border-color: #D4AF37;
+            background: rgba(212, 175, 55, 0.1);
+        }
+        
+        .tier-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        
+        .tier-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+        }
+        
+        .tier-price {
+            font-size: 24px;
+            font-weight: 700;
+            color: #D4AF37;
+        }
+        
+        .tier-price span {
+            font-size: 14px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .tier-features {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Master Tier Highlight */
+        .master-highlight {
+            background: linear-gradient(135deg, rgba(0, 212, 170, 0.2) 0%, rgba(0, 212, 170, 0.05) 100%);
+            border: 2px solid #00D4AA;
+        }
+        
+        .master-tag {
+            display: inline-block;
+            background: #00D4AA;
+            color: #0A0A0F;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+        
+        /* CTA */
+        .cta-section {
+            padding: 24px 0;
+        }
+        
+        .cta-button {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #D4AF37 0%, #F4D03F 100%);
+            border: none;
+            border-radius: 16px;
+            font-size: 17px;
+            font-weight: 600;
+            color: #0A0A0F;
+            cursor: pointer;
+            margin-bottom: 12px;
+        }
+        
+        .trial-note {
+            text-align: center;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .trial-note span {
+            color: #D4AF37;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="close-btn">✕</div>
+        </div>
+        
+        <!-- Content -->
+        <div class="scroll-content">
+            <!-- Hero -->
+            <div class="hero">
+                <div class="crown-icon">👑</div>
+                <h1 class="hero-title">Unlock Your Full Potential</h1>
+                <p class="hero-subtitle">Join the Inner Circle</p>
+            </div>
+            
+            <!-- Toggle -->
+            <div class="billing-toggle">
+                <button class="toggle-btn inactive">Monthly</button>
+                <button class="toggle-btn active">Annual</button>
+            </div>
+            
+            <!-- Seeker Tier -->
+            <div class="tier-card">
+                <div class="tier-header">
+                    <span class="tier-name">Inner Circle</span>
+                    <span class="tier-price">$59<span>/year</span></span>
+                </div>
+                <p class="tier-features">Full library, all numbers, community access</p>
+            </div>
+            
+            <!-- Initiate Tier -->
+            <div class="tier-card selected">
+                <div class="tier-header">
+                    <span class="tier-name">Qode Initiate</span>
+                    <span class="tier-price">$119<span>/year</span></span>
+                </div>
+                <p class="tier-features">Monthly group calls, personalized reports, priority support</p>
+            </div>
+            
+            <!-- Master Tier -->
+            <div class="tier-card master-highlight">
+                <span class="master-tag">👑 MOST POPULAR</span>
+                <div class="tier-header">
+                    <span class="tier-name">Qode Master</span>
+                    <span class="tier-price">$199<span>/lifetime</span></span>
+                </div>
+                <p class="tier-features">✨ Monthly 1:1 sessions with Shani • Direct WhatsApp access • Exclusive Master Circle</p>
+            </div>
+            
+            <!-- CTA -->
+            <div class="cta-section">
+                <button class="cta-button">Start Your Journey</button>
+                <p class="trial-note"><span>7-day free trial</span> • Cancel anytime</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

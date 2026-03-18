@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QodeX - Premium Screens Preview</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  background: #1a1a1a;
+  color: #FAFAFA;
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-wrap: wrap;
+}
+.screen-label {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.iphone-container {
+  position: relative;
+}
+.iphone {
+  width: 393px;
+  height: 852px;
+  background: #0A0A0F;
+  border-radius: 55px;
+  box-shadow: 0 0 0 12px #1a1a1a, 0 50px 100px rgba(0,0,0,0.8);
+  overflow: hidden;
+  position: relative;
+}
+.notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 126px;
+  height: 37px;
+  background: #0A0A0F;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  z-index: 100;
+}
+.bg-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #0A0A0F 0%, #0d0d14 100%);
+}
+.glow-orb-1 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(229, 193, 88, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  top: -100px;
+  right: -100px;
+}
+.glow-orb-2 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(155, 89, 182, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  bottom: 200px;
+  left: -150px;
+}
+.content {
+  position: relative;
+  z-index: 10;
+  padding: 60px 20px 100px;
+  height: 100%;
+  overflow-y: auto;
+}
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-top: 20px;
+}
+.header-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #FAFAFA;
+}
+.header-action {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #A1A1AA;
+}
+.logo {
+  font-size: 32px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #F4D03F 0%, #E5C158 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+.subtitle {
+  font-size: 15px;
+  color: #A1A1AA;
+}
+.number-container {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  margin: 0 auto 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  background: conic-gradient(from 0deg, transparent, #E5C158, transparent) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: rotate 20s linear infinite;
+}
+.ring-inner {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background: conic-gradient(from 180deg, transparent, #B8954C, transparent) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: rotate 15s linear infinite reverse;
+  opacity: 0.6;
+}
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.number-display {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(229, 193, 88, 0.15), transparent 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(229, 193, 88, 0.2);
+  backdrop-filter: blur(20px);
+}
+.number {
+  font-size: 100px;
+  font-weight: 700;
+  background: linear-gradient(180deg, #F4D03F 0%, #E5C158 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 60px rgba(229, 193, 88, 0.5);
+  animation: pulse 3s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+.vibe {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.vibe-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #FAFAFA;
+  margin-bottom: 8px;
+}
+.vibe-subtitle {
+  font-size: 15px;
+  color: #A1A1AA;
+}
+.glass-card {
+  background: rgba(18, 18, 26, 0.6);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+}
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+}
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.card-icon {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #E5C158;
+  box-shadow: 0 0 10px #E5C158;
+}
+.card-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #E5C158;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.insight-text {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #E5E5E5;
+}
+.insight-highlight {
+  color: #F4D03F;
+  font-weight: 500;
+}
+.hours-grid {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+.hour-pill {
+  background: rgba(229, 193, 88, 0.1);
+  border: 1px solid rgba(229, 193, 88, 0.2);
+  border-radius: 12px;
+  padding: 12px 20px;
+  text-align: center;
+  min-width: 70px;
+}
+.hour-time {
+  font-size: 18px;
+  font-weight: 600;
+  color: #E5C158;
+}
+.hour-label {
+  font-size: 11px;
+  color: #A1A1AA;
+  margin-top: 4px;
+}
+.cta-button {
+  width: 100%;
+  padding: 18px;
+  background: linear-gradient(135deg, #F4D03F 0%, #E5C158 100%);
+  border: none;
+  border-radius: 16px;
+  color: #0A0A0F;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(229, 193, 88, 0.3);
+  margin-top: 8px;
+}
+.tab-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 83px;
+  background: rgba(18, 18, 26, 0.95);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 20px 20px;
+}
+.tab-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.tab-icon {
+  font-size: 22px;
+  color: #A1A1AA;
+}
+.tab-item.active .tab-icon {
+  color: #E5C158;
+  text-shadow: 0 0 20px rgba(229, 193, 88, 0.5);
+}
+.tab-label {
+  font-size: 10px;
+  color: #A1A1AA;
+}
+.tab-item.active .tab-label {
+  color: #E5C158;
+}
+
+/* Chart View Styles */
+.hero-card {
+  background: linear-gradient(135deg, rgba(229, 193, 88, 0.15) 0%, rgba(229, 193, 88, 0.05) 100%);
+  border: 1px solid rgba(229, 193, 88, 0.2);
+  border-radius: 24px;
+  padding: 28px;
+  margin-bottom: 16px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(229, 193, 88, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #B8954C;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.hero-number {
+  font-size: 64px;
+  font-weight: 700;
+  background: linear-gradient(180deg, #F4D03F 0%, #E5C158 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+}
+.hero-info {
+  flex: 1;
+}
+.hero-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #FAFAFA;
+  margin-bottom: 4px;
+}
+.hero-subtitle {
+  font-size: 14px;
+  color: #A1A1AA;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.grid-card {
+  background: rgba(18, 18, 26, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.grid-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+}
+.grid-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #A1A1AA;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+.grid-number {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.grid-number.gold { color: #E5C158; }
+.grid-number.purple { color: #9B59B6; }
+.grid-number.blue { color: #3498DB; }
+.grid-number.green { color: #2ECC71; }
+.grid-title {
+  font-size: 13px;
+  color: #E5E5E5;
+  font-weight: 500;
+}
+.unlock-banner {
+  background: linear-gradient(135deg, rgba(229, 193, 88, 0.1) 0%, rgba(229, 193, 88, 0.02) 100%);
+  border: 1px dashed rgba(229, 193, 88, 0.3);
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.unlock-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(229, 193, 88, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+.unlock-content {
+  flex: 1;
+}
+.unlock-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #E5C158;
+  margin-bottom: 4px;
+}
+.unlock-subtitle {
+  font-size: 13px;
+  color: #A1A1AA;
+}
+.unlock-arrow {
+  font-size: 20px;
+  color: #E5C158;
+}
+</style>
+</head>
+<body>
+
+<!-- TODAY VIEW -->
+<div class="iphone-container">
+  <div class="screen-label">Today View</div>
+  <div class="iphone">
+    <div class="notch"></div>
+    <div class="bg-gradient"></div>
+    <div class="glow-orb-1"></div>
+    <div class="glow-orb-2"></div>
+    
+    <div class="content">
+      <div class="header">
+        <div class="logo">QODE</div>
+        <div class="subtitle">Today's Energy</div>
+      </div>
+      
+      <div class="number-container">
+        <div class="ring"></div>
+        <div class="ring-inner"></div>
+        <div class="number-display">
+          <div class="number">8</div>
+        </div>
+      </div>
+      
+      <div class="vibe">
+        <div class="vibe-title">Power & Abundance</div>
+        <div class="vibe-subtitle">A day for bold decisions</div>
+      </div>
+      
+      <div class="glass-card">
+        <div class="card-header">
+          <div class="card-icon"></div>
+          <div class="card-title">Today's Insight</div>
+        </div>
+        <div class="insight-text">
+          The energy of <span class="insight-highlight">8</span> brings opportunities for financial growth and career advancement. Take charge of your destiny today.
+        </div>
+      </div>
+      
+      <div class="glass-card">
+        <div class="card-header">
+          <div class="card-icon"></div>
+          <div class="card-title">Power Hours</div>
+        </div>
+        <div class="hours-grid">
+          <div class="hour-pill">
+            <div class="hour-time">9:00</div>
+            <div class="hour-label">AM</div>
+          </div>
+          <div class="hour-pill">
+            <div class="hour-time">2:00</div>
+            <div class="hour-label">PM</div>
+          </div>
+          <div class="hour-pill">
+            <div class="hour-time">7:00</div>
+            <div class="hour-label">PM</div>
+          </div>
+        </div>
+      </div>
+      
+      <button class="cta-button">View Full Reading</button>
+    </div>
+    
+    <div class="tab-bar">
+      <div class="tab-item active">
+        <div class="tab-icon">☀</div>
+        <div class="tab-label">Today</div>
+      </div>
+      <div class="tab-item">
+        <div class="tab-icon">◎</div>
+        <div class="tab-label">Chart</div>
+      </div>
+      <div class="tab-item">
+        <div class="tab-icon">◎</div>
+        <div class="tab-label">Community</div>
+      </div>
+      <div class="tab-item">
+        <div class="tab-icon">◎</div>
+        <div class="tab-label">Learn</div>
+      </div>
+      <div class="tab-item">
+        <div class="tab-icon">◎</div>
+        <div class="tab-label">Profile</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CHART VIEW -->
+<div class="iphone-container">
+  <div class="screen-label">Chart View</div>
+  <div class="iphone">
+    <div class="notch"></div>
+    <div class="bg-gradient"></div>
+    
+    <div class="content">
+      <div class="header-row">
+        <div class="header-title">Your Chart</div>
+        <div class="header-action">⚙</div>
+      </div>
+      
+      <div class="hero-card">
+        <div class="hero-label">Life Path Number</div>
+        <div class="hero-content">
+          <div class="hero-number">7</div>
+          <div class="hero-info">
+            <div class="hero-title">The Seeker</div>
+            <div class="hero-subtitle">Spiritual • Analytical • Wise</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="grid">
+        <div class="grid-card">
+          <div class="grid-label">Expression</div>
+          <div class="grid-number gold">3</div>
+          <div class="grid-title">Creative</div>
+        </div>
+        
+        <div class="grid-card">
+          <div class="grid-label">Soul Urge</div>
+          <div class="grid-number purple">6</div>
+          <div class="grid-title">Nurturing</div>
+        </div>
+        
+        <div class="grid-card">
+          <div class="grid-label">Personality</div>
+          <div class="grid-number blue">9</div>
+          <div class="grid-title">Humanitarian</div>
+        </div>
+        
+        <div class="grid-card">
+          <div class="grid-label">Birthday</div>
+          <div class="grid-number green">15</div>
+          <div class="grid-title">Leadership</div>
+        </div>
+      </div>
+      
+      <div class="unlock-banner">
+        <div class="unlock-icon">✦</div>
+        <div class="unlock-content">
+          <div class="unlock-title">Unlock 5 More Numbers</div>
+          <div class="unlock-subtitle">See your complete blueprint</div>
+        </div>
+        <div class="unlock-arrow">→</div>
+      </div>
+    </div>
+    
+    <div class="tab-bar">
+      <div class="tab-item">
+        <div class="tab-icon">○</div>
+        <div class="tab-label">Today</div>
+      </div>
+      <div class="tab-item active">
+        <div class="tab-icon">◉</div>
+        <div class="tab-label">Chart</div>
+      </div>
+      <div class="tab-item">
+        <div class="tab-icon">○</div>
+        <div class="tab-label">Community</div>
+      </div>
+      <div class="tab-item">
+        <div class="tab-icon">○</div>
+        <div class="tab-label">Learn</div>
+      </div>
+      <div class="tab-item">
+        <div class="tab-icon">○</div>
+        <div class="tab-label">Profile</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

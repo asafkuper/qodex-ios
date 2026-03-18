@@ -1,0 +1,39 @@
+/* Korean (ko) Localization for QodeX iOS App */
+
+/* App Info */
+"app_name" = "QodeX";
+
+/* Onboarding */
+"welcome_title" = "당신의 숫자 발견";
+"welcome_subtitle" = "단 2분 만에 당신의 수비학 비밀을 풀어보세요";
+"get_started" = "시작하기";
+
+/* Tab Bar */
+"today_view" = "오늘";
+"chart_view" = "차트";
+"community_view" = "커뮤니티";
+"learn_view" = "학습";
+"profile_view" = "프로필";
+
+/* Numerology Terms */
+"life_path" = "라이프 패스";
+"expression_number" = "표현 숫자";
+"soul_urge" = "영혼의 열정";
+
+/* Features */
+"daily_reading" = "데일리 리딩";
+"power_hours" = "파워 아워";
+"compatibility" = "궁합";
+
+/* General */
+"settings" = "설정";
+"premium" = "프리미엄";
+"unlock_full" = "전체 차트 잠금 해제";
+
+/* Actions */
+"continue" = "계속";
+"save" = "저장";
+"share" = "공유";
+"done" = "완료";
+"cancel" = "취소";
+"ok" = "확인";

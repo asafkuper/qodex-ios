@@ -1,0 +1,46 @@
+{
+  "life_path_1": {
+    "duration_seconds": 90,
+    "script": "Your Life Path Number is One. You are a natural born leader, here to blaze trails where none existed before. Your independent spirit and determination set you apart. You have the courage to stand alone when necessary, and the vision to see what others cannot. Your challenge is to balance your strong will with patience for those who move at different speeds. Remember that true leadership serves others, not the ego. Embrace your uniqueness. The world needs your pioneering energy. You are the spark that ignites change.",
+    "tone": "empowering_confident",
+    "background": "soft_ambient"
+  },
+  "life_path_2": {
+    "duration_seconds": 85,
+    "script": "Your Life Path Number is Two. You are a diplomat, a peacemaker, the glue that holds relationships together. Your sensitivity is not weakness—it is your superpower. You read the room, sense unspoken needs, and bring harmony to chaos. Your gift is making others feel truly seen and heard. Your challenge is to honor your own needs while caring for others. Speak your truth, even when it disrupts the peace. The world needs your gentle strength and intuitive wisdom. You are the bridge between hearts.",
+    "tone": "gentle_warm",
+    "background": "flowing_water"
+  },
+  "life_path_3": {
+    "duration_seconds": 88,
+    "script": "Your Life Path Number is Three. You are creativity incarnate—a messenger of joy, an artist of life. Your enthusiasm is contagious, your optimism a light in dark places. You came here to uplift, to inspire, to remind others that life is meant to be celebrated. Whether through words, art, or simply your presence, you bring color to the world. Your challenge is to ground your creative energy into finished projects. Discipline your gifts, and they will touch millions. The world needs your spark. Shine brightly.",
+    "tone": "joyful_inspiring",
+    "background": "uplifting_melody"
+  },
+  "life_path_7": {
+    "duration_seconds": 95,
+    "script": "Your Life Path Number is Seven. You are the seeker, the philosopher, the bridge between seen and unseen worlds. While others skim the surface, you dive deep. Your analytical mind craves truth, and your intuition guides you to hidden knowledge. You are here to question, to investigate, to understand the mysteries of existence. Your challenge is to balance solitude with connection. Share your insights—your wisdom illuminates paths for others. The world needs your depth and spiritual clarity. Trust your inner knowing.",
+    "tone": "contemplative_mystical",
+    "background": "deep_resonant"
+  },
+  "master_11": {
+    "duration_seconds": 100,
+    "script": "You carry Master Number Eleven—a beacon of spiritual insight and intuitive power. This is not an easy path, for you feel deeply what others ignore. Your dreams carry messages. Your intuition is razor-sharp. You are here to illuminate truth, to inspire through your very presence, to serve as a channel for higher wisdom. The intensity of this number can feel overwhelming at times. Ground yourself in spiritual practice. Your sensitivity is your gift to the world. Embrace the mastership. You are a lightworker.",
+    "tone": "reverent_empowering",
+    "background": "ethereal_chords"
+  },
+  "daily_guidance": {
+    "template": "Today is a {number} day. {energy_description} {action_guidance} Trust the journey.",
+    "examples": {
+      "1": "Take initiative on something you've been postponing. Leadership is required today.",
+      "2": "Focus on partnerships and cooperation. Listen deeply to what is unsaid.",
+      "3": "Express yourself creatively. Your words and ideas have extra power today.",
+      "4": "Build solid foundations. Details matter more than usual today.",
+      "5": "Embrace change and flexibility. An unexpected opportunity may arise.",
+      "6": "Nurture relationships and home. Family connections are highlighted.",
+      "7": "Go within. Research, study, and introspection yield insights today.",
+      "8": "Focus on career and finances. Your efforts are magnified today.",
+      "9": "Complete what you've started. Let go of what no longer serves you."
+    }
+  }
+}

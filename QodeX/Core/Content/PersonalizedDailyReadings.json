@@ -1,0 +1,669 @@
+{
+  "description": "Personalized Daily Readings combining Universal Day (1-9) with Life Path Numbers (1-9, 11, 22, 33). Total: 81 unique combinations.",
+  "universal_day_1": {
+    "1": {
+      "insight": "Today ignites your pioneering spirit. The double energy of 1 amplifies your natural leadership abilities. New beginnings align perfectly with your independent nature.",
+      "advice": "Take decisive action on a personal project. Your initiative today carries extra power—start something that reflects your authentic vision.",
+      "energy": "high",
+      "best_activities": ["Starting new projects", "Making important decisions", "Self-promotion", "Leadership tasks", "Personal branding"]
+    },
+    "2": {
+      "insight": "The assertive energy of Universal Day 1 meets your diplomatic nature. Today asks you to balance your own needs with harmony in partnerships.",
+      "advice": "Use your natural sensitivity to guide your actions. Lead with empathy rather than force. Collaborative beginnings favored over solo ventures.",
+      "energy": "medium",
+      "best_activities": ["Partnership negotiations", "Mediation", "Active listening", "Team building", "Harmonizing conflicts"]
+    },
+    "3": {
+      "insight": "Fresh energy meets creative expression. Universal Day 1 sparks new channels for your artistic talents. Your natural enthusiasm aligns with today's pioneering spirit.",
+      "advice": "Launch a creative project or express yourself boldly. Your ideas have extra impact today—share them confidently.",
+      "energy": "high",
+      "best_activities": ["Creative launches", "Public speaking", "Social networking", "Artistic expression", "Brainstorming sessions"]
+    },
+    "4": {
+      "insight": "New beginnings meet practical foundations. Your methodical nature helps channel today's initiating energy into lasting structures.",
+      "advice": "Start building something substantial. Use today's momentum to lay groundwork for long-term success. Patience plus action equals progress.",
+      "energy": "medium",
+      "best_activities": ["Planning systems", "Organizing spaces", "Creating schedules", "Foundation work", "Budget planning"]
+    },
+    "5": {
+      "insight": "Double independence amplifies your freedom-loving spirit. Universal Day 1 adds fresh momentum to your desire for change and adventure.",
+      "advice": "Embrace change boldly today. New experiences await—say yes to opportunities that expand your horizons.",
+      "energy": "high",
+      "best_activities": ["Travel planning", "Trying new experiences", "Breaking routines", "Adventure sports", "Exploring new places"]
+    },
+    "6": {
+      "insight": "New beginnings through nurturing. Your caring nature finds fresh ways to serve others today. Leadership through love and responsibility.",
+      "advice": "Start something that benefits family or community. Your natural healing abilities are heightened—offer support to those in need.",
+      "energy": "medium",
+      "best_activities": ["Family activities", "Home improvements", "Counseling others", "Community service", "Relationship building"]
+    },
+    "7": {
+      "insight": "Initiating energy meets inner wisdom. Today favors starting intellectual or spiritual pursuits. Trust your intuition as you begin new endeavors.",
+      "advice": "Begin research or study on a topic that fascinates you. Solitary exploration brings breakthroughs today.",
+      "energy": "medium",
+      "best_activities": ["Research projects", "Meditation", "Writing", "Analyzing data", "Spiritual practice"]
+    },
+    "8": {
+      "insight": "Powerful manifestation day. Your natural authority combined with Universal Day 1 creates potent conditions for career advancement.",
+      "advice": "Take bold steps toward professional goals. Financial and business initiatives have strong backing today.",
+      "energy": "high",
+      "best_activities": ["Business negotiations", "Career moves", "Investment decisions", "Leadership roles", "Goal setting"]
+    },
+    "9": {
+      "insight": "New beginnings serve higher purposes. Your humanitarian nature finds fresh avenues for making a difference today.",
+      "advice": "Start projects that serve others. Release what no longer serves you to make room for new service opportunities.",
+      "energy": "high",
+      "best_activities": ["Volunteer work", "Charitable giving", "Creative projects for causes", "Forgiveness practices", "Teaching others"]
+    },
+    "11": {
+      "insight": "Master illumination meets new beginnings. Your heightened intuition receives powerful downloads today. Pay attention to insights and visions.",
+      "advice": "Trust your psychic impressions. Begin projects aligned with your soul's purpose. Lead through inspiration, not force.",
+      "energy": "high",
+      "best_activities": ["Vision work", "Spiritual leadership", "Intuitive development", "Inspiring others", "Creative channeling"]
+    },
+    "22": {
+      "insight": "Master builder energy amplified. Universal Day 1 adds fresh momentum to your ability to manifest large-scale visions.",
+      "advice": "Begin work on your biggest dream. Practical steps toward grand goals are especially potent today.",
+      "energy": "high",
+      "best_activities": ["Large project launches", "Architectural planning", "Business expansion", "Legacy building", "Team leadership"]
+    },
+    "33": {
+      "insight": "Master teacher energy meets fresh starts. Your nurturing wisdom finds new expressions today. Lead by uplifting others.",
+      "advice": "Begin teaching or healing work. Your compassion combined with today's initiating energy creates profound impact.",
+      "energy": "high",
+      "best_activities": ["Teaching workshops", "Healing sessions", "Mentoring", "Counseling", "Spiritual guidance"]
+    }
+  },
+  "universal_day_2": {
+    "1": {
+      "insight": "Your independent nature meets cooperative energy today. Universal Day 2 asks you to balance leadership with collaboration.",
+      "advice": "Practice patience and diplomacy. Partnerships require give-and-take today. Success comes through cooperation, not dominance.",
+      "energy": "medium",
+      "best_activities": ["Collaborative planning", "Active listening", "Diplomatic negotiations", "Team coordination", "Relationship maintenance"]
+    },
+    "2": {
+      "insight": "Double sensitivity creates profound intuitive depth. Your natural diplomacy is heightened, making you exceptionally perceptive today.",
+      "advice": "Trust your gut feelings about people and situations. Your instincts are remarkably accurate. Focus on harmony in all interactions.",
+      "energy": "medium",
+      "best_activities": ["Meditation", "Counseling", "Partnership work", "Artistic collaboration", "Intuitive development"]
+    },
+    "3": {
+      "insight": "Creative expression finds receptive audiences. Your social charm combines beautifully with today's cooperative energy.",
+      "advice": "Collaborate on creative projects. Share your ideas with trusted partners. Your words carry emotional resonance today.",
+      "energy": "medium",
+      "best_activities": ["Creative collaboration", "Social gatherings", "Writing partnerships", "Musical jam sessions", "Group brainstorming"]
+    },
+    "4": {
+      "insight": "Stability meets sensitivity. Your practical nature benefits from slowing down and building carefully with others today.",
+      "advice": "Work methodically on shared goals. Patience in partnerships brings solid results. Focus on creating stable foundations together.",
+      "energy": "low",
+      "best_activities": ["Detailed planning", "Organizing with others", "Building routines", "Systematic work", "Quality assurance"]
+    },
+    "5": {
+      "insight": "Freedom-loving spirit meets cooperative flow. Balance your need for independence with meaningful connections today.",
+      "advice": "Find freedom within partnerships. Collaborative adventures can be as thrilling as solo ones. Stay flexible with others.",
+      "energy": "medium",
+      "best_activities": ["Group travel", "Team adventures", "Networking events", "Flexible collaborations", "Social exploration"]
+    },
+    "6": {
+      "insight": "Nurturing energy multiplied. Your caring nature creates deep harmony in relationships today. A beautiful day for healing connections.",
+      "advice": "Focus on family and loved ones. Your ability to create peace is enhanced. Mend fences and strengthen bonds.",
+      "energy": "high",
+      "best_activities": ["Family time", "Relationship healing", "Home beautification", "Counseling loved ones", "Cooking for others"]
+    },
+    "7": {
+      "insight": "Analytical mind meets emotional sensitivity. Today favors studying relationships, patterns, and deeper meanings.",
+      "advice": "Reflect on your connections with others. Research and analysis are productive, especially concerning partnerships.",
+      "energy": "low",
+      "best_activities": ["Relationship analysis", "Research", "Quiet contemplation", "Studying patterns", "Journaling"]
+    },
+    "8": {
+      "insight": "Business acumen meets diplomatic skills. Professional relationships flourish under today's cooperative energy.",
+      "advice": "Negotiate with sensitivity but maintain your standards. Partnerships in business can be highly profitable today.",
+      "energy": "medium",
+      "best_activities": ["Business partnerships", "Negotiations", "Contract discussions", "Team leadership", "Strategic planning"]
+    },
+    "9": {
+      "insight": "Humanitarian spirit meets collective consciousness. Your compassion aligns with today's universal harmony.",
+      "advice": "Serve others through cooperation. Group humanitarian efforts are especially effective. Release ego for collective good.",
+      "energy": "medium",
+      "best_activities": ["Group volunteer work", "Community organizing", "Charitable collaboration", "Peace mediation", "Universal love practices"]
+    },
+    "11": {
+      "insight": "Master intuition meets cooperative energy. Your psychic abilities are heightened for understanding others deeply.",
+      "advice": "Use your insight to heal relationships. Trust visions about partnerships. Lead by sensing what others need.",
+      "energy": "high",
+      "best_activities": ["Intuitive counseling", "Energy healing", "Spiritual partnerships", "Channeling", "Visionary collaboration"]
+    },
+    "22": {
+      "insight": "Master manifestation through partnership. Large-scale projects benefit from collaborative energy today.",
+      "advice": "Build your vision with trusted partners. Practical cooperation brings dreams into reality.",
+      "energy": "medium",
+      "best_activities": ["Team building for big projects", "Partnership negotiations", "Large-scale coordination", "Organizational development", "Strategic alliances"]
+    },
+    "33": {
+      "insight": "Master compassion in full expression. Your healing presence creates ripples of peace today.",
+      "advice": "Teach through gentle guidance. Your nurturing wisdom transforms relationships. Lead with unconditional love.",
+      "energy": "high",
+      "best_activities": ["Teaching compassion", "Healing circles", "Counseling sessions", "Mentoring relationships", "Peace facilitation"]
+    }
+  },
+  "universal_day_3": {
+    "1": {
+      "insight": "Your leadership finds joyful expression today. Universal Day 3 adds creative sparkle to your pioneering spirit.",
+      "advice": "Express yourself boldly and authentically. Your unique voice has power today. Don't dim your light for anyone.",
+      "energy": "high",
+      "best_activities": ["Creative leadership", "Public speaking", "Personal branding", "Starting artistic projects", "Innovative launches"]
+    },
+    "2": {
+      "insight": "Diplomatic nature meets creative expression. Your sensitivity becomes an asset in artistic and social pursuits today.",
+      "advice": "Express your feelings through creative channels. Collaborate on artistic endeavors. Your emotional intelligence shines.",
+      "energy": "medium",
+      "best_activities": ["Collaborative art", "Emotional expression", "Social dancing", "Poetry writing", "Musical collaboration"]
+    },
+    "3": {
+      "insight": "Triple creativity unleashed. Your natural expressiveness reaches new heights today. Pure joy and inspiration flow through you.",
+      "advice": "Create without inhibition. Share your gifts freely. This is your day to shine through artistic and social expression.",
+      "energy": "high",
+      "best_activities": ["Artistic creation", "Performance", "Social media", "Party hosting", "Creative writing"]
+    },
+    "4": {
+      "insight": "Practical nature meets creative inspiration. Structure your artistic impulses for lasting results today.",
+      "advice": "Apply discipline to your creativity. Build systems that support your artistic expression. Quality over quantity.",
+      "energy": "medium",
+      "best_activities": ["Structured creativity", "Project planning", "Building portfolios", "Organizing creative spaces", "Systematic art practice"]
+    },
+    "5": {
+      "insight": "Freedom and fun combine beautifully. Your adventurous spirit finds creative outlets today.",
+      "advice": "Explore new forms of expression. Travel, try new hobbies, embrace spontaneity. Variety fuels your creativity.",
+      "energy": "high",
+      "best_activities": ["Spontaneous adventures", "Trying new art forms", "Travel photography", "Improvisation", "Exploring new cuisines"]
+    },
+    "6": {
+      "insight": "Nurturing through creativity. Your caring nature finds beautiful expression through art, design, or entertainment today.",
+      "advice": "Create for loved ones. Beautify your home environment. Your artistic gifts heal and uplift others today.",
+      "energy": "high",
+      "best_activities": ["Home decoration", "Cooking creatively", "Family photography", "Crafting gifts", "Teaching art to children"]
+    },
+    "7": {
+      "insight": "Intellectual creativity flourishes. Your analytical mind produces innovative ideas and unique perspectives today.",
+      "advice": "Write, research, or study subjects that fascinate you. Your mind is especially sharp and creative today.",
+      "energy": "medium",
+      "best_activities": ["Academic writing", "Research", "Problem-solving", "Strategic thinking", "Technical creativity"]
+    },
+    "8": {
+      "insight": "Business meets creativity. Your professional endeavors benefit from innovative thinking and social charm today.",
+      "advice": "Pitch ideas with confidence. Creative business solutions emerge easily. Market yourself and your vision boldly.",
+      "energy": "high",
+      "best_activities": ["Business presentations", "Marketing campaigns", "Creative entrepreneurship", "Brand development", "Negotiations"]
+    },
+    "9": {
+      "insight": "Creative service to humanity. Your artistic gifts serve higher purposes today. Universal love through expression.",
+      "advice": "Create for causes you believe in. Your art can raise awareness and inspire change. Share your vision with the world.",
+      "energy": "high",
+      "best_activities": ["Art for charity", "Awareness campaigns", "Teaching underprivileged", "Creative volunteer work", "World music/dance"]
+    },
+    "11": {
+      "insight": "Inspired creativity at master level. Your artistic expression channels higher wisdom today.",
+      "advice": "Trust inspired ideas that seem to come from beyond. Create from a place of spiritual connection. Your art illuminates.",
+      "energy": "high",
+      "best_activities": ["Channeling creativity", "Spiritual art", "Visionary writing", "Intuitive performance", "Inspiring teaching"]
+    },
+    "22": {
+      "insight": "Master builder of creative visions. Large-scale artistic or communication projects find success today.",
+      "advice": "Manifest grand creative projects. Your practical vision brings artistic dreams into tangible reality.",
+      "energy": "high",
+      "best_activities": ["Large creative productions", "Architecture", "Designing systems", "Building creative businesses", "Mentoring artists"]
+    },
+    "33": {
+      "insight": "Master teacher through joy. Your creative expression uplifts and educates others today.",
+      "advice": "Teach through art and entertainment. Your joyful wisdom transforms. Share creativity as a healing gift.",
+      "energy": "high",
+      "best_activities": ["Teaching arts", "Children's entertainment", "Therapeutic art", "Creative healing", "Joyful mentorship"]
+    }
+  },
+  "universal_day_4": {
+    "1": {
+      "insight": "Leadership through structure. Your independent nature finds power in creating systems and foundations today.",
+      "advice": "Build something lasting. Your pioneering spirit succeeds when channeled into practical, methodical work.",
+      "energy": "medium",
+      "best_activities": ["System building", "Process creation", "Foundation work", "Organizational leadership", "Strategic planning"]
+    },
+    "2": {
+      "insight": "Diplomacy through stability. Your sensitive nature creates secure foundations for partnerships today.",
+      "advice": "Build relationship structures that last. Create routines that honor both partners' needs. Patience brings security.",
+      "energy": "low",
+      "best_activities": ["Relationship planning", "Creating shared routines", "Building trust", "Organizing together", "Home establishment"]
+    },
+    "3": {
+      "insight": "Creative expression needs structure today. Your artistic impulses benefit from disciplined application.",
+      "advice": "Set up systems for your creativity. Build a portfolio, create a schedule, establish routines that support your art.",
+      "energy": "medium",
+      "best_activities": ["Portfolio building", "Creative scheduling", "Studio organization", "Project planning", "Skill development"]
+    },
+    "4": {
+      "insight": "Double stability creates unshakeable foundations. Your methodical nature excels at building lasting structures today.",
+      "advice": "Focus on long-term security. Build, organize, and establish systems. Your disciplined work creates enduring value.",
+      "energy": "medium",
+      "best_activities": ["Construction projects", "Financial planning", "Career building", "Home improvements", "Skill mastery"]
+    },
+    "5": {
+      "insight": "Freedom within structure. Your adventurous spirit finds liberation through well-designed systems today.",
+      "advice": "Create structures that support your freedom. Automate, systematize, then explore. Discipline enables adventure.",
+      "energy": "medium",
+      "best_activities": ["System automation", "Travel planning", "Adventure preparation", "Efficiency improvements", "Lifestyle design"]
+    },
+    "6": {
+      "insight": "Nurturing through practical care. Your responsibility to others manifests in tangible support today.",
+      "advice": "Provide stability for family and community. Build secure home environments. Practical service is your gift today.",
+      "energy": "medium",
+      "best_activities": ["Home maintenance", "Family financial planning", "Creating safe spaces", "Practical caregiving", "Domestic organization"]
+    },
+    "7": {
+      "insight": "Intellectual foundations. Your analytical mind builds knowledge structures and research frameworks today.",
+      "advice": "Deep dive into complex subjects. Organize your knowledge. Build systems for learning and understanding.",
+      "energy": "low",
+      "best_activities": ["Research organization", "Academic writing", "Data analysis", "Library work", "Knowledge management"]
+    },
+    "8": {
+      "insight": "Business structure and authority. Your professional ambitions find solid ground through systematic approaches today.",
+      "advice": "Build business systems that scale. Focus on infrastructure and processes. Your authority grows through reliability.",
+      "energy": "high",
+      "best_activities": ["Business systems", "Infrastructure building", "Process optimization", "Corporate structuring", "Strategic planning"]
+    },
+    "9": {
+      "insight": "Humanitarian work through practical means. Your service manifests in building structures that help others.",
+      "advice": "Create organizations or systems for charitable work. Build foundations for humanitarian causes.",
+      "energy": "medium",
+      "best_activities": ["Charity organization", "Non-profit building", "Community infrastructure", "Volunteer coordination", "Legacy planning"]
+    },
+    "11": {
+      "insight": "Master vision finds practical form. Your inspired ideas need systematic implementation today.",
+      "advice": "Ground your spiritual insights in practical reality. Build structures that support your higher purpose.",
+      "energy": "medium",
+      "best_activities": ["Spiritual organization", "Vision implementation", "Conscious business building", "Intuitive planning", "Manifestation work"]
+    },
+    "22": {
+      "insight": "Master builder at peak power. Your ability to manifest large-scale visions through practical means is exceptional today.",
+      "advice": "Work on your biggest, most practical dreams. Build legacy projects. Your manifestation power is extraordinary.",
+      "energy": "high",
+      "best_activities": ["Major construction", "Large-scale projects", "Organizational building", "Legacy creation", "Master planning"]
+    },
+    "33": {
+      "insight": "Master teacher builds educational foundations. Your wisdom finds structure in teaching systems today.",
+      "advice": "Create educational institutions or programs. Build systems that spread your healing teachings widely.",
+      "energy": "high",
+      "best_activities": ["School founding", "Curriculum development", "Teaching systems", "Educational infrastructure", "Healing institutions"]
+    }
+  },
+  "universal_day_5": {
+    "1": {
+      "insight": "Pioneering spirit embraces change. Your independence finds freedom through embracing new experiences today.",
+      "advice": "Break routines boldly. New adventures await your leadership. Trust your instincts to guide you to fresh territories.",
+      "energy": "high",
+      "best_activities": ["Solo travel", "Starting new ventures", "Adventure sports", "Breaking comfort zones", "Exploring new paths"]
+    },
+    "2": {
+      "insight": "Diplomatic flexibility. Your sensitive nature navigates changes with grace and intuition today.",
+      "advice": "Adapt to changes in partnerships with understanding. Go with the flow while maintaining emotional connections.",
+      "energy": "medium",
+      "best_activities": ["Flexible partnerships", "Adapting to change", "Social exploration", "Relationship adventures", "Intuitive navigation"]
+    },
+    "3": {
+      "insight": "Creative freedom flows. Your expressive nature thrives on variety and new experiences today.",
+      "advice": "Explore multiple creative outlets. Try new artistic forms. Variety fuels your inspiration.",
+      "energy": "high",
+      "best_activities": ["Trying new art forms", "Spontaneous creation", "Social exploration", "Creative adventures", "Performance experimentation"]
+    },
+    "4": {
+      "insight": "Structure meets flexibility. Your practical nature learns to embrace necessary changes today.",
+      "advice": "Build flexibility into your systems. Adapt routines without losing stability. Change can strengthen foundations.",
+      "energy": "medium",
+      "best_activities": ["System updates", "Process improvements", "Flexibility training", "Adaptive planning", "Efficient changes"]
+    },
+    "5": {
+      "insight": "Double freedom amplifies adventure. Your love of variety and change is electrified today.",
+      "advice": "Embrace maximum freedom. Multiple new experiences await. Say yes to adventure and spontaneity.",
+      "energy": "high",
+      "best_activities": ["Spontaneous travel", "New experiences", "Adventure seeking", "Breaking all routines", "Freedom celebration"]
+    },
+    "6": {
+      "insight": "Nurturing through new experiences. Your care for others includes showing them new possibilities today.",
+      "advice": "Share adventures with loved ones. Introduce family to new experiences. Care through expanding horizons.",
+      "energy": "medium",
+      "best_activities": ["Family adventures", "New experiences together", "Travel with loved ones", "Exploring with children", "Shared discoveries"]
+    },
+    "7": {
+      "insight": "Intellectual exploration. Your analytical mind seeks new knowledge and experiences today.",
+      "advice": "Study new subjects. Travel to learn. Expand your mental horizons through diverse experiences.",
+      "energy": "medium",
+      "best_activities": ["Research adventures", "Educational travel", "New studies", "Philosophical exploration", "Knowledge seeking"]
+    },
+    "8": {
+      "insight": "Business adventure. Professional opportunities through change and risk-taking appear today.",
+      "advice": "Take calculated risks in business. Explore new markets. Change brings profit for the bold.",
+      "energy": "high",
+      "best_activities": ["Business expansion", "New market exploration", "Risk assessment", "Venture capital", "Strategic pivots"]
+    },
+    "9": {
+      "insight": "Humanitarian exploration. Your service to humanity expands through travel and new experiences.",
+      "advice": "Explore different cultures in service. Travel for humanitarian causes. Expand your compassion through exposure.",
+      "energy": "high",
+      "best_activities": ["Humanitarian travel", "Cultural exploration", "Global service", "Mission work", "International volunteering"]
+    },
+    "11": {
+      "insight": "Master intuition guides adventure. Your inner knowing leads you to transformative experiences today.",
+      "advice": "Follow intuitive prompts to new places. Spiritual adventures await. Trust visions about your path.",
+      "energy": "high",
+      "best_activities": ["Spiritual travel", "Intuitive exploration", "Vision quests", "Pilgrimages", "Consciousness expansion"]
+    },
+    "22": {
+      "insight": "Master builder explores new territories. Large-scale projects benefit from innovative approaches today.",
+      "advice": "Bring visionary projects to new markets. Expand your influence geographically. Build bridges to new horizons.",
+      "energy": "high",
+      "best_activities": ["International expansion", "Large-scale innovation", "Global projects", "Cross-cultural building", "Visionary travel"]
+    },
+    "33": {
+      "insight": "Master teacher travels. Your wisdom spreads through movement and sharing across distances today.",
+      "advice": "Teach while traveling. Share your healing presence widely. Movement enhances your teaching impact.",
+      "energy": "high",
+      "best_activities": ["Teaching tours", "Healing travel", "Spiritual pilgrimages", "Global education", "Wisdom sharing"]
+    }
+  },
+  "universal_day_6": {
+    "1": {
+      "insight": "Leadership through nurturing. Your independence serves others through protection and guidance today.",
+      "advice": "Lead by caring for those you protect. Your strength becomes a shelter for others today.",
+      "energy": "medium",
+      "best_activities": ["Protective leadership", "Family guidance", "Mentoring", "Providing security", "Nurturing independence"]
+    },
+    "2": {
+      "insight": "Diplomatic harmony in relationships. Your sensitivity creates beautiful balance in partnerships today.",
+      "advice": "Focus on relationship harmony. Your intuitive understanding heals connections. Love flows through diplomacy.",
+      "energy": "high",
+      "best_activities": ["Partnership healing", "Romantic gestures", "Marriage counseling", "Relationship building", "Emotional support"]
+    },
+    "3": {
+      "insight": "Creative expression of love. Your artistry beautifies relationships and home environments today.",
+      "advice": "Express love creatively. Create art for loved ones. Your creative gifts nurture those around you.",
+      "energy": "high",
+      "best_activities": ["Creative gifts", "Home beautification", "Artistic expression of love", "Celebrations", "Entertaining"]
+    },
+    "4": {
+      "insight": "Practical nurturing. Your responsibility manifests in tangible care for home and family today.",
+      "advice": "Build secure foundations for loved ones. Practical care shows love. Home maintenance is an act of devotion.",
+      "energy": "medium",
+      "best_activities": ["Home improvements", "Family planning", "Practical caregiving", "Domestic organization", "Security building"]
+    },
+    "5": {
+      "insight": "Freedom to care. Your independent spirit finds expression in helping others break free today.",
+      "advice": "Help loved ones explore new possibilities. Support family adventures. Freedom and care combine beautifully.",
+      "energy": "medium",
+      "best_activities": ["Family adventures", "Supporting independence", "Travel with purpose", "Healing through freedom", "Adventure caregiving"]
+    },
+    "6": {
+      "insight": "Triple nurturing energy. Your caring nature is amplified to healing levels today.",
+      "advice": "Give abundantly of your heart. Your presence heals. Focus entirely on service to loved ones and community.",
+      "energy": "high",
+      "best_activities": ["Deep caregiving", "Healing work", "Community service", "Family devotion", "Unconditional giving"]
+    },
+    "7": {
+      "insight": "Spiritual nurturing. Your analytical mind serves others through wisdom and guidance today.",
+      "advice": "Share knowledge that heals. Teach others to find their own answers. Wisdom is your form of care.",
+      "energy": "medium",
+      "best_activities": ["Spiritual teaching", "Counseling", "Wisdom sharing", "Mentoring", "Guidance giving"]
+    },
+    "8": {
+      "insight": "Powerful provision. Your professional success enables greater care for others today.",
+      "advice": "Use your resources to provide for others. Financial generosity flows. Leadership in family or community matters.",
+      "energy": "high",
+      "best_activities": ["Financial provision", "Business for family", "Resource management", "Leadership in service", "Executive caregiving"]
+    },
+    "9": {
+      "insight": "Universal love in action. Your humanitarian nature combined with nurturing creates profound service.",
+      "advice": "Serve humanity with motherly/fatherly care. Your compassion knows no bounds today. Love everyone as family.",
+      "energy": "high",
+      "best_activities": ["Humanitarian caregiving", "Universal service", "Global nurturing", "Charity work", "Unconditional love"]
+    },
+    "11": {
+      "insight": "Master intuitive healer. Your heightened sensitivity becomes a powerful healing gift today.",
+      "advice": "Trust your healing intuitions. Channel spiritual energy for others. Your presence transforms and uplifts.",
+      "energy": "high",
+      "best_activities": ["Energy healing", "Intuitive counseling", "Spiritual nurturing", "Channeling", "Light work"]
+    },
+    "22": {
+      "insight": "Master builder of care. Large-scale nurturing projects and healing institutions benefit today.",
+      "advice": "Build organizations that care for many. Your practical vision serves humanity at scale.",
+      "energy": "high",
+      "best_activities": ["Founding charities", "Building healing centers", "Large-scale caregiving", "Organizational nurturing", "Institutional healing"]
+    },
+    "33": {
+      "insight": "Master teacher of love. Your nurturing wisdom teaches others to love unconditionally.",
+      "advice": "Teach through pure compassion. Your love heals and instructs simultaneously. Be the example of divine love.",
+      "energy": "high",
+      "best_activities": ["Teaching love", "Christ consciousness work", "Divine nurturing", "Spiritual parenting", "Universal teaching"]
+    }
+  },
+  "universal_day_7": {
+    "1": {
+      "insight": "Independent wisdom. Your leadership finds guidance through inner knowing and analytical clarity today.",
+      "advice": "Trust your insights when making decisions. Lead from a place of deep understanding. Your mind is sharp.",
+      "energy": "medium",
+      "best_activities": ["Strategic planning", "Research-based decisions", "Intellectual leadership", "Analysis", "Knowledge application"]
+    },
+    "2": {
+      "insight": "Intuitive sensitivity heightened. Your natural diplomacy is guided by profound inner knowing today.",
+      "advice": "Listen deeply to your intuition about relationships. Insights about partnerships come through stillness.",
+      "energy": "low",
+      "best_activities": ["Meditation", "Intuitive listening", "Relationship contemplation", "Quiet reflection", "Spiritual partnership work"]
+    },
+    "3": {
+      "insight": "Creative intellect. Your expressive nature finds depth through study and contemplation today.",
+      "advice": "Channel creativity into intellectual pursuits. Write, study, research. Your mind produces creative insights.",
+      "energy": "medium",
+      "best_activities": ["Research writing", "Creative study", "Philosophical exploration", "Intellectual art", "Thought leadership"]
+    },
+    "4": {
+      "insight": "Analytical precision. Your methodical nature excels at detailed research and systematic thinking today.",
+      "advice": "Dive deep into complex subjects. Organize knowledge meticulously. Build intellectual foundations.",
+      "energy": "low",
+      "best_activities": ["Deep research", "Data analysis", "Systematic study", "Technical work", "Precision tasks"]
+    },
+    "5": {
+      "insight": "Freedom through knowledge. Your adventurous spirit finds new horizons through learning and exploration.",
+      "advice": "Explore intellectually. Travel for knowledge. New subjects bring the adventure you crave.",
+      "energy": "medium",
+      "best_activities": ["Intellectual travel", "New studies", "Research adventures", "Knowledge exploration", "Learning journeys"]
+    },
+    "6": {
+      "insight": "Nurturing wisdom. Your care for others includes sharing knowledge and spiritual guidance today.",
+      "advice": "Teach what you've learned. Counsel with wisdom. Your guidance helps others find their path.",
+      "energy": "medium",
+      "best_activities": ["Teaching", "Counseling", "Mentoring", "Spiritual guidance", "Wisdom sharing"]
+    },
+    "7": {
+      "insight": "Double introspection creates profound depth. Your analytical and spiritual nature reaches new levels of insight.",
+      "advice": "Dive deep into contemplation. Research mysteries. Trust your unique perspective. Solitude brings breakthroughs.",
+      "energy": "low",
+      "best_activities": ["Deep meditation", "Research", "Spiritual practice", "Writing", "Contemplative walks"]
+    },
+    "8": {
+      "insight": "Business intelligence. Professional success comes through strategic thinking and analysis today.",
+      "advice": "Use data and research for business decisions. Your analytical skills drive success. Think before acting.",
+      "energy": "medium",
+      "best_activities": ["Strategic analysis", "Business research", "Financial planning", "Executive thinking", "Market analysis"]
+    },
+    "9": {
+      "insight": "Spiritual wisdom for humanity. Your humanitarian nature seeks deeper meaning and universal truths today.",
+      "advice": "Study spiritual traditions. Seek universal wisdom. Your insights serve humanity's evolution.",
+      "energy": "medium",
+      "best_activities": ["Spiritual study", "Philosophical research", "Metaphysical exploration", "Universal wisdom seeking", "Consciousness studies"]
+    },
+    "11": {
+      "insight": "Master intuition amplified. Your psychic abilities and spiritual insights reach extraordinary levels today.",
+      "advice": "Trust visionary downloads. Channel higher wisdom. Your connection to the unseen is exceptionally clear.",
+      "energy": "high",
+      "best_activities": ["Channeling", "Vision work", "Psychic development", "Spiritual teaching", "Higher guidance"]
+    },
+    "22": {
+      "insight": "Master builder of wisdom. Your practical vision is guided by profound spiritual understanding today.",
+      "advice": "Apply spiritual principles to practical projects. Build institutions that teach wisdom. Manifest insight.",
+      "energy": "medium",
+      "best_activities": ["Building spiritual organizations", "Practical wisdom application", "Teaching institutions", "Manifesting visions", "Visionary planning"]
+    },
+    "33": {
+      "insight": "Master teacher of mysteries. Your wisdom includes profound spiritual truths that transform others.",
+      "advice": "Teach deep spiritual lessons. Your understanding of mysteries heals and enlightens. Share sacred knowledge.",
+      "energy": "high",
+      "best_activities": ["Mystery teachings", "Spiritual initiation", "Sacred wisdom sharing", "Deep healing", "Consciousness transformation"]
+    }
+  },
+  "universal_day_8": {
+    "1": {
+      "insight": "Executive leadership. Your independent drive finds powerful expression in business and achievement today.",
+      "advice": "Take bold action toward professional goals. Your authority is recognized. Lead with confidence and vision.",
+      "energy": "high",
+      "best_activities": ["Executive decisions", "Business launches", "Leadership actions", "Authority assertion", "Career advancement"]
+    },
+    "2": {
+      "insight": "Diplomatic power. Your sensitivity combines with business acumen for successful negotiations today.",
+      "advice": "Use emotional intelligence in business. Partnership negotiations favored. Lead with empathy in professional settings.",
+      "energy": "medium",
+      "best_activities": ["Business negotiations", "Partnership deals", "Diplomatic leadership", "Team management", "Client relations"]
+    },
+    "3": {
+      "insight": "Creative business opportunities. Your communication skills shine in financial and professional matters today.",
+      "advice": "Pitch ideas confidently. Your creative approach to business succeeds. Express your professional vision boldly.",
+      "energy": "high",
+      "best_activities": ["Business presentations", "Creative entrepreneurship", "Marketing", "Sales", "Professional networking"]
+    },
+    "4": {
+      "insight": "Practical power. Your methodical nature builds solid business foundations and financial security today.",
+      "advice": "Focus on long-term financial planning. Build systems that generate wealth. Disciplined effort brings substantial rewards.",
+      "energy": "high",
+      "best_activities": ["Financial planning", "System building", "Investment research", "Career building", "Asset management"]
+    },
+    "5": {
+      "insight": "Dynamic business energy. Your versatility opens multiple professional opportunities today.",
+      "advice": "Explore diverse income streams. Adaptability is your business advantage. Take calculated risks.",
+      "energy": "high",
+      "best_activities": ["New ventures", "Market exploration", "Investment diversification", "Business travel", "Strategic pivots"]
+    },
+    "6": {
+      "insight": "Nurturing prosperity. Your care for others includes creating financial security for family today.",
+      "advice": "Provide abundantly for loved ones. Business success serves family needs. Leadership in family finances.",
+      "energy": "high",
+      "best_activities": ["Family financial planning", "Business for dependents", "Providing security", "Executive parenting", "Wealth for others"]
+    },
+    "7": {
+      "insight": "Analytical wealth building. Your research skills identify profitable opportunities and smart investments today.",
+      "advice": "Analyze before investing. Research thoroughly. Your analytical approach to finance brings success.",
+      "energy": "high",
+      "best_activities": ["Investment analysis", "Research-driven decisions", "Strategic planning", "Financial research", "Due diligence"]
+    },
+    "8": {
+      "insight": "Double power and abundance. Your executive abilities are amplified for maximum achievement today.",
+      "advice": "Claim your power boldly. Financial and professional success is yours. Lead with authority and confidence.",
+      "energy": "high",
+      "best_activities": ["Major deals", "Executive leadership", "Wealth building", "Authority positions", "Power moves"]
+    },
+    "9": {
+      "insight": "Humanitarian wealth. Your success serves higher purposes. Business becomes a vehicle for service today.",
+      "advice": "Use financial success to help others. Social entrepreneurship shines. Abundance shared multiplies.",
+      "energy": "high",
+      "best_activities": ["Charitable business", "Social entrepreneurship", "Wealth distribution", "Humanitarian leadership", "Service through success"]
+    },
+    "11": {
+      "insight": "Master intuitive business. Your insights guide powerful professional decisions and visionary leadership today.",
+      "advice": "Trust intuitive hunches about business. Lead with inspired vision. Your guidance transforms organizations.",
+      "energy": "high",
+      "best_activities": ["Visionary leadership", "Intuitive investing", "Inspired business", "Spiritual entrepreneurship", "Transformative management"]
+    },
+    "22": {
+      "insight": "Master builder of empires. Your practical vision manifests large-scale business success today.",
+      "advice": "Build substantial enterprises. Your manifestation power in business is exceptional. Think big, execute practically.",
+      "energy": "high",
+      "best_activities": ["Large-scale business", "Empire building", "Major investments", "Corporate leadership", "Legacy creation"]
+    },
+    "33": {
+      "insight": "Master teacher of abundance. Your wisdom about wealth serves humanity's elevation today.",
+      "advice": "Teach others about prosperity consciousness. Use success to fund teaching and healing. Abundant giving.",
+      "energy": "high",
+      "best_activities": ["Wealth teaching", "Abundance coaching", "Philanthropic leadership", "Teaching success", "Generous giving"]
+    }
+  },
+  "universal_day_9": {
+    "1": {
+      "insight": "Leadership through service. Your independence channels into humanitarian causes and helping others today.",
+      "advice": "Lead by example in service. Your individual actions inspire collective good. Be the change you wish to see.",
+      "energy": "high",
+      "best_activities": ["Individual activism", "Leading charity work", "Personal service", "Volunteer leadership", "Change initiation"]
+    },
+    "2": {
+      "insight": "Diplomatic compassion. Your sensitivity serves others through understanding and emotional support today.",
+      "advice": "Use your empathy to heal others. Partnerships in service work. Your intuition guides helping effectively.",
+      "energy": "medium",
+      "best_activities": ["Counseling", "Emotional support", "Partnership in service", "Healing work", "Compassionate listening"]
+    },
+    "3": {
+      "insight": "Creative service. Your artistic gifts raise awareness and inspire change for causes today.",
+      "advice": "Create for causes you believe in. Your expression serves humanity. Art becomes activism.",
+      "energy": "high",
+      "best_activities": ["Art for change", "Creative activism", "Awareness campaigns", "Benefit performances", "Inspirational speaking"]
+    },
+    "4": {
+      "insight": "Practical humanitarian work. Your methodical approach builds lasting structures for helping others.",
+      "advice": "Build organizations that serve. Systematic charity work. Create sustainable systems for helping.",
+      "energy": "medium",
+      "best_activities": ["Organizational building", "Sustainable charity", "Systematic service", "Infrastructure for good", "Long-term planning"]
+    },
+    "5": {
+      "insight": "Freedom through service. Your adventurous spirit finds liberation in helping others break free.",
+      "advice": "Help others find freedom. Travel for humanitarian causes. Liberation work suits your spirit.",
+      "energy": "high",
+      "best_activities": ["Humanitarian travel", "Liberation work", "Freedom advocacy", "Adventure service", "Global activism"]
+    },
+    "6": {
+      "insight": "Nurturing humanity. Your care expands to embrace all people as family today.",
+      "advice": "Love universally. Your nurturing becomes a force for global healing. Care for strangers as kin.",
+      "energy": "high",
+      "best_activities": ["Universal caregiving", "Family service", "Global nurturing", "Community mothering/fathering", "Unconditional service"]
+    },
+    "7": {
+      "insight": "Spiritual service. Your wisdom becomes a healing gift for humanity today.",
+      "advice": "Share spiritual insights that help others. Teach what you've learned. Wisdom given freely transforms.",
+      "energy": "medium",
+      "best_activities": ["Spiritual teaching", "Wisdom sharing", "Philosophical guidance", "Mystery school", "Consciousness work"]
+    },
+    "8": {
+      "insight": "Powerful philanthropy. Your success becomes a tool for massive humanitarian impact today.",
+      "advice": "Use resources to serve humanity. Financial power directed toward good. Leadership in charitable causes.",
+      "energy": "high",
+      "best_activities": ["Major philanthropy", "Charitable leadership", "Resource distribution", "Executive charity", "Wealth for good"]
+    },
+    "9": {
+      "insight": "Double humanitarian energy. Your compassion reaches cosmic proportions today. Universal love flows through you.",
+      "advice": "Give everything to service. Release ego completely. Be a pure channel for universal compassion.",
+      "energy": "high",
+      "best_activities": ["Total service", "Selfless giving", "Universal compassion", "Humanitarian devotion", "Planetary healing"]
+    },
+    "11": {
+      "insight": "Master illumination for humanity. Your spiritual insights uplift and transform the collective today.",
+      "advice": "Share visionary wisdom. Your light illuminates human consciousness. Inspire through spiritual truth.",
+      "energy": "high",
+      "best_activities": ["Spiritual leadership", "Consciousness raising", "Visionary teaching", "Light work", "Global inspiration"]
+    },
+    "22": {
+      "insight": "Master builder for humanity. Your practical vision serves large-scale humanitarian projects today.",
+      "advice": "Build institutions that uplift humanity. Manifest grand visions for collective good. Practical service at scale.",
+      "energy": "high",
+      "best_activities": ["Humanitarian institutions", "Global projects", "Large-scale service", "Legacy of good", "Masterful philanthropy"]
+    },
+    "33": {
+      "insight": "Master teacher of love. Your wisdom and compassion become pure healing force for the world today.",
+      "advice": "Teach through total compassion. Your presence heals the world. Be the embodiment of universal love.",
+      "energy": "high",
+      "best_activities": ["Universal teaching", "Christ consciousness", "Planetary healing", "Divine service", "Cosmic love"]
+    }
+  }
+}

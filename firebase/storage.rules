@@ -1,0 +1,112 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    
+    // ==================== HELPER FUNCTIONS ====================
+    
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    function isAdmin() {
+      return isAuthenticated() && 
+        firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+    
+    function validImageContentType() {
+      return request.resource.contentType.matches('image/.*');
+    }
+    
+    function validFileSize() {
+      return request.resource.size <= 5 * 1024 * 1024; // 5MB max
+    }
+    
+    // ==================== USER PROFILE IMAGES ====================
+    
+    match /users/{userId}/profile/{fileName} {
+      // Users can read any profile image
+      allow read: if isAuthenticated();
+      
+      // Users can upload their own profile image
+      allow create, update: if isOwner(userId) && 
+        validImageContentType() && 
+        validFileSize();
+      
+      // Users can delete their own, admins can delete any
+      allow delete: if isOwner(userId) || isAdmin();
+    }
+    
+    // ==================== COMMUNITY IMAGES ====================
+    
+    match /community/{postId}/{fileName} {
+      // All authenticated users can read
+      allow read: if isAuthenticated();
+      
+      // Any authenticated user can upload (will be validated by post author in Firestore rules)
+      allow create: if isAuthenticated() && 
+        validImageContentType() && 
+        validFileSize();
+      
+      // Only admins can delete
+      allow delete: if isAdmin();
+    }
+    
+    // ==================== TEACHING ASSETS ====================
+    
+    match /teachings/{teachingId}/{fileName} {
+      // All authenticated users can read
+      allow read: if isAuthenticated();
+      
+      // Only admins can upload
+      allow write: if isAdmin();
+      
+      // Only admins can delete
+      allow delete: if isAdmin();
+    }
+    
+    // ==================== LIVE SESSION RECORDINGS ====================
+    
+    match /recordings/{sessionId}/{fileName} {
+      // All authenticated users can read (access control handled in app tier)
+      allow read: if isAuthenticated();
+      
+      // Only admins can upload
+      allow write: if isAdmin();
+      
+      // Only admins can delete
+      allow delete: if isAdmin();
+    }
+    
+    // ==================== JOURNAL ATTACHMENTS ====================
+    
+    match /users/{userId}/journal/{entryId}/{fileName} {
+      // Users can read their own attachments
+      allow read: if isOwner(userId);
+      
+      // Users can upload their own
+      allow create: if isOwner(userId) && 
+        validImageContentType() && 
+        validFileSize();
+      
+      // Users can delete their own
+      allow delete: if isOwner(userId);
+    }
+    
+    // ==================== ADMIN UPLOADS ====================
+    
+    match /admin/{fileName} {
+      // Admins can do anything
+      allow read, write, delete: if isAdmin();
+    }
+    
+    // ==================== DEFAULT DENY ====================
+    
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

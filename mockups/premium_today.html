@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QodeX - Premium Design Concept</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --cosmic-black: #0A0A0F;
+            --cosmic-elevated: #12121A;
+            --cosmic-floating: #1A1A24;
+            --gold-primary: #E5C158;
+            --gold-bright: #F4D03F;
+            --gold-muted: #B8954C;
+            --starlight: #FAFAFA;
+            --starlight-secondary: #E5E5E5;
+            --starlight-tertiary: #A1A1AA;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+            background: var(--cosmic-black);
+            color: var(--starlight);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+        
+        .iphone-frame {
+            width: 393px;
+            height: 852px;
+            background: var(--cosmic-black);
+            border-radius: 55px;
+            box-shadow: 
+                0 0 0 12px #1a1a1a,
+                0 50px 100px rgba(0,0,0,0.8),
+                0 0 0 1px rgba(229, 193, 88, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 126px;
+            height: 37px;
+            background: var(--cosmic-black);
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            z-index: 100;
+        }
+        
+        .screen {
+            width: 100%;
+            height: 100%;
+            padding: 60px 24px 34px;
+            overflow-y: auto;
+            background: linear-gradient(180deg, var(--cosmic-black) 0%, #0d0d14 100%);
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold-primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+        
+        .subtitle {
+            font-size: 15px;
+            color: var(--starlight-tertiary);
+            font-weight: 400;
+        }
+        
+        /* Main Number Card */
+        .number-card {
+            position: relative;
+            width: 280px;
+            height: 280px;
+            margin: 0 auto 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .number-ring {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, transparent, var(--gold-primary), transparent);
+            animation: rotate 20s linear infinite;
+            opacity: 0.3;
+        }
+        
+        .number-ring-inner {
+            position: absolute;
+            width: 90%;
+            height: 90%;
+            border-radius: 50%;
+            background: conic-gradient(from 180deg, transparent, var(--gold-muted), transparent);
+            animation: rotate 15s linear infinite reverse;
+            opacity: 0.2;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .number-display {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, rgba(229, 193, 88, 0.15), transparent 70%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(229, 193, 88, 0.2);
+        }
+        
+        .number {
+            font-size: 100px;
+            font-weight: 700;
+            background: linear-gradient(180deg, var(--gold-bright) 0%, var(--gold-primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 60px rgba(229, 193, 88, 0.5);
+            animation: pulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .vibe-text {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        
+        .vibe-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--starlight);
+            margin-bottom: 8px;
+        }
+        
+        .vibe-subtitle {
+            font-size: 15px;
+            color: var(--starlight-tertiary);
+        }
+        
+        /* Glass Card */
+        .glass-card {
+            background: rgba(18, 18, 26, 0.6);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        
+        .card-icon {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gold-primary);
+            box-shadow: 0 0 10px var(--gold-primary);
+        }
+        
+        .card-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gold-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .insight-text {
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--starlight-secondary);
+        }
+        
+        .insight-highlight {
+            color: var(--gold-bright);
+            font-weight: 500;
+        }
+        
+        /* Lucky Hours */
+        .hours-grid {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+        
+        .hour-pill {
+            background: rgba(229, 193, 88, 0.1);
+            border: 1px solid rgba(229, 193, 88, 0.2);
+            border-radius: 12px;
+            padding: 12px 20px;
+            text-align: center;
+            min-width: 70px;
+        }
+        
+        .hour-time {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--gold-primary);
+        }
+        
+        .hour-label {
+            font-size: 11px;
+            color: var(--starlight-tertiary);
+            margin-top: 4px;
+        }
+        
+        /* CTA Button */
+        .cta-button {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold-primary) 100%);
+            border: none;
+            border-radius: 16px;
+            color: var(--cosmic-black);
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(229, 193, 88, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(229, 193, 88, 0.4);
+        }
+        
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent 30%,
+                rgba(255,255,255,0.3) 50%,
+                transparent 70%
+            );
+            transform: rotate(45deg) translateX(-100%);
+            transition: transform 0.6s;
+        }
+        
+        .cta-button:hover::after {
+            transform: rotate(45deg) translateX(100%);
+        }
+        
+        /* Tab Bar */
+        .tab-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 83px;
+            background: rgba(18, 18, 26, 0.95);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 20px 20px;
+        }
+        
+        .tab-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+        }
+        
+        .tab-icon {
+            font-size: 24px;
+            color: var(--starlight-tertiary);
+            transition: color 0.2s;
+        }
+        
+        .tab-item.active .tab-icon {
+            color: var(--gold-primary);
+        }
+        
+        .tab-label {
+            font-size: 10px;
+            color: var(--starlight-tertiary);
+            font-weight: 500;
+        }
+        
+        .tab-item.active .tab-label {
+            color: var(--gold-primary);
+        }
+        
+        /* Floating Elements */
+        .floating-glow {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(229, 193, 88, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        
+        .glow-1 {
+            top: -100px;
+            right: -100px;
+        }
+        
+        .glow-2 {
+            bottom: 200px;
+            left: -150px;
+            background: radial-gradient(circle, rgba(155, 89, 182, 0.1) 0%, transparent 70%);
+        }
+    </style>
+</head>
+<body>
+    <div class="iphone-frame">
+        <div class="notch"></div>
+        
+        <div class="floating-glow glow-1"></div>
+        <div class="floating-glow glow-2"></div>
+        
+        <div class="screen">
+            <div class="header">
+                <div class="logo">QODE</div>
+                <div class="subtitle">Today's Energy</div>
+            </div>
+            
+            <div class="number-card">
+                <div class="number-ring"></div>
+                <div class="number-ring-inner"></div>
+                <div class="number-display">
+                    <div class="number">8</div>
+                </div>
+            </div>
+            
+            <div class="vibe-text">
+                <div class="vibe-title">Power & Abundance</div>
+                <div class="vibe-subtitle">A day for bold decisions</div>
+            </div>
+            
+            <div class="glass-card">
+                <div class="card-header">
+                    <div class="card-icon"></div>
+                    <div class="card-title">Today's Insight</div>
+                </div>
+                <div class="insight-text">
+                    The energy of <span class="insight-highlight">8</span> brings opportunities for financial growth and career advancement. Take charge of your destiny today.
+                </div>
+            </div>
+            
+            <div class="glass-card">
+                <div class="card-header">
+                    <div class="card-icon"></div>
+                    <div class="card-title">Power Hours</div>
+                </div>
+                <div class="hours-grid">
+                    <div class="hour-pill">
+                        <div class="hour-time">9:00</div>
+                        <div class="hour-label">AM</div>
+                    </div>
+                    <div class="hour-pill">
+                        <div class="hour-time">2:00</div>
+                        <div class="hour-label">PM</div>
+                    </div>
+                    <div class="hour-pill">
+                        <div class="hour-time">7:00</div>
+                        <div class="hour-label">PM</div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="cta-button">View Full Reading</button>
+        </div>
+        
+        <div class="tab-bar">
+            <div class="tab-item active">
+                <div class="tab-icon">◉</div>
+                <div class="tab-label">Today</div>
+            </div>
+            <div class="tab-item">
+                <div class="tab-icon">◎</div>
+                <div class="tab-label">Chart</div>
+            </div>
+            <div class="tab-item">
+                <div class="tab-icon">◉</div>
+                <div class="tab-label">Community</div>
+            </div>
+            <div class="tab-item">
+                <div class="tab-icon">◉</div>
+                <div class="tab-label">Learn</div>
+            </div>
+            <div class="tab-item">
+                <div class="tab-icon">◉</div>
+                <div class="tab-label">Profile</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

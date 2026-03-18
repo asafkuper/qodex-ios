@@ -1,0 +1,58 @@
+{
+  "app_name": "QodeX - Numerology & Destiny",
+  "subtitle": "Decode Your Matrix",
+  "description": "Discover your true path with QodeX, the most advanced numerology app ever created.\n\n🧬 YOUR NUMERIC BLUEPRINT\nCalculate your Life Path, Destiny, Soul Urge, and Personality numbers with precision. Understand what the universe encoded in your birth date and name.\n\n⚡ DAILY ENERGY FORECASTS\nStart each day with personalized numerology insights. Know when to take action, when to reflect, and when to connect.\n\n🎯 AI-POWERED MENTORSHIP\nGet matched with mentors based on numerological compatibility. Our algorithm finds the perfect guide for your journey.\n\n👥 SPIRITUAL COMMUNITY\nConnect with seekers worldwide. Join live sessions, discussions, and find your soul tribe.\n\n🔮 9 ESOTERIC SYSTEMS\nGo beyond basic numerology:\n• Astrology integration\n• Tarot correlations\n• Kabbalah Tree of Life\n• Sacred Geometry\n• Frequency work\n• And more...\n\n📊 ADVANCED ANALYTICS\nTrack your spiritual growth with detailed charts and insights. See patterns in your journey.\n\n🏆 PREMIUM FEATURES\n• Unlimited calculations\n• Full yearly forecasts\n• 1-on-1 mentorship\n• Exclusive live sessions\n• Ad-free experience\n\nYour destiny isn't written—it's calculated. Download QodeX today and start your journey of self-discovery.\n\n---\n\nQodeX offers auto-renewing subscriptions:\n• Seeker: $19.99/month\n• Initiate: $49.99/month\n• Master: $199.99/month\n\nPrices vary by region. Subscriptions auto-renew unless cancelled 24 hours before renewal.\n\nPrivacy: https://qodex.academy/privacy\nTerms: https://qodex.academy/terms",
+  
+  "keywords": [
+    "numerology",
+    "astrology",
+    "spirituality",
+    "self-discovery",
+    "life path",
+    "destiny",
+    "tarot",
+    "meditation",
+    "mindfulness",
+    "personal growth",
+    "horoscope",
+    "zodiac",
+    "birth chart",
+    "soul purpose",
+    "spiritual awakening"
+  ],
+  
+  "screenshot_text": {
+    "screen_1": {
+      "title": "Discover Your Life Path",
+      "subtitle": "Calculate your core numbers in seconds"
+    },
+    "screen_2": {
+      "title": "Daily Energy Forecasts",
+      "subtitle": "Know what each day holds for you"
+    },
+    "screen_3": {
+      "title": "AI-Powered Mentorship",
+      "subtitle": "Find your perfect spiritual guide"
+    },
+    "screen_4": {
+      "title": "Join the Community",
+      "subtitle": "Connect with like-minded seekers"
+    },
+    "screen_5": {
+      "title": "9 Esoteric Systems",
+      "subtitle": "Go deeper than basic numerology"
+    }
+  },
+  
+  "whats_new": "• iOS 17 Widgets - See your daily number at a glance\n• Smart Notifications - Optimized timing based on your numerology\n• AI Mentorship Matching - Find compatible guides\n• Community Features - Discussions and live sessions\n• Performance improvements\n• Bug fixes",
+  
+  "categories": [
+    "Lifestyle",
+    "Health & Fitness"
+  ],
+  
+  "age_rating": "12+",
+  "age_rating_reasons": [
+    "Infrequent/Mild Medical/Treatment Information"
+  ]
+}

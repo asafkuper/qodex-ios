@@ -1,0 +1,331 @@
+{
+  "version": "1.0",
+  "type": "Birthday Number",
+  "description": "Your Birthday Number reveals special gifts and talents you brought into this lifetime, as well as the sub-lessons woven into your personal journey. Derived from your day of birth, it represents a specific skill set and area of growth.",
+  "meanings": {
+    "1": {
+      "number": 1,
+      "title": "The Initiator",
+      "specialGifts": {
+        "primary": ["Natural leadership abilities", "Innovation and originality", "Courage to start new things", "Self-motivation", "Independent thinking"],
+        "hidden": ["Ability to inspire others to act", "Vision for what's possible", "Strength to stand alone", "Creative problem-solving"]
+      },
+      "talents": {
+        "naturalAbilities": ["Starting projects and movements", "Making decisions under pressure", "Pioneering new approaches", "Motivating others", "Turning ideas into action"],
+        "howTheyManifest": "You naturally take charge when others hesitate. You see solutions before others see problems. Your confidence gives permission to others to believe in themselves."
+      },
+      "subLessons": {
+        "coreChallenge": "Learning that leadership includes collaboration and that true strength allows for vulnerability.",
+        "specificLessons": [
+          "Leadership without dictatorship",
+          "Independence without isolation",
+          "Confidence without arrogance",
+          "Vision with practical follow-through"
+        ],
+        "growthOpportunities": "Your journey involves learning to lead with heart, not just authority. True leaders lift others up, not just themselves."
+      },
+      "lifePathIntegration": "Your birthday gifts support a life path of innovation and leadership. You're here to show others what's possible when one person dares to begin.",
+      "careerAdvantage": "You excel at starting new ventures, departments, or movements. Your gift is seeing the beginning in what others see as chaos.",
+      "relationshipGift": "You bring initiative and direction to relationships. You help partners grow by encouraging them to claim their own power.",
+      "shadowWork": "Watch for the tendency to dominate or dismiss others' contributions. Your strength becomes a weakness when it silences others.",
+      "affirmation": "I lead with courage and inspire with vision. My initiative creates opportunities for all."
+    },
+    "2": {
+      "number": 2,
+      "title": "The Harmonizer",
+      "specialGifts": {
+        "primary": ["Exceptional listening abilities", "Diplomatic skill", "Intuitive understanding of others", "Ability to create peace", "Partnership aptitude"],
+        "hidden": ["Perception of subtle energies", "Healing through presence", "Ability to see all sides", "Capacity for deep empathy"]
+      },
+      "talents": {
+        "naturalAbilities": ["Mediating conflicts", "Building relationships", "Creating harmony in groups", "Supporting others' growth", "Intuitive counseling"],
+        "howTheyManifest": "You naturally make others feel heard and understood. Conflicts diffuse in your presence. You have a gift for bringing people together."
+      },
+      "subLessons": {
+        "coreChallenge": "Learning to maintain your identity while being the ultimate partner and finding your voice even when it disrupts harmony.",
+        "specificLessons": [
+          "Partnership without losing self",
+          "Peace through truth, not suppression",
+          "Sensitivity with boundaries",
+          "Cooperation without codependency"
+        ],
+        "growthOpportunities": "Your journey involves learning that true harmony includes your authentic voice. You teach others to value themselves by valuing yourself."
+      },
+      "lifePathIntegration": "Your birthday gifts support paths of service, partnership, and healing. You're here to show the power of cooperation and understanding.",
+      "careerAdvantage": "You excel in roles requiring tact, mediation, and relationship-building. Your gift is making everyone feel valued.",
+      "relationshipGift": "You bring emotional safety and deep understanding to relationships. You help partners feel truly seen and accepted.",
+      "shadowWork": "Watch for the tendency to silence yourself to keep peace. True harmony includes all voices, especially yours.",
+      "affirmation": "I create harmony through authentic connection. My sensitivity bridges hearts and heals divisions."
+    },
+    "3": {
+      "number": 3,
+      "title": "The Creator",
+      "specialGifts": {
+        "primary": ["Creative expression", "Communication skills", "Joyful optimism", "Artistic vision", "Ability to inspire"],
+        "hidden": ["Healing through humor", "Seeing beauty everywhere", "Connecting through story", "Elevating ordinary moments"]
+      },
+      "talents": {
+        "naturalAbilities": ["Writing and storytelling", "Visual and performing arts", "Making people laugh", "Marketing and promotion", "Teaching through entertainment"],
+        "howTheyManifest": "You naturally see creative possibilities where others see limitations. Your enthusiasm is contagious. You make life more colorful for everyone around you."
+      },
+      "subLessons": {
+        "coreChallenge": "Learning to develop depth and follow-through while maintaining your gift for joy and inspiration.",
+        "specificLessons": [
+          "Creativity with discipline",
+          "Joy with emotional depth",
+          "Expression with listening",
+          "Inspiration with completion"
+        ],
+        "growthOpportunities": "Your journey involves learning that true creativity requires commitment. Your light shines brightest when you see projects through."
+      },
+      "lifePathIntegration": "Your birthday gifts support paths of creative expression and communication. You're here to show that joy is a valid spiritual path.",
+      "careerAdvantage": "You excel in any field requiring creativity and communication. Your gift is making the mundane magical.",
+      "relationshipGift": "You bring fun, creativity, and lightness to relationships. You help partners remember to play and enjoy life.",
+      "shadowWork": "Watch for using humor to avoid real feelings or leaving projects half-finished. Your gift deserves the discipline to manifest fully.",
+      "affirmation": "I express my authentic self with joy. My creativity illuminates the beauty in everything."
+    },
+    "4": {
+      "number": 4,
+      "title": "The Foundation Builder",
+      "specialGifts": {
+        "primary": ["Organizational mastery", "Practical manifestation", "Reliability and follow-through", "Attention to detail", "System-building"],
+        "hidden": ["Patience for long projects", "Ability to see structural weaknesses", "Gift for simplification", "Steadiness under pressure"]
+      },
+      "talents": {
+        "naturalAbilities": ["Project management", "Creating systems and processes", "Quality control", "Resource management", "Building lasting structures"],
+        "howTheyManifest": "You naturally bring order to chaos. Others trust you with important responsibilities. You build what lasts while others chase trends."
+      },
+      "subLessons": {
+        "coreChallenge": "Learning to balance structure with flexibility and to see that spontaneity has its own wisdom.",
+        "specificLessons": [
+          "Stability without rigidity",
+          "Work with play",
+          "Planning with spontaneity",
+          "Discipline with joy"
+        ],
+        "growthOpportunities": "Your journey involves learning that true security includes adaptability. Your strength becomes greater when it bends without breaking."
+      },
+      "lifePathIntegration": "Your birthday gifts support paths of building and organizing. You're here to show that greatness requires a solid foundation.",
+      "careerAdvantage": "You excel in roles requiring precision, reliability, and long-term thinking. Your gift is making the impossible achievable through methodical work.",
+      "relationshipGift": "You bring stability, loyalty, and dependability to relationships. You help partners feel secure and grounded.",
+      "shadowWork": "Watch for rigidity that blocks growth or workaholism that replaces living. Your gifts serve life, not the other way around.",
+      "affirmation": "I build lasting foundations with wisdom. My reliability creates security for myself and others."
+    },
+    "5": {
+      "number": 5,
+      "title": "The Catalyst",
+      "specialGifts": {
+        "primary": ["Adaptability to change", "Charismatic communication", "Resourcefulness", "Courage to take risks", "Multifaceted talents"],
+        "hidden": ["Ability to thrive in crisis", "Seeing opportunities in disruption", "Connecting diverse people", "Breaking through limitations"]
+      },
+      "talents": {
+        "naturalAbilities": ["Networking and connecting", "Sales and persuasion", "Crisis management", "Learning new skills quickly", "Promoting change"],
+        "howTheyManifest": "You naturally adapt to any situation. You thrive where others flounder. Your versatility opens doors that stay closed to others."
+      },
+      "subLessons": {
+        "coreChallenge": "Learning to find depth and meaning within commitment while honoring your need for freedom.",
+        "specificLessons": [
+          "Freedom through commitment",
+          "Change with purpose",
+          "Adventure with responsibility",
+          "Variety with depth"
+        ],
+        "growthOpportunities": "Your journey involves learning that true freedom includes choosing what matters and sticking with it. Depth is its own adventure."
+      },
+      "lifePathIntegration": "Your birthday gifts support paths of communication and change. You're here to show that freedom and responsibility can coexist.",
+      "careerAdvantage": "You excel in dynamic fields requiring adaptability and people skills. Your gift is turning change into opportunity.",
+      "relationshipGift": "You bring excitement, growth, and adaptability to relationships. You help partners embrace change and expand their horizons.",
+      "shadowWork": "Watch for restlessness that destroys good things or avoiding depth through constant motion. Freedom includes the freedom to stay.",
+      "affirmation": "I embrace change as my teacher. My adaptability transforms challenges into adventures."
+    },
+    "6": {
+      "number": 6,
+      "title": "The Heart Center",
+      "specialGifts": {
+        "primary": ["Nurturing and caring", "Artistic appreciation", "Responsibility and reliability", "Healing presence", "Creating harmony"],
+        "hidden": ["Ability to make people feel at home", "Seeing potential in others", "Creating beauty from chaos", "Unconditional acceptance"]
+      },
+      "talents": {
+        "naturalAbilities": ["Caretaking and support", "Interior design and aesthetics", "Counseling and guidance", "Teaching and mentoring", "Event hosting"],
+        "howTheyManifest": "You naturally create warm, welcoming environments. Others feel safe and cared for in your presence. You see beauty and help it bloom."
+      },
+      "subLessons": {
+        "coreChallenge": "Learning to receive care as gracefully as you give it and to maintain boundaries while staying open-hearted.",
+        "specificLessons": [
+          "Giving with receiving",
+          "Care with boundaries",
+          "Responsibility without martyrdom",
+          "Harmony with authenticity"
+        ],
+        "growthOpportunities": "Your journey involves learning that you deserve the love you so freely give. Self-care enables sustainable service."
+      },
+      "lifePathIntegration": "Your birthday gifts support paths of service and healing. You're here to show that love is the highest truth.",
+      "careerAdvantage": "You excel in caring professions and creative fields. Your gift is making people and spaces feel nurtured.",
+      "relationshipGift": "You bring unconditional love, care, and beauty to relationships. You help partners feel truly at home.",
+      "shadowWork": "Watch for over-giving that leads to resentment or perfectionism that exhausts you. Your care should include yourself.",
+      "affirmation": "I nurture with wisdom and love. My care creates healing spaces for all who enter."
+    },
+    "7": {
+      "number": 7,
+      "title": "The Truth Seeker",
+      "specialGifts": {
+        "primary": ["Analytical depth", "Spiritual perception", "Research abilities", "Intuitive knowing", "Intellectual precision"],
+        "hidden": ["Seeing through deception", "Understanding complex systems", "Connecting dots others miss", "Accessing wisdom beyond intellect"]
+      },
+      "talents": {
+        "naturalAbilities": ["Research and investigation", "Analysis and synthesis", "Strategic thinking", "Spiritual guidance", "Technical expertise"],
+        "howTheyManifest": "You naturally dive deeper than others. You see patterns and truths hidden from surface view. Your insights illuminate what others overlook."
+      },
+      "subLessons": {
+        "coreChallenge": "Learning to balance analysis with feeling and to share your insights without overwhelming others.",
+        "specificLessons": [
+          "Knowledge with wisdom",
+          "Analysis with intuition",
+          "Depth with accessibility",
+          "Solitude with connection"
+        ],
+        "growthOpportunities": "Your journey involves learning that truth includes the heart, not just the mind. Connection requires presence, not just understanding."
+      },
+      "lifePathIntegration": "Your birthday gifts support paths of research and spiritual seeking. You're here to show that questioning leads to wisdom.",
+      "careerAdvantage": "You excel in fields requiring deep thinking and investigation. Your gift is seeing what others can't see.",
+      "relationshipGift": "You bring depth, loyalty, and insightful perspective to relationships. You help partners understand themselves more deeply.",
+      "shadowWork": "Watch for isolation that becomes loneliness or analysis that paralyzes action. Truth is meant to be lived, not just studied.",
+      "affirmation": "I seek truth with an open heart. My depth illuminates the path for myself and others."
+    },
+    "8": {
+      "number": 8,
+      "title": "The Power Weaver",
+      "specialGifts": {
+        "primary": ["Executive ability", "Financial acumen", "Organizational leadership", "Manifestation power", "Strategic vision"],
+        "hidden": ["Seeing business opportunities", "Inspiring others to excel", "Creating win-win situations", "Turning vision into profit"]
+      },
+      "talents": {
+        "naturalAbilities": ["Business management", "Financial planning", "Team leadership", "Resource optimization", "Negotiation and deal-making"],
+        "howTheyManifest": "You naturally understand how systems work and how to improve them. You see opportunities for growth and efficiency. Your presence commands respect."
+      },
+      "subLessons": {
+        "coreChallenge": "Learning to use power ethically and to find worth beyond achievement and accumulation.",
+        "specificLessons": [
+          "Power with compassion",
+          "Success with integrity",
+          "Achievement with balance",
+          "Authority with humility"
+        ],
+        "growthOpportunities": "Your journey involves learning that true success includes the wellbeing of all. Power is sacred when it serves others."
+      },
+      "lifePathIntegration": "Your birthday gifts support paths of leadership and material mastery. You're here to show that abundance can be a force for good.",
+      "careerAdvantage": "You excel in executive and entrepreneurial roles. Your gift is turning potential into prosperity.",
+      "relationshipGift": "You bring security, ambition, and loyalty to relationships. You help partners achieve their own success.",
+      "shadowWork": "Watch for workaholism that replaces living or using power to control rather than empower. True success includes love.",
+      "affirmation": "I manifest abundance with integrity. My power serves the highest good of all."
+    },
+    "9": {
+      "number": 9,
+      "title": "The Old Soul",
+      "specialGifts": {
+        "primary": ["Universal compassion", "Artistic sensitivity", "Spiritual wisdom", "Completion energy", "Humanitarian vision"],
+        "hidden": ["Understanding life's cycles", "Seeing divine potential in all", "Healing through acceptance", "Transcending ego concerns"]
+      },
+      "talents": {
+        "naturalAbilities": ["Counseling and therapy", "Artistic expression", "Humanitarian work", "Teaching wisdom traditions", "Conflict resolution"],
+        "howTheyManifest": "You naturally see the big picture and the connections between all things. You understand what others are going through. Your acceptance heals."
+      },
+      "subLessons": {
+        "coreChallenge": "Learning to let go of what no longer serves and to receive as generously as you give.",
+        "specificLessons": [
+          "Service with self-care",
+          "Compassion with boundaries",
+          "Idealism with acceptance",
+          "Giving with receiving"
+        ],
+        "growthOpportunities": "Your journey involves learning that completion includes cycles of rest and receiving. You cannot give from an empty cup."
+      },
+      "lifePathIntegration": "Your birthday gifts support paths of service and spiritual teaching. You're here to demonstrate unconditional love in action.",
+      "careerAdvantage": "You excel in helping professions and creative fields. Your gift is seeing the humanity in everyone.",
+      "relationshipGift": "You bring unconditional acceptance, depth, and spiritual perspective to relationships. You help partners feel truly understood.",
+      "shadowWork": "Watch for martyrdom that depletes you or idealism that leads to disappointment. Your compassion must include yourself.",
+      "affirmation": "I serve humanity with an open heart. My wisdom and compassion heal the world."
+    },
+    "11": {
+      "number": 11,
+      "title": "The Channel",
+      "specialGifts": {
+        "primary": ["Intuitive receptivity", "Inspirational communication", "Spiritual sensitivity", "Visionary insight", "Healing presence"],
+        "hidden": ["Accessing higher guidance", "Perceiving energy fields", "Inspiring transformation", "Bridging seen and unseen"]
+      },
+      "talents": {
+        "naturalAbilities": ["Channeling inspiration", "Spiritual counseling", "Creative expression of truth", "Motivational speaking", "Energy healing"],
+        "howTheyManifest": "You naturally receive insights that seem to come from beyond. Your words inspire others to higher possibilities. You're a bridge between worlds."
+      },
+      "subLessons": {
+        "coreChallenge": "Learning to ground spiritual gifts in practical action and to care for your sensitive nervous system.",
+        "specificLessons": [
+          "Spiritual insight with grounded action",
+          "Sensitivity with protection",
+          "Inspiration with discipline",
+          "Vision with manifestation"
+        ],
+        "growthOpportunities": "Your journey involves learning that your gifts require care and boundaries. You serve best when you serve from fullness, not depletion."
+      },
+      "lifePathIntegration": "Your birthday gifts support paths of spiritual leadership and inspiration. You're here to awaken consciousness in yourself and others.",
+      "careerAdvantage": "You excel in roles combining inspiration with service. Your gift is elevating others to see their own potential.",
+      "relationshipGift": "You bring spiritual depth, intuitive understanding, and inspirational energy to relationships. You help partners awaken to their truth.",
+      "shadowWork": "Watch for overwhelm from too much input or spiritual bypassing that avoids earthly lessons. Your gifts need grounding.",
+      "affirmation": "I channel divine wisdom with grounded presence. My sensitivity is a sacred gift."
+    },
+    "22": {
+      "number": 22,
+      "title": "The Master Architect",
+      "specialGifts": {
+        "primary": ["Visionary practicality", "System-building mastery", "Manifestation at scale", "Organizational genius", "Influential leadership"],
+        "hidden": ["Seeing how pieces fit together", "Inspiring teams to greatness", "Creating sustainable systems", "Turning dreams into infrastructure"]
+      },
+      "talents": {
+        "naturalAbilities": ["Large-scale project management", "Strategic planning", "Building organizations", "Infrastructure development", "Executive leadership"],
+        "howTheyManifest": "You naturally see the big picture and the steps to get there. You build what others think impossible. Your work outlasts you."
+      },
+      "subLessons": {
+        "coreChallenge": "Learning to pace yourself and to find joy in the journey, not just the destination.",
+        "specificLessons": [
+          "Vision with patience",
+          "Leadership with delegation",
+          "Responsibility with rest",
+          "Achievement with presence"
+        ],
+        "growthOpportunities": "Your journey involves learning that even master builders need support and rest. Your legacy includes how you lived, not just what you built."
+      },
+      "lifePathIntegration": "Your birthday gifts support paths of large-scale creation and leadership. You're here to demonstrate what focused vision can manifest.",
+      "careerAdvantage": "You excel in executive and entrepreneurial roles with significant scope. Your gift is turning vision into lasting reality.",
+      "relationshipGift": "You bring vision, stability, and the ability to build shared dreams to relationships. You help partners achieve what seemed impossible.",
+      "shadowWork": "Watch for taking on too much or perfectionism that delays completion. Greatness includes knowing when good enough is enough.",
+      "affirmation": "I manifest great visions with practical wisdom. My work serves humanity for generations."
+    },
+    "33": {
+      "number": 33,
+      "title": "The Heart of the World",
+      "specialGifts": {
+        "primary": ["Unconditional love", "Spiritual teaching", "Healing presence", "Compassionate wisdom", "Universal acceptance"],
+        "hidden": ["Seeing divine in all beings", "Teaching through pure example", "Healing through presence alone", "Raising collective vibration"]
+      },
+      "talents": {
+        "naturalAbilities": ["Spiritual leadership", "Healing and counseling", "Teaching love and compassion", "Creating sacred space", "Nurturing growth"],
+        "howTheyManifest": "You naturally radiate love that transforms everyone you meet. Your presence is healing. You teach by being, not just by saying."
+      },
+      "subLessons": {
+        "coreChallenge": "Learning to include yourself in your compassion and to maintain boundaries while keeping an open heart.",
+        "specificLessons": [
+          "Universal love with self-love",
+          "Service with sustainability",
+          "Compassion with discernment",
+          "Giving with receiving"
+        ],
+        "growthOpportunities": "Your journey involves learning that you are also worthy of the love you give so freely. Your care must include the caregiver."
+      },
+      "lifePathIntegration": "Your birthday gifts support paths of spiritual service and healing. You're here to demonstrate the transformative power of unconditional love.",
+      "careerAdvantage": "You excel in roles of spiritual guidance and healing. Your gift is making people feel truly, completely loved.",
+      "relationshipGift": "You bring unconditional love, deep acceptance, and spiritual partnership to relationships. You help partners feel whole.",
+      "shadowWork": "Watch for self-sacrifice that depletes you or loving others more than yourself. You cannot pour from an empty cup.",
+      "affirmation": "I am love in action. My compassion heals the world, starting with myself."
+    }
+  }
+}

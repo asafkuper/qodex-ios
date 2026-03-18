@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QodeX - Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+            background: #0d0221;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 414px;
+            height: 896px;
+            background: linear-gradient(180deg, #1a0a2e 0%, #0d0221 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Header */
+        .header {
+            padding: 60px 24px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .greeting {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 4px;
+        }
+        
+        .user-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+        }
+        
+        .profile-btn {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, #D4AF37 0%, #F4D03F 100%);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            color: #1a0a2e;
+            font-weight: 600;
+        }
+        
+        /* Scrollable Content */
+        .scroll-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 0 24px 100px;
+        }
+        
+        /* Daily Number Card */
+        .daily-card {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 215, 0, 0.05) 100%);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 24px;
+            padding: 24px;
+            margin-bottom: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .daily-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+        }
+        
+        .card-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #D4AF37;
+            margin-bottom: 8px;
+        }
+        
+        .card-date {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 16px;
+        }
+        
+        .daily-number {
+            font-size: 64px;
+            font-weight: 200;
+            color: #D4AF37;
+            margin-bottom: 8px;
+        }
+        
+        .daily-theme {
+            font-size: 20px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+        
+        .daily-insight {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.5;
+        }
+        
+        /* Section Title */
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .see-all {
+            font-size: 14px;
+            color: #D4AF37;
+            font-weight: 500;
+        }
+        
+        /* Quick Actions Grid */
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+        
+        .action-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .action-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 12px;
+            font-size: 24px;
+        }
+        
+        .action-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+        
+        .action-subtitle {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* Life Path Banner */
+        .life-path-banner {
+            background: linear-gradient(135deg, #4A0E4E 0%, #1a0a2e 100%);
+            border-radius: 20px;
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .life-path-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #D4AF37 0%, #F4D03F 100%);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 36px;
+            font-weight: 300;
+            color: #1a0a2e;
+        }
+        
+        .life-path-info h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #D4AF37;
+            margin-bottom: 4px;
+        }
+        
+        .life-path-info p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 12px;
+        }
+        
+        .explore-btn {
+            font-size: 13px;
+            font-weight: 600;
+            color: #D4AF37;
+            background: rgba(255, 215, 0, 0.1);
+            padding: 8px 16px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+        
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(13, 2, 33, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 16px 24px 40px;
+            display: flex;
+            justify-content: space-around;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .nav-item.active .nav-icon {
+            color: #D4AF37;
+        }
+        
+        .nav-item.active .nav-label {
+            color: #D4AF37;
+        }
+        
+        .nav-icon {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.4);
+        }
+        
+        .nav-label {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div>
+                <p class="greeting">Good morning,</p>
+                <h1 class="user-name">Shani</h1>
+            </div>
+            <div class="profile-btn">S</div>
+        </div>
+        
+        <!-- Scrollable Content -->
+        <div class="scroll-content">
+            <!-- Daily Number -->
+            <div class="daily-card">
+                <p class="card-label">Today's Number</p>
+                <p class="card-date">Monday, March 16, 2026</p>
+                <div class="daily-number">5</div>
+                <h3 class="daily-theme">Freedom & Change</h3>
+                <p class="daily-insight">
+                    Today brings energy for adventure and breaking routines. Embrace unexpected opportunities.
+                </p>
+            </div>
+            
+            <!-- Quick Actions -->
+            <h2 class="section-title">
+                Explore
+                <span class="see-all">See All</span>
+            </h2>
+            
+            <div class="quick-actions">
+                <div class="action-card">
+                    <div class="action-icon">🔮</div>
+                    <p class="action-title">Compatibility</p>
+                    <p class="action-subtitle">Compare numbers</p>
+                </div>
+                <div class="action-card">
+                    <div class="action-icon">📅</div>
+                    <p class="action-title">Forecast</p>
+                    <p class="action-subtitle">7-day outlook</p>
+                </div>
+                <div class="action-card">
+                    <div class="action-icon">✨</div>
+                    <p class="action-title">Name Analysis</p>
+                    <p class="action-subtitle">Expression number</p>
+                </div>
+                <div class="action-card">
+                    <div class="action-icon">🌙</div>
+                    <p class="action-title">Moon Phases</p>
+                    <p class="action-subtitle">Lunar guidance</p>
+                </div>
+            </div>
+            
+            <!-- Life Path -->
+            <h2 class="section-title">Your Life Path</h2>
+            
+            <div class="life-path-banner">
+                <div class="life-path-number">7</div>
+                <div class="life-path-info">
+                    <h3>The Seeker</h3>
+                    <p>Spiritual wisdom and inner truth</p>
+                    <span class="explore-btn">Explore →</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <div class="nav-item active">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Home</span>
+            </div>
+            <div class="nav-item">
+                <span class="nav-icon">📖</span>
+                <span class="nav-label">Learn</span>
+            </div>
+            <div class="nav-item">
+                <span class="nav-icon">✦</span>
+                <span class="nav-label">Insights</span>
+            </div>
+            <div class="nav-item">
+                <span class="nav-icon">👤</span>
+                <span class="nav-label">Profile</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

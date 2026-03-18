@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QodeX - Complete UI Preview</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+            background: #0A0A0F;
+            color: #FAFAFA;
+            padding: 40px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #F4D03F 0%, #E5C158 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+        .header p {
+            font-size: 18px;
+            color: #888;
+        }
+        .category {
+            margin-bottom: 60px;
+        }
+        .category-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #E5C158;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .screens-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+        .screen-container {
+            text-align: center;
+        }
+        .screen-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+        .iphone {
+            width: 393px;
+            height: 852px;
+            background: #0A0A0F;
+            border-radius: 55px;
+            box-shadow: 0 0 0 12px #1a1a1a, 0 50px 100px rgba(0,0,0,0.8);
+            overflow: hidden;
+            position: relative;
+        }
+        .notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 126px;
+            height: 37px;
+            background: #0A0A0F;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            z-index: 100;
+        }
+        .screen-content {
+            width: 100%;
+            height: 100%;
+            padding: 60px 24px 34px;
+            overflow-y: auto;
+            background: linear-gradient(180deg, #0A0A0F 0%, #0d0d14 100%);
+        }
+        
+        /* TODAY SCREEN */
+        .today-header { text-align: center; margin-bottom: 40px; }
+        .today-logo { font-size: 32px; font-weight: 700; background: linear-gradient(135deg, #F4D03F 0%, #E5C158 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .today-subtitle { font-size: 15px; color: #A1A1AA; margin-top: 8px; }
+        .number-container { position: relative; width: 280px; height: 280px; margin: 0 auto 40px; display: flex; align-items: center; justify-content: center; }
+        .ring { position: absolute; width: 100%; height: 100%; border-radius: 50%; border: 3px solid transparent; background: conic-gradient(from 0deg, transparent, #E5C158, transparent) border-box; -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; animation: rotate 20s linear infinite; }
+        .ring-inner { position: absolute; width: 90%; height: 90%; border-radius: 50%; border: 2px solid transparent; background: conic-gradient(from 180deg, transparent, #B8954C, transparent) border-box; -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; animation: rotate 15s linear infinite reverse; opacity: 0.6; }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .number-display { width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle at 30% 30%, rgba(229, 193, 88, 0.15), transparent 70%); display: flex; align-items: center; justify-content: center; border: 1px solid rgba(229, 193, 88, 0.2); backdrop-filter: blur(20px); }
+        .number { font-size: 100px; font-weight: 700; background: linear-gradient(180deg, #F4D03F 0%, #E5C158 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: pulse 3s ease-in-out infinite; }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        .vibe { text-align: center; margin-bottom: 32px; }
+        .vibe-title { font-size: 24px; font-weight: 600; color: #FAFAFA; margin-bottom: 8px; }
+        .vibe-subtitle { font-size: 15px; color: #A1A1AA; }
+        .glass-card { background: rgba(18, 18, 26, 0.6); backdrop-filter: blur(20px); border-radius: 20px; padding: 24px; margin-bottom: 16px; border: 1px solid rgba(255, 255, 255, 0.08); position: relative; text-align: left; }
+        .glass-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent); }
+        .card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+        .card-icon { width: 8px; height: 8px; border-radius: 50%; background: #E5C158; box-shadow: 0 0 10px #E5C158; }
+        .card-title { font-size: 13px; font-weight: 600; color: #E5C158; text-transform: uppercase; letter-spacing: 0.5px; }
+        .insight-text { font-size: 16px; line-height: 1.5; color: #E5E5E5; }
+        .hours-grid { display: flex; gap: 12px; justify-content: center; }
+        .hour-pill { background: rgba(229, 193, 88, 0.1); border: 1px solid rgba(229, 193, 88, 0.2); border-radius: 12px; padding: 12px 20px; text-align: center; min-width: 70px; }
+        .hour-time { font-size: 18px; font-weight: 600; color: #E5C158; }
+        .hour-label { font-size: 11px; color: #A1A1AA; margin-top: 4px; }
+        .cta-button { width: 100%; padding: 18px; background: linear-gradient(135deg, #F4D03F 0%, #E5C158 100%); border: none; border-radius: 16px; color: #0A0A0F; font-size: 17px; font-weight: 600; cursor: pointer; box-shadow: 0 8px 30px rgba(229, 193, 88, 0.3); margin-top: 8px; }
+        .tab-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 83px; background: rgba(18, 18, 26, 0.95); backdrop-filter: blur(20px); border-top: 1px solid rgba(255, 255, 255, 0.05); display: flex; justify-content: space-around; align-items: center; padding: 0 20px 20px; }
+        .tab-item { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+        .tab-icon { font-size: 22px; color: #E5C158; }
+        .tab-icon-inactive { font-size: 22px; color: #A1A1AA; }
+        .tab-label { font-size: 10px; color: #E5C158; }
+        .tab-label-inactive { font-size: 10px; color: #A1A1AA; }
+        
+        /* CHART SCREEN */
+        .chart-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; padding-top: 20px; }
+        .chart-title { font-size: 28px; font-weight: 700; color: #FAFAFA; }
+        .settings-btn { width: 40px; height: 40px; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 20px; color: #A1A1AA; }
+        .hero-card { background: linear-gradient(135deg, rgba(229, 193, 88, 0.15) 0%, rgba(229, 193, 88, 0.05) 100%); border: 1px solid rgba(229, 193, 88, 0.2); border-radius: 24px; padding: 28px; margin-bottom: 16px; position: relative; overflow: hidden; text-align: left; }
+        .hero-card::before { content: ''; position: absolute; top: -50%; right: -50%; width: 200px; height: 200px; background: radial-gradient(circle, rgba(229, 193, 88, 0.2) 0%, transparent 70%); border-radius: 50%; }
+        .hero-label { font-size: 12px; font-weight: 600; color: #B8954C; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; position: relative; z-index: 1; }
+        .hero-content { display: flex; align-items: center; gap: 20px; position: relative; z-index: 1; }
+        .hero-number { font-size: 64px; font-weight: 700; background: linear-gradient(180deg, #F4D03F 0%, #E5C158 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-title { font-size: 22px; font-weight: 600; color: #FAFAFA; }
+        .hero-subtitle { font-size: 14px; color: #A1A1AA; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+        .grid-card { background: rgba(18, 18, 26, 0.6); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 20px; padding: 20px; text-align: left; }
+        .grid-label { font-size: 11px; font-weight: 600; color: #A1A1AA; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+        .grid-number { font-size: 36px; font-weight: 700; margin-bottom: 4px; }
+        .grid-number-gold { color: #E5C158; }
+        .grid-number-purple { color: #9B59B6; }
+        .grid-number-blue { color: #3498DB; }
+        .grid-number-green { color: #2ECC71; }
+        .grid-title { font-size: 13px; color: #E5E5E5; font-weight: 500; }
+        .unlock-banner { background: linear-gradient(135deg, rgba(229, 193, 88, 0.1) 0%, rgba(229, 193, 88, 0.02) 100%); border: 1px dashed rgba(229, 193, 88, 0.3); border-radius: 20px; padding: 20px; display: flex; align-items: center; gap: 16px; text-align: left; }
+        .unlock-icon { width: 48px; height: 48px; border-radius: 14px; background: rgba(229, 193, 88, 0.15); display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; }
+        .unlock-title { font-size: 15px; font-weight: 600; color: #E5C158; margin-bottom: 4px; }
+        .unlock-subtitle { font-size: 13px; color: #A1A1AA; }
+        .unlock-arrow { font-size: 20px; color: #E5C158; margin-left: auto; }
+        
+        /* PAYWALL SCREEN */
+        .paywall-header { text-align: center; margin-bottom: 32px; padding-top: 20px; }
+        .crown-icon { font-size: 48px; margin-bottom: 16px; }
+        .paywall-title { font-size: 28px; font-weight: 700; color: #FAFAFA; margin-bottom: 12px; }
+        .paywall-subtitle { font-size: 15px; color: #A1A1AA; padding: 0 40px; }
+        .features-list { margin-bottom: 24px; }
+        .feature-row { display: flex; align-items: center; gap: 12px; padding: 8px 0; }
+        .feature-check { color: #E5C158; font-size: 20px; }
+        .feature-text { font-size: 15px; color: #E5E5E5; }
+        .pricing-tier { padding: 20px; background: rgba(229, 193, 88, 0.1); border: 2px solid #E5C158; border-radius: 16px; margin-bottom: 12px; text-align: left; }
+        .tier-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+        .tier-radio { width: 24px; height: 24px; border-radius: 50%; border: 2px solid #E5C158; display: flex; align-items: center; justify-content: center; }
+        .tier-radio-inner { width: 12px; height: 12px; border-radius: 50%; background: #E5C158; }
+        .tier-name { font-size: 17px; font-weight: 600; color: #FAFAFA; }
+        .popular-badge { font-size: 10px; font-weight: 700; color: #0A0A0F; background: #E5C158; padding: 4px 8px; border-radius: 4px; }
+        .tier-price { font-size: 24px; font-weight: 700; color: #FAFAFA; }
+        .tier-price span { font-size: 15px; color: #A1A1AA; font-weight: 400; }
+        
+        /* STREAKS SCREEN */
+        .streak-flame { font-size: 80px; margin-bottom: 8px; animation: flame-pulse 0.5s ease-in-out infinite alternate; }
+        @keyframes flame-pulse { from { transform: scale(1); } to { transform: scale(1.1); } }
+        .streak-number { font-size: 72px; font-weight: 700; background: linear-gradient(180deg, #FF6B35 0%, #F7931E 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .streak-label { font-size: 20px; font-weight: 600; color: #FAFAFA; margin-top: 8px; }
+        .streak-subtitle { font-size: 15px; color: #A1A1AA; margin-top: 4px; }
+        .stats-row { display: flex; gap: 12px; margin-top: 20px; }
+        .stat-box { flex: 1; padding: 16px; background: rgba(18, 18, 26, 0.6); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 16px; }
+        .stat-icon { font-size: 24px; margin-bottom: 8px; }
+        .stat-value { font-size: 28px; font-weight: 700; color: #E5C158; }
+        .stat-label { font-size: 13px; color: #A1A1AA; }
+        .heatmap { margin-top: 24px; padding: 20px; background: rgba(18, 18, 26, 0.6); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 20px; }
+        .heatmap-title { font-size: 17px; font-weight: 600; color: #FAFAFA; margin-bottom: 16px; text-align: left; }
+        .heatmap-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+        .heatmap-cell { height: 24px; border-radius: 3px; }
+        .heatmap-0 { background: rgba(255, 255, 255, 0.05); }
+        .heatmap-1 { background: rgba(255, 107, 53, 0.2); }
+        .heatmap-2 { background: rgba(255, 107, 53, 0.4); }
+        .heatmap-3 { background: rgba(255, 107, 53, 0.6); }
+        .heatmap-4 { background: #FF6B35; }
+        
+        /* ACHIEVEMENTS */
+        .achievement-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+        .achievement-card { padding: 16px; background: rgba(18, 18, 26, 0.6); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 16px; text-align: left; }
+        .achievement-card.earned { border-color: rgba(229, 193, 88, 0.3); }
+        .achievement-icon { font-size: 24px; margin-bottom: 8px; }
+        .achievement-name { font-size: 14px; font-weight: 600; color: #FAFAFA; margin-bottom: 4px; }
+        .achievement-desc { font-size: 12px; color: #A1A1AA; }
+        .achievement-check { float: right; color: #2ECC71; font-size: 20px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>QodeX</h1>
+        <p>Complete UI Preview - 25+ Premium Screens</p>
+    </div>
+
+    <!-- CORE SCREENS -->
+    <div class="category">
+        <div class="category-title">Core Experience</div>
+        <div class="screens-grid">
+            
+            <!-- TODAY SCREEN -->
+            <div class="screen-container">
+                <div class="screen-label">Today View</div>
+                <div class="iphone">
+                    <div class="notch"></div>
+                    <div class="screen-content">
+                        <div class="today-header">
+                            <div class="today-logo">QODE</div>
+                            <div class="today-subtitle">Today's Energy</div>
+                        </div>
+                        
+                        <div class="number-container">
+                            <div class="ring"></div>
+                            <div class="ring-inner"></div>
+                            <div class="number-display">
+                                <div class="number">8</div>
+                            </div>
+                        </div>
+                        
+                        <div class="vibe">
+                            <div class="vibe-title">Power & Abundance</div>
+                            <div class="vibe-subtitle">A day for bold decisions</div>
+                        </div>
+                        
+                        <div class="glass-card">
+                            <div class="card-header">
+                                <div class="card-icon"></div>
+                                <div class="card-title">Today's Insight</div>
+                            </div>
+                            <div class="insight-text">The energy of <strong style="color:#F4D03F">8</strong> brings opportunities for financial growth and career advancement.</div>
+                        </div>
+                        
+                        <div class="glass-card">
+                            <div class="card-header">
+                                <div class="card-icon"></div>
+                                <div class="card-title">Power Hours</div>
+                            </div>
+                            <div class="hours-grid">
+                                <div class="hour-pill">
+                                    <div class="hour-time">9:00</div>
+                                    <div class="hour-label">AM</div>
+                                </div>
+                                <div class="hour-pill">
+                                    <div class="hour-time">2:00</div>
+                                    <div class="hour-label">PM</div>
+                                </div>
+                                <div class="hour-pill">
+                                    <div class="hour-time">7:00</div>
+                                    <div class="hour-label">PM</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="cta-button">View Full Reading</button>
+                    </div>
+                    
+                    <div class="tab-bar">
+                        <div class="tab-item">
+                            <div class="tab-icon">☀</div>
+                            <div class="tab-label">Today</div>
+                        </div>
+                        <div class="tab-item">
+                            <div class="tab-icon-inactive">◎</div>
+                            <div class="tab-label-inactive">Chart</div>
+                        </div>
+                        <div class="tab-item">
+                            <div class="tab-icon-inactive">◉</div>
+                            <div class="tab-label-inactive">Community</div>
+                        </div>
+                        <div class="tab-item">
+                            <div class="tab-icon-inactive">◉</div>
+                            <div class="tab-label-inactive">Learn</div>
+                        </div>
+                        <div class="tab-item">
+                            <div class="tab-icon-inactive">◉</div>
+                            <div class="tab-label-inactive">Profile</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHART SCREEN -->
+            <div class="screen-container">
+                <div class="screen-label">Chart View</div>
+                <div class="iphone">
+                    <div class="notch"></div>
+                    
+                    <div class="screen-content" style="padding-top: 60px;">
+                        <div class="chart-header">
+                            <div class="chart-title">Your Chart</div>
+                            <div class="settings-btn">⚙</div>
+                        </div>
+                        
+                        <div class="hero-card">
+                            <div class="hero-label">Life Path Number</div>
+                            <div class="hero-content">
+                                <div class="hero-number">7</div>
+                                <div>
+                                    <div class="hero-title">The Seeker</div>
+                                    <div class="hero-subtitle">Spiritual • Analytical • Wise</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="grid">
+                            <div class="grid-card">
+                                <div class="grid-label">Expression</div>
+                                <div class="grid-number grid-number-gold">3</div>
+                                <div class="grid-title">Creative</div>
+                            </div>
+                            
+                            <div class="grid-card">
+                                <div class="grid-label">Soul Urge</div>
+                                <div class="grid-number grid-number-purple">6</div>
+                                <div class="grid-title">Nurturing</div>
+                            </div>
+                            
+                            <div class="grid-card">
+                                <div class="grid-label">Personality</div>
+                                <div class="grid-number grid-number-blue">9</div>
+                                <div class="grid-title">Humanitarian</div>
+                            </div>
+                            
+                            <div class="grid-card">
+                                <div class="grid-label">Birthday</div>
+                                <div class="grid-number grid-number-green">15</div>
+                                <div class="grid-title">Leadership</div>
+                            </div>
+                        </div>
+                        
+                        <div class="unlock-banner">
+                            <div class="unlock-icon">✦</div>
+                            <div>
+                                <div class="unlock-title">Unlock 5 More Numbers</div>
+                                <div class="unlock-subtitle">See your complete blueprint</div>
+                            </div>
+                            <div class="unlock-arrow">→</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-bar">
+                        <div class="tab-item">
+                            <div class="tab-icon-inactive">○</div>
+                            <div class="tab-label-inactive">Today</div>
+                        </div>
+                        <div class="tab-item">
+                            <div class="tab-icon">◉</div>
+                            <div class="tab-label">Chart</div>
+                        </div>
+                        <div class="tab-item">
+                            <div class="tab-icon-inactive">○</div>
+                            <div class="tab-label-inactive">Community</div>
+                        </div>
+                        <div class="tab-item">
+                            <div class="tab-icon-inactive">○</div>
+                            <div class="tab-label-inactive">Learn</div>
+                        </div>
+                        <div class="tab-item">
+                            <div class="tab-icon-inactive">○</div>
+                            <div class="tab-label-inactive">Profile</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAYWALL SCREEN -->
+            <div class="screen-container">
+                <div class="screen-label">Paywall</div>
+                <div class="iphone">
+                    <div class="notch"></div>
+                    
+                    <div class="screen-content" style="padding-top: 60px;">
+                        <div class="paywall-header">
+                            <div class="crown-icon">👑</div>
+                            <div class="paywall-title">Unlock Your Full Potential</div>
+                            <div class="paywall-subtitle">Join 50,000+ members who discovered their true numbers</div>
+                        </div>
+                        
+                        <div class="features-list">
+                            <div class="feature-row">
+                                <span class="feature-check">✓</span>
+                                <span class="feature-text">Complete numerology chart</span>
+                            </div>
+                            <div class="feature-row">
+                                <span class="feature-check">✓</span>
+                                <span class="feature-text">Daily personalized readings</span>
+                            </div>
+                            <div class="feature-row">
+                                <span class="feature-check">✓</span>
+                                <span class="feature-text">Compatibility analysis</span>
+                            </div>
+                            <div class="feature-row">
+                                <span class="feature-check">✓</span>
+                                <span class="feature-text">Power hour notifications</span>
+                            </div>
+                            <div class="feature-row">
+                                <span class="feature-check">✓</span>
+                                <span class="feature-text">Unlimited journal entries</span>
+                            </div>
+                        </div>
+                        
+                        <div class="pricing-tier">
+                            <div class="tier-header">
+                                <div class="tier-radio"><div class="tier-radio-inner"></div></div>
+                                <span class="tier-name">Yearly</span>
+                                <span class="popular-badge">POPULAR</span>
+                            </div>
+                            <div class="tier-price">$59.99<span>/year</span></div>
+                        </div>
+                        
+                        <div class="pricing-tier" style="border-color: rgba(255,255,255,0.1); background: transparent;">
+                            <div class="tier-header">
+                                <div class="tier-radio" style="border-color: rgba(255,255,255,0.3);"></div>
+                                <span class="tier-name" style="color: #A1A1AA;">Monthly</span>
+                            </div>
+                            <div class="tier-price" style="color: #A1A1AA;">$9.99<span>/month</span></div>
+                        </div>
+                        
+                        <button class="cta-button">Start Free Trial</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STREAKS SCREEN -->
+            <div class="screen-container">
+                <div class="screen-label">Streaks</div>
+                <div class="iphone">
+                    <div class="notch"></div>
+                    
+                    <div class="screen-content" style="text-align: center;">
+                        <div style="font-size: 28px; font-weight: 700; color: #FAFAFA; margin-bottom: 40px; margin-top: 20px;">Streaks</div>
+                        
+                        <div class="streak-flame">🔥</div>
+                        
+                        <div class="streak-number">42</div>
+                        
+                        <div class="streak-label">Day Streak</div>
+                        
+                        <div class="streak-subtitle">Keep it going!</div>
+                        
+                        <div class="stats-row">
+                            <div class="stat-box">
+                                <div class="stat-icon">🔥</div>
+                                <div class="stat-value">42</div>
+                                <div class="stat-label">Current</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-icon">🏆</div>
+                                <div class="stat-value">67</div>
+                                <div class="stat-label">Longest</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-icon">⭐</div>
+                                <div class="stat-value">12</div>
+                                <div class="stat-label">Perfect Weeks</div>
+                            </div>
+                        </div>
+                        
+                        <div class="heatmap">
+                            <div class="heatmap-title">Activity</div>
+                            <div class="heatmap-grid">
+                                <div class="heatmap-cell heatmap-4"></div>
+                                <div class="heatmap-cell heatmap-3"></div>
+                                <div class="heatmap-cell heatmap-4"></div>
+                                <div class="heatmap-cell heatmap-2"></div>
+                                <div class="heatmap-cell heatmap-4"></div>
+                                <div class="heatmap-cell heatmap-3"></div>
+                                <div class="heatmap-cell heatmap-4"></div>
+                                <div class="heatmap-cell heatmap-4"></div>
+                                <div class="heatmap-cell heatmap-4"></div>
+                                <div class="heatmap-cell heatmap-3"></div>
+                                <div class="heatmap-cell heatmap-4"></div>
+                                <div class="heatmap-cell heatmap-2"></div>
+                                <div class="heatmap-cell heatmap-3"></div>
+                                <div class="heatmap-cell heatmap-4"></div>
+                                <div class="heatmap-cell heatmap-4"></div>
+                                <div class="heatmap-cell heatmap-1"></div>
+                                <div class="heatmap-cell heatmap-3"></div>
+                                <div class="heatmap-cell heatmap-4"></div>
+                                <div class="heatmap-cell heatmap-4"></div>
+                                <div class="heatmap-cell heatmap-3"></div>
+                                <div class="heatmap-cell heatmap-2"></div>
+                                <div class="heatmap-cell heatmap-4"></div>
+                                <div class="heatmap-cell heatmap-4"></div>
+                                <div class="heatmap-cell heatmap-3"></div>
+                                <div class="heatmap-cell heatmap-4"></div>
+                                <div class="heatmap-cell heatmap-4"></div>
+                                <div class="heatmap-cell heatmap-2"></div>
+                                <div class="heatmap-cell heatmap-3"></div>
+                                <div class="heatmap-cell heatmap-4"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ACHIEVEMENTS SCREEN -->
+            <div class="screen-container">
+                <div class="screen-label">Achievements</div>
+                <div class="iphone">
+                    <div class="notch"></div>
+                    
+                    <div class="screen-content">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; margin-top: 20px;">
+                            <div style="font-size: 28px; font-weight: 700; color: #FAFAFA;">Achievements</div>
+                            <div>
+                                <span style="font-size: 20px; font-weight: 700; color: #E5C158;">12</span>
+                                <span style="font-size: 17px; color: #A1A1AA;">/ 25</span>
+                            </div>
+                        </div>
+                        
+                        <div class="glass-card">
+                            <div style="display: flex; align-items: center; gap: 20px;">
+                                <div style="font-size: 40px;">🏆</div>
+                                <div style="flex: 1;">
+                                    <div style="font-size: 17px; font-weight: 600; color: #FAFAFA; margin-bottom: 8px;">Achievement Hunter</div>
+                                    <div style="height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; margin-bottom: 8px;">
+                                        <div style="width: 48%; height: 100%; background: linear-gradient(90deg, #F4D03F, #E5C158); border-radius: 4px;"></div>
+                                    </div>
+                                    <div style="font-size: 13px; color: #E5C158;">48% Complete • 13 more to unlock</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="achievement-grid">
+                            <div class="achievement-card earned">
+                                <div style="display: flex; justify-content: space-between;">
+                                    <div class="achievement-icon">🔥</div>
+                                    <span class="achievement-check">✓</span>
+                                </div>
+                                <div class="achievement-name">7-Day Streak</div>
+                                <div class="achievement-desc">Read for 7 days</div>
+                            </div>
+                            
+                            <div class="achievement-card earned">
+                                <div style="display: flex; justify-content: space-between;">
+                                    <div class="achievement-icon">📖</div>
+                                    <span class="achievement-check">✓</span>
+                                </div>
+                                <div class="achievement-name">First Reading</div>
+                                <div class="achievement-desc">Complete first read</div>
+                            </div>
+                            
+                            <div class="achievement-card">
+                                <div class="achievement-icon">🌟</div>
+                                <div class="achievement-name">30-Day Streak</div>
+                                <div class="achievement-desc">80% complete</div>
+                            </div>
+                            
+                            <div class="achievement-card">
+                                <div class="achievement-icon">📝</div>
+                                <div class="achievement-name">Journal Keeper</div>
+                                <div class="achievement-desc">30% complete</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 60px; padding: 40px; color: #666;">
+        <p>QodeX Premium UI Kit</p>
+        <p>60 Swift Files • 35,000 Lines • 25+ Screens</p>
+    </div>
+
+</body>
+</html>

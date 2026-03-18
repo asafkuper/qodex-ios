@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QodeX - Core Screens</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+            background: #0A0A0F;
+            color: #FAFAFA;
+            padding: 40px 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(229,193,88,0.1), transparent);
+            border-radius: 20px;
+        }
+        .header h1 {
+            font-size: 56px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #F4D03F 0%, #E5C158 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 16px;
+        }
+        .header p {
+            font-size: 20px;
+            color: #888;
+        }
+        .category {
+            margin-bottom: 80px;
+        }
+        .category-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #E5C158;
+            margin-bottom: 40px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid rgba(229,193,88,0.3);
+        }
+        .screens-row {
+            display: flex;
+            gap: 40px;
+            overflow-x: auto;
+            padding-bottom: 20px;
+        }
+        .screen-container {
+            flex-shrink: 0;
+            text-align: center;
+        }
+        .screen-label {
+            font-size: 16px;
+            font-weight: 600;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+        .iphone {
+            width: 393px;
+            height: 852px;
+            background: #0A0A0F;
+            border-radius: 55px;
+            box-shadow: 0 0 0 12px #1a1a1a, 0 50px 100px rgba(0,0,0,0.8);
+            overflow: hidden;
+            position: relative;
+        }
+        .notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 126px;
+            height: 37px;
+            background: #0A0A0F;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            z-index: 100;
+        }
+        .screen-content {
+            width: 100%;
+            height: 100%;
+            padding: 60px 24px 100px;
+            overflow-y: auto;
+            background: linear-gradient(180deg, #0A0A0F 0%, #0d0d14 100%);
+        }
+        
+        /* COMMON STYLES */
+        .gold-text { background: linear-gradient(135deg, #F4D03F 0%, #E5C158 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .glass-card { background: rgba(18, 18, 26, 0.6); backdrop-filter: blur(20px); border-radius: 20px; padding: 20px; border: 1px solid rgba(255, 255, 255, 0.08); }
+        .btn-primary { width: 100%; padding: 18px; background: linear-gradient(135deg, #F4D03F 0%, #E5C158 100%); border: none; border-radius: 16px; color: #0A0A0F; font-size: 17px; font-weight: 600; }
+        .tab-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 83px; background: rgba(18, 18, 26, 0.95); backdrop-filter: blur(20px); border-top: 1px solid rgba(255, 255, 255, 0.05); display: flex; justify-content: space-around; align-items: center; padding: 0 20px 20px; }
+        .tab-item { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+        .tab-icon { font-size: 22px; color: #E5C158; }
+        .tab-icon-inactive { font-size: 22px; color: #A1A1AA; }
+        
+        /* TODAY SCREEN */
+        .today-header { text-align: center; margin-bottom: 40px; }
+        .today-logo { font-size: 32px; font-weight: 700; background: linear-gradient(135deg, #F4D03F 0%, #E5C158 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .number-container { position: relative; width: 280px; height: 280px; margin: 40px auto; display: flex; align-items: center; justify-content: center; }
+        .ring { position: absolute; width: 100%; height: 100%; border-radius: 50%; border: 3px solid transparent; background: conic-gradient(from 0deg, transparent, #E5C158, transparent) border-box; -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; animation: rotate 20s linear infinite; }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .number-display { width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle at 30% 30%, rgba(229, 193, 88, 0.15), transparent 70%); display: flex; align-items: center; justify-content: center; border: 1px solid rgba(229, 193, 88, 0.2); }
+        .number { font-size: 100px; font-weight: 700; background: linear-gradient(180deg, #F4D03F 0%, #E5C158 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: pulse 3s ease-in-out infinite; }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        .card-icon { width: 8px; height: 8px; border-radius: 50%; background: #E5C158; box-shadow: 0 0 10px #E5C158; }
+        .card-title { font-size: 13px; font-weight: 600; color: #E5C158; text-transform: uppercase; letter-spacing: 0.5px; }
+        
+        /* CHART */
+        .hero-card { background: linear-gradient(135deg, rgba(229, 193, 88, 0.15) 0%, rgba(229, 193, 88, 0.05) 100%); border: 1px solid rgba(229, 193, 88, 0.2); border-radius: 24px; padding: 28px; margin-bottom: 16px; }
+        .hero-number { font-size: 64px; font-weight: 700; background: linear-gradient(180deg, #F4D03F 0%, #E5C158 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .grid-card { background: rgba(18, 18, 26, 0.6); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 20px; padding: 20px; }
+        
+        /* READING DETAIL */
+        .date-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; padding-top: 20px; }
+        .lunar-phase { font-size: 15px; color: #E5C158; }
+        .reading-number { font-size: 120px; font-weight: 700; text-align: center; background: linear-gradient(180deg, #F4D03F 0%, #E5C158 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 20px 0; }
+        .affirmation { font-style: italic; font-size: 18px; color: #E5E5E5; text-align: center; padding: 20px; border-left: 3px solid #E5C158; }
+        
+        /* NUMBER DETAIL */
+        .trait-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+        .trait-card { padding: 16px; border-radius: 12px; }
+        .trait-strength { background: rgba(46, 204, 113, 0.1); border: 1px solid rgba(46, 204, 113, 0.2); }
+        .trait-challenge { background: rgba(231, 76, 60, 0.1); border: 1px solid rgba(231, 76, 60, 0.2); }
+        .famous-person { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 16px; background: rgba(18,18,26,0.6); border-radius: 16px; }
+        .famous-avatar { width: 60px; height: 60px; border-radius: 50%; background: rgba(229,193,88,0.2); display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 700; color: #E5C158; }
+        
+        /* SEARCH */
+        .search-bar { display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: rgba(18,18,26,0.6); border-radius: 12px; border: 1px solid rgba(255,255,255,0.06); margin-bottom: 20px; }
+        .category-pill { padding: 8px 16px; background: rgba(229,193,88,0.1); border: 1px solid rgba(229,193,88,0.2); border-radius: 20px; font-size: 14px; color: #E5C158; }
+        .category-pill.active { background: #E5C158; color: #0A0A0F; }
+        .trending-item { display: flex; align-items: center; gap: 12px; padding: 16px; background: rgba(18,18,26,0.6); border-radius: 12px; margin-bottom: 8px; }
+        .trending-rank { font-size: 20px; color: #E5C158; font-weight: 700; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>QodeX Core Screens</h1>
+        <p>Today • Chart • Reading Detail • Number Detail • Search</p>
+    </div>
+
+    <!-- TODAY VIEW -->
+    <div class="category">
+        <div class="category-title">Today View</div>
+        <div class="screens-row">
+            <div class="screen-container">
+                <div class="screen-label">Daily Number</div>
+                <div class="iphone">
+                    <div class="notch"></div>
+                    <div class="screen-content">
+                        <div class="today-header">
+                            <div class="today-logo">QODE</div>
+                            <div style="font-size: 15px; color: #A1A1AA; margin-top: 8px;">Today's Energy</div>
+                        </div>
+                        
+                        <div class="number-container">
+                            <div class="ring"></div>
+                            <div class="number-display">
+                                <div class="number">8</div>
+                            </div>
+                        </div>
+                        
+                        <div style="text-align: center; margin-bottom: 32px;">
+                            <div style="font-size: 24px; font-weight: 600; color: #FAFAFA;">Power & Abundance</div>
+                            <div style="font-size: 15px; color: #A1A1AA; margin-top: 8px;">A day for bold decisions</div>
+                        </div>
+                        
+                        <div class="glass-card" style="margin-bottom: 16px;">
+                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                                <div class="card-icon"></div>
+                                <div class="card-title">Today's Insight</div>
+                            </div>
+                            <div style="font-size: 16px; line-height: 1.5; color: #E5E5E5;">The energy of <span style="color: #F4D03F; font-weight: 600;">8</span> brings opportunities for financial growth and career advancement.</div>
+                        </div>
+                        
+                        <div class="glass-card">
+                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                                <div class="card-icon"></div>
+                                <div class="card-title">Power Hours</div>
+                            </div>
+                            <div style="display: flex; gap: 12px; justify-content: center;">
+                                <div style="background: rgba(229,193,88,0.1); border: 1px solid rgba(229,193,88,0.2); border-radius: 12px; padding: 12px 20px; text-align: center;">
+                                    <div style="font-size: 18px; font-weight: 600; color: #E5C158;">9:00</div>
+                                    <div style="font-size: 11px; color: #A1A1AA;">AM</div>
+                                </div>
+                                <div style="background: rgba(229,193,88,0.1); border: 1px solid rgba(229,193,88,0.2); border-radius: 12px; padding: 12px 20px; text-align: center;">
+                                    <div style="font-size: 18px; font-weight: 600; color: #E5C158;">2:00</div>
+                                    <div style="font-size: 11px; color: #A1A1AA;">PM</div>
+                                </div>
+                                <div style="background: rgba(229,193,88,0.1); border: 1px solid rgba(229,193,88,0.2); border-radius: 12px; padding: 12px 20px; text-align: center;">
+                                    <div style="font-size: 18px; font-weight: 600; color: #E5C158;">7:00</div>
+                                    <div style="font-size: 11px; color: #A1A1AA;">PM</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="btn-primary" style="margin-top: 20px;">View Full Reading</button>
+                    </div>
+                    
+                    <div class="tab-bar">
+                        <div class="tab-item"><div class="tab-icon">☀</div><div style="font-size: 10px; color: #E5C158;">Today</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">◎</div><div style="font-size: 10px; color: #A1A1AA;">Chart</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">◉</div><div style="font-size: 10px; color: #A1A1AA;">Community</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">◉</div><div style="font-size: 10px; color: #A1A1AA;">Learn</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">◉</div><div style="font-size: 10px; color: #A1A1AA;">Profile</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHART VIEW -->
+            <div class="screen-container">
+                <div class="screen-label">Chart View</div>
+                <div class="iphone">
+                    <div class="notch"></div>
+                    
+                    <div class="screen-content" style="padding-top: 60px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                            <div style="font-size: 28px; font-weight: 700; color: #FAFAFA;">Your Chart</div>
+                            <div style="width: 40px; height: 40px; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 20px; color: #A1A1AA;">⚙</div>
+                        </div>
+                        
+                        <div class="hero-card">
+                            <div style="font-size: 12px; font-weight: 600; color: #B8954C; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">Life Path Number</div>
+                            <div style="display: flex; align-items: center; gap: 20px;">
+                                <div class="hero-number">7</div>
+                                <div>
+                                    <div style="font-size: 22px; font-weight: 600; color: #FAFAFA;">The Seeker</div>
+                                    <div style="font-size: 14px; color: #A1A1AA;">Spiritual • Analytical • Wise</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="grid" style="margin-bottom: 16px;">
+                            <div class="grid-card">
+                                <div style="font-size: 11px; font-weight: 600; color: #A1A1AA; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px;">Expression</div>
+                                <div style="font-size: 36px; font-weight: 700; color: #E5C158; margin-bottom: 4px;">3</div>
+                                <div style="font-size: 13px; color: #E5E5E5; font-weight: 500;">Creative</div>
+                            </div>
+                            
+                            <div class="grid-card">
+                                <div style="font-size: 11px; font-weight: 600; color: #A1A1AA; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px;">Soul Urge</div>
+                                <div style="font-size: 36px; font-weight: 700; color: #9B59B6; margin-bottom: 4px;">6</div>
+                                <div style="font-size: 13px; color: #E5E5E5; font-weight: 500;">Nurturing</div>
+                            </div>
+                            
+                            <div class="grid-card">
+                                <div style="font-size: 11px; font-weight: 600; color: #A1A1AA; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px;">Personality</div>
+                                <div style="font-size: 36px; font-weight: 700; color: #3498DB; margin-bottom: 4px;">9</div>
+                                <div style="font-size: 13px; color: #E5E5E5; font-weight: 500;">Humanitarian</div>
+                            </div>
+                            
+                            <div class="grid-card">
+                                <div style="font-size: 11px; font-weight: 600; color: #A1A1AA; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px;">Birthday</div>
+                                <div style="font-size: 36px; font-weight: 700; color: #2ECC71; margin-bottom: 4px;">15</div>
+                                <div style="font-size: 13px; color: #E5E5E5; font-weight: 500;">Leadership</div>
+                            </div>
+                        </div>
+                        
+                        <div style="background: linear-gradient(135deg, rgba(229, 193, 88, 0.1) 0%, rgba(229, 193, 88, 0.02) 100%); border: 1px dashed rgba(229, 193, 88, 0.3); border-radius: 20px; padding: 20px; display: flex; align-items: center; gap: 16px;">
+                            <div style="width: 48px; height: 48px; border-radius: 14px; background: rgba(229, 193, 88, 0.15); display: flex; align-items: center; justify-content: center; font-size: 24px;">✦</div>
+                            <div style="flex: 1;">
+                                <div style="font-size: 15px; font-weight: 600; color: #E5C158; margin-bottom: 4px;">Unlock 5 More Numbers</div>
+                                <div style="font-size: 13px; color: #A1A1AA;">See your complete blueprint</div>
+                            </div>
+                            <div style="font-size: 20px; color: #E5C158;">→</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-bar">
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Today</div></div>
+                        <div class="tab-item"><div class="tab-icon">◉</div><div style="font-size: 10px; color: #E5C158;">Chart</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Community</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Learn</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Profile</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- READING DETAIL -->
+            <div class="screen-container">
+                <div class="screen-label">Reading Detail</div>
+                <div class="iphone">
+                    <div class="notch"></div>
+                    
+                    <div class="screen-content" style="padding-top: 60px;">
+                        <div class="date-header">
+                            <div>
+                                <div style="font-size: 28px; font-weight: 700; color: #FAFAFA;">Friday, March 13</div>
+                                <div class="lunar-phase">🌙 Waxing Gibbous</div>
+                            </div>
+                            <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(229,193,88,0.2); display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                                <div style="font-size: 8px; font-weight: 700; color: #E5C158;">DAY</div>
+                                <div style="font-size: 20px; font-weight: 700; color: #FAFAFA;">13</div>
+                            </div>
+                        </div>
+                        
+                        <div class="reading-number">8</div>
+                        
+                        <div style="text-align: center; margin-bottom: 24px;">
+                            <div style="font-size: 24px; font-weight: 600; color: #FAFAFA;">Power & Abundance</div>
+                        </div>
+                        
+                        <div class="glass-card" style="margin-bottom: 16px;">
+                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                                <div class="card-icon"></div>
+                                <div class="card-title">Today's Energy</div>
+                            </div>
+                            <div style="font-size: 15px; line-height: 1.6; color: #E5E5E5;">The energy of 8 brings opportunities for financial growth and career advancement. Take charge of your destiny today.</div>
+                        </div>
+                        
+                        <div class="glass-card" style="margin-bottom: 16px;">
+                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                                <div class="card-icon" style="background: #E5C158;"></div>
+                                <div class="card-title">Lucky Elements</div>
+                            </div>
+                            <div style="display: flex; gap: 20px;">
+                                <div>
+                                    <div style="font-size: 12px; color: #A1A1AA; margin-bottom: 8px;">Colors</div>
+                                    <div style="display: flex; gap: 8px;">
+                                        <div style="text-align: center;">
+                                            <div style="width: 28px; height: 28px; border-radius: 50%; background: #E5C158; border: 1px solid rgba(255,255,255,0.2);"></div>
+                                            <div style="font-size: 10px; color: #A1A1AA; margin-top: 4px;">Gold</div>
+                                        </div>
+                                        <div style="text-align: center;">
+                                            <div style="width: 28px; height: 28px; border-radius: 50%; background: #9B59B6; border: 1px solid rgba(255,255,255,0.2);"></div>
+                                            <div style="font-size: 10px; color: #A1A1AA; margin-top: 4px;">Purple</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="affirmation">"I am worthy of abundance and success. I claim my power and create my reality."</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NUMBER DETAIL -->
+            <div class="screen-container">
+                <div class="screen-label">Number Detail</div>
+                <div class="iphone">
+                    <div class="notch"></div>
+                    
+                    <div class="screen-content" style="padding-top: 60px;">
+                        <div style="text-align: center; margin-bottom: 24px;">
+                            <div style="font-size: 13px; color: #A1A1AA; margin-bottom: 8px;">Life Path Number</div>
+                            
+                            <div class="reading-number">7</div>
+                            
+                            <div style="font-size: 24px; font-weight: 600; color: #FAFAFA; margin-bottom: 8px;">The Seeker</div>
+                            
+                            <div style="font-size: 15px; color: #A1A1AA;">Spiritual • Analytical • Wise</div>
+                        </div>
+                        
+                        <div class="glass-card" style="margin-bottom: 16px;">
+                            <div style="font-size: 15px; line-height: 1.6; color: #E5E5E5;">Life Path 7s are the truth seekers of numerology. You have a deep need to understand the mysteries of life and the universe.</div>
+                        </div>
+                        
+                        <div style="font-size: 18px; font-weight: 600; color: #FAFAFA; margin-bottom: 16px;">Traits</div>
+                        
+                        <div class="trait-grid" style="margin-bottom: 24px;">
+                            <div class="trait-card trait-strength">
+                                <div style="font-size: 14px; font-weight: 600; color: #2ECC71; margin-bottom: 8px;">Strengths</div>
+                                <div style="font-size: 13px; color: #E5E5E5; line-height: 1.8;">• Analytical<br>• Intuitive<br>• Wise</div>
+                            </div>
+                            
+                            <div class="trait-card trait-challenge">
+                                <div style="font-size: 14px; font-weight: 600; color: #E74C3C; margin-bottom: 8px;">Challenges</div>
+                                <div style="font-size: 13px; color: #E5E5E5; line-height: 1.8;">• Isolated<br>• Perfectionist<br>• Secretive</div>
+                            </div>
+                        </div>
+                        
+                        <div style="font-size: 18px; font-weight: 600; color: #FAFAFA; margin-bottom: 16px;">Famous 7s</div>
+                        
+                        <div style="display: flex; gap: 12px; overflow-x: auto; padding-bottom: 8px;">
+                            <div class="famous-person">
+                                <div class="famous-avatar">L</div>
+                                <div style="font-size: 13px; color: #FAFAFA;">Leonardo</div>
+                            </div>
+                            
+                            <div class="famous-person">
+                                <div class="famous-avatar">D</div>
+                                <div style="font-size: 13px; color: #FAFAFA;">Diana</div>
+                            </div>
+                            
+                            <div class="famous-person">
+                                <div class="famous-avatar">M</div>
+                                <div style="font-size: 13px; color: #FAFAFA;">Marilyn</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEARCH -->
+            <div class="screen-container">
+                <div class="screen-label">Search</div>
+                <div class="iphone">
+                    <div class="notch"></div>
+                    
+                    <div class="screen-content" style="padding-top: 60px;">
+                        <div style="font-size: 28px; font-weight: 700; color: #FAFAFA; margin-bottom: 24px;">Search</div>
+                        
+                        <div class="search-bar">
+                            <span style="color: #A1A1AA; font-size: 17px;">🔍</span>
+                            <span style="color: #A1A1AA; font-size: 17px;">Search numbers, articles...</span>
+                        </div>
+                        
+                        <div style="display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap;">
+                            <div class="category-pill active">All</div>
+                            <div class="category-pill">Numbers</div>
+                            <div class="category-pill">Articles</div>
+                            <div class="category-pill">People</div>
+                        </div>
+                        
+                        <div style="font-size: 20px; font-weight: 600; color: #FAFAFA; margin-bottom: 16px;">Trending</div>
+                        
+                        <div class="trending-item">
+                            <div class="trending-rank">1</div>
+                            <div style="flex: 1;">
+                                <div style="font-size: 16px; color: #FAFAFA;">Master Numbers Explained</div>
+                                <div style="font-size: 13px; color: #A1A1AA;">12K searches</div>
+                            </div>
+                            <div style="font-size: 20px; color: #E5C158;">↗</div>
+                        </div>
+                        
+                        <div class="trending-item">
+                            <div class="trending-rank">2</div>
+                            <div style="flex: 1;">
+                                <div style="font-size: 16px; color: #FAFAFA;">2026 Predictions</div>
+                                <div style="font-size: 13px; color: #A1A1AA;">8K searches</div>
+                            </div>
+                            <div style="font-size: 20px; color: #E5C158;">↗</div>
+                        </div>
+                        
+                        <div class="trending-item">
+                            <div class="trending-rank">3</div>
+                            <div style="flex: 1;">
+                                <div style="font-size: 16px; color: #FAFAFA;">Life Path Compatibility</div>
+                                <div style="font-size: 13px; color: #A1A1AA;">6K searches</div>
+                            </div>
+                            <div style="font-size: 20px; color: #E5C158;">↗</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 80px; padding: 40px; color: #666; border-top: 1px solid rgba(255,255,255,0.1);">
+        <p style="font-size: 20px; margin-bottom: 8px;">QodeX Premium UI Kit</p>
+        <p>60 Swift Files • 35,000 Lines • 30+ Screens</p>
+    </div>
+
+</body>
+</html>

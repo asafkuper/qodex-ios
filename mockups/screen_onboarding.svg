@@ -1,0 +1,40 @@
+<svg width="393" height="852" viewBox="0 0 393 852" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="393" height="852" fill="#0A0A0F"/>
+  
+  <!-- Status Bar -->
+  <rect x="0" y="0" width="393" height="44" fill="#0A0A0F"/>
+  <text x="40" y="28" fill="white" font-family="SF Pro" font-size="15" font-weight="600">9:41</text>
+  
+  <!-- Header -->
+  <text x="196" y="100" fill="white" font-family="SF Pro" font-size="28" font-weight="bold" text-anchor="middle">Welcome</text>
+  <text x="196" y="135" fill="#888888" font-family="SF Pro" font-size="16" text-anchor="middle">Discover your numerology in 2 minutes</text>
+  
+  <!-- Step Indicator -->
+  <rect x="24" y="170" width="345" height="4" rx="2" fill="#2A2A3E"/>
+  <rect x="24" y="170" width="86" height="4" rx="2" fill="#E5C158"/>
+  
+  <!-- Name Input Card -->
+  <rect x="24" y="200" width="345" height="200" rx="16" fill="#12121A" stroke="#2A2A3E" stroke-width="1"/>
+  
+  <text x="44" y="245" fill="white" font-family="SF Pro" font-size="20" font-weight="semibold">What's your name?</text>
+  
+  <text x="44" y="275" fill="#888888" font-family="SF Pro" font-size="14">Enter your full name for the most</text>
+  <text x="44" y="295" fill="#888888" font-family="SF Pro" font-size="14">accurate numerology reading.</text>
+  
+  <!-- Input Field -->
+  <rect x="44" y="330" width="305" height="56" rx="12" fill="#0A0A0F" stroke="#3A3A4E" stroke-width="1"/>
+  <text x="60" y="363" fill="#888888" font-family="SF Pro" font-size="16">Full Name</text>
+  
+  <!-- Continue Button -->
+  <rect x="24" y="650" width="345" height="56" rx="16" fill="#E5C158"/>
+  <text x="196" y="685" fill="#0A0A0F" font-family="SF Pro" font-size="17" font-weight="semibold" text-anchor="middle">Continue</text>
+  
+  <!-- Skip Option -->
+  <text x="196" y="730" fill="#888888" font-family="SF Pro" font-size="14" text-anchor="middle">Skip for now</text>
+  
+  <!-- Progress Dots -->
+  <circle cx="176" cy="780" r="6" fill="#E5C158"/>
+  <circle cx="196" cy="780" r="6" fill="#3A3A4E"/>
+  <circle cx="216" cy="780" r="6" fill="#3A3A4E"/>
+</svg>

@@ -1,0 +1,39 @@
+/* QodeX Hindi Localization */
+
+/* App Info */
+"app_name" = "QodeX";
+
+/* Welcome Screen */
+"welcome_title" = "अपने नंबर खोजें";
+"welcome_subtitle" = "सिर्फ 2 मिनट में अपने अंकज्योतिष के रहस्यों को खोलें";
+"get_started" = "शुरू करें";
+
+/* Navigation Tabs */
+"today_view" = "आज";
+"chart_view" = "चार्ट";
+"community_view" = "समुदाय";
+"learn_view" = "सीखें";
+"profile_view" = "प्रोफाइल";
+
+/* Numerology Terms */
+"life_path" = "जीवन पथ";
+"expression_number" = "अभिव्यक्ति संख्या";
+"soul_urge" = "आत्मा की इच्छा";
+
+/* Features */
+"daily_reading" = "दैनिक रीडिंग";
+"power_hours" = "शक्ति के घंटे";
+"compatibility" = "अनुकूलता";
+
+/* General */
+"settings" = "सेटिंग्स";
+"premium" = "प्रीमियम";
+"unlock_full" = "अपना पूरा चार्ट अनलॉक करें";
+
+/* Actions */
+"continue" = "जारी रखें";
+"save" = "सहेजें";
+"share" = "साझा करें";
+"done" = "हो गया";
+"cancel" = "रद्द करें";
+"ok" = "ठीक है";

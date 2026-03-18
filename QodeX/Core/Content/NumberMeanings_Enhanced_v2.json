@@ -1,0 +1,287 @@
+{
+  "version": "2.0",
+  "reviewed_by": "Sage",
+  "last_updated": "2026-03-16",
+  "content_standard": "emotional_storytelling",
+  "numbers": {
+    "1": {
+      "number": 1,
+      "title": "The Leader",
+      "keyword": "Independence",
+      "essence": "Leadership isn't about being first—it's about being brave enough to start. As a 1, you carry the spark of creation itself. Your independence isn't isolation; it's the clarity to trust your vision when others doubt.",
+      "numerology_meaning": "The primal force of creation. 1 represents the beginning, the singular point from which all else emerges. In sacred geometry, it's the point—the source of all manifestation.",
+      "core_traits": ["Initiating", "Independent", "Innovative", "Courageous", "Original"],
+      "strengths": ["Natural leadership", "Self-motivation", "Creative thinking", "Courage to start", "Innovative solutions"],
+      "challenges": ["Stubbornness", "Isolation tendency", "Impatience", "Self-criticism", "Difficulty delegating"],
+      "shadow_work": "Your 'I don't need anyone' is often 'I'm afraid to need and be disappointed.' True independence includes the courage to be interdependent.",
+      "spiritual_significance": "The Monad—the unity before duality. 1 represents the divine spark within you, the I AM presence. In tarot: The Magician, master of manifestation.",
+      "practical_application": "When you see 1: It's time to start. Trust your instincts. Take the lead. Begin what you've been delaying.",
+      "angel_number_meaning": "Your thoughts are manifesting rapidly. Stay positive. New beginnings are here. Trust yourself.",
+      "famous_examples": ["Elon Musk", "Martin Luther King Jr.", "Lady Gaga", "Tom Hanks"],
+      "cultural_significance": {
+        "chinese": "Associated with heaven, the beginning of all things. Considered very lucky for new ventures.",
+        "hebrew": "Aleph, the first letter, represents the oneness of God and the breath of creation.",
+        "hindu": "Represents Brahma, the creator. The bindu, the point from which the universe expands."
+      },
+      "daily_affirmations": [
+        "I am the creator of my reality.",
+        "I trust my unique vision.",
+        "I have everything I need within me.",
+        "New beginnings are my birthright."
+      ],
+      "metadata": {
+        "keywords": ["number 1 meaning", "leadership number", "new beginnings numerology"],
+        "difficulty": "beginner",
+        "estimated_read_time": 2
+      }
+    },
+    "2": {
+      "number": 2,
+      "title": "The Diplomat",
+      "keyword": "Partnership",
+      "essence": "You sense what others miss—the undercurrents, the unspoken needs, the delicate balance between opposing forces. Your sensitivity isn't weakness; it's emotional intelligence most never develop.",
+      "numerology_meaning": "Duality and balance. The first even number, representing the split from unity into relationship. The doorway between self and other.",
+      "core_traits": ["Diplomatic", "Sensitive", "Cooperative", "Intuitive", "Patient"],
+      "strengths": ["Emotional intelligence", "Mediation skills", "Attention to detail", "Supportive nature", "Intuitive knowing"],
+      "challenges": ["Over-sensitivity", "Indecisiveness", "Conflict avoidance", "Self-neglect", "Absorbing others' emotions"],
+      "shadow_work": "Your peacekeeping often comes at the cost of your truth. Real harmony includes honest discord resolved through love.",
+      "spiritual_significance": "The Dyad—balance and polarity. Represents the divine feminine, receptivity, and the wisdom of the heart. In tarot: The High Priestess, keeper of mysteries.",
+      "practical_application": "When you see 2: Trust your intuition. Seek balance. Cooperate rather than compete. Pay attention to relationships.",
+      "angel_number_meaning": "Trust. Everything is working out for your highest good. Have faith in the unseen. Partnerships are blessed.",
+      "famous_examples": ["Barack Obama", "Madonna", "Jennifer Aniston", "Kim Kardashian"],
+      "cultural_significance": {
+        "chinese": "Symbolizes balance and harmony. Considered lucky for relationships and partnerships.",
+        "hebrew": "Bet, the house. Represents duality, choice, and the container for divine presence.",
+        "hindu": "Represents duality—Shiva and Shakti, the cosmic dance of opposites."
+      },
+      "daily_affirmations": [
+        "My sensitivity is my superpower.",
+        "I trust my intuition completely.",
+        "Harmony flows through me.",
+        "My presence brings peace."
+      ],
+      "metadata": {
+        "keywords": ["number 2 meaning", "partnership number", "intuition numerology"],
+        "difficulty": "beginner",
+        "estimated_read_time": 2
+      }
+    },
+    "3": {
+      "number": 3,
+      "title": "The Creative",
+      "keyword": "Expression",
+      "essence": "You turn the mundane into magic. While others see a blank page, you see a canvas. Your mind is a playground where ideas swing from trees and inspiration slides down rainbows.",
+      "numerology_meaning": "The triad—creation, expression, manifestation. The number of the divine child, the artist, the communicator. Where ideas become form.",
+      "core_traits": ["Creative", "Optimistic", "Expressive", "Social", "Charismatic"],
+      "strengths": ["Communication skills", "Creative vision", "Joyful spirit", "Social charm", "Artistic talent"],
+      "challenges": ["Scattered energy", "Superficiality", "Emotional drama", "Incompletion", "Escapism"],
+      "shadow_work": "Your sparkle is beautiful, but your depth is your masterpiece. Let people see the quiet you too.",
+      "spiritual_significance": "The Trinity—creation, preservation, transformation. The triangle of manifestation. In tarot: The Empress, fertility and creative abundance.",
+      "practical_application": "When you see 3: Express yourself. Create something. Socialize. Share your joy. Communicate your truth.",
+      "angel_number_meaning": "The ascended masters are with you. Your prayers are heard. Express your truth. Creativity is blessed.",
+      "famous_examples": ["Cristiano Ronaldo", "Rihanna", "Alfred Hitchcock", "Celine Dion"],
+      "cultural_significance": {
+        "chinese": "Considered lucky—sounds like 'birth' or 'growth.' Associated with creativity and expansion.",
+        "hebrew": "Gimel, the camel. Represents abundance, nourishment, and the journey of spiritual growth.",
+        "hindu": "The Trimurti—Brahma, Vishnu, Shiva. The triple power of creation, preservation, and destruction."
+      },
+      "daily_affirmations": [
+        "My creativity flows freely.",
+        "I express my truth with joy.",
+        "My voice matters.",
+        "I am a channel for inspiration."
+      ],
+      "metadata": {
+        "keywords": ["number 3 meaning", "creativity number", "expression numerology"],
+        "difficulty": "beginner",
+        "estimated_read_time": 2
+      }
+    },
+    "4": {
+      "number": 4,
+      "title": "The Builder",
+      "keyword": "Stability",
+      "essence": "You see what needs to be built before anyone else has a blueprint. Your patience isn't lack of ambition—it's understanding that masterpieces aren't microwaved.",
+      "numerology_meaning": "The square—foundation, structure, manifestation in physical form. The number of order, systems, and lasting achievement.",
+      "core_traits": ["Practical", "Reliable", "Disciplined", "Hardworking", "Systematic"],
+      "strengths": ["Organizational skills", "Reliability", "Attention to detail", "Work ethic", "System building"],
+      "challenges": ["Rigidity", "Workaholism", "Perfectionism", "Inflexibility", "Pessimism"],
+      "shadow_work": "Your systems serve people, not the reverse. Flexibility is strength, not weakness.",
+      "spiritual_significance": "The material world manifest. The four directions, four elements, four seasons. In tarot: The Emperor, authority and structure.",
+      "practical_application": "When you see 4: Get organized. Build foundations. Follow through. Create systems. Be patient with process.",
+      "angel_number_meaning": "The angels are surrounding you. Your hard work is paying off. Stay disciplined. Foundation is being laid.",
+      "famous_examples": ["Bill Gates", "Oprah Winfrey", "Frank Sinatra", "Adam Sandler"],
+      "cultural_significance": {
+        "chinese": "Considered unlucky—sounds like 'death.' But also represents stability and groundedness.",
+        "hebrew": "Dalet, the door. Represents structure, boundaries, and the entry to higher consciousness.",
+        "hindu": "The four Vedas, four stages of life, four aims of human existence (dharma, artha, kama, moksha)."
+      },
+      "daily_affirmations": [
+        "I build with patience and purpose.",
+        "My work creates lasting value.",
+        "I am grounded and secure.",
+        "Progress over perfection."
+      ],
+      "metadata": {
+        "keywords": ["number 4 meaning", "stability number", "builder numerology"],
+        "difficulty": "beginner",
+        "estimated_read_time": 2
+      }
+    },
+    "5": {
+      "number": 5,
+      "title": "The Adventurer",
+      "keyword": "Freedom",
+      "essence": "You were born with wanderlust in your blood and freedom in your heart. Your restlessness isn't a flaw—it's the compass pointing toward your next evolution.",
+      "numerology_meaning": "The pentad—change, freedom, experience. The human microcosm (head + 4 limbs). The number of adventure and growth through variety.",
+      "core_traits": ["Adaptable", "Freedom-loving", "Curious", "Versatile", "Progressive"],
+      "strengths": ["Adaptability", "Communication", "Adventure spirit", "Resourcefulness", "Progressive thinking"],
+      "challenges": ["Restlessness", "Commitment issues", "Excess", "Scattered focus", "Rebellion"],
+      "shadow_work": "Freedom isn't the absence of commitment—it's choosing your commitments consciously.",
+      "spiritual_significance": "The microcosm—the human in the universe. Freedom as spiritual path. In tarot: The Hierophant (tradition) or The Lovers (choice), depending on context.",
+      "practical_application": "When you see 5: Embrace change. Try something new. Break routine. Be adaptable. Trust the journey.",
+      "angel_number_meaning": "Major changes are coming. Embrace them. Freedom is calling. Trust your adventurous spirit.",
+      "famous_examples": ["Angelina Jolie", "Abraham Lincoln", "Beyoncé", "Vincent van Gogh"],
+      "cultural_significance": {
+        "chinese": "Associated with the five elements (wood, fire, earth, metal, water) and balance.",
+        "hebrew": "Hei, the window. Represents revelation, divine breath, and the five books of Moses.",
+        "hindu": "The five elements, five senses, five koshas (sheaths of being). Complete human experience."
+      },
+      "daily_affirmations": [
+        "Change is my ally.",
+        "I am free to choose my path.",
+        "Adventure awaits.",
+        "I embrace life's variety."
+      ],
+      "metadata": {
+        "keywords": ["number 5 meaning", "freedom number", "adventure numerology"],
+        "difficulty": "beginner",
+        "estimated_read_time": 2
+      }
+    },
+    "6": {
+      "number": 6,
+      "title": "The Nurturer",
+      "keyword": "Love",
+      "essence": "Your heart is a sanctuary where others find refuge. While the world chases success, you measure wealth in love given. Your nurturing isn't weakness; it's the courage to care deeply.",
+      "numerology_meaning": "The hexad—harmony, beauty, service. The perfect number (1+2+3=6, 1×2×3=6). The number of home, family, and unconditional love.",
+      "core_traits": ["Compassionate", "Responsible", "Nurturing", "Harmonious", "Protective"],
+      "strengths": ["Caring nature", "Responsibility", "Healing presence", "Eye for beauty", "Domestic skills"],
+      "challenges": ["Over-giving", "Martyrdom", "Control tendencies", "Guilt", "Neglecting self"],
+      "shadow_work": "Self-care isn't selfish—it's sustainable. You can't pour from an empty cup.",
+      "spiritual_significance": "The macrocosm—divine perfection. The six directions, six days of creation. In tarot: The Lovers (choice through love) or The Devil (attachment).",
+      "practical_application": "When you see 6: Focus on home and family. Create beauty. Serve with love. Practice self-care.",
+      "angel_number_meaning": "Focus on home and family. Unconditional love surrounds you. Balance giving and receiving.",
+      "famous_examples": ["Mother Teresa", "John Lennon", "Albert Einstein", "Jennifer Lawrence"],
+      "cultural_significance": {
+        "chinese": "Associated with smoothness and flow. Considered lucky for relationships and home.",
+        "hebrew": "Vav, the hook. Connection, conjunction, and the six directions of space.",
+        "hindu": "The six chakras below the crown, six seasons, six tastes. Harmony and balance."
+      },
+      "daily_affirmations": [
+        "My love is my greatest gift.",
+        "I am worthy of love and care.",
+        "I create beauty and harmony.",
+        "Giving and receiving are one."
+      ],
+      "metadata": {
+        "keywords": ["number 6 meaning", "love number", "nurturer numerology"],
+        "difficulty": "beginner",
+        "estimated_read_time": 2
+      }
+    },
+    "7": {
+      "number": 7,
+      "title": "The Seeker",
+      "keyword": "Wisdom",
+      "essence": "You don't take things at face value—you need to know the 'why' beneath the 'what.' While others accept the world as it appears, you sense there's always another layer.",
+      "numerology_meaning": "The heptad—mystery, introspection, spiritual seeking. The number of the mystic, the philosopher, the truth-seeker. Sacred in virtually all traditions.",
+      "core_traits": ["Analytical", "Spiritual", "Introspective", "Perfectionist", "Mysterious"],
+      "strengths": ["Research ability", "Intuitive wisdom", "Intellectual depth", "Spiritual connection", "Analytical skills"],
+      "challenges": ["Isolation", "Overthinking", "Cynicism", "Difficulty trusting", "Escapism"],
+      "shadow_work": "Your questions serve truth, not just protection from vulnerability. Wisdom without love is just noise.",
+      "spiritual_significance": "The number of completion and spiritual perfection. Seven chakras, seven heavens, seven days of creation. In tarot: The Chariot (victory through understanding).",
+      "practical_application": "When you see 7: Trust your intuition. Research deeply. Meditate. Seek truth within. Honor your need for solitude.",
+      "angel_number_meaning": "You're on the right spiritual path. Trust your inner knowing. The universe is supporting your growth.",
+      "famous_examples": ["Leonardo DiCaprio", "Princess Diana", "Stephen Hawking", "Marilyn Monroe"],
+      "cultural_significance": {
+        "chinese": "Associated with spirituality and mysticism. The seven stars of the Big Dipper.",
+        "hebrew": "Zayin, the sword. The seven days of creation, seven branches of the menorah. Spiritual perfection.",
+        "hindu": "Seven chakras, seven sages (rishis), seven higher worlds. Complete spiritual journey."
+      },
+      "daily_affirmations": [
+        "I trust my inner wisdom.",
+        "Truth reveals itself to me.",
+        "My solitude is sacred.",
+        "I seek and I find."
+      ],
+      "metadata": {
+        "keywords": ["number 7 meaning", "spiritual number", "seeker numerology"],
+        "difficulty": "beginner",
+        "estimated_read_time": 2
+      }
+    },
+    "8": {
+      "number": 8,
+      "title": "The Powerhouse",
+      "keyword": "Abundance",
+      "essence": "You understand that power isn't given—it's built. Your ambition isn't greed; it's the courage to claim your place in the world and use it to create impact.",
+      "numerology_meaning": "The ogdoad—power, abundance, karma. The number of infinity (∞) when turned on its side. Material mastery and spiritual balance.",
+      "core_traits": ["Ambitious", "Authoritative", "Strategic", "Generous", "Determined"],
+      "strengths": ["Business acumen", "Leadership", "Manifestation power", "Organizational skills", "Resilience"],
+      "challenges": ["Workaholism", "Materialism", "Power struggles", "Work-life imbalance", "Impatience"],
+      "shadow_work": "True abundance includes time, health, and relationships. Wealth without wellbeing is poverty wearing a Rolex.",
+      "spiritual_significance": "The number of cosmic balance and karmic law. As above, so below. In tarot: Strength (power through compassion) or Justice (karmic balance).",
+      "practical_application": "When you see 8: Focus on abundance. Take charge. Build something lasting. Balance material and spiritual.",
+      "angel_number_meaning": "Financial abundance is flowing to you. Your hard work is manifesting. Stay balanced.",
+      "famous_examples": ["Nelson Mandela", "Kylie Jenner", "Elizabeth Taylor", "Matt Damon"],
+      "cultural_significance": {
+        "chinese": "Most lucky number—sounds like 'wealth' and 'prosperity.' The shape represents infinity.",
+        "hebrew": "Chet, the fence. The covenant, protection, and the eight days of circumcision. New beginnings.",
+        "hindu": "Eight forms of Lakshmi (wealth), eight directions, eightfold path of yoga. Abundance in all forms."
+      },
+      "daily_affirmations": [
+        "I am worthy of abundance.",
+        "Power serves my highest good.",
+        "Wealth flows to me easily.",
+        "I create value in the world."
+      ],
+      "metadata": {
+        "keywords": ["number 8 meaning", "abundance number", "power numerology"],
+        "difficulty": "beginner",
+        "estimated_read_time": 2
+      }
+    },
+    "9": {
+      "number": 9,
+      "title": "The Humanitarian",
+      "keyword": "Completion",
+      "essence": "You feel the world's pain as your own and its joy as your birthright. While others see borders, you see one human family. Your compassion isn't naive—it's the wisdom of lifetimes.",
+      "numerology_meaning": "The ennead—completion, universal love, humanitarianism. The number of the old soul, the culmination of the journey, return to source.",
+      "core_traits": ["Compassionate", "Universal", "Creative", "Selfless", "Wise"],
+      "strengths": ["Humanitarian vision", "Creative expression", "Universal empathy", "Wisdom", "Healing presence"],
+      "challenges": ["Over-attachment", "Martyrdom", "Scattered focus", "Absorbing world pain", "Difficulty letting go"],
+      "shadow_work": "You can't save everyone, and you're not meant to. Sustainable service requires sustainable boundaries.",
+      "spiritual_significance": "The number of completion and return to unity. Nine months of gestation, nine planets (traditionally). In tarot: The Hermit (wisdom shared) or The Sun (illumination).",
+      "practical_application": "When you see 9: Complete what you've started. Serve humanity. Let go of what no longer serves. Embrace your wisdom.",
+      "angel_number_meaning": "A cycle is completing. Let go with love. Your light is needed in the world. Serve your purpose.",
+      "famous_examples": ["Gandhi", "Bob Marley", "Morgan Freeman", "Jimmy Carter"],
+      "cultural_significance": {
+        "chinese": "Associated with longevity and eternity. The emperor's number. Completion and fulfillment.",
+        "hebrew": "Tet, the serpent. Surprisingly, represents goodness hidden within struggle. Nine months to birth.",
+        "hindu": "The Navagraha (nine planets), nine forms of devotion (bhakti), completion of the cycle before return."
+      },
+      "daily_affirmations": [
+        "I serve from fullness.",
+        "Completion brings new beginnings.",
+        "My compassion changes the world.",
+        "I am one with all life."
+      ],
+      "metadata": {
+        "keywords": ["number 9 meaning", "completion number", "humanitarian numerology"],
+        "difficulty": "beginner",
+        "estimated_read_time": 2
+      }
+    }
+  }
+}

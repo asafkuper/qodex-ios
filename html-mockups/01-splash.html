@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QodeX - Splash Screen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+            background: linear-gradient(135deg, #1a0a2e 0%, #4A0E4E 50%, #0d0221 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 414px;
+            height: 896px;
+            background: linear-gradient(180deg, #1a0a2e 0%, #2d1b4e 100%);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        /* Sacred Geometry Background Pattern */
+        .sacred-geometry {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            opacity: 0.1;
+            animation: rotate 60s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .geometry-circle {
+            position: absolute;
+            border: 1px solid #D4AF37;
+            border-radius: 50%;
+        }
+        
+        .c1 { width: 200px; height: 200px; top: 200px; left: 200px; }
+        .c2 { width: 300px; height: 300px; top: 150px; left: 150px; }
+        .c3 { width: 400px; height: 400px; top: 100px; left: 100px; }
+        .c4 { width: 500px; height: 500px; top: 50px; left: 50px; }
+        
+        /* Logo Container */
+        .logo-container {
+            z-index: 10;
+            text-align: center;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .logo {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #D4AF37 0%, #F4D03F 100%);
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 24px;
+            box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3);
+        }
+        
+        .logo-symbol {
+            font-size: 60px;
+            color: #1a0a2e;
+            font-weight: 300;
+        }
+        
+        .app-name {
+            font-size: 42px;
+            font-weight: 700;
+            color: #D4AF37;
+            letter-spacing: 4px;
+            margin-bottom: 8px;
+        }
+        
+        .tagline {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        
+        /* Loading Indicator */
+        .loading-container {
+            position: absolute;
+            bottom: 120px;
+            z-index: 10;
+        }
+        
+        .loading-text {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+        }
+        
+        .loading-bar {
+            width: 200px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 1px;
+            overflow: hidden;
+        }
+        
+        .loading-progress {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #D4AF37, #F4D03F);
+            border-radius: 1px;
+            animation: loading 2s ease-in-out infinite;
+        }
+        
+        @keyframes loading {
+            0% { width: 0%; opacity: 1; }
+            50% { width: 70%; opacity: 1; }
+            100% { width: 100%; opacity: 0; }
+        }
+        
+        /* Version */
+        .version {
+            position: absolute;
+            bottom: 40px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Particle Effect */
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #D4AF37;
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
+            50% { transform: translateY(-100px) scale(0.5); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sacred Geometry Background -->
+        <div class="sacred-geometry">
+            <div class="geometry-circle c1"></div>
+            <div class="geometry-circle c2"></div>
+            <div class="geometry-circle c3"></div>
+            <div class="geometry-circle c4"></div>
+        </div>
+        
+        <!-- Particles -->
+        <div class="particle" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+        <div class="particle" style="top: 30%; left: 80%; animation-delay: 2s;"></div>
+        <div class="particle" style="top: 60%; left: 20%; animation-delay: 4s;"></div>
+        <div class="particle" style="top: 70%; left: 70%; animation-delay: 6s;"></div>
+        
+        <!-- Logo -->
+        <div class="logo-container">
+            <div class="logo">
+                <span class="logo-symbol">✦</span>
+            </div>
+            <h1 class="app-name">QODEX</h1>
+            <p class="tagline">Discover Your Numbers</p>
+        </div>
+        
+        <!-- Loading -->
+        <div class="loading-container">
+            <p class="loading-text">ALIGNING THE COSMOS...</p>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+        
+        <!-- Version -->
+        <p class="version">v1.0.0</p>
+    </div>
+</body>
+</html>

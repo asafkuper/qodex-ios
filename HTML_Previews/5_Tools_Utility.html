@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QodeX - Tools & Utilities</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+            background: #0A0A0F;
+            color: #FAFAFA;
+            padding: 40px 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(229,193,88,0.1), transparent);
+            border-radius: 20px;
+        }
+        .header h1 {
+            font-size: 56px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #F4D03F 0%, #E5C158 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 16px;
+        }
+        .category {
+            margin-bottom: 80px;
+        }
+        .category-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #E5C158;
+            margin-bottom: 40px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid rgba(229,193,88,0.3);
+        }
+        .screens-row {
+            display: flex;
+            gap: 40px;
+            overflow-x: auto;
+            padding-bottom: 20px;
+        }
+        .screen-container {
+            flex-shrink: 0;
+            text-align: center;
+        }
+        .screen-label {
+            font-size: 16px;
+            font-weight: 600;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+        .iphone {
+            width: 393px;
+            height: 852px;
+            background: #0A0A0F;
+            border-radius: 55px;
+            box-shadow: 0 0 0 12px #1a1a1a, 0 50px 100px rgba(0,0,0,0.8);
+            overflow: hidden;
+            position: relative;
+        }
+        .notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 126px;
+            height: 37px;
+            background: #0A0A0F;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            z-index: 100;
+        }
+        .screen-content {
+            width: 100%;
+            height: 100%;
+            padding: 60px 24px 100px;
+            overflow-y: auto;
+            background: linear-gradient(180deg, #0A0A0F 0%, #0d0d14 100%);
+        }
+        .glass-card {
+            background: rgba(18, 18, 26, 0.6);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(229, 193, 88, 0.3);
+            transform: translateY(-2px);
+        }
+        .btn-primary {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #F4D03F 0%, #E5C158 100%);
+            border: none;
+            border-radius: 16px;
+            color: #0A0A0F;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(229, 193, 88, 0.3);
+        }
+        .tab-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 83px;
+            background: rgba(18, 18, 26, 0.95);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 20px 20px;
+        }
+        .tab-item { display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; transition: all 0.2s; }
+        .tab-item:hover { transform: scale(1.1); }
+        .tab-icon { font-size: 22px; color: #E5C158; }
+        .tab-icon-inactive { font-size: 22px; color: #A1A1AA; }
+        .brand-tag {
+            font-size: 11px;
+            color: #E5C158;
+            opacity: 0.6;
+            margin-top: 8px;
+        }
+        /* Interactive elements */
+        .clickable { cursor: pointer; transition: all 0.2s; }
+        .clickable:active { transform: scale(0.98); }
+        .active-tab { color: #E5C158 !important; }
+        .playing .pulse { animation: pulse 2s infinite; }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .wave-bar {
+            animation: wave 1s ease-in-out infinite;
+        }
+        .wave-bar:nth-child(2) { animation-delay: 0.1s; }
+        .wave-bar:nth-child(3) { animation-delay: 0.2s; }
+        .wave-bar:nth-child(4) { animation-delay: 0.3s; }
+        .wave-bar:nth-child(5) { animation-delay: 0.4s; }
+        @keyframes wave {
+            0%, 100% { height: 20%; }
+            50% { height: 100%; }
+        }
+        .achievement-locked { filter: grayscale(1); opacity: 0.5; }
+        .achievement-unlocked { filter: grayscale(0); }
+        .streak-day { transition: all 0.3s; }
+        .streak-day.active { background: #E5C158 !important; color: #0A0A0F !important; }
+        .search-highlight:hover { background: rgba(229,193,88,0.1); }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Tools & Utilities</h1>
+        <p style="font-size: 20px; color: #888;">Journal • Meditate • Learn • Search • Achieve • Track</p>
+        <div class="brand-tag">@Qodex_Numerology.il</div>
+    </div>
+
+    <!-- JOURNAL VIEW -->
+    <div class="category">
+        <div class="category-title">Journal View</div>
+        <div class="screens-row">
+            <div class="screen-container">
+                <div class="screen-label">Journal Entries</div>
+                <div class="iphone">
+                    <div class="notch"></div>
+                    
+                    <div class="screen-content">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                            <div>
+                                <div style="font-size: 28px; font-weight: 700; color: #FAFAFA;">Journal</div>
+                                <div style="font-size: 13px; color: #A1A1AA; margin-top: 4px;">@Qodex_Numerology.il</div>
+                            </div>
+                            <div class="clickable" style="width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #F4D03F, #E5C158); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #0A0A0F; box-shadow: 0 4px 15px rgba(229,193,88,0.3);">
+                                +
+                            </div>
+                        </div>
+                        
+                        <!-- Calendar Strip -->
+                        <div style="background: rgba(18,18,26,0.8); border-radius: 20px; padding: 16px; margin-bottom: 24px; border: 1px solid rgba(255,255,255,0.06);">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                <div style="font-size: 15px; font-weight: 600; color: #FAFAFA;">March 2026</div>
+                                <div style="font-size: 13px; color: #E5C158;">Personal Year 9</div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <div style="text-align: center; padding: 8px 6px; opacity: 0.5;">
+                                    <div style="font-size: 11px; color: #A1A1AA; margin-bottom: 4px;">M</div>
+                                    <div style="font-size: 14px; color: #FAFAFA;">10</div>
+                                </div>
+                                <div style="text-align: center; padding: 8px 6px; opacity: 0.5;">
+                                    <div style="font-size: 11px; color: #A1A1AA; margin-bottom: 4px;">T</div>
+                                    <div style="font-size: 14px; color: #FAFAFA;">11</div>
+                                </div>
+                                <div style="text-align: center; padding: 8px 6px; opacity: 0.5;">
+                                    <div style="font-size: 11px; color: #A1A1AA; margin-bottom: 4px;">W</div>
+                                    <div style="font-size: 14px; color: #FAFAFA;">12</div>
+                                </div>
+                                <div class="clickable" style="text-align: center; padding: 8px 10px; background: #E5C158; border-radius: 12px;">
+                                    <div style="font-size: 11px; color: #0A0A0F; margin-bottom: 4px; font-weight: 600;">T</div>
+                                    <div style="font-size: 14px; color: #0A0A0F; font-weight: 700;">13</div>
+                                </div>
+                                <div class="clickable" style="text-align: center; padding: 8px 6px;">
+                                    <div style="font-size: 11px; color: #A1A1AA; margin-bottom: 4px;">F</div>
+                                    <div style="font-size: 14px; color: #FAFAFA;">14</div>
+                                </div>
+                                <div class="clickable" style="text-align: center; padding: 8px 6px;">
+                                    <div style="font-size: 11px; color: #A1A1AA; margin-bottom: 4px;">S</div>
+                                    <div style="font-size: 14px; color: #FAFAFA;">15</div>
+                                </div>
+                                <div class="clickable" style="text-align: center; padding: 8px 6px;">
+                                    <div style="font-size: 11px; color: #A1A1AA; margin-bottom: 4px;">S</div>
+                                    <div style="font-size: 14px; color: #FAFAFA;">16</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Quick Stats -->
+                        <div style="display: flex; gap: 12px; margin-bottom: 24px;">
+                            <div class="glass-card clickable" style="flex: 1; text-align: center; padding: 16px;">
+                                <div style="font-size: 24px; font-weight: 700; color: #E5C158;">12</div>
+                                <div style="font-size: 12px; color: #A1A1AA;">Entries</div>
+                            </div>
+                            <div class="glass-card clickable" style="flex: 1; text-align: center; padding: 16px;">
+                                <div style="font-size: 24px; font-weight: 700; color: #E5C158;">5</div>
+                                <div style="font-size: 12px; color: #A1A1AA;">Day Streak</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Journal Entries -->
+                        <div style="font-size: 17px; font-weight: 600; color: #FAFAFA; margin-bottom: 16px;">Recent Entries</div>
+                        
+                        <div class="glass-card clickable" style="margin-bottom: 12px; position: relative; overflow: hidden;">
+                            <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: #E5C158;"></div>
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; padding-left: 12px;">
+                                <div>
+                                    <div style="font-size: 13px; font-weight: 600; color: #E5C158;">Today, Mar 13</div>
+                                    <div style="font-size: 12px; color: #A1A1AA;">Personal Day 8 • Abundance</div>
+                                </div>
+                                <div style="font-size: 24px;">✨</div>
+                            </div>
+                            <div style="font-size: 15px; color: #E5E5E5; line-height: 1.5; padding-left: 12px;">
+                                Today I felt a strong sense of purpose. The energy of 8 is really helping me focus on my career goals. I had a breakthrough moment during my morning meditation...
+                            </div>
+                            <div style="display: flex; gap: 8px; margin-top: 12px; padding-left: 12px;">
+                                <span style="padding: 4px 10px; background: rgba(229,193,88,0.1); border-radius: 12px; font-size: 11px; color: #E5C158;">#career</span>
+                                <span style="padding: 4px 10px; background: rgba(229,193,88,0.1); border-radius: 12px; font-size: 11px; color: #E5C158;">#abundance</span>
+                            </div>
+                        </div>
+                        
+                        <div class="glass-card clickable" style="margin-bottom: 12px; position: relative; overflow: hidden;">
+                            <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: #9B59B6;"></div>
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; padding-left: 12px;">
+                                <div>
+                                    <div style="font-size: 13px; font-weight: 600; color: #FAFAFA;">Yesterday, Mar 12</div>
+                                    <div style="font-size: 12px; color: #A1A1AA;">Personal Day 7 • Spirituality</div>
+                                </div>
+                                <div style="font-size: 24px;">🌙</div>
+                            </div>
+                            <div style="font-size: 15px; color: #E5E5E5; line-height: 1.5; padding-left: 12px;">
+                                A day of introspection. I spent time meditating and reflecting on my spiritual journey. The number 7 energy felt mysterious and enlightening...
+                            </div>
+                        </div>
+                        
+                        <div class="glass-card clickable" style="position: relative; overflow: hidden;">
+                            <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: #3498DB;"></div>
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; padding-left: 12px;">
+                                <div>
+                                    <div style="font-size: 13px; font-weight: 600; color: #FAFAFA;">Mar 11</div>
+                                    <div style="font-size: 12px; color: #A1A1AA;">Personal Day 6 • Harmony</div>
+                                </div>
+                                <div style="font-size: 24px;">🏠</div>
+                            </div>
+                            <div style="font-size: 15px; color: #E5E5E5; line-height: 1.5; padding-left: 12px;">
+                                Focused on family and relationships today. The nurturing energy of 6 brought harmony to my home life...
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-bar">
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Today</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Chart</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Community</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Learn</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Profile</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MEDITATION VIEW -->
+    <div class="category">
+        <div class="category-title">Meditation Player</div>
+        <div class="screens-row">
+            <div class="screen-container">
+                <div class="screen-label">Meditation Player UI</div>
+                <div class="iphone">
+                    <div class="notch"></div>
+                    
+                    <div class="screen-content" style="background: linear-gradient(180deg, #0d0d1a 0%, #0A0A0F 100%);">
+                        <!-- Header -->
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px;">
+                            <div class="clickable" style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center;">↓</div>
+                            <div style="font-size: 13px; font-weight: 600; color: #A1A1AA; text-transform: uppercase; letter-spacing: 2px;">Now Playing</div>
+                            <div class="clickable" style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center;">⋯</div>
+                        </div>
+                        
+                        <!-- Album Art -->
+                        <div style="width: 280px; height: 280px; margin: 0 auto 40px; border-radius: 24px; background: linear-gradient(135deg, rgba(229,193,88,0.3), rgba(155,89,182,0.3), rgba(52,152,219,0.2)); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; box-shadow: 0 20px 60px rgba(229,193,88,0.2);">
+                            <div style="position: absolute; inset: 0; background: radial-gradient(circle at 30% 30%, rgba(229,193,88,0.4), transparent 50%);"></div>
+                            <div style="font-size: 120px; z-index: 1;">🧘</div>
+                            <!-- Animated rings -->
+                            <div class="pulse" style="position: absolute; inset: -20px; border: 2px solid rgba(229,193,88,0.3); border-radius: 50%;"></div>
+                            <div class="pulse" style="position: absolute; inset: -40px; border: 2px solid rgba(229,193,88,0.2); border-radius: 50%; animation-delay: 0.5s;"></div>
+                        </div>
+                        
+                        <!-- Track Info -->
+                        <div style="text-align: center; margin-bottom: 40px;">
+                            <div style="font-size: 24px; font-weight: 700; color: #FAFAFA; margin-bottom: 8px;">Cosmic Abundance</div>
+                            <div style="font-size: 15px; color: #A1A1AA;">Life Path 8 Meditation • 10 min</div>
+                            <div style="font-size: 13px; color: #E5C158; margin-top: 8px;">@Qodex_Numerology.il</div>
+                        </div>
+                        
+                        <!-- Waveform Visualization -->
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 4px; height: 40px; margin-bottom: 40px;">
+                            <div class="wave-bar" style="width: 4px; height: 20%; background: #E5C158; border-radius: 2px;"></div>
+                            <div class="wave-bar" style="width: 4px; height: 60%; background: #E5C158; border-radius: 2px;"></div>
+                            <div class="wave-bar" style="width: 4px; height: 100%; background: #E5C158; border-radius: 2px;"></div>
+                            <div class="wave-bar" style="width: 4px; height: 80%; background: #E5C158; border-radius: 2px;"></div>
+                            <div class="wave-bar" style="width: 4px; height: 40%; background: #E5C158; border-radius: 2px;"></div>
+                            <div class="wave-bar" style="width: 4px; height: 70%; background: #E5C158; border-radius: 2px;"></div>
+                            <div class="wave-bar" style="width: 4px; height: 30%; background: #E5C158; border-radius: 2px;"></div>
+                            <div class="wave-bar" style="width: 4px; height: 90%; background: #E5C158; border-radius: 2px;"></div>
+                            <div class="wave-bar" style="width: 4px; height: 50%; background: #E5C158; border-radius: 2px;"></div>
+                            <div class="wave-bar" style="width: 4px; height: 70%; background: #E5C158; border-radius: 2px;"></div>
+                            <div class="wave-bar" style="width: 4px; height: 40%; background: #E5C158; border-radius: 2px;"></div>
+                            <div class="wave-bar" style="width: 4px; height: 60%; background: #E5C158; border-radius: 2px;"></div>
+                            <div class="wave-bar" style="width: 4px; height: 80%; background: #E5C158; border-radius: 2px;"></div>
+                            <div class="wave-bar" style="width: 4px; height: 30%; background: #E5C158; border-radius: 2px;"></div>
+                            <div class="wave-bar" style="width: 4px; height: 50%; background: #E5C158; border-radius: 2px;"></div>
+                            <div class="wave-bar" style="width: 4px; height: 90%; background: #E5C158; border-radius: 2px;"></div>
+                            <div class="wave-bar" style="width: 4px; height: 40%; background: #E5C158; border-radius: 2px;"></div>
+                            <div class="wave-bar" style="width: 4px; height: 60%; background: #E5C158; border-radius: 2px;"></div>
+                        </div>
+                        
+                        <!-- Progress Bar -->
+                        <div style="margin-bottom: 12px;">
+                            <div style="height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden;">
+                                <div style="width: 35%; height: 100%; background: linear-gradient(90deg, #E5C158, #F4D03F); border-radius: 2px;"></div>
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; font-size: 12px; color: #A1A1AA; margin-bottom: 40px;">
+                            <span>3:30</span>
+                            <span>10:00</span>
+                        </div>
+                        
+                        <!-- Controls -->
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 40px;">
+                            <div class="clickable" style="font-size: 28px; color: #A1A1AA;">⏮</div>
+                            <div class="clickable" style="font-size: 24px; color: #A1A1AA;">−10</div>
+                            <div class="clickable" style="width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, #F4D03F, #E5C158); display: flex; align-items: center; justify-content: center; font-size: 32px; color: #0A0A0F; box-shadow: 0 8px 30px rgba(229,193,88,0.4);">⏸</div>
+                            <div class="clickable" style="font-size: 24px; color: #A1A1AA;">+10</div>
+                            <div class="clickable" style="font-size: 28px; color: #A1A1AA;">⏭</div>
+                        </div>
+                        
+                        <!-- Bottom Options -->
+                        <div style="display: flex; justify-content: space-around; margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.05);">
+                            <div class="clickable" style="text-align: center;">
+                                <div style="font-size: 20px; margin-bottom: 4px;">♡</div>
+                                <div style="font-size: 11px; color: #A1A1AA;">Favorite</div>
+                            </div>
+                            <div class="clickable" style="text-align: center;">
+                                <div style="font-size: 20px; margin-bottom: 4px;">↗</div>
+                                <div style="font-size: 11px; color: #A1A1AA;">Share</div>
+                            </div>
+                            <div class="clickable" style="text-align: center;">
+                                <div style="font-size: 20px; margin-bottom: 4px;">📝</div>
+                                <div style="font-size: 11px; color: #A1A1AA;">Notes</div>
+                            </div>
+                            <div class="clickable" style="text-align: center;">
+                                <div style="font-size: 20px; margin-bottom: 4px;">⏲</div>
+                                <div style="font-size: 11px; color: #A1A1AA;">Timer</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-bar">
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Today</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Chart</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Community</div></div>
+                        <div class="tab-item"><div class="tab-icon">◉</div><div style="font-size: 10px; color: #E5C158;">Learn</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Profile</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LEARN VIEW -->
+    <div class="category">
+        <div class="category-title">Learn View</div>
+        <div class="screens-row">
+            <div class="screen-container">
+                <div class="screen-label">Course Cards & Learning Hub</div>
+                <div class="iphone">
+                    <div class="notch"></div>
+                    
+                    <div class="screen-content">
+                        <!-- Header -->
+                        <div style="margin-bottom: 24px;">
+                            <div style="font-size: 28px; font-weight: 700; color: #FAFAFA;">Learn</div>
+                            <div style="font-size: 13px; color: #A1A1AA; margin-top: 4px;">@Qodex_Numerology.il</div>
+                        </div>
+                        
+                        <!-- Daily Wisdom Card -->
+                        <div class="glass-card clickable" style="margin-bottom: 24px; background: linear-gradient(135deg, rgba(229,193,88,0.15), rgba(155,89,182,0.1));">
+                            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                                <div style="font-size: 24px;">✨</div>
+                                <div style="font-size: 13px; font-weight: 600; color: #E5C158; text-transform: uppercase; letter-spacing: 1px;">Daily Wisdom</div>
+                            </div>
+                            <div style="font-size: 17px; font-style: italic; color: #E5E5E5; line-height: 1.6;">"The numbers are the Universal language offered by the deity to humans as confirmation of the truth."</div>
+                            <div style="font-size: 14px; color: #A1A1AA; margin-top: 12px;">— St. Augustine</div>
+                        </div>
+                        
+                        <!-- Category Tabs -->
+                        <div style="display: flex; gap: 8px; margin-bottom: 24px; overflow-x: auto; padding-bottom: 8px;">
+                            <div class="clickable" style="padding: 10px 20px; background: #E5C158; border-radius: 20px; font-size: 15px; font-weight: 600; color: #0A0A0F; white-space: nowrap;">All</div>
+                            <div class="clickable" style="padding: 10px 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; font-size: 15px; color: #FAFAFA; white-space: nowrap;">Basics</div>
+                            <div class="clickable" style="padding: 10px 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; font-size: 15px; color: #FAFAFA; white-space: nowrap;">Advanced</div>
+                            <div class="clickable" style="padding: 10px 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; font-size: 15px; color: #FAFAFA; white-space: nowrap;">Meditation</div>
+                        </div>
+                        
+                        <!-- Featured Course -->
+                        <div style="font-size: 20px; font-weight: 600; color: #FAFAFA; margin-bottom: 16px;">Featured Course</div>
+                        
+                        <div class="clickable" style="background: linear-gradient(135deg, rgba(229,193,88,0.2), rgba(155,89,182,0.2)); border-radius: 24px; padding: 24px; margin-bottom: 24px; position: relative; overflow: hidden;">
+                            <div style="position: absolute; top: -50%; right: -30%; width: 200px; height: 200px; background: radial-gradient(circle, rgba(229,193,88,0.3), transparent 70%);"></div>
+                            
+                            <div style="height: 140px; background: linear-gradient(135deg, rgba(229,193,88,0.4), rgba(155,89,182,0.3)); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; position: relative;">
+                                <div style="font-size: 64px;">🔮</div>
+                                <div style="position: absolute; top: 12px; right: 12px; padding: 6px 12px; background: rgba(0,0,0,0.4); border-radius: 20px; font-size: 11px; font-weight: 600; color: #FAFAFA; backdrop-filter: blur(10px);">
+                                    ★ 4.9
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                                <div style="font-size: 10px; font-weight: 700; color: #0A0A0F; background: #E5C158; padding: 4px 10px; border-radius: 4px;">FEATURED</div>
+                                <div style="font-size: 13px; color: #A1A1AA;">12 lessons • 2.5 hours</div>
+                            </div>
+                            
+                            <div style="font-size: 22px; font-weight: 700; color: #FAFAFA; margin-bottom: 8px;">Master Numbers Deep Dive</div>
+                            <div style="font-size: 15px; color: #A1A1AA; line-height: 1.5;">Understanding 11, 22, and 33 - the spiritual messengers</div>
+                            
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 20px;">
+                                <div style="display: flex; align-items: center; gap: -8px;">
+                                    <div style="width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, #E5C158, #F4D03F); display: flex; align-items: center; justify-content: center; font-size: 12px; color: #0A0A0F; font-weight: 600; border: 2px solid #0A0A0F;">1.2k</div>
+                                    <span style="font-size: 13px; color: #A1A1AA; margin-left: 8px;">students</span>
+                                </div>
+                                <div class="btn-primary" style="width: auto; padding: 12px 24px; font-size: 15px;">Start Learning</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Continue Learning -->
+                        <div style="font-size: 20px; font-weight: 600; color: #FAFAFA; margin-bottom: 16px;">Continue Learning</div>
+                        
+                        <div class="glass-card clickable" style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
+                            <div style="width: 64px; height: 64px; border-radius: 16px; background: linear-gradient(135deg, rgba(229,193,88,0.2), rgba(229,193,88,0.1)); display: flex; align-items: center; justify-content: center; font-size: 32px;">🎯</div>
+                            
+                            <div style="flex: 1;">
+                                <div style="font-size: 17px; font-weight: 600; color: #FAFAFA; margin-bottom: 4px;">Life Path Numbers</div>
+                                <div style="font-size: 14px; color: #A1A1AA; margin-bottom: 10px;">Lesson 3 of 7 • 45% complete</div>
+                                <div style="height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px;">
+                                    <div style="width: 45%; height: 100%; background: linear-gradient(90deg, #E5C158, #F4D03F); border-radius: 2px;"></div>
+                                </div>
+                            </div>
+                            
+                            <div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(229,193,88,0.1); display: flex; align-items: center; justify-content: center; font-size: 20px; color: #E5C158;">▶</div>
+                        </div>
+                        
+                        <!-- Popular Courses -->
+                        <div style="font-size: 20px; font-weight: 600; color: #FAFAFA; margin-bottom: 16px;">Popular Courses</div>
+                        
+                        <div style="display: flex; gap: 12px; overflow-x: auto; padding-bottom: 8px;">
+                            <div class="clickable" style="flex-shrink: 0; width: 160px; background: rgba(18,18,26,0.8); border-radius: 16px; padding: 16px; border: 1px solid rgba(255,255,255,0.06);">
+                                <div style="height: 80px; background: linear-gradient(135deg, rgba(231,76,60,0.3), rgba(231,76,60,0.1)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 36px; margin-bottom: 12px;">❤️</div>
+                                <div style="font-size: 15px; font-weight: 600; color: #FAFAFA; margin-bottom: 4px;">Soul Urge</div>
+                                <div style="font-size: 12px; color: #A1A1AA;">8 lessons</div>
+                            </div>
+                            
+                            <div class="clickable" style="flex-shrink: 0; width: 160px; background: rgba(18,18,26,0.8); border-radius: 16px; padding: 16px; border: 1px solid rgba(255,255,255,0.06);">
+                                <div style="height: 80px; background: linear-gradient(135deg, rgba(52,152,219,0.3), rgba(52,152,219,0.1)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 36px; margin-bottom: 12px;">💫</div>
+                                <div style="font-size: 15px; font-weight: 600; color: #FAFAFA; margin-bottom: 4px;">Expression</div>
+                                <div style="font-size: 12px; color: #A1A1AA;">6 lessons</div>
+                            </div>
+                            
+                            <div class="clickable" style="flex-shrink: 0; width: 160px; background: rgba(18,18,26,0.8); border-radius: 16px; padding: 16px; border: 1px solid rgba(255,255,255,0.06);">
+                                <div style="height: 80px; background: linear-gradient(135deg, rgba(155,89,182,0.3), rgba(155,89,182,0.1)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 36px; margin-bottom: 12px;">🔢</div>
+                                <div style="font-size: 15px; font-weight: 600; color: #FAFAFA; margin-bottom: 4px;">Pythagorean</div>
+                                <div style="font-size: 12px; color: #A1A1AA;">10 lessons</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-bar">
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Today</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Chart</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Community</div></div>
+                        <div class="tab-item"><div class="tab-icon">◉</div><div style="font-size: 10px; color: #E5C158;">Learn</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Profile</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEARCH VIEW -->
+    <div class="category">
+        <div class="category-title">Search View</div>
+        <div class="screens-row">
+            <div class="screen-container">
+                <div class="screen-label">Search with Recent & Trending</div>
+                <div class="iphone">
+                    <div class="notch"></div>
+                    
+                    <div class="screen-content">
+                        <!-- Header -->
+                        <div style="font-size: 28px; font-weight: 700; color: #FAFAFA; margin-bottom: 20px;">Search</div>
+                        
+                        <!-- Search Bar -->
+                        <div style="position: relative; margin-bottom: 28px;">
+                            <div style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); font-size: 18px; color: #A1A1AA;">🔍</div>
+                            <input type="text" placeholder="Search numerology topics..." style="width: 100%; padding: 16px 16px 16px 48px; background: rgba(18,18,26,0.8); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; color: #FAFAFA; font-size: 16px; outline: none; font-family: inherit;">
+                            <div class="clickable" style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); font-size: 18px; color: #E5C158;">🎙</div>
+                        </div>
+                        
+                        <!-- Quick Filters -->
+                        <div style="display: flex; gap: 8px; margin-bottom: 28px; overflow-x: auto; padding-bottom: 8px;">
+                            <div class="clickable" style="padding: 10px 18px; background: rgba(229,193,88,0.1); border: 1px solid rgba(229,193,88,0.3); border-radius: 20px; font-size: 14px; color: #E5C158; white-space: nowrap; display: flex; align-items: center; gap: 6px;">
+                                <span>📊</span> Charts
+                            </div>
+                            <div class="clickable" style="padding: 10px 18px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; font-size: 14px; color: #FAFAFA; white-space: nowrap; display: flex; align-items: center; gap: 6px;">
+                                <span>📚</span> Articles
+                            </div>
+                            <div class="clickable" style="padding: 10px 18px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; font-size: 14px; color: #FAFAFA; white-space: nowrap; display: flex; align-items: center; gap: 6px;">
+                                <span>🧘</span> Meditations
+                            </div>
+                            <div class="clickable" style="padding: 10px 18px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; font-size: 14px; color: #FAFAFA; white-space: nowrap; display: flex: align-items: center; gap: 6px;">
+                                <span>👥</span> People
+                            </div>
+                        </div>
+                        
+                        <!-- Recent Searches -->
+                        <div style="margin-bottom: 28px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                                <div style="font-size: 17px; font-weight: 600; color: #FAFAFA;">Recent Searches</div>
+                                <div class="clickable" style="font-size: 13px; color: #E5C158;">Clear All</div>
+                            </div>
+                            
+                            <div class="glass-card search-highlight clickable" style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px; padding: 14px 16px;">
+                                <div style="font-size: 18px; color: #A1A1AA;">🕐</div>
+                                <div style="flex: 1; font-size: 15px; color: #FAFAFA;">Life Path 7 meaning</div>
+                                <div style="font-size: 18px; color: #A1A1AA;">×</div>
+                            </div>
+                            
+                            <div class="glass-card search-highlight clickable" style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px; padding: 14px 16px;">
+                                <div style="font-size: 18px; color: #A1A1AA;">🕐</div>
+                                <div style="flex: 1; font-size: 15px; color: #FAFAFA;">Master number 11</div>
+                                <div style="font-size: 18px; color: #A1A1AA;">×</div>
+                            </div>
+                            
+                            <div class="glass-card search-highlight clickable" style="display: flex; align-items: center; gap: 12px; padding: 14px 16px;">
+                                <div style="font-size: 18px; color: #A1A1AA;">🕐</div>
+                                <div style="flex: 1; font-size: 15px; color: #FAFAFA;">Personal year 9</div>
+                                <div style="font-size: 18px; color: #A1A1AA;">×</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Trending Now -->
+                        <div style="margin-bottom: 28px;">
+                            <div style="font-size: 17px; font-weight: 600; color: #FAFAFA; margin-bottom: 16px;">🔥 Trending Now</div>
+                            
+                            <div class="clickable" style="display: flex; align-items: center; gap: 16px; padding: 16px; background: linear-gradient(90deg, rgba(229,193,88,0.1), transparent); border-radius: 16px; margin-bottom: 8px;">
+                                <div style="font-size: 24px; font-weight: 700; color: #E5C158;">1</div>
+                                <div style="flex: 1;">
+                                    <div style="font-size: 15px; font-weight: 600; color: #FAFAFA;">2026 Numerology Forecast</div>
+                                    <div style="font-size: 13px; color: #A1A1AA; margin-top: 2px;">15.2k searches</div>
+                                </div>
+                                <div style="font-size: 12px; color: #10B981; background: rgba(16,185,129,0.1); padding: 4px 8px; border-radius: 12px;">↗ 245%</div>
+                            </div>
+                            
+                            <div class="clickable" style="display: flex; align-items: center; gap: 16px; padding: 16px; background: linear-gradient(90deg, rgba(229,193,88,0.05), transparent); border-radius: 16px; margin-bottom: 8px;">
+                                <div style="font-size: 24px; font-weight: 700; color: #A1A1AA;">2</div>
+                                <div style="flex: 1;">
+                                    <div style="font-size: 15px; font-weight: 600; color: #FAFAFA;">Twin Flame Numbers</div>
+                                    <div style="font-size: 13px; color: #A1A1AA; margin-top: 2px;">12.8k searches</div>
+                                </div>
+                                <div style="font-size: 12px; color: #10B981; background: rgba(16,185,129,0.1); padding: 4px 8px; border-radius: 12px;">↗ 180%</div>
+                            </div>
+                            
+                            <div class="clickable" style="display: flex; align-items: center; gap: 16px; padding: 16px; background: linear-gradient(90deg, rgba(229,193,88,0.05), transparent); border-radius: 16px; margin-bottom: 8px;">
+                                <div style="font-size: 24px; font-weight: 700; color: #A1A1AA;">3</div>
+                                <div style="flex: 1;">
+                                    <div style="font-size: 15px; font-weight: 600; color: #FAFAFA;">Angel Number 1111</div>
+                                    <div style="font-size: 13px; color: #A1A1AA; margin-top: 2px;">10.5k searches</div>
+                                </div>
+                                <div style="font-size: 12px; color: #10B981; background: rgba(16,185,129,0.1); padding: 4px 8px; border-radius: 12px;">↗ 156%</div>
+                            </div>
+                            
+                            <div class="clickable" style="display: flex; align-items: center; gap: 16px; padding: 16px; background: linear-gradient(90deg, rgba(229,193,88,0.05), transparent); border-radius: 16px;">
+                                <div style="font-size: 24px; font-weight: 700; color: #A1A1AA;">4</div>
+                                <div style="flex: 1;">
+                                    <div style="font-size: 15px; font-weight: 600; color: #FAFAFA;">Name Analysis Guide</div>
+                                    <div style="font-size: 13px; color: #A1A1AA; margin-top: 2px;">8.3k searches</div>
+                                </div>
+                                <div style="font-size: 12px; color: #10B981; background: rgba(16,185,129,0.1); padding: 4px 8px; border-radius: 12px;">↗ 124%</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Popular Categories -->
+                        <div>
+                            <div style="font-size: 17px; font-weight: 600; color: #FAFAFA; margin-bottom: 16px;">Popular Categories</div>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                                <div class="clickable" style="padding: 20px; background: linear-gradient(135deg, rgba(229,193,88,0.15), rgba(229,193,88,0.05)); border-radius: 16px; text-align: center; border: 1px solid rgba(229,193,88,0.2);">
+                                    <div style="font-size: 32px; margin-bottom: 8px;">🔢</div>
+                                    <div style="font-size: 15px; font-weight: 600; color: #FAFAFA;">Core Numbers</div>
+                                    <div style="font-size: 12px; color: #A1A1AA; margin-top: 4px;">24 articles</div>
+                                </div>
+                                
+                                <div class="clickable" style="padding: 20px; background: rgba(18,18,26,0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; text-align: center;">
+                                    <div style="font-size: 32px; margin-bottom: 8px;">🧘</div>
+                                    <div style="font-size: 15px; font-weight: 600; color: #FAFAFA;">Meditations</div>
+                                    <div style="font-size: 12px; color: #A1A1AA; margin-top: 4px;">18 sessions</div>
+                                </div>
+                                
+                                <div class="clickable" style="padding: 20px; background: rgba(18,18,26,0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; text-align: center;">
+                                    <div style="font-size: 32px; margin-bottom: 8px;">✨</div>
+                                    <div style="font-size: 15px; font-weight: 600; color: #FAFAFA;">Compatibility</div>
+                                    <div style="font-size: 12px; color: #A1A1AA; margin-top: 4px;">12 guides</div>
+                                </div>
+                                
+                                <div class="clickable" style="padding: 20px; background: rgba(18,18,26,0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; text-align: center;">
+                                    <div style="font-size: 32px; margin-bottom: 8px;">🔮</div>
+                                    <div style="font-size: 15px; font-weight: 600; color: #FAFAFA;">Predictions</div>
+                                    <div style="font-size: 12px; color: #A1A1AA; margin-top: 4px;">8 forecasts</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-bar">
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Today</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Chart</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Community</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Learn</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Profile</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ACHIEVEMENTS VIEW -->
+    <div class="category">
+        <div class="category-title">Achievements Grid</div>
+        <div class="screens-row">
+            <div class="screen-container">
+                <div class="screen-label">Achievements & Badges</div>
+                <div class="iphone">
+                    <div class="notch"></div>
+                    
+                    <div class="screen-content">
+                        <!-- Header -->
+                        <div style="text-align: center; margin-bottom: 28px;">
+                            <div style="font-size: 13px; color: #E5C158; margin-bottom: 8px;">@Qodex_Numerology.il</div>
+                            <div style="font-size: 28px; font-weight: 700; color: #FAFAFA;">Achievements</div>
+                        </div>
+                        
+                        <!-- Stats Summary -->
+                        <div style="display: flex; gap: 12px; margin-bottom: 28px;">
+                            <div class="glass-card" style="flex: 1; text-align: center; padding: 20px;">
+                                <div style="font-size: 32px; font-weight: 700; color: #E5C158;">12</div>
+                                <div style="font-size: 12px; color: #A1A1AA; margin-top: 4px;">Unlocked</div>
+                            </div>
+                            <div class="glass-card" style="flex: 1; text-align: center; padding: 20px;">
+                                <div style="font-size: 32px; font-weight: 700; color: #FAFAFA;">24</div>
+                                <div style="font-size: 12px; color: #A1A1AA; margin-top: 4px;">Total</div>
+                            </div>
+                            <div class="glass-card" style="flex: 1; text-align: center; padding: 20px;">
+                                <div style="font-size: 32px; font-weight: 700; color: #9B59B6;">50%</div>
+                                <div style="font-size: 12px; color: #A1A1AA; margin-top: 4px;">Progress</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Level Progress -->
+                        <div class="glass-card" style="margin-bottom: 28px; text-align: center;">
+                            <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 16px;">
+                                <div style="width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #E5C158, #F4D03F); display: flex; align-items: center; justify-content: center; font-size: 28px;">👑</div>
+                                <div style="text-align: left;">
+                                    <div style="font-size: 18px; font-weight: 700; color: #FAFAFA;">Numerology Sage</div>
+                                    <div style="font-size: 13px; color: #A1A1AA;">Level 8 • 2,450 XP</div>
+                                </div>
+                            </div>
+                            <div style="height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
+                                <div style="width: 65%; height: 100%; background: linear-gradient(90deg, #E5C158, #F4D03F); border-radius: 4px;"></div>
+                            </div>
+                            <div style="font-size: 12px; color: #A1A1AA; margin-top: 8px;">550 XP to Level 9</div>
+                        </div>
+                        
+                        <!-- Categories -->
+                        <div style="display: flex; gap: 8px; margin-bottom: 24px; overflow-x: auto; padding-bottom: 8px;">
+                            <div class="clickable" style="padding: 10px 20px; background: #E5C158; border-radius: 20px; font-size: 14px; font-weight: 600; color: #0A0A0F; white-space: nowrap;">All</div>
+                            <div class="clickable" style="padding: 10px 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; font-size: 14px; color: #FAFAFA; white-space: nowrap;">Learning</div>
+                            <div class="clickable" style="padding: 10px 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; font-size: 14px; color: #FAFAFA; white-space: nowrap;">Social</div>
+                            <div class="clickable" style="padding: 10px 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; font-size: 14px; color: #FAFAFA; white-space: nowrap;">Streaks</div>
+                        </div>
+                        
+                        <!-- Achievements Grid -->
+                        <div style="font-size: 17px; font-weight: 600; color: #FAFAFA; margin-bottom: 16px;">Your Badges</div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;">
+                            <!-- Unlocked -->
+                            <div class="clickable" style="text-align: center; padding: 16px 8px; background: linear-gradient(135deg, rgba(229,193,88,0.2), rgba(229,193,88,0.05)); border-radius: 16px; border: 1px solid rgba(229,193,88,0.3);">
+                                <div style="font-size: 36px; margin-bottom: 8px;">🔥</div>
+                                <div style="font-size: 13px; font-weight: 600; color: #FAFAFA;">7 Day Streak</div>
+                                <div style="font-size: 10px; color: #E5C158; margin-top: 4px;">Unlocked</div>
+                            </div>
+                            
+                            <div class="clickable" style="text-align: center; padding: 16px 8px; background: linear-gradient(135deg, rgba(229,193,88,0.2), rgba(229,193,88,0.05)); border-radius: 16px; border: 1px solid rgba(229,193,88,0.3);">
+                                <div style="font-size: 36px; margin-bottom: 8px;">📚</div>
+                                <div style="font-size: 13px; font-weight: 600; color: #FAFAFA;">First Course</div>
+                                <div style="font-size: 10px; color: #E5C158; margin-top: 4px;">Unlocked</div>
+                            </div>
+                            
+                            <div class="clickable" style="text-align: center; padding: 16px 8px; background: linear-gradient(135deg, rgba(229,193,88,0.2), rgba(229,193,88,0.05)); border-radius: 16px; border: 1px solid rgba(229,193,88,0.3);">
+                                <div style="font-size: 36px; margin-bottom: 8px;">✍️</div>
+                                <div style="font-size: 13px; font-weight: 600; color: #FAFAFA;">Journaler</div>
+                                <div style="font-size: 10px; color: #E5C158; margin-top: 4px;">Unlocked</div>
+                            </div>
+                            
+                            <div class="clickable" style="text-align: center; padding: 16px 8px; background: linear-gradient(135deg, rgba(229,193,88,0.2), rgba(229,193,88,0.05)); border-radius: 16px; border: 1px solid rgba(229,193,88,0.3);">
+                                <div style="font-size: 36px; margin-bottom: 8px;">🧘</div>
+                                <div style="font-size: 13px; font-weight: 600; color: #FAFAFA;">Zen Master</div>
+                                <div style="font-size: 10px; color: #E5C158; margin-top: 4px;">Unlocked</div>
+                            </div>
+                            
+                            <div class="clickable" style="text-align: center; padding: 16px 8px; background: linear-gradient(135deg, rgba(229,193,88,0.2), rgba(229,193,88,0.05)); border-radius: 16px; border: 1px solid rgba(229,193,88,0.3);">
+                                <div style="font-size: 36px; margin-bottom: 8px;">🎯</div>
+                                <div style="font-size: 13px; font-weight: 600; color: #FAFAFA;">Chart Pro</div>
+                                <div style="font-size: 10px; color: #E5C158; margin-top: 4px;">Unlocked</div>
+                            </div>
+                            
+                            <div class="clickable" style="text-align: center; padding: 16px 8px; background: linear-gradient(135deg, rgba(229,193,88,0.2), rgba(229,193,88,0.05)); border-radius: 16px; border: 1px solid rgba(229,193,88,0.3);">
+                                <div style="font-size: 36px; margin-bottom: 8px;">💫</div>
+                                <div style="font-size: 13px; font-weight: 600; color: #FAFAFA;">Explorer</div>
+                                <div style="font-size: 10px; color: #E5C158; margin-top: 4px;">Unlocked</div>
+                            </div>
+                            
+                            <!-- Locked -->
+                            <div class="clickable" style="text-align: center; padding: 16px 8px; background: rgba(18,18,26,0.6); border-radius: 16px; border: 1px solid rgba(255,255,255,0.06); opacity: 0.5;">
+                                <div style="font-size: 36px; margin-bottom: 8px; filter: grayscale(1);">⚡</div>
+                                <div style="font-size: 13px; font-weight: 600; color: #A1A1AA;">30 Day Streak</div>
+                                <div style="font-size: 10px; color: #666; margin-top: 4px;">🔒 18 days left</div>
+                            </div>
+                            
+                            <div class="clickable" style="text-align: center; padding: 16px 8px; background: rgba(18,18,26,0.6); border-radius: 16px; border: 1px solid rgba(255,255,255,0.06); opacity: 0.5;">
+                                <div style="font-size: 36px; margin-bottom: 8px; filter: grayscale(1);">👥</div>
+                                <div style="font-size: 13px; font-weight: 600; color: #A1A1AA;">Socialite</div>
+                                <div style="font-size: 10px; color: #666; margin-top: 4px;">🔒 5 more friends</div>
+                            </div>
+                            
+                            <div class="clickable" style="text-align: center; padding: 16px 8px; background: rgba(18,18,26,0.6); border-radius: 16px; border: 1px solid rgba(255,255,255,0.06); opacity: 0.5;">
+                                <div style="font-size: 36px; margin-bottom: 8px; filter: grayscale(1);">🏆</div>
+                                <div style="font-size: 13px; font-weight: 600; color: #A1A1AA;">Grand Master</div>
+                                <div style="font-size: 10px; color: #666; margin-top: 4px;">🔒 Lvl 10 req</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Recent Achievement -->
+                        <div style="margin-top: 24px;">
+                            <div style="font-size: 17px; font-weight: 600; color: #FAFAFA; margin-bottom: 16px;">🏆 Recently Earned</div>
+                            
+                            <div class="glass-card" style="display: flex; align-items: center; gap: 16px; background: linear-gradient(90deg, rgba(229,193,88,0.1), transparent);">
+                                <div style="width: 56px; height: 56px; border-radius: 16px; background: linear-gradient(135deg, #E5C158, #F4D03F); display: flex; align-items: center; justify-content: center; font-size: 28px;">🔥</div>
+                                <div style="flex: 1;">
+                                    <div style="font-size: 17px; font-weight: 600; color: #FAFAFA;">Week Warrior</div>
+                                    <div style="font-size: 13px; color: #A1A1AA;">7 day meditation streak achieved!</div>
+                                    <div style="font-size: 11px; color: #E5C158; margin-top: 4px;">+150 XP • 2 days ago</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-bar">
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Today</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Chart</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Community</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Learn</div></div>
+                        <div class="tab-item"><div class="tab-icon">◉</div><div style="font-size: 10px; color: #E5C158;">Profile</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- STREAKS VIEW -->
+    <div class="category">
+        <div class="category-title">Streaks Calendar</div>
+        <div class="screens-row">
+            <div class="screen-container">
+                <div class="screen-label">Streaks Calendar View</div>
+                <div class="iphone">
+                    <div class="notch"></div>
+                    
+                    <div class="screen-content">
+                        <!-- Header -->
+                        <div style="text-align: center; margin-bottom: 24px;">
+                            <div style="font-size: 13px; color: #E5C158; margin-bottom: 4px;">@Qodex_Numerology.il</div>
+                            <div style="font-size: 28px; font-weight: 700; color: #FAFAFA;">Your Streaks</div>
+                        </div>
+                        
+                        <!-- Current Streak Card -->
+                        <div style="background: linear-gradient(135deg, rgba(229,193,88,0.25), rgba(155,89,182,0.15)); border-radius: 24px; padding: 28px; margin-bottom: 24px; position: relative; overflow: hidden; border: 1px solid rgba(229,193,88,0.3);">
+                            <div style="position: absolute; top: -50%; right: -30%; width: 200px; height: 200px; background: radial-gradient(circle, rgba(229,193,88,0.4), transparent 70%);"></div>
+                            
+                            <div style="display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 1;">
+                                <div>
+                                    <div style="font-size: 13px; font-weight: 600; color: #E5C158; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Current Streak</div>
+                                    <div style="font-size: 64px; font-weight: 700; color: #FAFAFA; line-height: 1;">12</div>
+                                    <div style="font-size: 17px; color: #A1A1AA; margin-top: 4px;">days in a row</div>
+                                </div>
+                                <div style="font-size: 80px;">🔥</div>
+                            </div>
+                            
+                            <div style="display: flex; gap: 8px; margin-top: 24px; position: relative; z-index: 1;">
+                                <div style="flex: 1; padding: 12px; background: rgba(0,0,0,0.2); border-radius: 12px; text-align: center;">
+                                    <div style="font-size: 20px; font-weight: 700; color: #FAFAFA;">45</div>
+                                    <div style="font-size: 11px; color: #A1A1AA;">Total Days</div>
+                                </div>
+                                <div style="flex: 1; padding: 12px; background: rgba(0,0,0,0.2); border-radius: 12px; text-align: center;">
+                                    <div style="font-size: 20px; font-weight: 700; color: #FAFAFA;">18</div>
+                                    <div style="font-size: 11px; color: #A1A1AA;">Best Streak</div>
+                                </div>
+                                <div style="flex: 1; padding: 12px; background: rgba(0,0,0,0.2); border-radius: 12px; text-align: center;">
+                                    <div style="font-size: 20px; font-weight: 700; color: #FAFAFA;">3</div>
+                                    <div style="font-size: 11px; color: #A1A1AA;">This Week</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Activity Type Tabs -->
+                        <div style="display: flex; gap: 8px; margin-bottom: 24px; overflow-x: auto; padding-bottom: 8px;">
+                            <div class="clickable" style="padding: 12px 20px; background: #E5C158; border-radius: 24px; font-size: 14px; font-weight: 600; color: #0A0A0F; white-space: nowrap; display: flex; align-items: center; gap: 6px;">
+                                <span>🧘</span> Meditation
+                            </div>
+                            <div class="clickable" style="padding: 12px 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; font-size: 14px; color: #FAFAFA; white-space: nowrap; display: flex; align-items: center; gap: 6px;">
+                                <span>✍️</span> Journal
+                            </div>
+                            <div class="clickable" style="padding: 12px 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; font-size: 14px; color: #FAFAFA; white-space: nowrap; display: flex; align-items: center; gap: 6px;">
+                                <span>📚</span> Learn
+                            </div>
+                        </div>
+                        
+                        <!-- Calendar -->
+                        <div class="glass-card" style="margin-bottom: 24px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                                <div style="font-size: 18px; font-weight: 600; color: #FAFAFA;">March 2026</div>
+                                <div style="display: flex; gap: 16px;">
+                                    <div class="clickable" style="font-size: 18px; color: #A1A1AA;">‹</div>
+                                    <div class="clickable" style="font-size: 18px; color: #A1A1AA;">›</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Days Header -->
+                            <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; margin-bottom: 12px;">
+                                <div style="text-align: center; padding: 8px;"><div style="font-size: 11px; font-weight: 600; color: #A1A1AA;">SUN</div></div>
+                                <div style="text-align: center; padding: 8px;"><div style="font-size: 11px; font-weight: 600; color: #A1A1AA;">MON</div></div>
+                                <div style="text-align: center; padding: 8px;"><div style="font-size: 11px; font-weight: 600; color: #A1A1AA;">TUE</div></div>
+                                <div style="text-align: center; padding: 8px;"><div style="font-size: 11px; font-weight: 600; color: #A1A1AA;">WED</div></div>
+                                <div style="text-align: center; padding: 8px;"><div style="font-size: 11px; font-weight: 600; color: #A1A1AA;">THU</div></div>
+                                <div style="text-align: center; padding: 8px;"><div style="font-size: 11px; font-weight: 600; color: #A1A1AA;">FRI</div></div>
+                                <div style="text-align: center; padding: 8px;"><div style="font-size: 11px; font-weight: 600; color: #A1A1AA;">SAT</div></div>
+                            </div>
+                            
+                            <!-- Calendar Days -->
+                            <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px;">
+                                <!-- Week 1 -->
+                                <div style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center;"><div style="font-size: 14px; color: #555;">23</div></div>
+                                <div style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center;"><div style="font-size: 14px; color: #555;">24</div></div>
+                                <div style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center;"><div style="font-size: 14px; color: #555;">25</div></div>
+                                <div style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center;"><div style="font-size: 14px; color: #555;">26</div></div>
+                                <div style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center;"><div style="font-size: 14px; color: #555;">27</div></div>
+                                <div style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(229,193,88,0.2);"><div style="font-size: 14px; color: #FAFAFA;">28</div></div>
+                                <div style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(229,193,88,0.2);"><div style="font-size: 14px; color: #FAFAFA;">1</div></div>
+                                
+                                <!-- Week 2 -->
+                                <div style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(229,193,88,0.2);"><div style="font-size: 14px; color: #FAFAFA;">2</div></div>
+                                <div style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center;"><div style="font-size: 14px; color: #FAFAFA;">3</div></div>
+                                <div style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(229,193,88,0.2);"><div style="font-size: 14px; color: #FAFAFA;">4</div></div>
+                                <div style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(229,193,88,0.2);"><div style="font-size: 14px; color: #FAFAFA;">5</div></div>
+                                <div style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(229,193,88,0.2);"><div style="font-size: 14px; color: #FAFAFA;">6</div></div>
+                                <div style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(229,193,88,0.2);"><div style="font-size: 14px; color: #FAFAFA;">7</div></div>
+                                <div style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(229,193,88,0.2);"><div style="font-size: 14px; color: #FAFAFA;">8</div></div>
+                                
+                                <!-- Week 3 -->
+                                <div style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(229,193,88,0.2);"><div style="font-size: 14px; color: #FAFAFA;">9</div></div>
+                                <div style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(229,193,88,0.2);"><div style="font-size: 14px; color: #FAFAFA;">10</div></div>
+                                <div style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(229,193,88,0.2);"><div style="font-size: 14px; color: #FAFAFA;">11</div></div>
+                                <div style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(229,193,88,0.2);"><div style="font-size: 14px; color: #FAFAFA;">12</div></div>
+                                <div style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #E5C158; box-shadow: 0 4px 20px rgba(229,193,88,0.4);"><div style="font-size: 14px; font-weight: 700; color: #0A0A0F;">13</div></div>
+                                <div style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center;"><div style="font-size: 14px; color: #FAFAFA;">14</div></div>
+                                <div style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center;"><div style="font-size: 14px; color: #FAFAFA;">15</div></div>
+                            </div>
+                            
+                            <!-- Legend -->
+                            <div style="display: flex; justify-content: center; gap: 24px; margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.05);">
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <div style="width: 12px; height: 12px; border-radius: 50%; background: #E5C158;"></div>
+                                    <div style="font-size: 12px; color: #A1A1AA;">Completed</div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <div style="width: 12px; height: 12px; border-radius: 50%; background: rgba(229,193,88,0.2);"></div>
+                                    <div style="font-size: 12px; color: #A1A1AA;">In Streak</div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <div style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,0.1);"></div>
+                                    <div style="font-size: 12px; color: #A1A1AA;">Missed</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Next Milestone -->
+                        <div class="glass-card">
+                            <div style="display: flex; align-items: center; gap: 16px;">
+                                <div style="width: 56px; height: 56px; border-radius: 16px; background: linear-gradient(135deg, rgba(155,89,182,0.3), rgba(155,89,182,0.1)); display: flex; align-items: center; justify-content: center; font-size: 28px;">🎯</div>
+                                <div style="flex: 1;">
+                                    <div style="font-size: 15px; font-weight: 600; color: #FAFAFA;">Next Milestone</div>
+                                    <div style="font-size: 13px; color: #A1A1AA; margin-top: 2px;">21 Day Streak - 9 days to go!</div>
+                                    <div style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; margin-top: 10px; overflow: hidden;">
+                                        <div style="width: 57%; height: 100%; background: linear-gradient(90deg, #9B59B6, #E5C158); border-radius: 3px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-bar">
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Today</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Chart</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Community</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Learn</div></div>
+                        <div class="tab-item"><div class="tab-icon">◉</div><div style="font-size: 10px; color: #E5C158;">Profile</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 80px; padding: 40px; color: #666; border-top: 1px solid rgba(255,255,255,0.1);">
+        <p style="font-size: 20px; margin-bottom: 8px;">QodeX Tools & Utilities</p>
+        <p style="font-size: 14px;">@Qodex_Numerology.il</p>
+    </div>
+
+    <script>
+        // Simple interactive scripts
+        document.querySelectorAll('.clickable').forEach(el => {
+            el.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 100);
+            });
+        });
+    </script>
+
+</body>
+</html>

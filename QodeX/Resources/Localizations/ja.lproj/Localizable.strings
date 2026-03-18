@@ -1,0 +1,40 @@
+/* Japanese Localization for QodeX iOS App */
+/* ja.lproj/Localizable.strings */
+
+// App Info
+"app_name" = "QodeX";
+
+// Welcome Screen
+"welcome_title" = "あなたの数字を発見";
+"welcome_subtitle" = "わずか2分で数秘術の秘密を解き明かす";
+"get_started" = "始める";
+
+// Tab Bar / Navigation
+"today_view" = "今日";
+"chart_view" = "チャート";
+"community_view" = "コミュニティ";
+"learn_view" = "学ぶ";
+"profile_view" = "プロフィール";
+
+// Numerology Terms
+"life_path" = "ライフパス";
+"expression_number" = "表現数";
+"soul_urge" = "魂の願い";
+
+// Features
+"daily_reading" = "デイリーリーディング";
+"power_hours" = "パワーアワー";
+"compatibility" = "相性";
+
+// Settings & Premium
+"settings" = "設定";
+"premium" = "プレミアム";
+"unlock_full" = "完全なチャートをアンロック";
+
+// Common Actions
+"continue" = "続ける";
+"save" = "保存";
+"share" = "共有";
+"done" = "完了";
+"cancel" = "キャンセル";
+"ok" = "OK";

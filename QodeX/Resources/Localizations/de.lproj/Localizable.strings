@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  QodeX
+  German (de) Localization
+*/
+
+"app_name" = "QodeX";
+"welcome_title" = "Entdecke deine Zahlen";
+"welcome_subtitle" = "Entschlüssele die Geheimnisse deiner Numerologie in nur 2 Minuten";
+"get_started" = "Loslegen";
+"today_view" = "Heute";
+"chart_view" = "Karte";
+"community_view" = "Community";
+"learn_view" = "Lernen";
+"profile_view" = "Profil";
+"life_path" = "Lebensweg";
+"expression_number" = "Ausdruckszahl";
+"soul_urge" = "Seelenverlangen";
+"daily_reading" = "Tägliche Lesung";
+"power_hours" = "Kraftstunden";
+"compatibility" = "Kompatibilität";
+"settings" = "Einstellungen";
+"premium" = "Premium";
+"unlock_full" = "Schalte deine vollständige Karte frei";
+"continue" = "Weiter";
+"save" = "Speichern";
+"share" = "Teilen";
+"done" = "Fertig";
+"cancel" = "Abbrechen";
+"ok" = "OK";

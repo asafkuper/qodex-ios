@@ -1,0 +1,259 @@
+{
+  "version": "1.0",
+  "type": "Expression Number",
+  "description": "Your Expression Number reveals your natural talents, abilities, and the path you're meant to express in this lifetime. Calculated from your full birth name, it represents the destiny you're here to fulfill.",
+  "meanings": {
+    "1": {
+      "number": 1,
+      "title": "The Pioneer",
+      "archetype": "Leader • Innovator • Trailblazer",
+      "essence": "You are here to lead, innovate, and forge new paths where none existed before.",
+      "traits": {
+        "core": ["Independent", "Ambitious", "Original", "Determined", "Self-reliant"],
+        "strengths": ["Natural leadership", "Innovative thinking", "Courage to stand alone", "Strong willpower", "Creative vision"],
+        "challenges": ["Can be domineering", "May struggle with collaboration", "Tendency toward self-criticism", "Impatience with others' pace", "Fear of vulnerability"]
+      },
+      "careerPaths": ["Entrepreneur", "CEO/Executive", "Inventor", "Consultant", "Director", "Politician", "Self-employed professional"],
+      "careerDescription": "You thrive in positions where you can call the shots and bring original ideas to life. The corner office—or your own company—suits you best.",
+      "relationships": {
+        "style": "You need a partner who respects your independence while offering emotional support. You lead in love, but must learn to share the throne.",
+        "compatibleWith": [2, 3, 5],
+        "challengesWith": [1, 8, 9],
+        "advice": "Practice listening as much as leading. Your strength attracts, but your vulnerability creates lasting bonds."
+      },
+      "famousExamples": ["Steve Jobs", "Napoleon Bonaparte", "Maya Angelou"],
+      "affirmation": "I lead with courage and create my own destiny. My unique vision is a gift to the world."
+    },
+    "2": {
+      "number": 2,
+      "title": "The Diplomat",
+      "archetype": "Peacemaker • Partner • Intuitive",
+      "essence": "You are here to bring harmony, cooperation, and understanding to the world through gentle persuasion.",
+      "traits": {
+        "core": ["Sensitive", "Intuitive", "Cooperative", "Diplomatic", "Supportive"],
+        "strengths": ["Exceptional listening", "Ability to mediate conflicts", "Deep empathy", "Patience", "Diplomatic finesse"],
+        "challenges": ["Overly sensitive to criticism", "May lose identity in relationships", "Tendency toward indecision", "Avoiding confrontation at all costs", "Internalizing others' emotions"]
+      },
+      "careerPaths": ["Diplomat", "Counselor", "Mediator", "Human Resources", "Nurse", "Teacher", "Artist", "Musician"],
+      "careerDescription": "You excel in roles requiring tact, patience, and the ability to bring people together. Your success comes through collaboration, not competition.",
+      "relationships": {
+        "style": "You are the ultimate partner—supportive, understanding, and deeply committed. You seek harmony above all else.",
+        "compatibleWith": [1, 2, 8],
+        "challengesWith": [5, 7],
+        "advice": "Your needs matter as much as your partner's. Speak your truth even when it disrupts the peace."
+      },
+      "famousExamples": ["Barack Obama", "Jennifer Aniston", "Prince William"],
+      "affirmation": "I bring harmony to every situation. My sensitivity is my strength, and my voice deserves to be heard."
+    },
+    "3": {
+      "number": 3,
+      "title": "The Creative",
+      "archetype": "Artist • Communicator • Optimist",
+      "essence": "You are here to uplift, inspire, and bring beauty into the world through creative self-expression.",
+      "traits": {
+        "core": ["Creative", "Expressive", "Optimistic", "Social", "Charming"],
+        "strengths": ["Natural charisma", "Artistic talent", "Gift of communication", "Infectious enthusiasm", "Ability to inspire joy"],
+        "challenges": ["Scattered energy", "Difficulty with discipline", "Tendency to escape reality", "Emotional sensitivity", "Fear of criticism"]
+      },
+      "careerPaths": ["Writer", "Actor", "Designer", "Musician", "Marketing", "Public Relations", "Teacher", "Social Media Influencer"],
+      "careerDescription": "Your ideal career combines creativity with connection. You need variety, expression, and an audience to thrive professionally.",
+      "relationships": {
+        "style": "You bring playfulness and passion to relationships. You need a partner who appreciates your creativity and doesn't try to contain your spirit.",
+        "compatibleWith": [1, 5, 6],
+        "challengesWith": [3, 4, 8],
+        "advice": "Depth requires staying power. Don't abandon ship when the initial excitement fades."
+      },
+      "famousExamples": ["Taylor Swift", "Chris Pratt", "Celine Dion"],
+      "affirmation": "My creativity flows freely and touches hearts. I express my truth with joy and authenticity."
+    },
+    "4": {
+      "number": 4,
+      "title": "The Builder",
+      "archetype": "Organizer • Foundation-Maker • Practical Visionary",
+      "essence": "You are here to build lasting structures, bring order to chaos, and create stability in an unstable world.",
+      "traits": {
+        "core": ["Practical", "Disciplined", "Reliable", "Detail-oriented", "Hardworking"],
+        "strengths": ["Exceptional organizational skills", "Ability to manifest ideas", "Unwavering determination", "Trustworthiness", "Methodical approach"],
+        "challenges": ["Rigidity in thinking", "Workaholic tendencies", "Resistance to change", "Perfectionism", "Difficulty relaxing"]
+      },
+      "careerPaths": ["Architect", "Engineer", "Accountant", "Project Manager", "Financial Planner", "Contractor", "IT Professional", "Operations Manager"],
+      "careerDescription": "You excel in careers requiring precision, planning, and the ability to see projects through to completion. You build what others only imagine.",
+      "relationships": {
+        "style": "You are loyal, dependable, and committed. You show love through actions rather than words and need a partner who values stability.",
+        "compatibleWith": [2, 6, 8],
+        "challengesWith": [3, 5, 9],
+        "advice": "Flexibility is strength too. Learn to bend without breaking, especially with those you love."
+      },
+      "famousExamples": ["Bill Gates", "Oprah Winfrey", "Beyoncé"],
+      "affirmation": "I build foundations that last. My dedication transforms dreams into reality."
+    },
+    "5": {
+      "number": 5,
+      "title": "The Freedom Seeker",
+      "archetype": "Adventurer • Change-Agent • Progressive",
+      "essence": "You are here to experience life fully, embrace change, and inspire others to break free from limitations.",
+      "traits": {
+        "core": ["Adventurous", "Versatile", "Curious", "Freedom-loving", "Adaptable"],
+        "strengths": ["Ability to thrive in change", "Natural charm", "Quick thinking", "Magnetic personality", "Fearless exploration"],
+        "challenges": ["Restlessness", "Difficulty with commitment", "Impulsiveness", "Scattered focus", "Sensory excess"]
+      },
+      "careerPaths": ["Travel Writer", "Entrepreneur", "Sales", "Journalist", "Consultant", "Event Planner", "Photographer", "Tour Guide"],
+      "careerDescription": "You need careers offering variety, freedom, and constant stimulation. Routine is your enemy; adventure is your fuel.",
+      "relationships": {
+        "style": "You bring excitement and spontaneity to relationships. You need a partner who gives you space to roam while keeping you grounded.",
+        "compatibleWith": [1, 3, 7],
+        "challengesWith": [2, 4, 6],
+        "advice": "Freedom and commitment aren't opposites. The right person will feel like liberation, not limitation."
+      },
+      "famousExamples": ["Angelina Jolie", "Mark Zuckerberg", "Johnny Depp"],
+      "affirmation": "I embrace change as my teacher. My freedom inspires others to live authentically."
+    },
+    "6": {
+      "number": 6,
+      "title": "The Nurturer",
+      "archetype": "Healer • Caregiver • Harmonizer",
+      "essence": "You are here to serve, heal, and create beauty through love, responsibility, and artistic expression.",
+      "traits": {
+        "core": ["Responsible", "Nurturing", "Artistic", "Protective", "Compassionate"],
+        "strengths": ["Deep capacity to love", "Natural healing abilities", "Aesthetic sensibility", "Strong sense of duty", "Ability to create harmony"],
+        "challenges": ["Tendency to over-give", "Perfectionism in relationships", "Difficulty saying no", "Taking on others' burdens", "Self-sacrifice"]
+      },
+      "careerPaths": ["Doctor", "Therapist", "Teacher", "Interior Designer", "Chef", "Social Worker", "Counselor", "Non-profit Director"],
+      "careerDescription": "You thrive in roles where you can care for others, create beauty, or restore balance. Your work should feel like love made visible.",
+      "relationships": {
+        "style": "You are the heart of any relationship—devoted, protective, and deeply loving. You create homes, not just houses.",
+        "compatibleWith": [2, 3, 9],
+        "challengesWith": [1, 5, 7],
+        "advice": "You cannot pour from an empty cup. Self-care isn't selfish—it's necessary for you to give your best."
+      },
+      "famousExamples": ["Mother Teresa", "John Lennon", "Meryl Streep"],
+      "affirmation": "I nurture the world with my love. My care creates healing and beauty everywhere I go."
+    },
+    "7": {
+      "number": 7,
+      "title": "The Seeker",
+      "archetype": "Mystic • Analyst • Truth-Hunter",
+      "essence": "You are here to uncover hidden truths, dive deep into mysteries, and bridge the material and spiritual worlds.",
+      "traits": {
+        "core": ["Analytical", "Spiritual", "Introspective", "Intellectual", "Perceptive"],
+        "strengths": ["Exceptional research abilities", "Deep intuition", "Intellectual depth", "Spiritual awareness", "Ability to see patterns"],
+        "challenges": ["Social isolation", "Over-analysis paralysis", "Difficulty with superficiality", "Secrecy", "Trust issues"]
+      },
+      "careerPaths": ["Researcher", "Scientist", "Philosopher", "Psychologist", "Detective", "Spiritual Teacher", "Data Analyst", "Investigative Journalist"],
+      "careerDescription": "You excel in roles requiring deep thinking, investigation, and the pursuit of truth. Surface-level work drains you; meaningful questions energize you.",
+      "relationships": {
+        "style": "You need intellectual and spiritual connection above all. Small talk bores you; soul talks sustain you.",
+        "compatibleWith": [3, 5, 7],
+        "challengesWith": [2, 4, 6],
+        "advice": "Connection requires presence, not just analysis. Let others see your heart, not just your mind."
+      },
+      "famousExamples": ["Albert Einstein", "Stephen Hawking", "Princess Diana"],
+      "affirmation": "I seek truth and find wisdom. My depth is a gift that illuminates the path for others."
+    },
+    "8": {
+      "number": 8,
+      "title": "The Powerhouse",
+      "archetype": "Achiever • Executive • Wealth-Builder",
+      "essence": "You are here to master the material world, demonstrate the power of integrity, and create abundance through ethical leadership.",
+      "traits": {
+        "core": ["Ambitious", "Authoritative", "Efficient", "Goal-oriented", "Determined"],
+        "strengths": ["Natural business acumen", "Ability to manifest wealth", "Executive presence", "Strategic thinking", "Resilience"],
+        "challenges": ["Work-life imbalance", "Material obsession", "Control issues", "Impatience with weakness", "Karmic intensity"]
+      },
+      "careerPaths": ["CEO", "Investment Banker", "Real Estate Developer", "Entrepreneur", "Politician", "Lawyer", "Executive Coach", "Venture Capitalist"],
+      "careerDescription": "You're built for big business, high stakes, and positions of authority. Your challenge is achieving success without sacrificing your soul.",
+      "relationships": {
+        "style": "You approach relationships with the same intensity you bring to business. You need a partner who can handle your power and keep you human.",
+        "compatibleWith": [2, 4, 6],
+        "challengesWith": [1, 8, 9],
+        "advice": "True power includes vulnerability. Your heart is your greatest asset, not a liability."
+      },
+      "famousExamples": ["Warren Buffett", "Paul McCartney", "Sandra Bullock"],
+      "affirmation": "I create abundance with integrity. My power serves the highest good of all."
+    },
+    "9": {
+      "number": 9,
+      "title": "The Humanitarian",
+      "archetype": "Universalist • Idealist • Old Soul",
+      "essence": "You are here to serve humanity, complete karmic cycles, and demonstrate the power of unconditional love.",
+      "traits": {
+        "core": ["Compassionate", "Idealistic", "Creative", "Selfless", "Wise"],
+        "strengths": ["Global perspective", "Artistic talent", "Deep empathy for suffering", "Ability to inspire", "Completion energy"],
+        "challenges": ["Difficulty letting go", "Martyr tendencies", "Romantic idealism", "Disappointment with reality", "Boundary issues"]
+      },
+      "careerPaths": ["Humanitarian Worker", "Artist", "Counselor", "Writer", "Environmental Activist", "Diplomat", "Healer", "Non-profit Founder"],
+      "careerDescription": "You need work that serves a higher purpose. Making money for its own sake feels empty; making a difference feels like destiny.",
+      "relationships": {
+        "style": "You love deeply and universally. You seek soul connections that transcend the ordinary and often feel like you've known partners before.",
+        "compatibleWith": [3, 6, 9],
+        "challengesWith": [4, 7, 8],
+        "advice": "Not everyone is ready for your depth. Choose partners who can meet you where you are, not where you hope they'll be."
+      },
+      "famousExamples": ["Gandhi", "Morgan Freeman", "Whitney Houston"],
+      "affirmation": "I serve humanity with an open heart. My love transcends boundaries and heals the world."
+    },
+    "11": {
+      "number": 11,
+      "title": "The Illuminator",
+      "archetype": "Master Intuitive • Spiritual Messenger • Visionary",
+      "essence": "You are here to illuminate spiritual truths, inspire higher consciousness, and bridge the visible and invisible worlds.",
+      "traits": {
+        "core": ["Intuitive", "Inspiring", "Sensitive", "Visionary", "Charismatic"],
+        "strengths": ["Powerful intuition", "Ability to inspire masses", "Spiritual insight", "Creative genius", "Healing presence"],
+        "challenges": ["Nervous tension", "Extreme sensitivity", "Pressure to perform", "Self-doubt", "Difficulty with practical matters"]
+      },
+      "careerPaths": ["Spiritual Teacher", "Inventor", "Artist", "Psychic/Medium", "Motivational Speaker", "Healer", "Writer", "Innovator"],
+      "careerDescription": "You have a sacred mission that goes beyond personal success. Your career should inspire, heal, or illuminate truth for others.",
+      "relationships": {
+        "style": "You need partners who understand your intensity and spiritual nature. Casual connections feel empty; soul bonds feel necessary.",
+        "compatibleWith": [2, 4, 8],
+        "challengesWith": [1, 5, 7],
+        "advice": "Your sensitivity is your gift, not your weakness. The right people will honor your depth without exploiting it."
+      },
+      "famousExamples": ["Wolfgang Amadeus Mozart", "Edgar Allan Poe", "Michelle Obama"],
+      "affirmation": "I am a channel for divine wisdom. My presence illuminates the path for others."
+    },
+    "22": {
+      "number": 22,
+      "title": "The Master Builder",
+      "archetype": "Master Manifestor • System Architect • World-Changer",
+      "essence": "You are here to build structures that serve humanity, transform visionary ideas into tangible reality, and demonstrate what's possible when spiritual insight meets practical action.",
+      "traits": {
+        "core": ["Visionary", "Practical", "Powerful", "Systematic", "Influential"],
+        "strengths": ["Ability to manifest big dreams", "Organizational mastery", "Global perspective", "Natural leadership", "Unshakeable determination"],
+        "challenges": ["Overwhelming responsibility", "Perfectionism", "Fear of failure", "Work obsession", "Difficulty delegating"]
+      },
+      "careerPaths": ["CEO of major corporation", "Architect", "Urban Planner", "Philanthropist", "Social Entrepreneur", "Diplomat", "Infrastructure Developer", "Systems Designer"],
+      "careerDescription": "You are designed for large-scale impact. Your career should build something that outlasts you and serves generations.",
+      "relationships": {
+        "style": "You need partners who understand your mission and won't try to shrink your vision. You build empires; your relationships should support that.",
+        "compatibleWith": [4, 6, 8],
+        "challengesWith": [3, 5, 9],
+        "advice": "Even master builders need rest. Let your loved ones remind you that you're human, not just a force of nature."
+      },
+      "famousExamples": ["Bill Gates", "Oprah Winfrey", "Richard Branson"],
+      "affirmation": "I build what others think impossible. My work serves the world and stands the test of time."
+    },
+    "33": {
+      "number": 33,
+      "title": "The Master Teacher",
+      "archetype": "Master Nurturer • Christ Consciousness • Universal Parent",
+      "essence": "You are here to demonstrate unconditional love, teach through compassionate example, and raise the consciousness of humanity through service.",
+      "traits": {
+        "core": ["Compassionate", "Wise", "Selfless", "Healing", "Nurturing"],
+        "strengths": ["Unconditional love", "Natural teaching ability", "Profound healing presence", "Emotional wisdom", "Ability to see divine potential in all"],
+        "challenges": ["Sacrificing self for others", "Taking on too much responsibility", "Difficulty with boundaries", "Emotional overwhelm", "Perfectionism in giving"]
+      },
+      "careerPaths": ["Spiritual Leader", "Healer", "Teacher", "Counselor", "Humanitarian", "Parent/Homemaker", "Nurse", "Therapist", "Religious Figure"],
+      "careerDescription": "Your career is your ministry, whatever form it takes. You are here to love, teach, and heal—whether in a classroom, a temple, or a home.",
+      "relationships": {
+        "style": "You love like a force of nature—completely, unconditionally, and often without expectation of return. You are everyone's safe harbor.",
+        "compatibleWith": [3, 6, 9],
+        "challengesWith": [1, 5, 8],
+        "advice": "You cannot save everyone, and not everyone wants to be saved. Save yourself first, then offer your overflow."
+      },
+      "famousExamples": ["Dalai Lama", "Mother Teresa", "Mister Rogers"],
+      "affirmation": "I teach through love and serve through compassion. My presence is healing for the world."
+    }
+  }
+}

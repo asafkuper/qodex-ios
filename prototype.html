@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>QodeX - Interactive Prototype</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        
+        .phone-frame {
+            width: 390px;
+            height: 844px;
+            background: #0A0A0F;
+            border-radius: 50px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.8);
+        }
+        
+        .notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 35px;
+            background: #0A0A0F;
+            border-radius: 0 0 25px 25px;
+            z-index: 1000;
+        }
+        
+        .screen {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            overflow-y: auto;
+            padding-top: 50px;
+            padding-bottom: 30px;
+        }
+        
+        .screen.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .screen.slide-left {
+            transform: translateX(-100%);
+        }
+        
+        .screen.slide-right {
+            transform: translateX(100%);
+        }
+        
+        /* Colors */
+        .cosmic-black { background: #0A0A0F; }
+        .deep-void { background: #12121A; }
+        .gold { color: #D4AF37; }
+        .gold-bg { background: #D4AF37; }
+        .white { color: #FFFFFF; }
+        .stardust { color: #8B8B9E; }
+        .mystic-purple { color: #6B4EE6; }
+        .cosmic-teal { color: #00D4AA; }
+        .rose { color: #E85D75; }
+        
+        /* Typography */
+        h1 { font-size: 32px; font-weight: 700; }
+        h2 { font-size: 24px; font-weight: 600; }
+        h3 { font-size: 20px; font-weight: 600; }
+        p { font-size: 16px; line-height: 1.5; }
+        .caption { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+        .small { font-size: 14px; }
+        
+        /* Components */
+        .btn {
+            width: 100%;
+            height: 56px;
+            border: none;
+            border-radius: 16px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+        
+        .btn:active { transform: scale(0.98); }
+        .btn-primary { background: #D4AF37; color: #0A0A0F; }
+        .btn-secondary { background: #12121A; color: #FFFFFF; }
+        
+        .card {
+            background: #12121A;
+            border-radius: 16px;
+            padding: 16px;
+            margin: 0 20px 12px;
+        }
+        
+        .input {
+            width: calc(100% - 40px);
+            height: 50px;
+            background: #12121A;
+            border: none;
+            border-radius: 12px;
+            padding: 0 16px;
+            color: #FFFFFF;
+            font-size: 16px;
+            margin: 0 20px 12px;
+        }
+        
+        .input::placeholder { color: #8B8B9E; }
+        
+        /* Animations */
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.1); opacity: 0.5; }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-breathe { animation: breathe 3s ease-in-out infinite; }
+        .animate-pulse { animation: pulse 2s ease-in-out infinite; }
+        .animate-fade-in { animation: fadeIn 0.5s ease-out; }
+        
+        /* Screen 1: Welcome */
+        .welcome-logo {
+            width: 120px;
+            height: 120px;
+            margin: 150px auto 40px;
+            position: relative;
+        }
+        
+        .welcome-ring {
+            position: absolute;
+            border: 1px solid rgba(212,175,55,0.3);
+            border-radius: 50%;
+        }
+        
+        .welcome-ring:nth-child(1) { width: 120px; height: 120px; top: 0; left: 0; animation: breathe 3s ease-in-out infinite; }
+        .welcome-ring:nth-child(2) { width: 100px; height: 100px; top: 10px; left: 10px; animation: breathe 3s ease-in-out infinite 0.5s; }
+        .welcome-ring:nth-child(3) { width: 80px; height: 80px; top: 20px; left: 20px; animation: breathe 3s ease-in-out infinite 1s; }
+        
+        .hexagon {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }
+        
+        /* Screen 2: Birth Date */
+        .progress-bar {
+            height: 4px;
+            background: #12121A;
+            border-radius: 2px;
+            margin: 20px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: #D4AF37;
+            width: 30%;
+            border-radius: 2px;
+            transition: width 0.3s;
+        }
+        
+        /* Screen 3: Result */
+        .result-number {
+            font-size: 120px;
+            font-weight: 700;
+            color: #D4AF37;
+            text-align: center;
+            margin: 60px 0 20px;
+            text-shadow: 0 0 60px rgba(212,175,55,0.3);
+        }
+        
+        /* Screen 4: Dashboard */
+        .daily-qode-card {
+            background: #12121A;
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: 20px;
+            padding: 20px;
+            margin: 0 20px 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .daily-qode-number {
+            font-size: 72px;
+            font-weight: 700;
+            color: #D4AF37;
+            margin-right: 20px;
+        }
+        
+        .quick-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin: 0 20px;
+        }
+        
+        .quick-action {
+            background: #12121A;
+            border-radius: 16px;
+            padding: 16px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .quick-action:active { transform: scale(0.98); }
+        
+        /* Screen 5: Calculator */
+        .result-card {
+            background: #12121A;
+            border-radius: 16px;
+            padding: 20px;
+            margin: 0 20px 12px;
+            border-left: 3px solid;
+        }
+        
+        .result-card.purple { border-color: #6B4EE6; }
+        .result-card.teal { border-color: #00D4AA; }
+        .result-card.gold { border-color: #D4AF37; }
+        
+        .number-circle {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 700;
+            margin-right: 16px;
+        }
+        
+        /* Screen 6: Community */
+        .tab-bar {
+            display: flex;
+            padding: 0 20px;
+            border-bottom: 1px solid #12121A;
+            margin-bottom: 16px;
+        }
+        
+        .tab {
+            padding: 12px 16px;
+            color: #8B8B9E;
+            font-size: 14px;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        
+        .tab.active { color: #D4AF37; border-color: #D4AF37; }
+        
+        .topic-card {
+            background: #12121A;
+            border-radius: 12px;
+            padding: 16px;
+            margin: 0 20px 12px;
+            cursor: pointer;
+        }
+        
+        /* Screen 7: Paywall */
+        .tier-card {
+            background: #12121A;
+            border-radius: 16px;
+            padding: 16px;
+            margin: 0 20px 12px;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .tier-card.popular { border: 2px solid #D4AF37; }
+        
+        .popular-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: #D4AF37;
+            color: #0A0A0F;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 700;
+        }
+        
+        /* Screen 8: Journal */
+        .calendar-strip {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            margin-bottom: 20px;
+        }
+        
+        .day-cell {
+            width: 60px;
+            height: 80px;
+            background: #12121A;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        
+        .day-cell.active { background: #D4AF37; }
+        .day-cell.active .day-name, .day-cell.active .day-num { color: #0A0A0F; }
+        
+        .day-name { font-size: 12px; color: #8B8B9E; margin-bottom: 4px; }
+        .day-num { font-size: 20px; font-weight: 600; color: #FFFFFF; }
+        
+        /* Screen 9: Challenges */
+        .leaderboard-row {
+            background: #12121A;
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin: 0 20px 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .rank { font-size: 16px; font-weight: 600; width: 30px; }
+        .rank.gold { color: #D4AF37; }
+        
+        /* Screen 10: Profile */
+        .stat-card {
+            background: #12121A;
+            border-radius: 16px;
+            padding: 16px;
+            text-align: center;
+        }
+        
+        .stat-value { font-size: 28px; font-weight: 700; color: #FFFFFF; }
+        .stat-label { font-size: 12px; color: #8B8B9E; margin-top: 4px; }
+        
+        .menu-item {
+            background: #12121A;
+            border-radius: 12px;
+            padding: 16px;
+            margin: 0 20px 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+        
+        /* Hide scrollbar */
+        .screen::-webkit-scrollbar { display: none; }
+        .screen { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body>
+    <div class="phone-frame">
+        <div class="notch"></div>
+        
+        <!-- Screen 1: Welcome -->
+        <div class="screen active" id="screen-welcome">
+            <div style="display: flex; flex-direction: column; align-items: center; padding: 40px 20px; height: 100%;">
+                <div class="welcome-logo">
+                    <div class="welcome-ring"></div>
+                    <div class="welcome-ring"></div>
+                    <div class="welcome-ring"></div>
+                    <svg class="hexagon" viewBox="0 0 100 100">
+                        <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" fill="none" stroke="#D4AF37" stroke-width="2"/>
+                    </svg>
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 40px; font-weight: 700; color: #D4AF37;">Q</div>
+                </div>
+                
+                <h1 class="white" style="margin-bottom: 8px;">QodeX</h1>
+                <p class="caption gold" style="margin-bottom: 60px;">INNER CIRCLE</p>
+                
+                <p class="stardust" style="text-align: center; margin-bottom: auto; padding: 0 20px;">
+                    Decode the energetic patterns that shape your life
+                </p>
+                
+                <button class="btn btn-primary" onclick="goTo('birthdate')">Begin Your Journey</button>
+                <button class="btn btn-secondary" style="margin-top: 12px; background: transparent; color: #8B8B9E;">I already have an account</button>
+            </div>
+        </div>
+        
+        <!-- Screen 2: Birth Date -->
+        <div class="screen" id="screen-birthdate">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            
+            <div style="padding: 40px 20px;">
+                <h2 class="white" style="margin-bottom: 8px;">When were you born?</h2>
+                <p class="stardust" style="margin-bottom: 40px;">This reveals your Life Path number</p>
+                
+                <div style="background: #12121A; border-radius: 12px; padding: 40px; text-align: center; margin-bottom: 40px;">
+                    <p class="white" style="font-size: 18px; margin-bottom: 20px;">March 2026</p>
+                    <p class="gold" style="font-size: 72px; font-weight: 700;">8</p>
+                    <div style="display: flex; justify-content: center; gap: 8px; margin-top: 20px;">
+                        <span class="stardust">6</span>
+                        <span class="gold" style="font-weight: 600;">7</span>
+                        <span class="white" style="font-weight: 600;">8</span>
+                        <span class="stardust">9</span>
+                        <span class="stardust">10</span>
+                    </div>
+                </div>
+                
+                <button class="btn btn-primary" onclick="goTo('result')">Continue</button>
+            </div>
+        </div>
+        
+        <!-- Screen 3: First Result -->
+        <div class="screen" id="screen-result">
+            <div style="padding: 40px 20px; text-align: center;">
+                <div class="result-number animate-pulse">7</div>
+                
+                <h2 class="white" style="margin-bottom: 8px;">You are a Life Path 7</h2>
+                <p class="gold" style="font-size: 18px; margin-bottom: 20px;">The Seeker</p>
+                
+                <p class="stardust" style="margin-bottom: 60px; padding: 0 20px;">
+                    You have a natural gift for analysis and spiritual seeking. Your path is one of deep introspection and truth.
+                </p>
+                
+                <p class="stardust" style="margin-bottom: 20px;">Join 2,800+ seekers who discovered their Qode</p>
+                
+                <button class="btn btn-primary" onclick="goTo('dashboard')">See Your Full Chart</button>
+            </div>
+        </div>
+        
+        <!-- Screen 4: Dashboard -->
+        <div class="screen" id="screen-dashboard">
+            <div style="padding: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <div>
+                        <p class="stardust small">Welcome back,</p>
+                        <h3 class="white">Seeker</h3>
+                    </div>
+                    <div style="width: 48px; height: 48px; background: #12121A; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <span class="gold" style="font-weight: 600;">S</span>
+                    </div>
+                </div>
+                
+                <div class="daily-qode-card" onclick="goTo('calculator')">
+                    <div class="daily-qode-number">7</div>
+                    <div>
+                        <p class="white" style="font-weight: 600; margin-bottom: 4px;">Today's Qode</p>
+                        <p class="stardust small">The Seeker</p>
+                        <p class="stardust small">A day for introspection</p>
+                    </div>
+                    <span class="gold" style="margin-left: auto; font-size: 20px;">✦</span>
+                </div>
+                
+                <div class="quick-actions">
+                    <div class="quick-action" onclick="goTo('calculator')">
+                        <span class="mystic-purple" style="font-size: 24px;">◉</span>
+                        <p class="white" style="margin-top: 8px; font-weight: 500;">My Qode</p>
+                    </div>
+                    <div class="quick-action">
+                        <span class="cosmic-teal" style="font-size: 24px;">📖</span>
+                        <p class="white" style="margin-top: 8px; font-weight: 500;">Teachings</p>
+                    </div>
+                    <div class="quick-action">
+                        <span class="gold" style="font-size: 24px;">▶</span>
+                        <p class="white" style="margin-top: 8px; font-weight: 500;">Live</p>
+                    </div>
+                    <div class="quick-action" onclick="goTo('community')">
+                        <span class="rose" style="font-size: 24px;">👥</span>
+                        <p class="white" style="margin-top: 8px; font-weight: 500;">Community</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 24px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                        <h3 class="white">Recent Teachings</h3>
+                        <span class="gold small">See All</span>
+                    </div>
+                    
+                    <div class="card" style="display: flex; align-items: center; margin-bottom: 12px;">
+                        <div style="width: 60px; height: 60px; background: #1E1E2E; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 16px;">
+                            <span class="gold">▶</span>
+                        </div>
+                        <div style="flex: 1;">
+                            <p class="white" style="font-weight: 500;">The Master Numbers <span style="background: #D4AF37; color: #0A0A0F; padding: 2px 6px; border-radius: 4px; font-size: 10px; margin-left: 8px;">NEW</span></p>
+                            <p class="stardust small">45 min</p>
+                        </div>
+                        <span class="stardust">›</span>
+                    </div>
+                    
+                    <div class="card" style="display: flex; align-items: center;">
+                        <div style="width: 60px; height: 60px; background: #1E1E2E; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 16px;">
+                            <span class="gold">▶</span>
+                        </div>
+                        <div style="flex: 1;">
+                            <p class="white" style="font-weight: 500;">Decoding Your Life Path</p>
+                            <p class="stardust small">32 min</p>
+                        </div>
+                        <span class="stardust">›</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Screen 5: Calculator -->
+        <div class="screen" id="screen-calculator">
+            <div style="padding: 20px;">
+                <h2 class="white" style="text-align: center; margin-bottom: 8px;">Qode Calculator</h2>
+                <p class="stardust" style="text-align: center; margin-bottom: 30px;">Discover your energetic blueprint</p>
+                
+                <p class="caption stardust" style="margin-bottom: 8px; margin-left: 20px;">BIRTH DATE</p>
+                <input type="text" class="input" value="March 8, 1990" readonly>
+                
+                <p class="caption stardust" style="margin-bottom: 8px; margin-left: 20px;">FULL NAME AT BIRTH</p>
+                <input type="text" class="input" value="Shani Ben-David" readonly>
+                
+                <button class="btn btn-primary" style="margin: 20px;">✦ Decode My Qode</button>
+                
+                <div class="result-card purple" style="display: flex; align-items: center;">
+                    <div class="number-circle" style="background: rgba(107,78,230,0.2); color: #6B4EE6;">7</div>
+                    <div>
+                        <p class="white" style="font-weight: 600;">Life Path Number</p>
+                        <p class="stardust small">The Seeker. Deeply analytical.</p>
+                    </div>
+                </div>
+                
+                <div class="result-card teal" style="display: flex; align-items: center;">
+                    <div class="number-circle" style="background: rgba(0,212,170,0.2); color: #00D4AA;">3</div>
+                    <div>
+                        <p class="white" style="font-weight: 600;">Expression Number</p>
+                        <p class="stardust small">The Creative. Self-expression.</p>
+                    </div>
+                </div>
+                
+                <div class="result-card gold" style="display: flex; align-items: center;">
+                    <div class="number-circle" style="background: rgba(212,175,55,0.2); color: #D4AF37;">9</div>
+                    <div>
+                        <p class="white" style="font-weight: 600;">Soul Urge Number</p>
+                        <p class="stardust small">The Humanitarian. Serve others.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Screen 6: Community -->
+        <div class="screen" id="screen-community">
+            <div style="padding: 20px;">
+                <h2 class="white" style="margin-bottom: 16px;">Inner Circle</h2>
+                
+                <div class="tab-bar">
+                    <div class="tab active">Discussions</div>
+                    <div class="tab">Live</div>
+                    <div class="tab">Members</div>
+                    <div class="tab">Messages</div>
+                </div>
+                
+                <div class="topic-card">
+                    <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                        <div style="width: 40px; height: 40px; background: #1E1E2E; border-radius: 50%; margin-right: 12px; display: flex; align-items: center; justify-content: center;">
+                            <span class="gold">S</span>
+                        </div>
+                        <div>
+                            <p class="white" style="font-weight: 500;">Sarah M.</p>
+                            <p class="stardust small">Initiate • 2h ago</p>
+                        </div>
+                    </div>
+                    <p class="white" style="font-weight: 600; margin-bottom: 8px;">What does 11:11 mean to you?</p>
+                    <p class="stardust small">I've been seeing it everywhere lately...</p>
+                    <div style="display: flex; gap: 16px; margin-top: 12px;">
+                        <span class="stardust small">💬 24 replies</span>
+                        <span class="stardust small">❤️ 12 likes</span>
+                    </div>
+                </div>
+                
+                <div class="topic-card">
+                    <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                        <div style="width: 40px; height: 40px; background: #1E1E2E; border-radius: 50%; margin-right: 12px; display: flex; align-items: center; justify-content: center;">
+                            <span class="gold">D</span>
+                        </div>
+                        <div>
+                            <p class="white" style="font-weight: 500;">David K.</p>
+                            <p class="stardust small">Seeker • 4h ago</p>
+                        </div>
+                    </div>
+                    <p class="white" style="font-weight: 600; margin-bottom: 8px;">Life Path 7 experiences?</p>
+                    <p class="stardust small">Would love to hear from other 7s...</p>
+                    <div style="display: flex; gap: 16px; margin-top: 12px;">
+                        <span class="stardust small">💬 18 replies</span>
+                        <span class="stardust small">❤️ 8 likes</span>
+                    </div>
+                </div>
+                
+                <div class="topic-card">
+                    <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                        <div style="width: 40px; height: 40px; background: #1E1E2E; border-radius: 50%; margin-right: 12px; display: flex; align-items: center; justify-content: center;">
+                            <span class="gold">E</span>
+                        </div>
+                        <div>
+                            <p class="white" style="font-weight: 500;">Emma L.</p>
+                            <p class="stardust small">Master • 6h ago</p>
+                        </div>
+                    </div>
+                    <p class="white" style="font-weight: 600; margin-bottom: 8px;">New moon rituals</p>
+                    <p class="stardust small">Sharing my practice for tonight...</p>
+                    <div style="display: flex; gap: 16px; margin-top: 12px;">
+                        <span class="stardust small">💬 31 replies</span>
+                        <span class="stardust small">❤️ 45 likes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Screen 7: Paywall -->
+        <div class="screen" id="screen-paywall">
+            <div style="padding: 20px;">
+                <h2 class="white" style="text-align: center; margin-bottom: 8px;">Unlock Your Full Potential</h2>
+                <p class="stardust" style="text-align: center; margin-bottom: 30px;">Join the Inner Circle</p>
+                
+                <div style="background: #12121A; border-radius: 12px; padding: 8px; display: flex; margin-bottom: 30px;">
+                    <div style="flex: 1; text-align: center; padding: 8px; color: #8B8B9E;">Monthly</div>
+                    <div style="flex: 1; text-align: center; padding: 8px; background: #1E1E2E; border-radius: 8px; color: #FFFFFF;">Annual</div>
+                    <div style="position: absolute; right: 40px; top: 110px; background: #D4AF37; color: #0A0A0F; padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: 700;">SAVE 25%</div>
+                </div>
+                
+                <div class="tier-card">
+                    <div style="display: flex; align-items: center;">
+                        <div style="width: 24px; height: 24px; border: 2px solid #8B8B9E; border-radius: 50%; margin-right: 12px;"></div>
+                        <div style="flex: 1;">
+                            <p class="white" style="font-weight: 600;">Free Seeker</p>
+                        </div>
+                        <p class="stardust">Free</p>
+                    </div>
+                </div>
+                
+                <div class="tier-card popular">
+                    <span class="popular-badge">POPULAR</span>
+                    <div style="display: flex; align-items: center;">
+                        <div style="width: 24px; height: 24px; border: 2px solid #D4AF37; border-radius: 50%; margin-right: 12px; display: flex; align-items: center; justify-content: center;">
+                            <div style="width: 12px; height: 12px; background: #D4AF37; border-radius: 50%;"></div>
+                        </div>
+                        <div style="flex: 1;">
+                            <p class="white" style="font-weight: 600;">Inner Circle</p>
+                        </div>
+                        <p class="gold" style="font-weight: 600;">$19.99/mo</p>
+                    </div>
+                </div>
+                
+                <div class="tier-card">
+                    <div style="display: flex; align-items: center;">
+                        <div style="width: 24px; height: 24px; border: 2px solid #6B4EE6; border-radius: 50%; margin-right: 12px;"></div>
+                        <div style="flex: 1;">
+                            <p class="white" style="font-weight: 600;">Qode Initiate</p>
+                        </div>
+                        <p class="mystic-purple" style="font-weight: 600;">$49.99/mo</p>
+                    </div>
+                </div>
+                
+                <div class="tier-card">
+                    <div style="display: flex; align-items: center;">
+                        <div style="width: 24px; height: 24px; border: 2px solid #00D4AA; border-radius: 50%; margin-right: 12px;"></div>
+                        <div style="flex: 1;">
+                            <p class="white" style="font-weight: 600;">Qode Master</p>
+                        </div>
+                        <p class="cosmic-teal" style="font-weight: 600;">$199.99/mo</p>
+                    </div>
+                </div>
+                
+                <button class="btn btn-primary" style="margin-top: 30px;">Start Your Journey</button>
+            </div>
+        </div>
+        
+        <!-- Screen 8: Journal -->
+        <div class="screen" id="screen-journal">
+            <div style="padding: 20px;">
+                <h2 class="white" style="margin-bottom: 20px;">Sunday, March 8</h2>
+                
+                <div class="calendar-strip">
+                    <div class="day-cell">
+                        <span class="day-name">F</span>
+                        <span class="day-num">6</span>
+                    </div>
+                    <div class="day-cell">
+                        <span class="day-name">S</span>
+                        <span class="day-num">7</span>
+                    </div>
+                    <div class="day-cell active">
+                        <span class="day-name">S</span>
+                        <span class="day-num">8</span>
+                        <div style="width: 20px; height: 20px; background: #0A0A0F; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-top: 4px;">
+                            <span style="font-size: 10px; color: #D4AF37;">7</span>
+                        </div>
+                    </div>
+                    <div class="day-cell">
+                        <span class="day-name">M</span>
+                        <span class="day-num">9</span>
+                    </div>
+                    <div class="day-cell">
+                        <span class="day-name">T</span>
+                        <span class="day-num">10</span>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                        <p class="white" style="font-weight: 600;">Personal Day 7</p>
+                        <span class="gold" style="font-size: 32px; font-weight: 700;">7</span>
+                    </div>
+                    <p class="stardust">Today is perfect for introspection and inner work. Trust your intuition.</p>
+                </div>
+                
+                <h3 class="white" style="margin: 24px 0 12px;">Your Reflection</h3>
+                <div class="card" style="min-height: 200px;">
+                    <p class="stardust">Today I noticed...</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Screen 9: Challenges -->
+        <div class="screen" id="screen-challenges">
+            <div style="padding: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h2 class="white">Community Challenges</h2>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span class="gold" style="font-size: 28px; font-weight: 700;">12</span>
+                        <span style="font-size: 24px;">🔥</span>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                        <div style="width: 60px; height: 60px; background: rgba(107,78,230,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 16px;">
+                            <span style="font-size: 28px;">🧘</span>
+                        </div>
+                        <div style="flex: 1;">
+                            <p class="white" style="font-weight: 600;">7-Day Meditation</p>
+                            <p class="stardust small">3 days remaining</p>
+                        </div>
+                        <span class="mystic-purple" style="font-weight: 700;">65%</span>
+                    </div>
+                    <div class="progress-bar" style="margin: 0;">
+                        <div class="progress-fill" style="width: 65%; background: #6B4EE6;"></div>
+                    </div>
+                </div>
+                
+                <h3 class="white" style="margin: 24px 0 12px;">This Week's Leaders</h3>
+                
+                <div class="leaderboard-row">
+                    <span class="rank gold">1</span>
+                    <div style="width: 40px; height: 40px; background: #1E1E2E; border-radius: 50%; margin: 0 12px; display: flex; align-items: center; justify-content: center;">
+                        <span class="white" style="font-size: 14px;">S</span>
+                    </div>
+                    <div style="flex: 1;">
+                        <p class="white" style="font-weight: 500;">Sarah M.</p>
+                    </div>
+                    <span class="gold" style="font-weight: 600;">2,840</span>
+                </div>
+                
+                <div class="leaderboard-row">
+                    <span class="rank gold">2</span>
+                    <div style="width: 40px; height: 40px; background: #1E1E2E; border-radius: 50%; margin: 0 12px; display: flex; align-items: center; justify-content: center;">
+                        <span class="white" style="font-size: 14px;">D</span>
+                    </div>
+                    <div style="flex: 1;">
+                        <p class="white" style="font-weight: 500;">David K.</p>
+                    </div>
+                    <span class="gold" style="font-weight: 600;">2,650</span>
+                </div>
+                
+                <div class="leaderboard-row">
+                    <span class="rank" style="color: #8B8B9E;">3</span>
+                    <div style="width: 40px; height: 40px; background: #1E1E2E; border-radius: 50%; margin: 0 12px; display: flex; align-items: center; justify-content: center;">
+                        <span class="white" style="font-size: 14px;">Y</span>
+                    </div>
+                    <div style="flex: 1;">
+                        <p class="white" style="font-weight: 500;">You</p>
+                    </div>
+                    <span class="gold" style="font-weight: 600;">1,950</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Screen 10: Profile -->
+        <div class="screen" id="screen-profile">
+            <div style="padding: 20px;">
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <div style="width: 120px; height: 120px; background: #12121A; border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center;">
+                        <span class="gold" style="font-size: 48px; font-weight: 700;">S</span>
+                    </div>
+                    <h2 class="white">Shani</h2>
+                    <p class="stardust">shani@qodex.academy</p>
+                </div>
+                
+                <div class="card" style="border: 1px solid rgba(212,175,55,0.3);">
+                    <p class="caption stardust">Current Plan</p>
+                    <p class="gold" style="font-size: 24px; font-weight: 700; margin: 8px 0;">Qode Master</p>
+                    <p class="stardust">$199.99/mo • Everything included</p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 20px 0;">
+                    <div class="stat-card">
+                        <p class="stat-value">12</p>
+                        <p class="stat-label">Day Streak</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-value">48h</p>
+                        <p class="stat-label">Watched</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-value">7</p>
+                        <p class="stat-label">Courses</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <span class="white">👤 Edit Profile</span>
+                    <span class="stardust">›</span>
+                </div>
+                
+                <div class="menu-item">
+                    <span class="white">🔔 Notifications</span>
+                    <span class="stardust">›</span>
+                </div>
+                
+                <div class="menu-item">
+                    <span class="white">⚙️ Settings</span>
+                    <span class="stardust">›</span>
+                </div>
+                
+                <div class="menu-item" onclick="goTo('welcome')">
+                    <span class="white">🚪 Sign Out</span>
+                    <span class="stardust">›</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function goTo(screenName) {
+            // Hide all screens
+            document.querySelectorAll('.screen').forEach(screen => {
+                screen.classList.remove('active');
+            });
+            
+            // Show target screen
+            const target = document.getElementById('screen-' + screenName);
+            if (target) {
+                target.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

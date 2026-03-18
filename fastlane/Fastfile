@@ -1,0 +1,151 @@
+# This file contains the fastlane.tools configuration
+# For more info: https://docs.fastlane.tools
+
+default_platform(:ios)
+
+platform :ios do
+  # Variables
+  app_identifier = "academy.qodex.app"
+  team_id = ENV["TEAM_ID"]
+  
+  # Before all lanes
+  before_all do
+    ensure_git_status_clean
+    setup_ci if ENV['CI']
+  end
+
+  # Run tests
+  lane :test do
+    scan(
+      scheme: "QodeX",
+      devices: ["iPhone 15 Pro"],
+      clean: true
+    )
+  end
+
+  # Build and upload to TestFlight (Beta)
+  lane :beta do
+    # Increment build number
+    increment_build_number
+    
+    # Sync certificates
+    match(type: "appstore", readonly: true)
+    
+    # Build app
+    build_app(
+      scheme: "QodeX",
+      export_method: "app-store",
+      include_bitcode: false,
+      include_symbols: true
+    )
+    
+    # Upload to TestFlight
+    upload_to_testflight(
+      skip_waiting_for_build_processing: true,
+      notify_external_testers: false
+    )
+    
+    # Commit version bump
+    commit_version_bump(message: "Bump build number [ci skip]")
+    push_to_git_remote
+    
+    # Notify
+    slack(
+      message: "QodeX Beta #{get_build_number} uploaded to TestFlight! 🚀",
+      channel: "#deployments"
+    )
+  end
+
+  # Deploy to App Store
+  lane :release do
+    # Ensure we're on main branch
+    ensure_git_branch(branch: "main")
+    
+    # Run tests
+    test
+    
+    # Increment version
+    increment_version_number(bump_type: "patch")
+    increment_build_number
+    
+    # Sync certificates
+    match(type: "appstore", readonly: true)
+    
+    # Build app
+    build_app(
+      scheme: "QodeX",
+      export_method: "app-store",
+      include_bitcode: false,
+      include_symbols: true
+    )
+    
+    # Upload to App Store
+    upload_to_app_store(
+      force: true,
+      skip_metadata: false,
+      skip_screenshots: false,
+      submit_for_review: false,
+      automatic_release: false,
+      precheck_include_in_app_purchases: false
+    )
+    
+    # Create GitHub release
+    version = get_version_number
+    add_git_tag(tag: "v#{version}")
+    push_to_git_remote
+    push_git_tags
+    
+    # Notify
+    slack(
+      message: "QodeX v#{version} submitted to App Store! 🎉",
+      channel: "#deployments"
+    )
+  end
+
+  # Create screenshots
+  lane :screenshots do
+    capture_screenshots(
+      scheme: "QodeX",
+      devices: [
+        "iPhone 15 Pro Max",
+        "iPhone 15 Pro",
+        "iPhone SE (3rd generation)"
+      ],
+      languages: ["en-US"],
+      clear_previous_screenshots: true
+    )
+  end
+
+  # Refresh certificates
+  lane :certificates do
+    match(type: "development", force: true)
+    match(type: "appstore", force: true)
+  end
+
+  # Register new device
+  lane :register_device do
+    device_name = prompt(text: "Device name: ")
+    device_udid = prompt(text: "Device UDID: ")
+    
+    register_device(
+      name: device_name,
+      udid: device_udid
+    )
+    
+    match(type: "development", force: true)
+  end
+
+  # After all lanes
+  after_all do |lane|
+    # Clean up
+  end
+
+  # Error handling
+  error do |lane, exception|
+    slack(
+      message: "Error in lane #{lane}: #{exception.message}",
+      success: false,
+      channel: "#deployments"
+    )
+  end
+end

@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QodeX - Profile & Community</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+            background: #0A0A0F;
+            color: #FAFAFA;
+            padding: 40px;
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .header {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #F4D03F 0%, #E5C158 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+        .header p {
+            font-size: 18px;
+            color: #888;
+        }
+        .screen-container {
+            text-align: center;
+        }
+        .screen-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+        .iphone {
+            width: 393px;
+            height: 852px;
+            background: #0A0A0F;
+            border-radius: 55px;
+            box-shadow: 0 0 0 12px #1a1a1a, 0 50px 100px rgba(0,0,0,0.8);
+            overflow: hidden;
+            position: relative;
+        }
+        .notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 126px;
+            height: 37px;
+            background: #0A0A0F;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            z-index: 100;
+        }
+        .screen-content {
+            width: 100%;
+            height: 100%;
+            padding: 60px 20px 100px;
+            overflow-y: auto;
+            background: linear-gradient(180deg, #0A0A0F 0%, #0d0d14 100%);
+        }
+        
+        /* PROFILE */
+        .profile-avatar-container {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin: 20px auto 16px;
+        }
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(229,193,88,0.3), rgba(229,193,88,0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(229,193,88,0.3);
+        }
+        .profile-avatar span {
+            font-size: 40px;
+            font-weight: 700;
+            color: #FAFAFA;
+        }
+        .life-path-badge {
+            position: absolute;
+            bottom: -4px;
+            right: -4px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #0A0A0F;
+            border: 3px solid #0A0A0F;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .life-path-badge-inner {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #E5C158;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            color: #0A0A0F;
+        }
+        .profile-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #FAFAFA;
+            margin-bottom: 4px;
+        }
+        .profile-handle {
+            font-size: 15px;
+            color: #A1A1AA;
+            margin-bottom: 12px;
+        }
+        .profile-bio {
+            font-size: 15px;
+            color: #E5E5E5;
+            line-height: 1.5;
+            margin-bottom: 24px;
+        }
+        .profile-stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background: rgba(18,18,26,0.6);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            margin-bottom: 20px;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 22px;
+            font-weight: 700;
+            color: #FAFAFA;
+        }
+        .stat-label {
+            font-size: 13px;
+            color: #A1A1AA;
+            margin-top: 4px;
+        }
+        .glass-card {
+            background: rgba(18, 18, 26, 0.6);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: left;
+        }
+        .membership-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #E5C158, #F4D03F);
+            color: #0A0A0F;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-left: 8px;
+        }
+        
+        /* COMMUNITY */
+        .community-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-top: 20px;
+        }
+        .community-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #FAFAFA;
+        }
+        .fab-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #F4D03F, #E5C158);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #0A0A0F;
+            box-shadow: 0 4px 15px rgba(229,193,88,0.3);
+        }
+        .create-post-card {
+            padding: 16px;
+            background: rgba(18,18,26,0.6);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .create-post-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(229,193,88,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 600;
+            color: #FAFAFA;
+        }
+        .create-post-placeholder {
+            flex: 1;
+            font-size: 15px;
+            color: #A1A1AA;
+        }
+        .create-post-icon {
+            font-size: 20px;
+            color: #E5C158;
+        }
+        .post-card {
+            background: rgba(18,18,26,0.6);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 20px;
+            padding: 16px;
+            margin-bottom: 16px;
+            text-align: left;
+        }
+        .post-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .post-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(155,89,182,0.3), rgba(155,89,182,0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 600;
+            color: #FAFAFA;
+            position: relative;
+        }
+        .post-avatar-badge {
+            position: absolute;
+            bottom: -2px;
+            right: -2px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #E5C158;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: 700;
+            color: #0A0A0F;
+        }
+        .post-meta {
+            flex: 1;
+        }
+        .post-username {
+            font-size: 15px;
+            font-weight: 600;
+            color: #FAFAFA;
+        }
+        .post-info {
+            font-size: 13px;
+            color: #A1A1AA;
+        }
+        .post-info span {
+            color: #E5C158;
+        }
+        .post-content {
+            font-size: 15px;
+            color: #E5E5E5;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+        .post-actions {
+            display: flex;
+            gap: 20px;
+        }
+        .post-action {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: #A1A1AA;
+        }
+        .post-action.liked {
+            color: #FF6B6B;
+        }
+        .tab-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 83px;
+            background: rgba(18, 18, 26, 0.95);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 20px 20px;
+        }
+        .tab-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+        .tab-icon {
+            font-size: 22px;
+            color: #E5C158;
+        }
+        .tab-icon-inactive {
+            font-size: 22px;
+            color: #A1A1AA;
+        }
+        .tab-label {
+            font-size: 10px;
+            color: #E5C158;
+        }
+        .tab-label-inactive {
+            font-size: 10px;
+            color: #A1A1AA;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Social Features</h1>
+        <p>Profile & Community Screens</p>
+    </div>
+
+    <!-- PROFILE SCREEN -->
+    <div class="screen-container">
+        <div class="screen-label">Profile View</div>
+        <div class="iphone">
+            <div class="notch"></div>
+            
+            <div class="screen-content" style="text-align: center;">
+                <div class="profile-avatar-container">
+                    <div class="profile-avatar">
+                        <span>SJ</span>
+                    </div>
+                    <div class="life-path-badge">
+                        <div class="life-path-badge-inner">7</div>
+                    </div>
+                </div>
+                
+                <div class="profile-name">Sarah Johnson</div>
+                <div class="profile-handle">@sarahj • Life Path 7</div>
+                
+                <div class="profile-bio">Seeking truth through numbers ✨<br>Spiritual guide • Numerology enthusiast</div>
+                
+                <div class="profile-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">156</div>
+                        <div class="stat-label">Readings</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">42</div>
+                        <div class="stat-label">Day Streak</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">1.2k</div>
+                        <div class="stat-label">Followers</div>
+                    </div>
+                </div>
+                
+                <div class="glass-card" style="display: flex; align-items: center; gap: 16px;">
+                    <div style="font-size: 32px;">👑</div>
+                    <div style="flex: 1; text-align: left;">
+                        <div style="display: flex; align-items: center;">
+                            <span style="font-size: 17px; font-weight: 600; color: #FAFAFA;">QodeX Pro</span>
+                            <span class="membership-badge">ACTIVE</span>
+                        </div>
+                        <div style="font-size: 13px; color: #A1A1AA; margin-top: 4px;">Renews Dec 15, 2026</div>
+                    </div>
+                    <div style="font-size: 20px; color: #A1A1AA;">›</div>
+                </div>
+                
+                <div class="glass-card">
+                    <div style="font-size: 15px; font-weight: 600; color: #E5C158; margin-bottom: 12px;">Recent Activity</div>
+                    
+                    <div style="display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <div style="font-size: 20px;">☀️</div>
+                        <div style="flex: 1;">
+                            <div style="font-size: 15px; color: #FAFAFA;">Completed daily reading</div>
+                            <div style="font-size: 13px; color: #A1A1AA;">2 hours ago</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-bar">
+                <div class="tab-item">
+                    <div class="tab-icon-inactive">○</div>
+                    <div class="tab-label-inactive">Today</div>
+                </div>
+                <div class="tab-item">
+                    <div class="tab-icon-inactive">○</div>
+                    <div class="tab-label-inactive">Chart</div>
+                </div>
+                <div class="tab-item">
+                    <div class="tab-icon-inactive">○</div>
+                    <div class="tab-label-inactive">Community</div>
+                </div>
+                <div class="tab-item">
+                    <div class="tab-icon-inactive">○</div>
+                    <div class="tab-label-inactive">Learn</div>
+                </div>
+                <div class="tab-item">
+                    <div class="tab-icon">◉</div>
+                    <div class="tab-label">Profile</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- COMMUNITY SCREEN -->
+    <div class="screen-container">
+        <div class="screen-label">Community Feed</div>
+        <div class="iphone">
+            <div class="notch"></div>
+            
+            <div class="screen-content">
+                <div class="community-header">
+                    <div class="community-title">Community</div>
+                    <div class="fab-btn">+</div>
+                </div>
+                
+                <div class="create-post-card">
+                    <div class="create-post-avatar">SJ</div>
+                    <div class="create-post-placeholder">Share your insight...</div>
+                    <div class="create-post-icon">📷</div>
+                </div>
+                
+                <div class="post-card">
+                    <div class="post-header">
+                        <div class="post-avatar">
+                            SM
+                            <div class="post-avatar-badge">7</div>
+                        </div>
+                        <div class="post-meta">
+                            <div class="post-username">Sarah M.</div>
+                            <div class="post-info"><span>Life Path 7</span> • 2h ago</div>
+                        </div>
+                    </div>
+                    
+                    <div class="post-content">Today my number is 8 and I feel the power! Manifesting abundance ✨</div>
+                    
+                    <div class="post-actions">
+                        <div class="post-action liked">
+                            <span>❤️</span>
+                            <span>24</span>
+                        </div>
+                        <div class="post-action">
+                            <span>💬</span>
+                            <span>8</span>
+                        </div>
+                        <div class="post-action">
+                            <span>🔄</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="post-card">
+                    <div class="post-header">
+                        <div class="post-avatar" style="background: linear-gradient(135deg, rgba(52,152,219,0.3), rgba(52,152,219,0.1));">
+                            MR
+                            <div class="post-avatar-badge">3</div>
+                        </div>
+                        <div class="post-meta">
+                            <div class="post-username">Michael R.</div>
+                            <div class="post-info"><span>Life Path 3</span> • 5h ago</div>
+                        </div>
+                    </div>
+                    
+                    <div class="post-content">Can someone explain Personal Year cycles? Mine just changed to 9 🙏</div>
+                    
+                    <div class="post-actions">
+                        <div class="post-action">
+                            <span>🤍</span>
+                            <span>12</span>
+                        </div>
+                        <div class="post-action">
+                            <span>💬</span>
+                            <span>15</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-bar">
+                <div class="tab-item">
+                    <div class="tab-icon-inactive">○</div>
+                    <div class="tab-label-inactive">Today</div>
+                </div>
+                <div class="tab-item">
+                    <div class="tab-icon-inactive">○</div>
+                    <div class="tab-label-inactive">Chart</div>
+                </div>
+                <div class="tab-item">
+                    <div class="tab-icon">◉</div>
+                    <div class="tab-label">Community</div>
+                </div>
+                <div class="tab-item">
+                    <div class="tab-icon-inactive">○</div>
+                    <div class="tab-label-inactive">Learn</div>
+                </div>
+                <div class="tab-item">
+                    <div class="tab-icon-inactive">○</div>
+                    <div class="tab-label-inactive">Profile</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

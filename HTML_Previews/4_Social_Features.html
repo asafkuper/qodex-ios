@@ -1,0 +1,1706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QodeX - Social Features Preview</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+            background: #0A0A0F;
+            color: #FAFAFA;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(229,193,88,0.15), transparent);
+            border-radius: 24px;
+            border: 1px solid rgba(229,193,88,0.1);
+        }
+        
+        .header h1 {
+            font-size: 52px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #F4D03F 0%, #E5C158 50%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+        
+        .header .brand {
+            font-size: 16px;
+            color: #E5C158;
+            font-weight: 500;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+        
+        .header p {
+            font-size: 18px;
+            color: #888;
+        }
+        
+        /* Screen Selector Tabs */
+        .screen-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .screen-tab {
+            padding: 14px 28px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            color: #A1A1AA;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .screen-tab:hover {
+            background: rgba(229,193,88,0.1);
+            border-color: rgba(229,193,88,0.3);
+        }
+        
+        .screen-tab.active {
+            background: linear-gradient(135deg, rgba(229,193,88,0.2), rgba(229,193,88,0.1));
+            border-color: #E5C158;
+            color: #E5C158;
+        }
+        
+        /* iPhone Frame */
+        .iphone-container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .iphone {
+            width: 393px;
+            height: 852px;
+            background: #0A0A0F;
+            border-radius: 55px;
+            box-shadow: 
+                0 0 0 12px #1a1a1a,
+                0 0 0 14px rgba(229,193,88,0.3),
+                0 50px 100px rgba(0,0,0,0.8),
+                0 0 60px rgba(229,193,88,0.1);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 126px;
+            height: 37px;
+            background: #0A0A0F;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            z-index: 100;
+        }
+        
+        .dynamic-island {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 30px;
+            background: #000;
+            border-radius: 20px;
+            z-index: 101;
+        }
+        
+        /* Screen Content */
+        .screen-content {
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            background: linear-gradient(180deg, #0A0A0F 0%, #0d0d14 100%);
+            scrollbar-width: none;
+        }
+        
+        .screen-content::-webkit-scrollbar {
+            display: none;
+        }
+        
+        /* Screens */
+        .screen {
+            display: none;
+            height: 100%;
+            padding: 60px 0 90px;
+        }
+        
+        .screen.active {
+            display: block;
+        }
+        
+        /* Common Styles */
+        .glass-card {
+            background: rgba(18, 18, 26, 0.6);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .gold-text {
+            background: linear-gradient(135deg, #F4D03F, #E5C158);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #FAFAFA;
+            margin-bottom: 20px;
+        }
+        
+        /* Tab Bar */
+        .tab-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 83px;
+            background: rgba(18, 18, 26, 0.95);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 20px 20px;
+        }
+        
+        .tab-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .tab-item:hover {
+            transform: scale(1.1);
+        }
+        
+        .tab-icon {
+            font-size: 22px;
+            color: #E5C158;
+        }
+        
+        .tab-icon-inactive {
+            font-size: 22px;
+            color: #A1A1AA;
+        }
+        
+        .tab-label {
+            font-size: 10px;
+            color: #A1A1AA;
+        }
+        
+        .tab-label.active {
+            color: #E5C158;
+        }
+        
+        /* ============ COMMUNITY VIEW ============ */
+        .community-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 24px;
+            margin-bottom: 8px;
+        }
+        
+        .community-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #FAFAFA;
+        }
+        
+        .add-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #F4D03F, #E5C158);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #0A0A0F;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        
+        .add-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .create-post {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px;
+            margin: 0 20px 20px;
+            background: rgba(18,18,26,0.6);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .create-post:hover {
+            background: rgba(229,193,88,0.1);
+            border-color: rgba(229,193,88,0.2);
+        }
+        
+        .create-post-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(229,193,88,0.3), rgba(229,193,88,0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 600;
+            color: #FAFAFA;
+        }
+        
+        .create-post-text {
+            flex: 1;
+            font-size: 15px;
+            color: #A1A1AA;
+        }
+        
+        .create-post-icon {
+            font-size: 20px;
+            color: #E5C158;
+        }
+        
+        .post-card {
+            background: rgba(18,18,26,0.6);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 20px;
+            padding: 16px;
+            margin: 0 20px 16px;
+            transition: all 0.2s ease;
+        }
+        
+        .post-card:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-2px);
+        }
+        
+        .post-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .post-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 600;
+            color: #FAFAFA;
+            position: relative;
+        }
+        
+        .post-avatar.purple { background: linear-gradient(135deg, rgba(155,89,182,0.4), rgba(155,89,182,0.2)); }
+        .post-avatar.blue { background: linear-gradient(135deg, rgba(52,152,219,0.4), rgba(52,152,219,0.2)); }
+        .post-avatar.green { background: linear-gradient(135deg, rgba(46,204,113,0.4), rgba(46,204,113,0.2)); }
+        .post-avatar.orange { background: linear-gradient(135deg, rgba(230,126,34,0.4), rgba(230,126,34,0.2)); }
+        
+        .life-path-badge {
+            position: absolute;
+            bottom: -2px;
+            right: -2px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #E5C158;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: 700;
+            color: #0A0A0F;
+            border: 2px solid #0A0A0F;
+        }
+        
+        .post-author {
+            flex: 1;
+        }
+        
+        .post-name {
+            font-size: 15px;
+            font-weight: 600;
+            color: #FAFAFA;
+        }
+        
+        .post-meta {
+            font-size: 13px;
+            color: #A1A1AA;
+        }
+        
+        .post-meta .path {
+            color: #E5C158;
+        }
+        
+        .post-content {
+            font-size: 15px;
+            color: #E5E5E5;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+        
+        .post-actions {
+            display: flex;
+            gap: 24px;
+        }
+        
+        .post-action {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: #A1A1AA;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+        
+        .post-action:hover {
+            color: #E5C158;
+        }
+        
+        .post-action.liked {
+            color: #FF6B6B;
+        }
+        
+        .post-action.liked:hover {
+            color: #FF6B6B;
+        }
+        
+        /* ============ PROFILE VIEW ============ */
+        .profile-header {
+            text-align: center;
+            padding: 20px 24px;
+        }
+        
+        .profile-avatar-container {
+            position: relative;
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 16px;
+        }
+        
+        .profile-avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(229,193,88,0.3), rgba(229,193,88,0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid rgba(229,193,88,0.4);
+            font-size: 44px;
+            font-weight: 700;
+            color: #FAFAFA;
+        }
+        
+        .profile-avatar-ring {
+            position: absolute;
+            inset: -5px;
+            border-radius: 50%;
+            border: 2px dashed rgba(229,193,88,0.3);
+            animation: spin 20s linear infinite;
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .life-path-circle {
+            position: absolute;
+            bottom: -4px;
+            right: -4px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #0A0A0F;
+            border: 3px solid #0A0A0F;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .life-path-inner {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #E5C158, #F4D03F);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 700;
+            color: #0A0A0F;
+        }
+        
+        .profile-name {
+            font-size: 26px;
+            font-weight: 700;
+            color: #FAFAFA;
+            margin-bottom: 4px;
+        }
+        
+        .profile-handle {
+            font-size: 15px;
+            color: #A1A1AA;
+            margin-bottom: 12px;
+        }
+        
+        .profile-bio {
+            font-size: 15px;
+            color: #E5E5E5;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            padding: 0 20px;
+        }
+        
+        .profile-stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background: rgba(18,18,26,0.6);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            margin: 0 20px 20px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        
+        .stat-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .stat-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #FAFAFA;
+        }
+        
+        .stat-label {
+            font-size: 13px;
+            color: #A1A1AA;
+            margin-top: 4px;
+        }
+        
+        .premium-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin: 0 20px 20px;
+            padding: 18px;
+            background: linear-gradient(135deg, rgba(229,193,88,0.15), rgba(229,193,88,0.05));
+            border: 1px solid rgba(229,193,88,0.2);
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .premium-card:hover {
+            background: linear-gradient(135deg, rgba(229,193,88,0.2), rgba(229,193,88,0.1));
+            transform: translateY(-2px);
+        }
+        
+        .premium-icon {
+            font-size: 32px;
+        }
+        
+        .premium-info {
+            flex: 1;
+            text-align: left;
+        }
+        
+        .premium-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .premium-name {
+            font-size: 17px;
+            font-weight: 600;
+            color: #FAFAFA;
+        }
+        
+        .premium-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #E5C158, #F4D03F);
+            color: #0A0A0F;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 4px;
+        }
+        
+        .premium-date {
+            font-size: 13px;
+            color: #A1A1AA;
+            margin-top: 4px;
+        }
+        
+        .premium-arrow {
+            font-size: 20px;
+            color: #A1A1AA;
+        }
+        
+        .achievements-section {
+            padding: 0 20px;
+        }
+        
+        .achievements-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #FAFAFA;
+            margin-bottom: 16px;
+        }
+        
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+        
+        .achievement {
+            aspect-ratio: 1;
+            background: rgba(18,18,26,0.6);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .achievement:hover {
+            background: rgba(229,193,88,0.1);
+            border-color: rgba(229,193,88,0.3);
+            transform: scale(1.05);
+        }
+        
+        .achievement.locked {
+            opacity: 0.5;
+        }
+        
+        .achievement-icon {
+            font-size: 24px;
+        }
+        
+        .achievement-name {
+            font-size: 10px;
+            color: #A1A1AA;
+            text-align: center;
+        }
+        
+        /* ============ COMPATIBILITY VIEW ============ */
+        .compatibility-header {
+            padding: 20px 24px;
+        }
+        
+        .compatibility-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #FAFAFA;
+        }
+        
+        .compatibility-subtitle {
+            font-size: 15px;
+            color: #A1A1AA;
+            margin-top: 4px;
+        }
+        
+        .compatibility-selector {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 30px 20px;
+        }
+        
+        .person-card {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        
+        .person-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .person-avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 700;
+            color: #FAFAFA;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        
+        .person-avatar.purple { background: linear-gradient(135deg, rgba(155,89,182,0.4), rgba(155,89,182,0.2)); }
+        .person-avatar.blue { background: linear-gradient(135deg, rgba(52,152,219,0.4), rgba(52,152,219,0.2)); }
+        .person-avatar.pink { background: linear-gradient(135deg, rgba(236,112,99,0.4), rgba(236,112,99,0.2)); }
+        
+        .person-path {
+            position: absolute;
+            bottom: -4px;
+            right: -4px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #0A0A0F;
+            border: 3px solid #0A0A0F;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .person-path-inner {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            color: #FAFAFA;
+        }
+        
+        .person-path-inner.purple { background: #9B59B6; }
+        .person-path-inner.blue { background: #3498DB; }
+        .person-path-inner.pink { background: #EC7063; }
+        
+        .person-name {
+            font-size: 15px;
+            font-weight: 600;
+            color: #FAFAFA;
+        }
+        
+        .person-role {
+            font-size: 13px;
+            color: #A1A1AA;
+        }
+        
+        .compatibility-heart {
+            font-size: 36px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+        
+        .compatibility-circle-container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .compatibility-circle {
+            width: 220px;
+            height: 220px;
+            position: relative;
+        }
+        
+        .circle-bg {
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 14px solid rgba(255,255,255,0.08);
+        }
+        
+        .circle-progress {
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 14px solid transparent;
+            border-top-color: #E5C158;
+            transform: rotate(306deg);
+            transition: all 0.5s ease;
+        }
+        
+        .circle-content {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .compatibility-score {
+            font-size: 64px;
+            font-weight: 800;
+            background: linear-gradient(180deg, #F4D03F, #E5C158);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+        }
+        
+        .compatibility-label {
+            font-size: 16px;
+            color: #A1A1AA;
+            margin-top: 8px;
+        }
+        
+        .compatibility-result {
+            margin: 0 20px 20px;
+            padding: 24px;
+            background: rgba(18,18,26,0.6);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            text-align: center;
+        }
+        
+        .result-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #E5C158;
+            margin-bottom: 12px;
+        }
+        
+        .result-description {
+            font-size: 15px;
+            color: #E5E5E5;
+            line-height: 1.6;
+        }
+        
+        .compatibility-breakdown {
+            margin: 0 20px;
+            padding: 20px;
+            background: rgba(18,18,26,0.6);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+        }
+        
+        .breakdown-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #FAFAFA;
+            margin-bottom: 16px;
+        }
+        
+        .breakdown-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+        
+        .breakdown-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .breakdown-label {
+            width: 100px;
+            font-size: 14px;
+            color: #A1A1AA;
+        }
+        
+        .breakdown-bar {
+            flex: 1;
+            height: 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .breakdown-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #E5C158, #F4D03F);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+        
+        .breakdown-value {
+            width: 40px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #E5C158;
+            text-align: right;
+        }
+        
+        /* ============ LIVE SESSIONS VIEW ============ */
+        .live-header {
+            padding: 20px 24px;
+        }
+        
+        .live-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #FAFAFA;
+        }
+        
+        .live-subtitle {
+            font-size: 15px;
+            color: #A1A1AA;
+            margin-top: 4px;
+        }
+        
+        .live-now-section {
+            padding: 0 20px 20px;
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        
+        .section-name {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #FAFAFA;
+        }
+        
+        .live-indicator {
+            width: 8px;
+            height: 8px;
+            background: #FF4444;
+            border-radius: 50%;
+            animation: blink 1s ease-in-out infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        
+        .view-all {
+            font-size: 14px;
+            color: #E5C158;
+            cursor: pointer;
+        }
+        
+        .live-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px;
+            margin-bottom: 12px;
+            background: rgba(18,18,26,0.6);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .live-card:hover {
+            background: rgba(229,193,88,0.1);
+            border-color: rgba(229,193,88,0.2);
+            transform: translateX(4px);
+        }
+        
+        .live-card::before {
+            content: '● LIVE';
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            font-size: 10px;
+            font-weight: 700;
+            color: #FF4444;
+            letter-spacing: 1px;
+        }
+        
+        .live-thumbnail {
+            width: 70px;
+            height: 70px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(229,193,88,0.3), rgba(155,89,182,0.3));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+        
+        .live-info {
+            flex: 1;
+        }
+        
+        .live-session-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #FAFAFA;
+            margin-bottom: 4px;
+        }
+        
+        .live-host {
+            font-size: 14px;
+            color: #E5C158;
+            margin-bottom: 6px;
+        }
+        
+        .live-viewers {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: #A1A1AA;
+        }
+        
+        .live-join-btn {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #E5C158, #F4D03F);
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #0A0A0F;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .live-join-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(229,193,88,0.3);
+        }
+        
+        .upcoming-section {
+            padding: 0 20px;
+        }
+        
+        .upcoming-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px;
+            margin-bottom: 12px;
+            background: rgba(18,18,26,0.6);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .upcoming-card:hover {
+            background: rgba(255,255,255,0.08);
+        }
+        
+        .upcoming-time {
+            width: 60px;
+            text-align: center;
+        }
+        
+        .upcoming-hour {
+            font-size: 20px;
+            font-weight: 700;
+            color: #FAFAFA;
+        }
+        
+        .upcoming-period {
+            font-size: 12px;
+            color: #A1A1AA;
+        }
+        
+        .upcoming-info {
+            flex: 1;
+        }
+        
+        .upcoming-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #FAFAFA;
+            margin-bottom: 4px;
+        }
+        
+        .upcoming-host {
+            font-size: 13px;
+            color: #A1A1AA;
+        }
+        
+        .reminder-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .reminder-btn:hover {
+            background: rgba(229,193,88,0.2);
+        }
+        
+        .reminder-btn.active {
+            background: rgba(229,193,88,0.3);
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 40px;
+            color: #666;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .footer-brand {
+            font-size: 20px;
+            font-weight: 600;
+            color: #E5C158;
+            margin-bottom: 8px;
+        }
+        
+        .footer-tagline {
+            font-size: 14px;
+            color: #888;
+        }
+        
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: rgba(18, 18, 26, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(229, 193, 88, 0.3);
+            border-radius: 12px;
+            padding: 14px 24px;
+            font-size: 14px;
+            color: #FAFAFA;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="brand">@Qodex_Numerology.il</div>
+        <h1>Social Features</h1>
+        <p>Interactive Preview • 4 Screens</p>
+    </div>
+
+    <!-- Screen Selector Tabs -->
+    <div class="screen-tabs">
+        <div class="screen-tab active" onclick="showScreen('community')">Community</div>
+        <div class="screen-tab" onclick="showScreen('profile')">Profile</div>
+        <div class="screen-tab" onclick="showScreen('compatibility')">Compatibility</div>
+        <div class="screen-tab" onclick="showScreen('live')">Live Sessions</div>
+    </div>
+
+    <!-- iPhone Frame -->
+    <div class="iphone-container">
+        <div class="iphone">
+            <div class="notch"></div>
+            <div class="dynamic-island"></div>
+            
+            <div class="screen-content">
+                
+                <!-- ===== COMMUNITY VIEW ===== -->
+                <div id="community" class="screen active">
+                    <div class="community-header">
+                        <div class="community-title">Community</div>
+                        <div class="add-btn" onclick="showToast('Create new post')">+</div>
+                    </div>
+                    
+                    <div class="create-post" onclick="showToast('Create new post')">
+                        <div class="create-post-avatar">SJ</div>
+                        <div class="create-post-text">Share your insight...</div>
+                        <div class="create-post-icon">📷</div>
+                    </div>
+                    
+                    <div class="post-card">
+                        <div class="post-header">
+                            <div class="post-avatar purple">
+                                SM
+                                <div class="life-path-badge">7</div>
+                            </div>
+                            <div class="post-author">
+                                <div class="post-name">Sarah M.</div>
+                                <div class="post-meta"><span class="path">Life Path 7</span> • 2h ago</div>
+                            </div>
+                        </div>
+                        <div class="post-content">Today my number is 8 and I feel the power! Manifesting abundance ✨ #Numerology #Abundance</div>
+                        <div class="post-actions">
+                            <div class="post-action" onclick="toggleLike(this)">
+                                <span>🤍</span>
+                                <span class="like-count">24</span>
+                            </div>
+                            <div class="post-action" onclick="showToast('8 comments')">
+                                <span>💬</span>
+                                <span>8</span>
+                            </div>
+                            <div class="post-action" onclick="showToast('Shared!')">
+                                <span>↗️</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="post-card">
+                        <div class="post-header">
+                            <div class="post-avatar blue">
+                                MR
+                                <div class="life-path-badge">3</div>
+                            </div>
+                            <div class="post-author">
+                                <div class="post-name">Michael R.</div>
+                                <div class="post-meta"><span class="path">Life Path 3</span> • 5h ago</div>
+                            </div>
+                        </div>
+                        <div class="post-content">Can someone explain Personal Year cycles? Mine just changed to 9 and I'm feeling all the feels 🙏</div>
+                        <div class="post-actions">
+                            <div class="post-action" onclick="toggleLike(this)">
+                                <span>🤍</span>
+                                <span class="like-count">12</span>
+                            </div>
+                            <div class="post-action" onclick="showToast('15 comments')">
+                                <span>💬</span>
+                                <span>15</span>
+                            </div>
+                            <div class="post-action" onclick="showToast('Shared!')">
+                                <span>↗️</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="post-card">
+                        <div class="post-header">
+                            <div class="post-avatar green">
+                                EK
+                                <div class="life-path-badge">11</div>
+                            </div>
+                            <div class="post-author">
+                                <div class="post-name">Emma K.</div>
+                                <div class="post-meta"><span class="path">Life Path 11</span> • 8h ago</div>
+                            </div>
+                        </div>
+                        <div class="post-content">Just had the most amazing compatibility reading with my partner! 95% match - the insights were mind-blowing 🔮✨</div>
+                        <div class="post-actions">
+                            <div class="post-action" onclick="toggleLike(this)">
+                                <span>🤍</span>
+                                <span class="like-count">56</span>
+                            </div>
+                            <div class="post-action" onclick="showToast('23 comments')">
+                                <span>💬</span>
+                                <span>23</span>
+                            </div>
+                            <div class="post-action" onclick="showToast('Shared!')">
+                                <span>↗️</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="post-card">
+                        <div class="post-header">
+                            <div class="post-avatar orange">
+                                DL
+                                <div class="life-path-badge">5</div>
+                            </div>
+                            <div class="post-author">
+                                <div class="post-name">David L.</div>
+                                <div class="post-meta"><span class="path">Life Path 5</span> • 12h ago</div>
+                            </div>
+                        </div>
+                        <div class="post-content">Joining the live session tonight! Who else is tuning in for the Full Moon numerology reading? 🌕</div>
+                        <div class="post-actions">
+                            <div class="post-action" onclick="toggleLike(this)">
+                                <span>🤍</span>
+                                <span class="like-count">89</span>
+                            </div>
+                            <div class="post-action" onclick="showToast('42 comments')">
+                                <span>💬</span>
+                                <span>42</span>
+                            </div>
+                            <div class="post-action" onclick="showToast('Shared!')">
+                                <span>↗️</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ===== PROFILE VIEW ===== -->
+                <div id="profile" class="screen">
+                    <div class="profile-header">
+                        <div class="profile-avatar-container">
+                            <div class="profile-avatar-ring"></div>
+                            <div class="profile-avatar">SJ</div>
+                            <div class="life-path-circle">
+                                <div class="life-path-inner">7</div>
+                            </div>
+                        </div>
+                        <div class="profile-name">Sarah Johnson</div>
+                        <div class="profile-handle">@sarahj • Life Path 7</div>
+                        <div class="profile-bio">Seeking truth through numbers ✨<br>Spiritual guide • Numerology enthusiast</div>
+                    </div>
+                    
+                    <div class="profile-stats">
+                        <div class="stat-item" onclick="showToast('156 readings viewed')">
+                            <div class="stat-value">156</div>
+                            <div class="stat-label">Readings</div>
+                        </div>
+                        <div class="stat-item" onclick="showToast('42 day streak!')">
+                            <div class="stat-value">42</div>
+                            <div class="stat-label">Day Streak</div>
+                        </div>
+                        <div class="stat-item" onclick="showToast('1.2k followers')">
+                            <div class="stat-value">1.2k</div>
+                            <div class="stat-label">Followers</div>
+                        </div>
+                    </div>
+                    
+                    <div class="premium-card" onclick="showToast('Manage subscription')">
+                        <div class="premium-icon">👑</div>
+                        <div class="premium-info">
+                            <div class="premium-title">
+                                <span class="premium-name">QodeX Pro</span>
+                                <span class="premium-badge">ACTIVE</span>
+                            </div>
+                            <div class="premium-date">Renews Dec 15, 2026</div>
+                        </div>
+                        <div class="premium-arrow">›</div>
+                    </div>
+                    
+                    <div class="achievements-section">
+                        <div class="achievements-title">Achievements</div>
+                        <div class="achievements-grid">
+                            <div class="achievement" onclick="showToast('7 Day Streak - Keep it up!')">
+                                <div class="achievement-icon">🔥</div>
+                                <div class="achievement-name">7 Day</div>
+                            </div>
+                            <div class="achievement" onclick="showToast('30 Day Streak Unlocked!')">
+                                <div class="achievement-icon">⚡</div>
+                                <div class="achievement-name">30 Day</div>
+                            </div>
+                            <div class="achievement" onclick="showToast('First Reading Complete')">
+                                <div class="achievement-icon">📖</div>
+                                <div class="achievement-name">First</div>
+                            </div>
+                            <div class="achievement" onclick="showToast('Early Adopter Badge')">
+                                <div class="achievement-icon">⭐</div>
+                                <div class="achievement-name">Early</div>
+                            </div>
+                            <div class="achievement locked" onclick="showToast('Complete 100 readings')">
+                                <div class="achievement-icon">🔒</div>
+                                <div class="achievement-name">Master</div>
+                            </div>
+                            <div class="achievement locked" onclick="showToast('Join a live session')">
+                                <div class="achievement-icon">🔒</div>
+                                <div class="achievement-name">Live</div>
+                            </div>
+                            <div class="achievement locked" onclick="showToast('Share 10 posts')">
+                                <div class="achievement-icon">🔒</div>
+                                <div class="achievement-name">Social</div>
+                            </div>
+                            <div class="achievement locked" onclick="showToast('Get 100 likes')">
+                                <div class="achievement-icon">🔒</div>
+                                <div class="achievement-name">Loved</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ===== COMPATIBILITY VIEW ===== -->
+                <div id="compatibility" class="screen">
+                    <div class="compatibility-header">
+                        <div class="compatibility-title">Compatibility</div>
+                        <div class="compatibility-subtitle">Discover your cosmic connections</div>
+                    </div>
+                    
+                    <div class="compatibility-selector">
+                        <div class="person-card" onclick="showToast('Edit your profile')">
+                            <div class="person-avatar purple">
+                                SJ
+                                <div class="person-path">
+                                    <div class="person-path-inner purple">7</div>
+                                </div>
+                            </div>
+                            <div class="person-name">You</div>
+                            <div class="person-role">Life Path 7</div>
+                        </div>
+                        
+                        <div class="compatibility-heart">💕</div>
+                        
+                        <div class="person-card" onclick="changePartner()">
+                            <div class="person-avatar blue" id="partner-avatar">
+                                AJ
+                                <div class="person-path">
+                                    <div class="person-path-inner blue" id="partner-path">3</div>
+                                </div>
+                            </div>
+                            <div class="person-name" id="partner-name">Alex</div>
+                            <div class="person-role" id="partner-role">Life Path 3</div>
+                        </div>
+                    </div>
+                    
+                    <div class="compatibility-circle-container">
+                        <div class="compatibility-circle">
+                            <div class="circle-bg"></div>
+                            <div class="circle-progress" id="circle-progress"></div>
+                            <div class="circle-content">
+                                <div class="compatibility-score" id="compatibility-score">85%</div>
+                                <div class="compatibility-label">Match</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="compatibility-result">
+                        <div class="result-title" id="result-title">Highly Compatible</div>
+                        <div class="result-description" id="result-desc">Strong compatibility with natural understanding. You complement each other's strengths beautifully.</div>
+                    </div>
+                    
+                    <div class="compatibility-breakdown">
+                        <div class="breakdown-title">Compatibility Breakdown</div>
+                        <div class="breakdown-item">
+                            <div class="breakdown-label">Romance</div>
+                            <div class="breakdown-bar">
+                                <div class="breakdown-fill" style="width: 92%"></div>
+                            </div>
+                            <div class="breakdown-value">92%</div>
+                        </div>
+                        <div class="breakdown-item">
+                            <div class="breakdown-label">Friendship</div>
+                            <div class="breakdown-bar">
+                                <div class="breakdown-fill" style="width: 88%"></div>
+                            </div>
+                            <div class="breakdown-value">88%</div>
+                        </div>
+                        <div class="breakdown-item">
+                            <div class="breakdown-label">Work</div>
+                            <div class="breakdown-bar">
+                                <div class="breakdown-fill" style="width: 76%"></div>
+                            </div>
+                            <div class="breakdown-value">76%</div>
+                        </div>
+                        <div class="breakdown-item">
+                            <div class="breakdown-label">Growth</div>
+                            <div class="breakdown-bar">
+                                <div class="breakdown-fill" style="width: 84%"></div>
+                            </div>
+                            <div class="breakdown-value">84%</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ===== LIVE SESSIONS VIEW ===== -->
+                <div id="live" class="screen">
+                    <div class="live-header">
+                        <div class="live-title">Live Sessions</div>
+                        <div class="live-subtitle">Join live readings & discussions</div>
+                    </div>
+                    
+                    <div class="live-now-section">
+                        <div class="section-header">
+                            <div class="section-name">
+                                <div class="live-indicator"></div>
+                                Live Now
+                            </div>
+                            <div class="view-all" onclick="showToast('View all live sessions')">View All</div>
+                        </div>
+                        
+                        <div class="live-card" onclick="showToast('Joining Full Moon Reading...')">
+                            <div class="live-thumbnail">🌕</div>
+                            <div class="live-info">
+                                <div class="live-session-title">Full Moon Numerology Reading</div>
+                                <div class="live-host">with Rachel Moon</div>
+                                <div class="live-viewers">
+                                    <span>👥</span>
+                                    <span>1,247 watching</span>
+                                </div>
+                            </div>
+                            <div class="live-join-btn">Join</div>
+                        </div>
+                        
+                        <div class="live-card" onclick="showToast('Joining Compatibility Workshop...')">
+                            <div class="live-thumbnail">💕</div>
+                            <div class="live-info">
+                                <div class="live-session-title">Compatibility Workshop</div>
+                                <div class="live-host">with David Stars</div>
+                                <div class="live-viewers">
+                                    <span>👥</span>
+                                    <span>856 watching</span>
+                                </div>
+                            </div>
+                            <div class="live-join-btn">Join</div>
+                        </div>
+                        
+                        <div class="live-card" onclick="showToast('Joining Q&A Session...')">
+                            <div class="live-thumbnail">🔮</div>
+                            <div class="live-info">
+                                <div class="live-session-title">Personal Year Q&A</div>
+                                <div class="live-host">with Sarah Numerology</div>
+                                <div class="live-viewers">
+                                    <span>👥</span>
+                                    <span>643 watching</span>
+                                </div>
+                            </div>
+                            <div class="live-join-btn">Join</div>
+                        </div>
+                    </div>
+                    
+                    <div class="upcoming-section">
+                        <div class="section-header">
+                            <div class="section-name">Upcoming</div>
+                            <div class="view-all" onclick="showToast('View calendar')">Calendar</div>
+                        </div>
+                        
+                        <div class="upcoming-card">
+                            <div class="upcoming-time">
+                                <div class="upcoming-hour">8:00</div>
+                                <div class="upcoming-period">PM</div>
+                            </div>
+                            <div class="upcoming-info">
+                                <div class="upcoming-title">Master Number Deep Dive</div>
+                                <div class="upcoming-host">with Emma Wise</div>
+                            </div>
+                            <div class="reminder-btn" onclick="toggleReminder(this)">
+                                🔔
+                            </div>
+                        </div>
+                        
+                        <div class="upcoming-card">
+                            <div class="upcoming-time">
+                                <div class="upcoming-hour">9:30</div>
+                                <div class="upcoming-period">PM</div>
+                            </div>
+                            <div class="upcoming-info">
+                                <div class="upcoming-title">Daily Number Meditation</div>
+                                <div class="upcoming-host">with Michael Zen</div>
+                            </div>
+                            <div class="reminder-btn" onclick="toggleReminder(this)">
+                                🔔
+                            </div>
+                        </div>
+                        
+                        <div class="upcoming-card">
+                            <div class="upcoming-time">
+                                <div class="upcoming-hour">10:00</div>
+                                <div class="upcoming-period">PM</div>
+                            </div>
+                            <div class="upcoming-info">
+                                <div class="upcoming-title">New Moon Manifesting</div>
+                                <div class="upcoming-host">with Luna Star</div>
+                            </div>
+                            <div class="reminder-btn" onclick="toggleReminder(this)">
+                                🔔
+                            </div>
+                        </div>
+                        
+                        <div class="upcoming-card">
+                            <div class="upcoming-time">
+                                <div class="upcoming-hour">Tomorrow</div>
+                                <div class="upcoming-period">10 AM</div>
+                            </div>
+                            <div class="upcoming-info">
+                                <div class="upcoming-title">Career Path Reading</div>
+                                <div class="upcoming-host">with James Guide</div>
+                            </div>
+                            <div class="reminder-btn" onclick="toggleReminder(this)">
+                                🔔
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tab Bar -->
+            <div class="tab-bar">
+                <div class="tab-item" onclick="showScreen('community')">
+                    <div class="tab-icon-inactive">☀️</div>
+                    <div class="tab-label" id="tab-today">Today</div>
+                </div>
+                <div class="tab-item">
+                    <div class="tab-icon-inactive">📊</div>
+                    <div class="tab-label">Chart</div>
+                </div>
+                <div class="tab-item" onclick="showScreen('community')">
+                    <div class="tab-icon" id="tab-community-icon">👥</div>
+                    <div class="tab-label active" id="tab-community">Community</div>
+                </div>
+                <div class="tab-item">
+                    <div class="tab-icon-inactive">📚</div>
+                    <div class="tab-label">Learn</div>
+                </div>
+                <div class="tab-item" onclick="showScreen('profile')">
+                    <div class="tab-icon-inactive" id="tab-profile-icon">👤</div>
+                    <div class="tab-label" id="tab-profile">Profile</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <div class="footer">
+        <div class="footer-brand">@Qodex_Numerology.il</div>
+        <div class="footer-tagline">Discover your numbers. Unlock your destiny.</div>
+    </div>
+
+    <script>
+        // Screen Navigation
+        function showScreen(screenName) {
+            // Hide all screens
+            document.querySelectorAll('.screen').forEach(screen => {
+                screen.classList.remove('active');
+            });
+            
+            // Show selected screen
+            document.getElementById(screenName).classList.add('active');
+            
+            // Update tabs
+            document.querySelectorAll('.screen-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            const tabIndex = ['community', 'profile', 'compatibility', 'live'].indexOf(screenName);
+            if (tabIndex >= 0) {
+                document.querySelectorAll('.screen-tab')[tabIndex].classList.add('active');
+            }
+            
+            // Update bottom tab bar
+            document.querySelectorAll('.tab-label').forEach(label => label.classList.remove('active'));
+            document.querySelectorAll('.tab-icon').forEach(icon => icon.classList.remove('tab-icon'));
+            document.querySelectorAll('.tab-icon').forEach(icon => icon.classList.add('tab-icon-inactive'));
+            
+            if (screenName === 'community') {
+                document.getElementById('tab-community').classList.add('active');
+                document.getElementById('tab-community-icon').classList.remove('tab-icon-inactive');
+                document.getElementById('tab-community-icon').classList.add('tab-icon');
+            } else if (screenName === 'profile') {
+                document.getElementById('tab-profile').classList.add('active');
+                document.getElementById('tab-profile-icon').classList.remove('tab-icon-inactive');
+                document.getElementById('tab-profile-icon').classList.add('tab-icon');
+            }
+        }
+        
+        // Toast Notification
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2500);
+        }
+        
+        // Like Toggle
+        function toggleLike(element) {
+            element.classList.toggle('liked');
+            const icon = element.querySelector('span:first-child');
+            const count = element.querySelector('.like-count');
+            
+            if (element.classList.contains('liked')) {
+                icon.textContent = '❤️';
+                count.textContent = parseInt(count.textContent) + 1;
+                showToast('Liked!');
+            } else {
+                icon.textContent = '🤍';
+                count.textContent = parseInt(count.textContent) - 1;
+            }
+        }
+        
+        // Partner rotation for compatibility
+        const partners = [
+            { name: 'Alex', path: '3', initials: 'AJ', color: 'blue', score: 85, title: 'Highly Compatible', desc: 'Strong compatibility with natural understanding. You complement each other\'s strengths beautifully.' },
+            { name: 'Emma', path: '5', initials: 'EK', color: 'pink', score: 72, title: 'Good Match', desc: 'Good potential with some challenges. Communication will be key to your success.' },
+            { name: 'Michael', path: '1', initials: 'MR', color: 'blue', score: 91, title: 'Perfect Harmony', desc: 'Exceptional compatibility! You share deep spiritual connections and life goals.' }
+        ];
+        let currentPartner = 0;
+        
+        function changePartner() {
+            currentPartner = (currentPartner + 1) % partners.length;
+            const partner = partners[currentPartner];
+            
+            document.getElementById('partner-name').textContent = partner.name;
+            document.getElementById('partner-role').textContent = 'Life Path ' + partner.path;
+            document.getElementById('partner-avatar').innerHTML = partner.initials + 
+                '<div class="person-path"><div class="person-path-inner ' + partner.color + '">' + partner.path + '</div></div>';
+            
+            // Animate score change
+            const scoreEl = document.getElementById('compatibility-score');
+            const circleEl = document.getElementById('circle-progress');
+            const titleEl = document.getElementById('result-title');
+            const descEl = document.getElementById('result-desc');
+            
+            scoreEl.textContent = partner.score + '%';
+            titleEl.textContent = partner.title;
+            descEl.textContent = partner.desc;
+            
+            // Update circle rotation based on score
+            const rotation = (partner.score / 100) * 360;
+            circleEl.style.transform = 'rotate(' + (rotation - 54) + 'deg)';
+            
+            showToast('Comparing with ' + partner.name);
+        }
+        
+        // Reminder Toggle
+        function toggleReminder(element) {
+            element.classList.toggle('active');
+            if (element.classList.contains('active')) {
+                element.textContent = '🔔';
+                showToast('Reminder set!');
+            } else {
+                element.textContent = '🔕';
+                showToast('Reminder removed');
+            }
+        }
+    </script>
+</body>
+</html>

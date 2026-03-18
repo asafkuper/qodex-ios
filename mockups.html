@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QodeX iOS App - Mockups</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+            background: #0A0A0F;
+            color: #fff;
+            padding: 40px;
+        }
+        
+        h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #D4AF37, #F4D03F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            color: #8B8B9E;
+            margin-bottom: 40px;
+        }
+        
+        .mockups-container {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .phone-frame {
+            width: 390px;
+            height: 844px;
+            background: #12121A;
+            border-radius: 50px;
+            padding: 12px;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.1);
+            position: relative;
+        }
+        
+        .phone-notch {
+            position: absolute;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 35px;
+            background: #0A0A0F;
+            border-radius: 0 0 25px 25px;
+            z-index: 10;
+        }
+        
+        .screen {
+            width: 100%;
+            height: 100%;
+            background: #0A0A0F;
+            border-radius: 40px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .screen-label {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #8B8B9E;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+        
+        /* Sacred Geometry Background */
+        .sacred-bg {
+            position: absolute;
+            inset: 0;
+            opacity: 0.1;
+            background: 
+                radial-gradient(circle at 30% 40%, rgba(212,175,55,0.3) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(107,78,230,0.2) 0%, transparent 50%);
+        }
+        
+        /* LOGIN SCREEN */
+        .login-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 40px 32px;
+        }
+        
+        .logo-container {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin-bottom: 24px;
+        }
+        
+        .logo-ring {
+            position: absolute;
+            border: 1px solid rgba(212,175,55,0.3);
+            border-radius: 50%;
+        }
+        
+        .logo-ring.outer {
+            width: 120px;
+            height: 120px;
+            top: 0;
+            left: 0;
+        }
+        
+        .logo-ring.inner {
+            width: 100px;
+            height: 100px;
+            top: 10px;
+            left: 10px;
+            border-color: rgba(212,175,55,0.5);
+        }
+        
+        .hexagon {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            top: 30px;
+            left: 30px;
+        }
+        
+        .hexagon svg {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .logo-q {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 32px;
+            font-weight: bold;
+            color: #D4AF37;
+        }
+        
+        .brand-title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .brand-subtitle {
+            font-size: 12px;
+            letter-spacing: 4px;
+            color: #D4AF37;
+            margin-bottom: 60px;
+        }
+        
+        .input-group {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        
+        .input-label {
+            font-size: 12px;
+            color: #8B8B9E;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .input-field {
+            width: 100%;
+            padding: 16px;
+            background: #12121A;
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 16px;
+        }
+        
+        .input-field::placeholder {
+            color: #8B8B9E;
+        }
+        
+        .forgot-link {
+            align-self: flex-end;
+            font-size: 12px;
+            color: rgba(212,175,55,0.8);
+            margin-bottom: 40px;
+        }
+        
+        .login-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #D4AF37, #F4D03F);
+            border: none;
+            border-radius: 16px;
+            color: #0A0A0F;
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+        
+        .signup-text {
+            font-size: 12px;
+            color: #8B8B9E;
+        }
+        
+        .signup-text a {
+            color: #D4AF37;
+            text-decoration: none;
+        }
+        
+        /* DASHBOARD SCREEN */
+        .dashboard-screen {
+            padding: 60px 20px 40px;
+            height: 100%;
+            overflow-y: auto;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+        
+        .greeting {
+            font-size: 14px;
+            color: #8B8B9E;
+        }
+        
+        .username {
+            font-size: 24px;
+            font-weight: 600;
+        }
+        
+        .avatar {
+            width: 48px;
+            height: 48px;
+            background: #1E1E2E;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 600;
+            color: #D4AF37;
+        }
+        
+        .daily-card {
+            background: #12121A;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(212,175,55,0.2);
+        }
+        
+        .daily-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        
+        .daily-title {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .sparkle {
+            color: #D4AF37;
+        }
+        
+        .daily-content {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .number-display {
+            text-align: center;
+            min-width: 100px;
+        }
+        
+        .big-number {
+            font-size: 64px;
+            font-weight: bold;
+            color: #D4AF37;
+            line-height: 1;
+        }
+        
+        .number-label {
+            font-size: 12px;
+            color: #E8E8F0;
+            margin-top: 8px;
+        }
+        
+        .divider {
+            width: 1px;
+            background: #1E1E2E;
+        }
+        
+        .daily-desc h4 {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        
+        .daily-desc p {
+            font-size: 12px;
+            color: #8B8B9E;
+            line-height: 1.5;
+        }
+        
+        .quick-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .action-card {
+            background: #12121A;
+            border-radius: 16px;
+            padding: 16px;
+        }
+        
+        .action-icon {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+        
+        .action-icon.purple { color: #6B4EE6; }
+        .action-icon.teal { color: #00D4AA; }
+        .action-icon.gold { color: #D4AF37; }
+        .action-icon.rose { color: #E85D75; }
+        
+        .action-title {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .action-subtitle {
+            font-size: 12px;
+            color: #8B8B9E;
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .see-all {
+            font-size: 12px;
+            color: #D4AF37;
+        }
+        
+        .teaching-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .teaching-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: #12121A;
+            border-radius: 12px;
+            padding: 16px;
+        }
+        
+        .teaching-thumb {
+            width: 60px;
+            height: 60px;
+            background: #1E1E2E;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .play-icon {
+            color: #D4AF37;
+        }
+        
+        .teaching-info {
+            flex: 1;
+        }
+        
+        .teaching-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+        
+        .teaching-title span {
+            font-size: 15px;
+            font-weight: 500;
+        }
+        
+        .badge-new {
+            background: #D4AF37;
+            color: #0A0A0F;
+            font-size: 10px;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        
+        .teaching-duration {
+            font-size: 12px;
+            color: #8B8B9E;
+        }
+        
+        .chevron {
+            color: #8B8B9E;
+        }
+        
+        /* CALCULATOR SCREEN */
+        .calculator-screen {
+            padding: 60px 20px 40px;
+            height: 100%;
+            overflow-y: auto;
+        }
+        
+        .calc-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        
+        .calc-title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .calc-subtitle {
+            font-size: 16px;
+            color: #8B8B9E;
+        }
+        
+        .input-section {
+            margin-bottom: 32px;
+        }
+        
+        .calc-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #D4AF37, #F4D03F);
+            border: none;
+            border-radius: 16px;
+            color: #0A0A0F;
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+        
+        .results-section {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .result-card {
+            background: #12121A;
+            border-radius: 16px;
+            padding: 20px;
+            border: 1px solid;
+        }
+        
+        .result-card.purple { border-color: rgba(107,78,230,0.3); }
+        .result-card.teal { border-color: rgba(0,212,170,0.3); }
+        .result-card.gold { border-color: rgba(212,175,55,0.3); }
+        
+        .result-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 12px;
+        }
+        
+        .result-number {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        
+        .result-number.purple {
+            background: rgba(107,78,230,0.2);
+            color: #6B4EE6;
+        }
+        
+        .result-number.teal {
+            background: rgba(0,212,170,0.2);
+            color: #00D4AA;
+        }
+        
+        .result-number.gold {
+            background: rgba(212,175,55,0.2);
+            color: #D4AF37;
+        }
+        
+        .result-title-section h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .result-title-section span {
+            font-size: 12px;
+            color: #8B8B9E;
+        }
+        
+        .result-desc {
+            font-size: 14px;
+            color: #E8E8F0;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <h1>QodeX Inner Circle</h1>
+    <p class="subtitle">iOS App Design Mockups — Premium Membership Experience</p>
+    
+    <div class="mockups-container">
+        <!-- LOGIN SCREEN -->
+        <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <div class="screen">
+                <div class="sacred-bg"></div>
+                <div class="login-screen">
+                    <div class="logo-container">
+                        <div class="logo-ring outer"></div>
+                        <div class="logo-ring inner"></div>
+                        <div class="hexagon">
+                            <svg viewBox="0 0 100 100">
+                                <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" 
+                                         fill="none" 
+                                         stroke="#D4AF37" 
+                                         stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="logo-q">Q</div>
+                    </div>
+                    
+                    <div class="brand-title">QodeX</div>
+                    <div class="brand-subtitle">INNER CIRCLE</div>
+                    
+                    <div class="input-group">
+                        <label class="input-label">EMAIL</label>
+                        <input type="email" class="input-field" placeholder="your@email.com">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label class="input-label">PASSWORD</label>
+                        <input type="password" class="input-field" placeholder="••••••••">
+                    </div>
+                    
+                    <a href="#" class="forgot-link">Forgot Password?</a>
+                    
+                    <button class="login-btn">
+                        <span>Enter the Circle</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                    
+                    <p class="signup-text">Not a member? <a href="#">Join QodeX</a></p>
+                </div>
+            </div>
+            <span class="screen-label">Login Screen</span>
+        </div>
+        
+        <!-- DASHBOARD SCREEN -->
+        <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <div class="screen">
+                <div class="sacred-bg"></div>
+                <div class="dashboard-screen">
+                    <div class="header">
+                        <div>
+                            <div class="greeting">Welcome back,</div>
+                            <div class="username">Seeker</div>
+                        </div>
+                        <div class="avatar">S</div>
+                    </div>
+                    
+                    <div class="daily-card">
+                        <div class="daily-header">
+                            <span class="daily-title">Today's Qode</span>
+                            <span class="sparkle">✦</span>
+                        </div>
+                        <div class="daily-content">
+                            <div class="number-display">
+                                <div class="big-number">7</div>
+                                <div class="number-label">The Seeker</div>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="daily-desc">
+                                <h4>Analysis & Understanding</h4>
+                                <p>A day for introspection and seeking deeper truths. Trust your intuition.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quick-actions">
+                        <div class="action-card">
+                            <div class="action-icon purple">◉</div>
+                            <div class="action-title">My Qode</div>
+                            <div class="action-subtitle">Personal Matrix</div>
+                        </div>
+                        <div class="action-card">
+                            <div class="action-icon teal">📖</div>
+                            <div class="action-title">Teachings</div>
+                            <div class="action-subtitle">Shani's Library</div>
+                        </div>
+                        <div class="action-card">
+                            <div class="action-icon gold">▶</div>
+                            <div class="action-title">Live Sessions</div>
+                            <div class="action-subtitle">Member Calls</div>
+                        </div>
+                        <div class="action-card">
+                            <div class="action-icon rose">👥</div>
+                            <div class="action-title">Community</div>
+                            <div class="action-subtitle">Inner Circle</div>
+                        </div>
+                    </div>
+                    
+                    <div class="section-header">
+                        <span class="section-title">Recent Teachings</span>
+                        <a href="#" class="see-all">See All</a>
+                    </div>
+                    
+                    <div class="teaching-list">
+                        <div class="teaching-item">
+                            <div class="teaching-thumb">
+                                <span class="play-icon">▶</span>
+                            </div>
+                            <div class="teaching-info">
+                                <div class="teaching-title">
+                                    <span>The Master Numbers</span>
+                                    <span class="badge-new">NEW</span>
+                                </div>
+                                <div class="teaching-duration">45 min</div>
+                            </div>
+                            <span class="chevron">›</span>
+                        </div>
+                        
+                        <div class="teaching-item">
+                            <div class="teaching-thumb">
+                                <span class="play-icon">▶</span>
+                            </div>
+                            <div class="teaching-info">
+                                <div class="teaching-title">
+                                    <span>Decoding Your Life Path</span>
+                                </div>
+                                <div class="teaching-duration">32 min</div>
+                            </div>
+                            <span class="chevron">›</span>
+                        </div>
+                        
+                        <div class="teaching-item">
+                            <div class="teaching-thumb">
+                                <span class="play-icon">▶</span>
+                            </div>
+                            <div class="teaching-info">
+                                <div class="teaching-title">
+                                    <span>Timing & Cycles</span>
+                                </div>
+                                <div class="teaching-duration">28 min</div>
+                            </div>
+                            <span class="chevron">›</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="screen-label">Dashboard</span>
+        </div>
+        
+        <!-- CALCULATOR SCREEN -->
+        <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <div class="screen">
+                <div class="sacred-bg"></div>
+                <div class="calculator-screen">
+                    <div class="calc-header">
+                        <h2 class="calc-title">Qode Calculator</h2>
+                        <p class="calc-subtitle">Discover your energetic blueprint</p>
+                    </div>
+                    
+                    <div class="input-section">
+                        <div class="input-group">
+                            <label class="input-label">BIRTH DATE</label>
+                            <input type="text" class="input-field" value="March 8, 1990" readonly>
+                        </div>
+                        
+                        <div class="input-group" style="margin-top: 24px;">
+                            <label class="input-label">FULL NAME AT BIRTH</label>
+                            <input type="text" class="input-field" value="Shani Ben-David">
+                        </div>
+                    </div>
+                    
+                    <button class="calc-btn">
+                        <span>✦</span>
+                        <span>Decode My Qode</span>
+                    </button>
+                    
+                    <div class="results-section">
+                        <div class="result-card purple">
+                            <div class="result-header">
+                                <div class="result-number purple">7</div>
+                                <div class="result-title-section">
+                                    <h4>Life Path Number</h4>
+                                    <span>Core Number</span>
+                                </div>
+                            </div>
+                            <p class="result-desc">The Seeker. Deeply analytical and introspective. You are here to seek truth and understanding.</p>
+                        </div>
+                        
+                        <div class="result-card teal">
+                            <div class="result-header">
+                                <div class="result-number teal">3</div>
+                                <div class="result-title-section">
+                                    <h4>Expression Number</h4>
+                                    <span>Core Number</span>
+                                </div>
+                            </div>
+                            <p class="result-desc">The Creative. Self-expression and communication are your gifts. You bring joy through creativity.</p>
+                        </div>
+                        
+                        <div class="result-card gold">
+                            <div class="result-header">
+                                <div class="result-number gold">9</div>
+                                <div class="result-title-section">
+                                    <h4>Soul Urge Number</h4>
+                                    <span>Core Number</span>
+                                </div>
+                            </div>
+                            <p class="result-desc">The Humanitarian. Your heart yearns to serve humanity and make the world better.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="screen-label">Qode Calculator</span>
+        </div>
+    </div>
+</body>
+</html>

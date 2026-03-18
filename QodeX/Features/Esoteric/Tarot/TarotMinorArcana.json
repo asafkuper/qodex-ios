@@ -1,0 +1,1379 @@
+{
+  "metadata": {
+    "name": "QodeX Tarot Minor Arcana",
+    "version": "1.0",
+    "totalCards": 56,
+    "suits": [
+      {
+        "name": "Wands",
+        "element": "Fire",
+        "symbol": "🔥",
+        "domain": "Creativity, Passion, Action, Willpower, Inspiration",
+        "season": "Spring",
+        "direction": "South",
+        "kabbalahWorld": "Atziluth (Archetypal World)"
+      },
+      {
+        "name": "Cups",
+        "element": "Water",
+        "symbol": "🌊",
+        "domain": "Emotions, Relationships, Intuition, Love, Dreams",
+        "season": "Summer",
+        "direction": "West",
+        "kabbalahWorld": "Briah (Creative World)"
+      },
+      {
+        "name": "Swords",
+        "element": "Air",
+        "symbol": "💨",
+        "domain": "Thoughts, Conflicts, Clarity, Intellect, Communication",
+        "season": "Autumn",
+        "direction": "East",
+        "kabbalahWorld": "Yetzirah (Formative World)"
+      },
+      {
+        "name": "Pentacles",
+        "element": "Earth",
+        "symbol": "🌍",
+        "domain": "Material, Work, Physical Body, Wealth, Practicality",
+        "season": "Winter",
+        "direction": "North",
+        "kabbalahWorld": "Assiah (Material World)"
+      }
+    ]
+  },
+  "minorArcana": {
+    "wands": {
+      "suitInfo": {
+        "name": "Wands",
+        "element": "Fire",
+        "alternativeNames": ["Staves", "Rods", "Clubs"],
+        "zodiacAssociations": ["Aries", "Leo", "Sagittarius"],
+        "archetype": "The Creator / The Explorer"
+      },
+      "cards": [
+        {
+          "number": 1,
+          "name": "Ace of Wands",
+          "keywords": {
+            "upright": ["New beginnings", "Creative spark", "Inspiration", "Potential", "Enthusiasm", "Seed of fire"],
+            "reversed": ["Delayed start", "Lack of motivation", "Creative blocks", "Missed opportunity", "Hesitation"]
+          },
+          "meanings": {
+            "upright": "A powerful new creative beginning. The hand of the universe offers you a wand of pure potential—raw energy ready to manifest. This is the spark before the flame, the creative impulse that precedes action. A time of pure inspiration and enthusiasm.",
+            "reversed": "Creative energy is blocked or delayed. You may be experiencing a lack of motivation or hesitating to begin something new. The spark is there but not catching fire. Consider what fears or obstacles are preventing you from starting."
+          },
+          "numerology": "1 - Beginnings, initiative, masculine principle, the spark of creation",
+          "astrology": "All Fire signs (Aries, Leo, Sagittarius)",
+          "kabbalah": {
+            "sephirah": "Kether (Crown)",
+            "path": "11 - The path of the Primum Mobile",
+            "meaning": "The pure, undifferentiated divine will manifesting as creative impulse"
+          },
+          "affirmation": "I embrace new creative beginnings with passion and enthusiasm.",
+          "career": "New projects, entrepreneurial ventures, creative opportunities",
+          "relationships": "New romantic spark, passionate beginnings, creative partnerships",
+          "spirituality": "Spiritual awakening, divine inspiration, connection to higher purpose"
+        },
+        {
+          "number": 2,
+          "name": "Two of Wands",
+          "keywords": {
+            "upright": ["Planning", "Decisions", "Discovery", "Future planning", "Worldly power", "Expansion"],
+            "reversed": ["Fear of unknown", "Poor planning", "Indecision", "Over-analysis", "Playing small"]
+          },
+          "meanings": {
+            "upright": "You stand at a vantage point, wand in hand, looking out over possibilities. This is the planning phase after the initial spark. You have the power and now you're choosing the direction. Worldly expansion and strategic decisions are highlighted.",
+            "reversed": "Fear of leaving your comfort zone is holding you back. You may be over-analyzing instead of acting, or planning without executing. The world awaits, but you're hesitating at the threshold."
+          },
+          "numerology": "2 - Duality, partnership, balance, choice, the crossroads",
+          "astrology": "Mars in Aries",
+          "kabbalah": {
+            "sephirah": "Chokmah (Wisdom)",
+            "path": "12 - The path of the Magical Intelligence",
+            "meaning": "The wisdom of action through balanced masculine force"
+          },
+          "affirmation": "I confidently choose my path and embrace worldly expansion.",
+          "career": "Business expansion, strategic partnerships, exploring new markets",
+          "relationships": "Deciding between potential partners, long-distance relationships, future planning together",
+          "spirituality": "Exploring different spiritual paths, expanding consciousness"
+        },
+        {
+          "number": 3,
+          "name": "Three of Wands",
+          "keywords": {
+            "upright": ["Expansion", "Foresight", "Leadership", "Collaboration", "Enterprise", "Growth"],
+            "reversed": ["Shortsightedness", "Delays", "Obstacles", "Lack of foresight", "Missed opportunities"]
+          },
+          "meanings": {
+            "upright": "Your ships are coming in. The initial plans are bearing fruit and expansion is occurring. You've done the work and now opportunities are arriving from afar. Leadership and collaboration bring success. Foresight pays off.",
+            "reversed": "Delays in expected results or returns. You may have lacked foresight in your planning, or obstacles are blocking your progress. Ships may be coming, but they're delayed. Patience and reassessment are needed."
+          },
+          "numerology": "3 - Creation, expression, growth, the triangle of manifestation",
+          "astrology": "Sun in Aries",
+          "kabbalah": {
+            "sephirah": "Binah (Understanding)",
+            "path": "13 - The path of the Uniting Intelligence",
+            "meaning": "Understanding through creative expansion and enterprise"
+          },
+          "affirmation": "I welcome abundance as my creative visions manifest into reality.",
+          "career": "Successful ventures, business growth, international opportunities, teamwork",
+          "relationships": "Growing together, successful partnerships, supportive community",
+          "spirituality": "Spiritual growth, expanding consciousness, receiving spiritual guidance"
+        },
+        {
+          "number": 4,
+          "name": "Four of Wands",
+          "keywords": {
+            "upright": ["Celebration", "Harmony", "Marriage", "Community", "Achievement", "Stability"],
+            "reversed": ["Lack of support", "Instability", "Family conflict", "Postponed celebration", "Transience"]
+          },
+          "meanings": {
+            "upright": "A time of celebration and harmony. The four wands create a canopy of blessing—this is the completion of a phase worthy of recognition. Community support, stable foundations, and joyful gatherings. Milestones reached and celebrated.",
+            "reversed": "Celebration feels hollow or is postponed. Lack of community support or unstable foundations in your endeavors. Family conflicts may be disrupting your sense of home and belonging."
+          },
+          "numerology": "4 - Structure, foundation, stability, the square of manifestation",
+          "astrology": "Venus in Aries",
+          "kabbalah": {
+            "sephirah": "Chesed (Mercy)",
+            "path": "14 - The path of the Illuminating Intelligence",
+            "meaning": "Mercy and blessing through stable creative foundations"
+          },
+          "affirmation": "I celebrate my achievements and honor the community that supports me.",
+          "career": "Successful project completion, workplace celebrations, team harmony",
+          "relationships": "Weddings, engagements, housewarmings, community gatherings",
+          "spirituality": "Spiritual community, celebration of spiritual milestones, group rituals"
+        },
+        {
+          "number": 5,
+          "name": "Five of Wands",
+          "keywords": {
+            "upright": ["Conflict", "Competition", "Tension", "Diversity", "Clashing energies", "Struggle"],
+            "reversed": ["Avoiding conflict", "Resolution", "Inner harmony", "Cooperation", "Respite"]
+          },
+          "meanings": {
+            "upright": "Conflict and competition are present, but not necessarily destructive. Multiple energies are clashing, creating tension and struggle. This may be healthy competition or disagreements about direction. Navigate with awareness.",
+            "reversed": "Conflict resolution is possible. Inner harmony is being restored, or you're learning to avoid unnecessary battles. Cooperation emerges from chaos. A respite from struggle."
+          },
+          "numerology": "5 - Change, challenge, instability, the pentagram of transformation",
+          "astrology": "Saturn in Leo",
+          "kabbalah": {
+            "sephirah": "Geburah (Severity)",
+            "path": "15 - The path of the Radical Intelligence",
+            "meaning": "The severity of creative conflict that leads to transformation"
+          },
+          "affirmation": "I navigate conflict with grace and learn from competitive energies.",
+          "career": "Workplace competition, conflicting ideas, healthy rivalry, debates",
+          "relationships": "Arguments, clashing personalities, competition for attention",
+          "spirituality": "Spiritual battles, wrestling with beliefs, refining through challenge"
+        },
+        {
+          "number": 6,
+          "name": "Six of Wands",
+          "keywords": {
+            "upright": ["Victory", "Recognition", "Success", "Public acclaim", "Progress", "Confidence"],
+            "reversed": ["Private victory", "Ego issues", "Fall from grace", "Delayed recognition", "Pride"]
+          },
+          "meanings": {
+            "upright": "Victory and public recognition are yours. The rider returns triumphant with the wand of authority raised high. Others acknowledge your success and leadership. A time of confidence and deserved celebration.",
+            "reversed": "Victory that goes unrecognized or is kept private. Excessive pride may be alienating others. Fear of success or difficulty accepting praise. Recognition delayed but not denied."
+          },
+          "numerology": "6 - Harmony, balance, service, the hexagram of completion",
+          "astrology": "Jupiter in Leo",
+          "kabbalah": {
+            "sephirah": "Tiphareth (Beauty)",
+            "path": "16 - The path of the Triumphant Intelligence",
+            "meaning": "Beauty and harmony through creative victory"
+          },
+          "affirmation": "I graciously accept recognition and celebrate my victories.",
+          "career": "Promotion, awards, public success, leadership recognition",
+          "relationships": "Relationship success, being admired, public relationship milestones",
+          "spirituality": "Spiritual achievements, recognition as a teacher or guide"
+        },
+        {
+          "number": 7,
+          "name": "Seven of Wands",
+          "keywords": {
+            "upright": ["Perseverance", "Defense", "Maintaining position", "Courage", "Conviction", "Standing ground"],
+            "reversed": ["Giving up", "Overwhelm", "Exhaustion", "Inability to defend", "Vulnerability"]
+          },
+          "meanings": {
+            "upright": "You must defend your position against challenges from all sides. Standing your ground requires courage and conviction. This is not the time to retreat—you have the high ground if you maintain your stance with integrity.",
+            "reversed": "Feeling overwhelmed by opposition. You may be considering giving up or unable to maintain your defense. Exhaustion from constant battles. Need to choose which fights are worth engaging."
+          },
+          "numerology": "7 - Mysticism, analysis, assessment, the septenary of reflection",
+          "astrology": "Mars in Leo",
+          "kabbalah": {
+            "sephirah": "Netzach (Victory)",
+            "path": "17 - The path of the Disposing Intelligence",
+            "meaning": "Enduring victory through steadfast defense of one's creative vision"
+          },
+          "affirmation": "I stand my ground with courage and defend what I believe in.",
+          "career": "Defending your position, competition at work, standing up for ideas",
+          "relationships": "Defending the relationship, standing up for yourself, boundary setting",
+          "spirituality": "Defending spiritual beliefs, perseverance in practice, spiritual warfare"
+        },
+        {
+          "number": 8,
+          "name": "Eight of Wands",
+          "keywords": {
+            "upright": ["Swift action", "Movement", "Quick decisions", "Progress", "Travel", "Communication"],
+            "reversed": ["Delays", "Frustration", "Resistance", "Slowing down", "Miscommunication"]
+          },
+          "meanings": {
+            "upright": "Things are moving fast! Swift action, rapid progress, and quick communication characterize this time. Delays are over and momentum is building. Travel may be indicated. Decisions happen quickly now.",
+            "reversed": "Frustrating delays and resistance slow your progress. Miscommunication may be causing problems. The energy is there but blocked. Patience is required as things move slower than desired."
+          },
+          "numerology": "8 - Power, abundance, authority, the octave of manifestation",
+          "astrology": "Mercury in Sagittarius",
+          "kabbalah": {
+            "sephirah": "Hod (Glory)",
+            "path": "18 - The path of the Active Intelligence",
+            "meaning": "Glory through swift and decisive creative action"
+          },
+          "affirmation": "I move swiftly and confidently toward my goals.",
+          "career": "Rapid project development, quick business decisions, fast communication",
+          "relationships": "Relationship moving quickly, fast communication, passionate intensity",
+          "spirituality": "Rapid spiritual growth, sudden insights, quick energetic shifts"
+        },
+        {
+          "number": 9,
+          "name": "Nine of Wands",
+          "keywords": {
+            "upright": ["Resilience", "Courage", "Persistence", "Last stand", "Preparedness", "Defensive strength"],
+            "reversed": ["Exhaustion", "Burnout", "Defensiveness", "Paranoia", "Giving up"]
+          },
+          "meanings": {
+            "upright": "You've been through battles and you're weary, but you stand ready to defend what you've built. The Nine of Wands represents the final test before completion—resilience and persistence are required. You're stronger than you know.",
+            "reversed": "Exhaustion and burnout from constant vigilance. Paranoia or excessive defensiveness may be alienating others. You may be ready to give up just before the finish line. Rest and restore."
+          },
+          "numerology": "9 - Completion, wisdom, integration, the ennead of fulfillment",
+          "astrology": "Moon in Sagittarius",
+          "kabbalah": {
+            "sephirah": "Yesod (Foundation)",
+            "path": "19 - The path of the Secret Intelligence",
+            "meaning": "Foundation through the resilience of creative fire"
+          },
+          "affirmation": "I have the strength to persevere through any challenge.",
+          "career": "Final push on projects, defending your work, persistence through difficulties",
+          "relationships": "Protecting the relationship, overcoming past wounds, staying committed",
+          "spirituality": "Spiritual resilience, maintaining practice through difficulties"
+        },
+        {
+          "number": 10,
+          "name": "Ten of Wands",
+          "keywords": {
+            "upright": ["Burden", "Responsibility", "Hard work", "Completion", "Stress", "Achievement"],
+            "reversed": ["Release", "Delegation", "Lightening the load", "Letting go", "Recovery"]
+          },
+          "meanings": {
+            "upright": "You carry a heavy burden of responsibility and hard work. The creative cycle is complete but exhausting. You've achieved much but at a cost. This is the weight of success—time to consider what can be released.",
+            "reversed": "It's time to release the burden. Delegate what you can and let go of unnecessary responsibilities. Recovery from burnout. Learning to say no and lighten your load."
+          },
+          "numerology": "10 - Completion, new cycle beginning, the perfection of manifestation",
+          "astrology": "Saturn in Sagittarius",
+          "kabbalah": {
+            "sephirah": "Malkuth (Kingdom)",
+            "path": "20 - The path of the Kingdom",
+            "meaning": "The full manifestation of creative fire in the material world"
+          },
+          "affirmation": "I release what no longer serves me and carry only what is mine to bear.",
+          "career": "Heavy workload, completing a major project, career burnout, delegation",
+          "relationships": "Relationship burdens, carrying too much emotional weight, codependency",
+          "spirituality": "Spiritual burdens, releasing ego attachments, completion of spiritual work"
+        },
+        {
+          "number": 11,
+          "name": "Page of Wands",
+          "keywords": {
+            "upright": ["Exploration", "Enthusiasm", "Discovery", "New ideas", "Free spirit", "Adventure"],
+            "reversed": ["Lack of direction", "Procrastination", "Unfocused energy", "Immaturity", "Bad news"]
+          },
+          "meanings": {
+            "upright": "A messenger of creative potential arrives. The Page of Wands represents new ideas, enthusiasm, and the spirit of adventure. This is the explorer who sets out with passion but little plan. Fresh energy and exciting possibilities.",
+            "reversed": "Unfocused enthusiasm leads nowhere. Lack of direction or follow-through. Procrastination masks fear. The message may be delayed or disappointing. Mature your approach to your passions."
+          },
+          "numerology": "Page corresponds to 11/2 - Intuition, sensitivity, gateway energy",
+          "astrology": "All Fire signs (Aries, Leo, Sagittarius)",
+          "kabbalah": {
+            "sephirah": "Malkuth (Kingdom)",
+            "elemental": "Earth of Fire",
+            "meaning": "The grounding of creative fire in practical exploration"
+          },
+          "affirmation": "I explore new ideas with enthusiasm and an open heart.",
+          "career": "New career ideas, creative projects, entry-level enthusiasm, exploration",
+          "relationships": "New romantic interest, playful energy, adventurous dating",
+          "spirituality": "Spiritual exploration, new practices, discovering spiritual interests"
+        },
+        {
+          "number": 12,
+          "name": "Knight of Wands",
+          "keywords": {
+            "upright": ["Action", "Adventure", "Fearlessness", "Passion", "Impulsiveness", "Charm"],
+            "reversed": ["Recklessness", "Haste", "Anger", "Impulsiveness", "Delays", "Frustration"]
+          },
+          "meanings": {
+            "upright": "The Knight charges forward with passion and courage. This is action-oriented energy—bold, adventurous, and charismatic. Things happen quickly now. A passionate pursuit of goals with fearless determination.",
+            "reversed": "Reckless action leads to problems. Impulsiveness without forethought causes delays. Anger or frustration driving poor decisions. Slow down and think before acting."
+          },
+          "numerology": "Knight corresponds to 12/3 - Creative expression through action",
+          "astrology": "Scorpio (the fixed water sign ruled by Mars)",
+          "kabbalah": {
+            "sephirah": "Tiphareth (Beauty)",
+            "elemental": "Air of Fire",
+            "meaning": "The beauty of passionate action and creative movement"
+          },
+          "affirmation": "I pursue my passions with courage and decisive action.",
+          "career": "Fast career moves, ambitious projects, pursuing goals with passion",
+          "relationships": "Passionate pursuit, whirlwind romance, adventurous partner",
+          "spirituality": "Active spiritual practice, passionate devotion, dynamic meditation"
+        },
+        {
+          "number": 13,
+          "name": "Queen of Wands",
+          "keywords": {
+            "upright": ["Confidence", "Social butterfly", "Determination", "Charisma", "Independence", "Warmth"],
+            "reversed": ["Self-doubt", "Insecurity", "Introversion", "Jealousy", "Overbearing"]
+          },
+          "meanings": {
+            "upright": "The Queen of Wands embodies confident creativity and magnetic charisma. She is warm, determined, and socially graceful. This energy attracts others through authenticity and passion. A master of creative manifestation.",
+            "reversed": "Self-doubt undermines your confidence. Insecurity may cause you to withdraw or become jealous of others. The warmth is replaced by coldness. Reconnect with your inner fire and authentic power."
+          },
+          "numerology": "Queen corresponds to 13/4 - Manifestation through creative authority",
+          "astrology": "Aries (the cardinal fire sign)",
+          "kabbalah": {
+            "sephirah": "Binah (Understanding)",
+            "elemental": "Water of Fire",
+            "meaning": "The understanding that comes from mature creative expression"
+          },
+          "affirmation": "I embody confidence and warm others with my creative fire.",
+          "career": "Leadership with charisma, creative authority, successful entrepreneurship",
+          "relationships": "Confident partner, charismatic lover, warm and passionate relationship",
+          "spirituality": "Spiritual authority, confident practice, warm spiritual leadership"
+        },
+        {
+          "number": 14,
+          "name": "King of Wands",
+          "keywords": {
+            "upright": ["Leadership", "Vision", "Entrepreneurship", "Charisma", "Honor", "Optimism"],
+            "reversed": ["Impulsiveness", "Ruthlessness", "Tyranny", "Unrealistic expectations", "Harshness"]
+          },
+          "meanings": {
+            "upright": "The King of Wands is the visionary leader who inspires others through action and charisma. He combines creativity with practical mastery. A natural entrepreneur who leads with honor and optimism. Mature fire energy in its highest form.",
+            "reversed": "Leadership becomes tyranny. Impulsiveness leads to poor decisions. Ruthlessness in pursuit of goals alienates others. Unrealistic expectations create disappointment. Temper fire with wisdom."
+          },
+          "numerology": "King corresponds to 14/5 - Leadership through creative change",
+          "astrology": "Leo (the fixed fire sign ruled by the Sun)",
+          "kabbalah": {
+            "sephirah": "Chokmah (Wisdom)",
+            "elemental": "Fire of Fire",
+            "meaning": "The pure wisdom of creative fire in mastery"
+          },
+          "affirmation": "I lead with vision, passion, and honorable action.",
+          "career": "Executive leadership, entrepreneurship, visionary management, creative direction",
+          "relationships": "Strong leadership in relationship, protective partner, passionate commitment",
+          "spirituality": "Spiritual mastery, wise leadership, embodiment of divine will"
+        }
+      ]
+    },
+    "cups": {
+      "suitInfo": {
+        "name": "Cups",
+        "element": "Water",
+        "alternativeNames": ["Chalices", "Hearts", "Goblets"],
+        "zodiacAssociations": ["Cancer", "Scorpio", "Pisces"],
+        "archetype": "The Lover / The Mystic"
+      },
+      "cards": [
+        {
+          "number": 1,
+          "name": "Ace of Cups",
+          "keywords": {
+            "upright": ["New love", "Overflowing emotions", "Spiritual awakening", "Intuition", "Creativity", "Joy"],
+            "reversed": ["Emotional blockage", "Empty heart", "Unexpressed feelings", "Creative blocks", "Emotional drain"]
+          },
+          "meanings": {
+            "upright": "A cup overflowing with love and emotional abundance is offered to you. This is the beginning of deep emotional or spiritual experience—new love, creative inspiration, or profound intuition. The heart opens to receive divine love.",
+            "reversed": "Emotional blockage prevents you from receiving love. The cup is there but you cannot drink from it. Unexpressed feelings create inner pressure. Creative and emotional stagnation needs addressing."
+          },
+          "numerology": "1 - New emotional beginnings, the fountain of feelings opening",
+          "astrology": "All Water signs (Cancer, Scorpio, Pisces)",
+          "kabbalah": {
+            "sephirah": "Kether (Crown)",
+            "path": "11 - The path of the Primum Mobile",
+            "meaning": "The divine source of all emotion and spiritual love"
+          },
+          "affirmation": "My heart overflows with love and creative inspiration.",
+          "career": "Creative inspiration, emotionally fulfilling work, compassionate service",
+          "relationships": "New love, deepening emotional connection, spiritual partnership",
+          "spirituality": "Spiritual awakening, divine love, connection to higher realms"
+        },
+        {
+          "number": 2,
+          "name": "Two of Cups",
+          "keywords": {
+            "upright": ["Partnership", "Union", "Harmony", "Mutual attraction", "Commitment", "Balance"],
+            "reversed": ["Imbalance", "Broken relationships", "Disconnection", "Mistrust", "Unequal partnership"]
+          },
+          "meanings": {
+            "upright": "Two cups are exchanged in mutual love and harmony. This represents partnership, union, and the sacred bond between two people. True emotional connection based on equality and mutual respect. A commitment or deepening relationship.",
+            "reversed": "Imbalance in a relationship creates disconnection. Trust has been broken or communication has failed. An unequal partnership where one gives more than the other. Misalignment of values or feelings."
+          },
+          "numerology": "2 - Emotional duality, partnership, the exchange of feelings",
+          "astrology": "Venus in Cancer",
+          "kabbalah": {
+            "sephirah": "Chokmah (Wisdom)",
+            "path": "12 - The path of the Magical Intelligence",
+            "meaning": "The wisdom of emotional union and sacred partnership"
+          },
+          "affirmation": "I am open to deep, harmonious partnerships built on mutual respect.",
+          "career": "Business partnerships, harmonious work relationships, collaborative projects",
+          "relationships": "Romantic partnership, soulmate connection, marriage, deep friendship",
+          "spirituality": "Spiritual partnership, divine union, sacred marriage"
+        },
+        {
+          "number": 3,
+          "name": "Three of Cups",
+          "keywords": {
+            "upright": ["Celebration", "Friendship", "Community", "Joy", "Abundance", "Togetherness"],
+            "reversed": ["Gossip", "Isolation", "Overindulgence", "Drama", "Conflict within group"]
+          },
+          "meanings": {
+            "upright": "Three cups are raised in celebration and friendship. This is the joy of community, shared happiness, and emotional abundance with others. Celebrate your connections and the support of your tribe. A time of happiness and togetherness.",
+            "reversed": "Celebration turns to gossip or drama within a group. Isolation from community or feeling left out. Overindulgence in pleasure creates problems. Conflicts within your social circle need addressing."
+          },
+          "numerology": "3 - Emotional creativity, the joy of expression, social expansion",
+          "astrology": "Mercury in Cancer",
+          "kabbalah": {
+            "sephirah": "Binah (Understanding)",
+            "path": "13 - The path of the Uniting Intelligence",
+            "meaning": "Understanding through emotional community and shared joy"
+          },
+          "affirmation": "I celebrate the joy of friendship and community in my life.",
+          "career": "Team celebrations, workplace friendships, collaborative success",
+          "relationships": "Group friendships, social connections, celebrating relationships",
+          "spirituality": "Spiritual community, group rituals, shared spiritual joy"
+        },
+        {
+          "number": 4,
+          "name": "Four of Cups",
+          "keywords": {
+            "upright": ["Contemplation", "Apathy", "Reevaluation", "Meditation", "Dissatisfaction", "Withdrawal"],
+            "reversed": ["New awareness", "Awakening", "Choosing happiness", "Acceptance", "Openness"]
+          },
+          "meanings": {
+            "upright": "A figure sits under a tree, contemplating three cups while a fourth is offered from above. This is a time of emotional reevaluation and contemplation. You may be feeling apathetic or dissatisfied despite having much. Meditation and introspection are needed.",
+            "reversed": "New awareness breaks through apathy. You recognize the blessings being offered and choose to accept them. Awakening from emotional stagnation. Opening your heart to new possibilities."
+          },
+          "numerology": "4 - Emotional stability, foundation of feelings, contemplation",
+          "astrology": "Moon in Cancer",
+          "kabbalah": {
+            "sephirah": "Chesed (Mercy)",
+            "path": "14 - The path of the Illuminating Intelligence",
+            "meaning": "Mercy through emotional introspection and stability"
+          },
+          "affirmation": "I remain open to the blessings the universe offers me.",
+          "career": "Job dissatisfaction, reevaluating career path, needing change",
+          "relationships": "Emotional withdrawal, taking relationship for granted, introspection",
+          "spirituality": "Spiritual contemplation, meditation, seeking deeper meaning"
+        },
+        {
+          "number": 5,
+          "name": "Five of Cups",
+          "keywords": {
+            "upright": ["Loss", "Grief", "Disappointment", "Regret", "Focusing on negatives", "Mourning"],
+            "reversed": ["Acceptance", "Moving on", "Hope", "Finding peace", "Release", "Recovery"]
+          },
+          "meanings": {
+            "upright": "Three cups have spilled while two remain standing. This is the card of grief and loss—mourning what has been lost while failing to see what remains. Disappointment and regret cloud your vision. It's natural to grieve, but don't lose sight of what you still have.",
+            "reversed": "Acceptance of loss allows you to move forward. Hope returns as you release grief. Finding peace with what has passed. Recovery from disappointment. The remaining cups are now visible."
+          },
+          "numerology": "5 - Emotional change, loss leading to transformation",
+          "astrology": "Mars in Scorpio",
+          "kabbalah": {
+            "sephirah": "Geburah (Severity)",
+            "path": "15 - The path of the Radical Intelligence",
+            "meaning": "The severity of emotional loss that leads to transformation"
+          },
+          "affirmation": "I honor my grief while remaining grateful for what remains.",
+          "career": "Career disappointment, job loss, project failure, professional setbacks",
+          "relationships": "Heartbreak, loss of relationship, grieving love, disappointment",
+          "spirituality": "Dark night of the soul, spiritual grief, finding meaning in loss"
+        },
+        {
+          "number": 6,
+          "name": "Six of Cups",
+          "keywords": {
+            "upright": ["Nostalgia", "Childhood memories", "Innocence", "Joy", "Reunion", "Gift giving"],
+            "reversed": ["Stuck in past", "Naivety", "Unrealistic expectations", "Childishness", "Unresolved issues"]
+          },
+          "meanings": {
+            "upright": "Children share cups in a garden of memory. This card represents nostalgia, childhood innocence, and the joy of simpler times. Happy memories surface, possibly a reunion with someone from your past. Gifts given and received with pure hearts.",
+            "reversed": "Being stuck in the past prevents present happiness. Naivety or childishness creates problems. Unrealistic expectations based on memory rather than reality. Past issues need resolution."
+          },
+          "numerology": "6 - Emotional harmony, nostalgia, the sweetness of memory",
+          "astrology": "Sun in Scorpio",
+          "kabbalah": {
+            "sephirah": "Tiphareth (Beauty)",
+            "path": "16 - The path of the Triumphant Intelligence",
+            "meaning": "Beauty through the harmony of emotional memory"
+          },
+          "affirmation": "I cherish sweet memories while staying present in my joy.",
+          "career": "Returning to previous work, nostalgia for past jobs, childhood career dreams",
+          "relationships": "Reunion with past love, childhood sweethearts, nostalgia in relationship",
+          "spirituality": "Inner child work, reconnecting with pure spiritual joy, ancestral connection"
+        },
+        {
+          "number": 7,
+          "name": "Seven of Cups",
+          "keywords": {
+            "upright": ["Choices", "Fantasy", "Wishes", "Imagination", "Illusion", "Dreams"],
+            "reversed": ["Reality check", "Clarity", "Decisiveness", "Overcoming delusion", "Grounding"]
+          },
+          "meanings": {
+            "upright": "Seven cups appear, each containing a different vision or temptation. This card represents choices, fantasies, and the imagination running wild. Many possibilities present themselves, but not all are real. Distinguish between dreams and illusions.",
+            "reversed": "A reality check brings clarity. You see through illusions to what is real. Decisiveness replaces fantasy. Overcoming delusion or wishful thinking. Grounding dreams in practical reality."
+          },
+          "numerology": "7 - Emotional analysis, dreams, choices in the emotional realm",
+          "astrology": "Venus in Scorpio",
+          "kabbalah": {
+            "sephirah": "Netzach (Victory)",
+            "path": "17 - The path of the Disposing Intelligence",
+            "meaning": "Victory through emotional choices and dream manifestation"
+          },
+          "affirmation": "I choose my dreams wisely and manifest them in reality.",
+          "career": "Multiple career options, creative possibilities, fantasy vs reality in work",
+          "relationships": "Fantasy relationships, illusions in love, choosing between partners",
+          "spirituality": "Vision quests, spiritual fantasies, discerning true spiritual paths"
+        },
+        {
+          "number": 8,
+          "name": "Eight of Cups",
+          "keywords": {
+            "upright": ["Walking away", "Disillusionment", "Seeking truth", "Leaving behind", "Soul searching", "Journey"],
+            "reversed": ["Fear of change", "Stagnation", "Avoidance", "Fear of loss", "Settling"]
+          },
+          "meanings": {
+            "upright": "A figure walks away from eight stacked cups toward distant mountains. This represents leaving behind emotional situations that no longer serve you. Disillusionment leads to the search for deeper meaning. A necessary journey away from the familiar toward truth.",
+            "reversed": "Fear of change keeps you in unfulfilling situations. Stagnation from avoiding necessary departures. Settling for less than you deserve. The journey calls but you hesitate to begin."
+          },
+          "numerology": "8 - Emotional power, the journey of the heart, leaving behind",
+          "astrology": "Saturn in Pisces",
+          "kabbalah": {
+            "sephirah": "Hod (Glory)",
+            "path": "18 - The path of the Active Intelligence",
+            "meaning": "Glory through the courage to seek emotional truth"
+          },
+          "affirmation": "I have the courage to leave what no longer serves my highest good.",
+          "career": "Leaving unfulfilling job, career change, seeking meaningful work",
+          "relationships": "Ending relationships, walking away from emotional situations, seeking true love",
+          "spirituality": "Spiritual pilgrimage, leaving behind limiting beliefs, seeking truth"
+        },
+        {
+          "number": 9,
+          "name": "Nine of Cups",
+          "keywords": {
+            "upright": ["Wishes fulfilled", "Contentment", "Satisfaction", "Emotional abundance", "Gratitude", "Joy"],
+            "reversed": ["Dissatisfaction", "Unfulfilled wishes", "Smugness", "Complacency", "Inner emptiness"]
+          },
+          "meanings": {
+            "upright": "The wish card—a figure sits before nine arranged cups with satisfaction. Your emotional and material wishes are being fulfilled. Contentment, satisfaction, and emotional abundance are yours. A time of gratitude and joy for what you have manifested.",
+            "reversed": "Despite having much, you feel dissatisfied. Wishes remain unfulfilled or don't bring the expected joy. Smugness or complacency prevents true happiness. Inner emptiness exists beneath apparent abundance."
+          },
+          "numerology": "9 - Emotional completion, fulfillment, the satisfaction of desires",
+          "astrology": "Jupiter in Pisces",
+          "kabbalah": {
+            "sephirah": "Yesod (Foundation)",
+            "path": "19 - The path of the Secret Intelligence",
+            "meaning": "The foundation of emotional fulfillment and wish manifestation"
+          },
+          "affirmation": "I am grateful for the abundance of joy and fulfillment in my life.",
+          "career": "Dream job achieved, career satisfaction, work that fulfills emotionally",
+          "relationships": "Emotional fulfillment in relationship, wish come true in love, contentment",
+          "spirituality": "Spiritual fulfillment, answered prayers, deep spiritual contentment"
+        },
+        {
+          "number": 10,
+          "name": "Ten of Cups",
+          "keywords": {
+            "upright": ["Happiness", "Harmony", "Family", "Lasting love", "Emotional completion", "Bliss"],
+            "reversed": ["Broken home", "Discord", "Misalignment of values", "Unhappiness", "Family conflict"]
+          },
+          "meanings": {
+            "upright": "Ten cups arc beneath a rainbow—a vision of perfect happiness and family harmony. This is emotional completion at its highest—lasting love, family bliss, and deep contentment. True emotional fulfillment shared with others. The happily ever after.",
+            "reversed": "Family discord disrupts happiness. Misalignment of values creates conflict. The happily ever after has cracks. Unhappiness in relationships or domestic situations. Address underlying issues to restore harmony."
+          },
+          "numerology": "10 - Emotional completion, perfect harmony, the cycle of feeling",
+          "astrology": "Mars in Pisces",
+          "kabbalah": {
+            "sephirah": "Malkuth (Kingdom)",
+            "path": "20 - The path of the Kingdom",
+            "meaning": "The complete manifestation of emotional fulfillment in the material world"
+          },
+          "affirmation": "I am surrounded by love, harmony, and emotional fulfillment.",
+          "career": "Work-life balance, career supporting family happiness, harmonious workplace",
+          "relationships": "Happy family, lasting love, domestic bliss, relationship completion",
+          "spirituality": "Spiritual bliss, cosmic consciousness, union with divine love"
+        },
+        {
+          "number": 11,
+          "name": "Page of Cups",
+          "keywords": {
+            "upright": ["New feelings", "Intuition", "Creative beginnings", "Romantic messages", "Innocence", "Sensitivity"],
+            "reversed": ["Emotional immaturity", "Intuitive blocks", "Bad news", "Fantasy over reality", "Naivety"]
+          },
+          "meanings": {
+            "upright": "A young figure contemplates a cup with a fish—new feelings and intuitive messages are emerging. This is the beginning of emotional awareness and creative sensitivity. A romantic message or new emotional experience. Innocence and imagination.",
+            "reversed": "Emotional immaturity creates problems. Blocked intuition or ignored inner guidance. Disappointing news. Fantasy overwhelms reality. Naivety in emotional matters. Time to mature your emotional approach."
+          },
+          "numerology": "Page corresponds to 11/2 - Intuitive sensitivity, emotional gateway",
+          "astrology": "All Water signs (Cancer, Scorpio, Pisces)",
+          "kabbalah": {
+            "sephirah": "Malkuth (Kingdom)",
+            "elemental": "Earth of Water",
+            "meaning": "The grounding of emotional water in practical sensitivity"
+          },
+          "affirmation": "I am open to new feelings and intuitive messages from within.",
+          "career": "Creative beginnings, new emotional approach to work, intuitive career choices",
+          "relationships": "New crush, romantic message, developing emotional awareness",
+          "spirituality": "Developing intuition, new spiritual sensitivity, receiving messages"
+        },
+        {
+          "number": 12,
+          "name": "Knight of Cups",
+          "keywords": {
+            "upright": ["Romantic pursuit", "Charm", "Idealism", "Following heart", "Messenger", "Imagination"],
+            "reversed": ["Unrealistic ideals", "Emotional instability", "Moodiness", "Disappointment", "Escapism"]
+          },
+          "meanings": {
+            "upright": "The Knight rides forth bearing a cup—romantic, idealistic, and guided by emotion. This represents following your heart, pursuing dreams, and approaching life with charm and imagination. A messenger of love or creative opportunity.",
+            "reversed": "Unrealistic ideals lead to disappointment. Emotional instability or moodiness creates problems. Escapism through fantasy. The romantic pursuit becomes impractical or delusional. Ground your dreams in reality."
+          },
+          "numerology": "Knight corresponds to 12/3 - Creative emotional expression",
+          "astrology": "Aquarius (the fixed air sign)",
+          "kabbalah": {
+            "sephirah": "Tiphareth (Beauty)",
+            "elemental": "Air of Water",
+            "meaning": "The beauty of emotional pursuit and romantic idealism"
+          },
+          "affirmation": "I follow my heart with courage and romantic idealism.",
+          "career": "Pursuing dream career, creative work, following passion over practicality",
+          "relationships": "Romantic pursuit, charming suitor, following heart in love",
+          "spirituality": "Spiritual idealism, pursuing spiritual dreams, heart-centered practice"
+        },
+        {
+          "number": 13,
+          "name": "Queen of Cups",
+          "keywords": {
+            "upright": ["Compassion", "Intuition", "Emotional depth", "Nurturing", "Psychic ability", "Gentleness"],
+            "reversed": ["Emotional overwhelm", "Dependency", "Insecurity", "Manipulation", "Over-sensitivity"]
+          },
+          "meanings": {
+            "upright": "The Queen sits on her throne by the sea—mistress of emotional depths and intuition. She represents compassion, psychic ability, and deep emotional understanding. Nurturing energy that heals through love. Trust your inner knowing.",
+            "reversed": "Emotional overwhelm drowns your clarity. Dependency or neediness in relationships. Insecurity masked as intuition. Emotional manipulation of others. Over-sensitivity that distorts perception."
+          },
+          "numerology": "Queen corresponds to 13/4 - Emotional manifestation through compassion",
+          "astrology": "Gemini (the mutable air sign)",
+          "kabbalah": {
+            "sephirah": "Binah (Understanding)",
+            "elemental": "Water of Water",
+            "meaning": "The understanding that comes from emotional mastery and intuition"
+          },
+          "affirmation": "I trust my intuition and lead with compassion and emotional wisdom.",
+          "career": "Counseling, healing arts, creative work, emotionally intelligent leadership",
+          "relationships": "Nurturing partner, emotionally deep relationship, compassionate love",
+          "spirituality": "Psychic development, intuitive mastery, compassionate spirituality"
+        },
+        {
+          "number": 14,
+          "name": "King of Cups",
+          "keywords": {
+            "upright": ["Emotional mastery", "Diplomacy", "Counseling", "Compassion", "Wisdom", "Steadiness"],
+            "reversed": ["Emotional manipulation", "Moodiness", "Dishonesty", "Emotional distance", "Turbulence"]
+          },
+          "meanings": {
+            "upright": "The King of Cups holds his cup steadily, master of his emotional realm. He represents emotional maturity, diplomatic wisdom, and the ability to help others navigate their feelings. Compassionate leadership balanced with control.",
+            "reversed": "Emotional manipulation disguised as wisdom. Unstable moods or hidden feelings create turbulence. Dishonesty about emotional state. Emotional distance masking as control. Address your inner emotional truth."
+          },
+          "numerology": "King corresponds to 14/5 - Leadership through emotional mastery",
+          "astrology": "Pisces (the mutable water sign)",
+          "kabbalah": {
+            "sephirah": "Chokmah (Wisdom)",
+            "elemental": "Fire of Water",
+            "meaning": "The pure wisdom of emotional mastery and compassionate leadership"
+          },
+          "affirmation": "I lead with emotional wisdom, compassion, and steady mastery.",
+          "career": "Leadership with emotional intelligence, counseling, diplomacy, healing professions",
+          "relationships": "Emotionally mature partner, wise relationship guidance, steady love",
+          "spirituality": "Spiritual mastery, wise teacher, compassionate spiritual leadership"
+        }
+      ]
+    },
+    "swords": {
+      "suitInfo": {
+        "name": "Swords",
+        "element": "Air",
+        "alternativeNames": ["Blades", "Spades", "Arrows"],
+        "zodiacAssociations": ["Gemini", "Libra", "Aquarius"],
+        "archetype": "The Thinker / The Truth-Seeker"
+      },
+      "cards": [
+        {
+          "number": 1,
+          "name": "Ace of Swords",
+          "keywords": {
+            "upright": ["Clarity", "Breakthrough", "New ideas", "Mental clarity", "Truth", "Sharp mind"],
+            "reversed": ["Confusion", "Chaos", "Lack of clarity", "Miscommunication", "Mental block"]
+          },
+          "meanings": {
+            "upright": "A double-edged sword emerges from the cloud—pure mental clarity and breakthrough thinking. This is the moment of truth, new ideas crystallizing, and intellectual power. The mind is sharp and ready to cut through confusion.",
+            "reversed": "Mental confusion and lack of clarity prevail. Thoughts are chaotic or blocked. Miscommunication creates problems. The truth is obscured. Time to quiet the mind and seek clarity."
+          },
+          "numerology": "1 - New mental beginnings, the birth of thought",
+          "astrology": "All Air signs (Gemini, Libra, Aquarius)",
+          "kabbalah": {
+            "sephirah": "Kether (Crown)",
+            "path": "11 - The path of the Primum Mobile",
+            "meaning": "The divine source of all thought and mental clarity"
+          },
+          "affirmation": "My mind is clear, sharp, and ready for breakthrough insights.",
+          "career": "New ideas, mental breakthroughs, clear thinking, problem solving",
+          "relationships": "Clear communication, mental connection, truth in relationships",
+          "spirituality": "Spiritual clarity, truth revealed, mental discipline"
+        },
+        {
+          "number": 2,
+          "name": "Two of Swords",
+          "keywords": {
+            "upright": ["Indecision", "Difficult choices", "Stalemate", "Avoidance", "Balance", "Truce"],
+            "reversed": ["Decision", "Breakthrough", "Information overload", "Confusion", "No right choice"]
+          },
+          "meanings": {
+            "upright": "A blindfolded figure holds two crossed swords—stalemate and difficult decisions. You face a choice but are avoiding it or unable to see clearly. Indecision creates paralysis. Remove the blindfold and face the truth.",
+            "reversed": "A breakthrough in decision-making occurs. You finally choose a path. Information overload has been sorted. The stalemate breaks. Even without perfect clarity, you must decide."
+          },
+          "numerology": "2 - Mental duality, choice, balanced thinking",
+          "astrology": "Moon in Libra",
+          "kabbalah": {
+            "sephirah": "Chokmah (Wisdom)",
+            "path": "12 - The path of the Magical Intelligence",
+            "meaning": "The wisdom of balanced thought and difficult choices"
+          },
+          "affirmation": "I face difficult choices with courage and clarity.",
+          "career": "Difficult career decisions, stalemate at work, avoiding decisions",
+          "relationships": "Relationship decisions, difficult conversations avoided, stalemate",
+          "spirituality": "Spiritual choices, balancing opposites, mental discipline"
+        },
+        {
+          "number": 3,
+          "name": "Three of Swords",
+          "keywords": {
+            "upright": ["Heartbreak", "Grief", "Sorrow", "Pain", "Rejection", "Loss"],
+            "reversed": ["Recovery", "Forgiveness", "Moving on", "Releasing pain", "Optimism"]
+          },
+          "meanings": {
+            "upright": "Three swords pierce a heart—this is the card of heartbreak and sorrow. Grief, loss, and emotional pain are present. Sometimes truth hurts. Acknowledge the pain rather than suppressing it. This too shall pass.",
+            "reversed": "Recovery from heartbreak begins. Forgiveness releases the pain. Moving on from sorrow. Optimism returns. The heart begins to heal. Let go of past hurts."
+          },
+          "numerology": "3 - Mental creativity, the pain of growth, transformative thinking",
+          "astrology": "Saturn in Libra",
+          "kabbalah": {
+            "sephirah": "Binah (Understanding)",
+            "path": "13 - The path of the Uniting Intelligence",
+            "meaning": "Understanding through the pain of mental clarity"
+          },
+          "affirmation": "I acknowledge my pain and allow my heart to heal.",
+          "career": "Workplace heartbreak, professional rejection, painful career truth",
+          "relationships": "Heartbreak, breakup, betrayal, grief in love",
+          "spirituality": "Spiritual pain, dark night of the soul, growth through suffering"
+        },
+        {
+          "number": 4,
+          "name": "Four of Swords",
+          "keywords": {
+            "upright": ["Rest", "Restoration", "Contemplation", "Recovery", "Peace", "Meditation"],
+            "reversed": ["Restlessness", "Burnout", "Lack of progress", "Exhaustion", "Insomnia"]
+          },
+          "meanings": {
+            "upright": "A figure rests on a tomb beneath three swords, one beneath—time for rest and recovery. This is the pause after battle, necessary restoration of mind and body. Contemplation and meditation bring peace. Heal before acting again.",
+            "reversed": "Restlessness prevents necessary recovery. Burnout from pushing too hard. Lack of progress due to insufficient rest. Exhaustion takes its toll. Make time for peace and restoration."
+          },
+          "numerology": "4 - Mental stability, foundation of thought, rest",
+          "astrology": "Jupiter in Libra",
+          "kabbalah": {
+            "sephirah": "Chesed (Mercy)",
+            "path": "14 - The path of the Illuminating Intelligence",
+            "meaning": "Mercy through mental rest and contemplative peace"
+          },
+          "affirmation": "I honor my need for rest and allow myself to recover fully.",
+          "career": "Career burnout recovery, sabbatical, mental rest from work stress",
+          "relationships": "Relationship pause, taking time apart, healing from conflict",
+          "spirituality": "Meditation practice, contemplative retreat, spiritual rest"
+        },
+        {
+          "number": 5,
+          "name": "Five of Swords",
+          "keywords": {
+            "upright": ["Conflict", "Defeat", "Winning at all costs", "Betrayal", "Resignation", "Hollow victory"],
+            "reversed": ["Reconciliation", "Past resentment", "Making amends", "Conflict resolution"]
+          },
+          "meanings": {
+            "upright": "A figure collects swords while others walk away in defeat—conflict with consequences. This may be a hollow victory won at too great a cost. Betrayal or resignation may be present. Consider what you've sacrificed to win.",
+            "reversed": "Reconciliation becomes possible. Past resentments are released. Making amends heals old wounds. Conflict resolution through understanding. The battle ends."
+          },
+          "numerology": "5 - Mental change, conflict, transformation through challenge",
+          "astrology": "Venus in Aquarius",
+          "kabbalah": {
+            "sephirah": "Geburah (Severity)",
+            "path": "15 - The path of the Radical Intelligence",
+            "meaning": "The severity of mental conflict and the lessons of defeat"
+          },
+          "affirmation": "I choose my battles wisely and seek resolution over victory.",
+          "career": "Workplace conflict, office politics, competitive battles, professional betrayal",
+          "relationships": "Arguments, conflict in relationships, winning at partner's expense",
+          "spirituality": "Spiritual conflict, battling ego, lessons from defeat"
+        },
+        {
+          "number": 6,
+          "name": "Six of Swords",
+          "keywords": {
+            "upright": ["Transition", "Change", "Moving on", "Journey", "Leaving behind", "Healing"],
+            "reversed": ["Stuck in past", "Resistance to change", "Unfinished business", "Delayed departure"]
+          },
+          "meanings": {
+            "upright": "A boatman ferries figures across water, six swords aboard—transition to calmer waters. This represents moving on from difficulties, leaving troubles behind. A necessary journey toward healing. The worst is over.",
+            "reversed": "Resistance to leaving the past behind. Stuck in old patterns or situations. Unfinished business prevents forward movement. The journey is delayed. Acceptance is needed to move on."
+          },
+          "numerology": "6 - Mental harmony, transition, the journey of thought",
+          "astrology": "Mercury in Aquarius",
+          "kabbalah": {
+            "sephirah": "Tiphareth (Beauty)",
+            "path": "16 - The path of the Triumphant Intelligence",
+            "meaning": "Beauty through mental transition and healing journey"
+          },
+          "affirmation": "I gracefully transition to calmer waters and leave troubles behind.",
+          "career": "Career transition, moving to new job, leaving workplace problems",
+          "relationships": "Moving on from relationship, healing after breakup, leaving conflict",
+          "spirituality": "Spiritual transition, crossing to new understanding, healing journey"
+        },
+        {
+          "number": 7,
+          "name": "Seven of Swords",
+          "keywords": {
+            "upright": ["Deception", "Strategy", "Sneakiness", "Theft", "Getting away with something", "Secrecy"],
+            "reversed": ["Coming clean", "Reparation", "Consequences", "Turning over new leaf", "Confession"]
+          },
+          "meanings": {
+            "upright": "A figure sneaks away with five swords, leaving two behind—deception and strategy. This may represent necessary cunning or unwise sneakiness. Secrets and hidden agendas are present. Consider the ethics of your approach.",
+            "reversed": "Coming clean about deception. Making reparation for past actions. Facing consequences of sneakiness. Turning over a new leaf. Confession brings relief."
+          },
+          "numerology": "7 - Mental analysis, strategy, the deceptions of mind",
+          "astrology": "Moon in Aquarius",
+          "kabbalah": {
+            "sephirah": "Netzach (Victory)",
+            "path": "17 - The path of the Disposing Intelligence",
+            "meaning": "Victory through mental strategy and cunning"
+          },
+          "affirmation": "I act with integrity and strategic wisdom, avoiding deception.",
+          "career": "Strategic career moves, workplace politics, protecting your ideas",
+          "relationships": "Secrets in relationships, strategic communication, honesty needed",
+          "spirituality": "Deceptive spiritual practices, strategic growth, integrity in practice"
+        },
+        {
+          "number": 8,
+          "name": "Eight of Swords",
+          "keywords": {
+            "upright": ["Restriction", "Imprisonment", "Victim mentality", "Blindness", "Helplessness", "Isolation"],
+            "reversed": ["Freedom", "Release", "Taking control", "New perspective", "Empowerment"]
+          },
+          "meanings": {
+            "upright": "A blindfolded figure stands surrounded by swords—restriction that feels inescapable. Victim mentality or self-imposed limitations create imprisonment. The bindings are loose but unseen. The cage is mental, not physical.",
+            "reversed": "Freedom is realized as you take off the blindfold. Release from self-imposed restrictions. Taking control of your situation. A new perspective reveals escape routes. Empowerment replaces helplessness."
+          },
+          "numerology": "8 - Mental power, the prison of thought, liberation",
+          "astrology": "Jupiter in Gemini",
+          "kabbalah": {
+            "sephirah": "Hod (Glory)",
+            "path": "18 - The path of the Active Intelligence",
+            "meaning": "Glory through the liberation of mental restrictions"
+          },
+          "affirmation": "I release self-imposed limitations and claim my freedom.",
+          "career": "Feeling trapped in job, workplace restrictions, career victim mentality",
+          "relationships": "Feeling trapped in relationship, relationship restrictions, emotional imprisonment",
+          "spirituality": "Mental spiritual prisons, liberating beliefs, breaking free"
+        },
+        {
+          "number": 9,
+          "name": "Nine of Swords",
+          "keywords": {
+            "upright": ["Anxiety", "Worry", "Fear", "Nightmares", "Guilt", "Anguish"],
+            "reversed": ["Hope", "Reaching out", "Despair lifting", "Inner turmoil", "Secrets revealed"]
+          },
+          "meanings": {
+            "upright": "A figure wakes in terror, nine swords on the wall—anxiety and worry consume the night. This is the card of mental anguish, fear, and guilt. Nightmares may reflect deeper concerns. The suffering is real but often exaggerated by the mind.",
+            "reversed": "Hope begins to emerge from despair. Reaching out for help alleviates the burden. Nightmares fade as truth is faced. Secrets that cause anguish are revealed. The worst thoughts begin to lift."
+          },
+          "numerology": "9 - Mental completion, the culmination of worry, anxiety peaks",
+          "astrology": "Mars in Gemini",
+          "kabbalah": {
+            "sephirah": "Yesod (Foundation)",
+            "path": "19 - The path of the Secret Intelligence",
+            "meaning": "The foundation of mental anguish that leads to transformation"
+          },
+          "affirmation": "I release my worries and find peace in the present moment.",
+          "career": "Workplace anxiety, career worries, stress, insomnia about work",
+          "relationships": "Relationship anxiety, worry about partner, trust issues, guilt",
+          "spirituality": "Spiritual anxiety, dark night of the soul, seeking peace"
+        },
+        {
+          "number": 10,
+          "name": "Ten of Swords",
+          "keywords": {
+            "upright": ["Painful endings", "Deep wounds", "Betrayal", "Loss", "Crisis", "Rock bottom"],
+            "reversed": ["Recovery", "Regeneration", "Resisting an inevitable end", "Survival", "Hope"]
+          },
+          "meanings": {
+            "upright": "A figure lies with ten swords in their back—the end of a painful cycle. This is rock bottom, deep betrayal, or crisis. Yet dawn breaks on the horizon. The worst has happened; now healing can begin. This is the end, not the end of you.",
+            "reversed": "Recovery begins from the lowest point. Regeneration is possible even after deep wounds. Resisting the inevitable end prolongs pain. Survival against odds. Hope emerges from despair."
+          },
+          "numerology": "10 - Mental completion, the end of a thought cycle, new beginning",
+          "astrology": "Sun in Gemini",
+          "kabbalah": {
+            "sephirah": "Malkuth (Kingdom)",
+            "path": "20 - The path of the Kingdom",
+            "meaning": "The complete manifestation of mental crisis leading to rebirth"
+          },
+          "affirmation": "I accept this ending and trust in new beginnings.",
+          "career": "Career ending, job loss, professional betrayal, complete career change",
+          "relationships": "Relationship ending, betrayal, painful breakup, final separation",
+          "spirituality": "Spiritual death and rebirth, ego death, complete transformation"
+        },
+        {
+          "number": 11,
+          "name": "Page of Swords",
+          "keywords": {
+            "upright": ["Curiosity", "New ideas", "Thirst for knowledge", "Communication", "Vigilance", "Mental agility"],
+            "reversed": ["Deception", "Manipulation", "All talk no action", "Hasty conclusions", "Gossip"]
+          },
+          "meanings": {
+            "upright": "A young figure stands alert with sword raised—curious, vigilant, and ready to learn. New ideas spark mental activity. Communication flows quickly. This is the student of the mind, eager for knowledge and truth.",
+            "reversed": "Deception or manipulation is present. All talk and no action creates emptiness. Hasty conclusions lead to errors. Gossip spreads misinformation. Slow down and verify before speaking."
+          },
+          "numerology": "Page corresponds to 11/2 - Mental sensitivity, curious duality",
+          "astrology": "All Air signs (Gemini, Libra, Aquarius)",
+          "kabbalah": {
+            "sephirah": "Malkuth (Kingdom)",
+            "elemental": "Earth of Air",
+            "meaning": "The grounding of mental air in practical curiosity"
+          },
+          "affirmation": "I approach learning with curiosity and communicate with clarity.",
+          "career": "New learning opportunities, curious approach to work, communication skills",
+          "relationships": "New intellectual connections, curious communication, learning about partner",
+          "spirituality": "Curious spiritual exploration, learning about new practices, mental approach"
+        },
+        {
+          "number": 12,
+          "name": "Knight of Swords",
+          "keywords": {
+            "upright": ["Action", "Impulsiveness", "Defending beliefs", "Haste", "Ambition", "Aggression"],
+            "reversed": ["No direction", "Disregard for consequences", "Unpredictability", "Impatience", "Chaos"]
+          },
+          "meanings": {
+            "upright": "The Knight charges forward sword raised—action-oriented, determined, and fast-moving. This is swift mental energy applied to problems. Defending beliefs with courage. Ambition drives rapid progress. But beware of haste.",
+            "reversed": "Action without direction creates chaos. Disregard for consequences leads to problems. Unpredictable behavior confuses others. Impatience undermines success. Slow down and plan before charging ahead."
+          },
+          "numerology": "Knight corresponds to 12/3 - Creative mental expression through action",
+          "astrology": "Taurus (the fixed earth sign)",
+          "kabbalah": {
+            "sephirah": "Tiphareth (Beauty)",
+            "elemental": "Air of Air",
+            "meaning": "The beauty of swift mental action and decisive thinking"
+          },
+          "affirmation": "I act decisively while remaining mindful of consequences.",
+          "career": "Swift career action, decisive moves, aggressive pursuit of goals",
+          "relationships": "Direct communication, pursuing relationship goals, mental intensity",
+          "spirituality": "Active spiritual practice, pursuing truth, decisive spiritual action"
+        },
+        {
+          "number": 13,
+          "name": "Queen of Swords",
+          "keywords": {
+            "upright": ["Independence", "Unbiased judgment", "Clear boundaries", "Direct communication", "Mental clarity", "Honesty"],
+            "reversed": ["Coldness", "Cruelty", "Bitterness", "Overly emotional", "Confusion", "Deception"]
+          },
+          "meanings": {
+            "upright": "The Queen sits on her throne, sword raised—mistress of clear thinking and honest communication. She represents unbiased judgment, mental clarity, and the courage to speak truth. Independence and clear boundaries protect her wisdom.",
+            "reversed": "Coldness or cruelty mask as honesty. Bitterness distorts judgment. Overly emotional thinking replaces clarity. Confusion about what is true. Deception may be present. Warm your wisdom with compassion."
+          },
+          "numerology": "Queen corresponds to 13/4 - Mental manifestation through clarity",
+          "astrology": "Virgo (the mutable earth sign)",
+          "kabbalah": {
+            "sephirah": "Binah (Understanding)",
+            "elemental": "Water of Air",
+            "meaning": "The understanding that comes from emotional clarity and honest communication"
+          },
+          "affirmation": "I communicate with clarity, honesty, and compassionate wisdom.",
+          "career": "Clear professional communication, unbiased leadership, honest assessment",
+          "relationships": "Honest relationship communication, clear boundaries, independent partner",
+          "spirituality": "Clear spiritual vision, honest self-assessment, discerning truth"
+        },
+        {
+          "number": 14,
+          "name": "King of Swords",
+          "keywords": {
+            "upright": ["Mental clarity", "Intellectual power", "Authority", "Truth", "Discipline", "Ethics"],
+            "reversed": ["Quiet power", "Inner truth", "Misuse of power", "Manipulation", "Tyranny", "Confusion"]
+          },
+          "meanings": {
+            "upright": "The King of Swords sits in judgment—master of the mental realm. He represents intellectual authority, clear truth, and ethical leadership. Disciplined thinking applied with wisdom. Truth spoken with authority and fairness.",
+            "reversed": "Misuse of intellectual power creates tyranny. Manipulation disguised as truth. Confusion about what is ethical. Inner truth is ignored for outer authority. Power without wisdom becomes cruelty."
+          },
+          "numerology": "King corresponds to 14/5 - Leadership through mental mastery",
+          "astrology": "Libra (the cardinal air sign)",
+          "kabbalah": {
+            "sephirah": "Chokmah (Wisdom)",
+            "elemental": "Fire of Air",
+            "meaning": "The pure wisdom of intellectual mastery and truth"
+          },
+          "affirmation": "I lead with intellectual clarity, ethical wisdom, and fair authority.",
+          "career": "Intellectual leadership, authoritative expertise, ethical management",
+          "relationships": "Mature communication, intellectual partnership, ethical relationship",
+          "spirituality": "Spiritual authority, mastery of mind, truthful spiritual leadership"
+        }
+      ]
+    },
+    "pentacles": {
+      "suitInfo": {
+        "name": "Pentacles",
+        "element": "Earth",
+        "alternativeNames": ["Coins", "Disks", "Denarii", "Diamonds"],
+        "zodiacAssociations": ["Taurus", "Virgo", "Capricorn"],
+        "archetype": "The Builder / The Provider"
+      },
+      "cards": [
+        {
+          "number": 1,
+          "name": "Ace of Pentacles",
+          "keywords": {
+            "upright": ["New financial opportunity", "Manifestation", "Abundance", "Prosperity", "Material gift", "Security"],
+            "reversed": ["Lost opportunity", "Lack of planning", "Scarcity", "Financial loss", "Missed chance", "Instability"]
+          },
+          "meanings": {
+            "upright": "A hand offers a golden pentacle from the clouds—a new opportunity for material abundance. This is the seed of prosperity, financial opportunity, or practical manifestation. Security and tangible results are possible. The universe offers material blessing.",
+            "reversed": "A financial opportunity is lost or missed. Lack of planning prevents manifestation. Scarcity mindset blocks abundance. Financial instability creates worry. The gift was there but not recognized or received."
+          },
+          "numerology": "1 - New material beginnings, the seed of manifestation",
+          "astrology": "All Earth signs (Taurus, Virgo, Capricorn)",
+          "kabbalah": {
+            "sephirah": "Kether (Crown)",
+            "path": "11 - The path of the Primum Mobile",
+            "meaning": "The divine source of all material abundance"
+          },
+          "affirmation": "I welcome new opportunities for abundance and prosperity.",
+          "career": "New job opportunity, financial growth, business startup, career potential",
+          "relationships": "Material stability in relationship, practical partnership, building together",
+          "spirituality": "Spiritual abundance, manifesting spiritual gifts, practical spirituality"
+        },
+        {
+          "number": 2,
+          "name": "Two of Pentacles",
+          "keywords": {
+            "upright": ["Balance", "Adaptability", "Time management", "Prioritization", "Flexibility", "Juggling"],
+            "reversed": ["Overwhelm", "Disorganization", "Reprioritization needed", "Imbalance", "Dropping the ball"]
+          },
+          "meanings": {
+            "upright": "A figure juggles two pentacles in an infinity loop—balance and adaptability are required. You're managing multiple responsibilities, requiring flexibility and time management. The dance of priorities keeps life moving. Stay flexible.",
+            "reversed": "Overwhelm from juggling too much. Disorganization causes things to fall apart. Reprioritization is urgently needed. Imbalance creates stress. You're dropping the ball somewhere important."
+          },
+          "numerology": "2 - Material duality, balancing resources, practical choices",
+          "astrology": "Jupiter in Capricorn",
+          "kabbalah": {
+            "sephirah": "Chokmah (Wisdom)",
+            "path": "12 - The path of the Magical Intelligence",
+            "meaning": "The wisdom of balancing material resources"
+          },
+          "affirmation": "I balance my responsibilities with flexibility and grace.",
+          "career": "Balancing multiple projects, time management, flexible work approach",
+          "relationships": "Balancing relationship with other priorities, adaptable partnership",
+          "spirituality": "Balancing spiritual and material life, practical spiritual practice"
+        },
+        {
+          "number": 3,
+          "name": "Three of Pentacles",
+          "keywords": {
+            "upright": ["Teamwork", "Collaboration", "Learning", "Implementation", "Skill", "Apprenticeship"],
+            "reversed": ["Lack of teamwork", "Disorganized groups", "Poor quality", "Disharmony", "Lack of growth"]
+          },
+          "meanings": {
+            "upright": "A craftsman shows his work to two others—teamwork and skilled collaboration. Learning from those with more experience. Implementation of plans through skill and cooperation. Apprenticeship and mastery through practice.",
+            "reversed": "Lack of teamwork undermines projects. Disorganized groups fail to deliver. Poor quality work needs improvement. Disharmony among collaborators. Personal growth is stalled without proper guidance."
+          },
+          "numerology": "3 - Material creativity, the work of hands, collaborative building",
+          "astrology": "Mars in Capricorn",
+          "kabbalah": {
+            "sephirah": "Binah (Understanding)",
+            "path": "13 - The path of the Uniting Intelligence",
+            "meaning": "Understanding through collaborative work and skilled craftsmanship"
+          },
+          "affirmation": "I collaborate with others to create quality and lasting results.",
+          "career": "Team projects, mentorship, skill development, collaborative work success",
+          "relationships": "Building relationship together, teamwork in partnership, shared goals",
+          "spirituality": "Learning spiritual practices, working with spiritual teachers, community practice"
+        },
+        {
+          "number": 4,
+          "name": "Four of Pentacles",
+          "keywords": {
+            "upright": ["Security", "Conservation", "Frugality", "Control", "Stability", "Possessiveness"],
+            "reversed": ["Greed", "Materialism", "Self-protection", "Generosity", "Letting go", "Openness"]
+          },
+          "meanings": {
+            "upright": "A figure clutches four pentacles tightly—security through holding on. Conservation of resources and stable foundations. Frugality and careful management. But beware of possessiveness and fear of loss. Security can become prison.",
+            "reversed": "Greed or materialism creates isolation. Self-protection becomes selfishness. Opening up and letting go brings freedom. Generosity replaces hoarding. Release control to receive more."
+          },
+          "numerology": "4 - Material stability, foundation of security, structure",
+          "astrology": "Sun in Capricorn",
+          "kabbalah": {
+            "sephirah": "Chesed (Mercy)",
+            "path": "14 - The path of the Illuminating Intelligence",
+            "meaning": "Mercy through material security and stable foundations"
+          },
+          "affirmation": "I create security while remaining open to abundance and generosity.",
+          "career": "Job security, financial stability, conservative career moves, saving",
+          "relationships": "Possessiveness in relationships, holding on too tightly, security needs",
+          "spirituality": "Material attachments, finding security in spirit, releasing materialism"
+        },
+        {
+          "number": 5,
+          "name": "Five of Pentacles",
+          "keywords": {
+            "upright": ["Material loss", "Poverty", "Hardship", "Isolation", "Worry", "Struggle"],
+            "reversed": ["Recovery", "Improvement", "Finding help", "New resources", "Hope", "End of hardship"]
+          },
+          "meanings": {
+            "upright": "Two figures struggle in the snow outside a lit church—material hardship and isolation. Financial loss or hardship creates worry. You may feel left out in the cold, but help is available if you seek it. This is temporary.",
+            "reversed": "Recovery from hardship begins. Improvement in material circumstances. Finding help that was overlooked. New resources become available. Hope returns as the struggle eases."
+          },
+          "numerology": "5 - Material change, loss leading to transformation",
+          "astrology": "Mercury in Taurus",
+          "kabbalah": {
+            "sephirah": "Geburah (Severity)",
+            "path": "15 - The path of the Radical Intelligence",
+            "meaning": "The severity of material loss that leads to spiritual growth"
+          },
+          "affirmation": "I seek help when needed and trust in better times ahead.",
+          "career": "Job loss, financial hardship, career struggle, seeking employment",
+          "relationships": "Feeling left out, relationship hardship, isolation in partnership",
+          "spirituality": "Spiritual poverty, finding spirit in hardship, seeking help"
+        },
+        {
+          "number": 6,
+          "name": "Six of Pentacles",
+          "keywords": {
+            "upright": ["Generosity", "Charity", "Giving", "Prosperity", "Sharing wealth", "Gratitude"],
+            "reversed": ["Debt", "Selfishness", "One-sided charity", "Strings attached", "Inequality"]
+          },
+          "meanings": {
+            "upright": "A figure distributes coins to those in need—generosity and charitable giving. Prosperity shared creates abundance for all. Giving and receiving in balance. Gratitude for what you have and willingness to share.",
+            "reversed": "Debt or financial strings attached to help. Selfishness prevents generosity. One-sided charity creates dependence. Inequality in giving and receiving. Check your motives around money and help."
+          },
+          "numerology": "6 - Material harmony, balance of giving and receiving",
+          "astrology": "Moon in Taurus",
+          "kabbalah": {
+            "sephirah": "Tiphareth (Beauty)",
+            "path": "16 - The path of the Triumphant Intelligence",
+            "meaning": "Beauty through generous sharing of material abundance"
+          },
+          "affirmation": "I give generously and receive gratefully, maintaining balance.",
+          "career": "Giving back, charitable work, fair compensation, sharing success",
+          "relationships": "Generosity in relationship, giving and receiving love, balanced partnership",
+          "spirituality": "Spiritual generosity, tithing, sharing spiritual gifts"
+        },
+        {
+          "number": 7,
+          "name": "Seven of Pentacles",
+          "keywords": {
+            "upright": ["Long-term view", "Sustainable results", "Perseverance", "Investment", "Assessment", "Patience"],
+            "reversed": ["Lack of long-term vision", "Limited success", "Impatience", "Unrewarded effort", "Frustration"]
+          },
+          "meanings": {
+            "upright": "A figure pauses from work to assess growing plants—long-term investment requires patience. Assessment of progress toward sustainable results. Perseverance pays off over time. What you've planted is growing; wait for harvest.",
+            "reversed": "Impatience undermines long-term goals. Lack of vision limits success. Effort feels unrewarded. Frustration with slow progress. Consider if you're planting the right seeds for what you want to harvest."
+          },
+          "numerology": "7 - Material analysis, assessment of resources, patient waiting",
+          "astrology": "Saturn in Taurus",
+          "kabbalah": {
+            "sephirah": "Netzach (Victory)",
+            "path": "17 - The path of the Disposing Intelligence",
+            "meaning": "Victory through patient work and long-term investment"
+          },
+          "affirmation": "I patiently invest in my future and trust in slow, steady growth.",
+          "career": "Long-term career planning, investment in skills, assessing progress",
+          "relationships": "Long-term relationship investment, patience with growth, building together",
+          "spirituality": "Patience in spiritual growth, long-term practice, assessing progress"
+        },
+        {
+          "number": 8,
+          "name": "Eight of Pentacles",
+          "keywords": {
+            "upright": ["Apprenticeship", "Repetitive tasks", "Mastery", "Skill development", "Diligence", "Craft"],
+            "reversed": ["Self-development", "Perfectionism", "Misdirected activity", "Boredom", "Lack of growth"]
+          },
+          "meanings": {
+            "upright": "A craftsman works diligently on pentacles—apprenticeship and skill development through repetition. Mastery comes from dedicated practice. Diligent work leads to expertise. The journey from novice to master requires patience.",
+            "reversed": "Misdirected activity wastes effort. Perfectionism prevents completion. Boredom with repetitive work. Lack of growth despite effort. Consider if you're working smart or just working hard."
+          },
+          "numerology": "8 - Material power, the work of mastery, diligent effort",
+          "astrology": "Sun in Virgo",
+          "kabbalah": {
+            "sephirah": "Hod (Glory)",
+            "path": "18 - The path of the Active Intelligence",
+            "meaning": "Glory through dedicated work and skill mastery"
+          },
+          "affirmation": "I dedicate myself to mastery through patient, diligent practice.",
+          "career": "Skill development, apprenticeship, craftsmanship, dedicated practice",
+          "relationships": "Working on relationship skills, dedication to partnership, practical love",
+          "spirituality": "Spiritual practice mastery, dedicated meditation, skill in practice"
+        },
+        {
+          "number": 9,
+          "name": "Nine of Pentacles",
+          "keywords": {
+            "upright": ["Abundance", "Luxury", "Self-sufficiency", "Financial independence", "Refinement", "Reward"],
+            "reversed": ["Self-worth issues", "Superficiality", "Living beyond means", "Dependency", "Lack of abundance"]
+          },
+          "meanings": {
+            "upright": "A refined figure stands in a lush garden with a falcon—abundance and luxury through self-sufficiency. Financial independence and the rewards of hard work. Refinement and grace in prosperity. Enjoying the fruits of labor.",
+            "reversed": "Self-worth issues tied to material success. Superficiality masks insecurity. Living beyond means creates problems. Dependency on others for security. Abundance is present but not recognized."
+          },
+          "numerology": "9 - Material completion, fulfillment through work, abundance",
+          "astrology": "Venus in Virgo",
+          "kabbalah": {
+            "sephirah": "Yesod (Foundation)",
+            "path": "19 - The path of the Secret Intelligence",
+            "meaning": "The foundation of material abundance and refined independence"
+          },
+          "affirmation": "I enjoy the abundance I've created through my own efforts.",
+          "career": "Financial independence, career success, enjoying professional rewards",
+          "relationships": "Independence within relationship, self-sufficiency, refined partnership",
+          "spirituality": "Spiritual abundance, self-sufficient spirituality, enjoying spiritual fruits"
+        },
+        {
+          "number": 10,
+          "name": "Ten of Pentacles",
+          "keywords": {
+            "upright": ["Wealth", "Financial security", "Family", "Long-term success", "Inheritance", "Legacy"],
+            "reversed": ["Family conflicts", "Financial failure", "Lack of stability", "Loss", "Short-term focus"]
+          },
+          "meanings": {
+            "upright": "A family gathers in a courtyard with ten pentacles—wealth and security spanning generations. Long-term success and family stability. Legacy and inheritance, both material and spiritual. The culmination of material efforts.",
+            "reversed": "Family conflicts around money or inheritance. Financial failure affects security. Lack of stability disrupts peace. Loss of wealth or security. Short-term thinking undermines long-term success."
+          },
+          "numerology": "10 - Material completion, wealth cycle complete, new generation",
+          "astrology": "Mercury in Virgo",
+          "kabbalah": {
+            "sephirah": "Malkuth (Kingdom)",
+            "path": "20 - The path of the Kingdom",
+            "meaning": "The complete manifestation of material wealth and family legacy"
+          },
+          "affirmation": "I create lasting wealth and security for myself and my family.",
+          "career": "Long-term career success, building legacy, generational wealth",
+          "relationships": "Family harmony, building family together, long-term relationship security",
+          "spirituality": "Spiritual legacy, generational wisdom, complete spiritual abundance"
+        },
+        {
+          "number": 11,
+          "name": "Page of Pentacles",
+          "keywords": {
+            "upright": ["Manifestation", "Financial opportunity", "Skill development", "New venture", "Practicality", "Study"],
+            "reversed": ["Lack of progress", "Procrastination", "Learn from failure", "Short-term focus", "Missed opportunity"]
+          },
+          "meanings": {
+            "upright": "A young figure studies a pentacle—new opportunities for manifestation and skill development. Practical approach to learning and growth. A new venture with potential. Grounded enthusiasm for material goals.",
+            "reversed": "Lack of progress despite potential. Procrastination blocks manifestation. Failure provides lessons for growth. Short-term focus misses long-term gains. The opportunity is there but not seized."
+          },
+          "numerology": "Page corresponds to 11/2 - Practical sensitivity, material gateway",
+          "astrology": "All Earth signs (Taurus, Virgo, Capricorn)",
+          "kabbalah": {
+            "sephirah": "Malkuth (Kingdom)",
+            "elemental": "Earth of Earth",
+            "meaning": "The grounding of earth in practical manifestation"
+          },
+          "affirmation": "I embrace new opportunities for practical growth and manifestation.",
+          "career": "New career opportunity, learning practical skills, entry-level growth",
+          "relationships": "Practical approach to relationships, building foundation, new connections",
+          "spirituality": "Practical spirituality, manifesting spiritual goals, grounded practice"
+        },
+        {
+          "number": 12,
+          "name": "Knight of Pentacles",
+          "keywords": {
+            "upright": ["Hard work", "Productivity", "Routine", "Conservatism", "Diligence", "Responsibility"],
+            "reversed": ["Self-discipline", "Laziness", "Obsessiveness", "Work without reward", "Stagnation"]
+          },
+          "meanings": {
+            "upright": "The Knight stands steady with his pentacle—hard work and methodical progress. Productivity through routine and diligence. Conservative but reliable approach. Responsibility and dedication to the task at hand.",
+            "reversed": "Lack of self-discipline undermines progress. Laziness prevents achievement. Obsessive work without balance. Effort seems unrewarded. Stagnation from doing the same thing without growth."
+          },
+          "numerology": "Knight corresponds to 12/3 - Creative practical expression",
+          "astrology": "Leo (the fixed fire sign)",
+          "kabbalah": {
+            "sephirah": "Tiphareth (Beauty)",
+            "elemental": "Air of Earth",
+            "meaning": "The beauty of steady, productive work"
+          },
+          "affirmation": "I work diligently and steadily toward my practical goals.",
+          "career": "Steady career progress, reliable work ethic, methodical advancement",
+          "relationships": "Steady relationship building, reliable partner, practical romance",
+          "spirituality": "Steady spiritual practice, reliable discipline, methodical growth"
+        },
+        {
+          "number": 13,
+          "name": "Queen of Pentacles",
+          "keywords": {
+            "upright": ["Nurturing", "Practical", "Financially nurturing", "Working parent", "Comfort", "Abundance"],
+            "reversed": ["Financial independence", "Self-care", "Work-home conflict", "Smothering", "Materialism"]
+          },
+          "meanings": {
+            "upright": "The Queen sits among abundant nature—nurturing and practical care for others. Financial nurturing and creating comfort. The working parent who balances provision with care. Abundance shared generously. Grounded and sensual.",
+            "reversed": "Work-home conflict creates stress. Smothering care becomes controlling. Materialism replaces genuine nurturing. Self-care is neglected while caring for others. Find balance between giving and receiving."
+          },
+          "numerology": "Queen corresponds to 13/4 - Material manifestation through nurturing",
+          "astrology": "Sagittarius (the mutable fire sign)",
+          "kabbalah": {
+            "sephirah": "Binah (Understanding)",
+            "elemental": "Water of Earth",
+            "meaning": "The understanding that comes from nurturing material abundance"
+          },
+          "affirmation": "I nurture myself and others with practical care and abundance.",
+          "career": "Nurturing leadership, practical management, creating comfortable work environment",
+          "relationships": "Nurturing partner, practical care in relationship, providing comfort",
+          "spirituality": "Nurturing spiritual practice, practical spirituality, earth-based spirituality"
+        },
+        {
+          "number": 14,
+          "name": "King of Pentacles",
+          "keywords": {
+            "upright": ["Wealth", "Business", "Leadership", "Security", "Discipline", "Abundance"],
+            "reversed": ["Financially inept", "Obsessed with wealth", "Stubborn", "Materialistic", "Greed"]
+          },
+          "meanings": {
+            "upright": "The King sits on his throne surrounded by abundance—master of the material realm. Wealth and business acumen combined with leadership. Security for self and others. Disciplined approach to abundance. Generous prosperity.",
+            "reversed": "Financial incompetence despite resources. Obsession with wealth creates imbalance. Stubbornness prevents growth. Materialism replaces values. Greed isolates from true abundance."
+          },
+          "numerology": "King corresponds to 14/5 - Leadership through material mastery",
+          "astrology": "Virgo (the mutable earth sign)",
+          "kabbalah": {
+            "sephirah": "Chokmah (Wisdom)",
+            "elemental": "Fire of Earth",
+            "meaning": "The pure wisdom of material mastery and abundant leadership"
+          },
+          "affirmation": "I lead with wisdom, creating abundance and security for all.",
+          "career": "Business leadership, financial mastery, executive management, wealth creation",
+          "relationships": "Providing security in relationship, stable leadership, material care",
+          "spirituality": "Master of material spirituality, abundant spiritual leadership, grounded wisdom"
+        }
+      ]
+    }
+  }
+}

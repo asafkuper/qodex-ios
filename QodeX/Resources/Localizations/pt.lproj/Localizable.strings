@@ -1,0 +1,39 @@
+/* Portuguese (pt) Localization for QodeX iOS App */
+
+/* App General */
+"app_name" = "QodeX";
+
+/* Welcome Screen */
+"welcome_title" = "Descubra seus Números";
+"welcome_subtitle" = "Desbloqueie os segredos da sua numerologia em apenas 2 minutos";
+"get_started" = "Começar";
+
+/* Tab Bar / Navigation */
+"today_view" = "Hoje";
+"chart_view" = "Mapa";
+"community_view" = "Comunidade";
+"learn_view" = "Aprender";
+"profile_view" = "Perfil";
+
+/* Numerology Terms */
+"life_path" = "Caminho da Vida";
+"expression_number" = "Número de Expressão";
+"soul_urge" = "Desejo da Alma";
+
+/* Features */
+"daily_reading" = "Leitura Diária";
+"power_hours" = "Horas de Poder";
+"compatibility" = "Compatibilidade";
+
+/* Settings & Premium */
+"settings" = "Configurações";
+"premium" = "Premium";
+"unlock_full" = "Desbloqueie seu mapa completo";
+
+/* Actions */
+"continue" = "Continuar";
+"save" = "Salvar";
+"share" = "Compartilhar";
+"done" = "Concluído";
+"cancel" = "Cancelar";
+"ok" = "OK";

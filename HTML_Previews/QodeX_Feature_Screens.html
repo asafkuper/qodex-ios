@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QodeX - Feature Screens</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+            background: #0A0A0F;
+            color: #FAFAFA;
+            padding: 40px 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(229,193,88,0.1), transparent);
+            border-radius: 20px;
+        }
+        .header h1 {
+            font-size: 56px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #F4D03F 0%, #E5C158 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 16px;
+        }
+        .category {
+            margin-bottom: 80px;
+        }
+        .category-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #E5C158;
+            margin-bottom: 40px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid rgba(229,193,88,0.3);
+        }
+        .screens-row {
+            display: flex;
+            gap: 40px;
+            overflow-x: auto;
+            padding-bottom: 20px;
+        }
+        .screen-container {
+            flex-shrink: 0;
+            text-align: center;
+        }
+        .screen-label {
+            font-size: 16px;
+            font-weight: 600;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+        .iphone {
+            width: 393px;
+            height: 852px;
+            background: #0A0A0F;
+            border-radius: 55px;
+            box-shadow: 0 0 0 12px #1a1a1a, 0 50px 100px rgba(0,0,0,0.8);
+            overflow: hidden;
+            position: relative;
+        }
+        .notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 126px;
+            height: 37px;
+            background: #0A0A0F;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            z-index: 100;
+        }
+        .screen-content {
+            width: 100%;
+            height: 100%;
+            padding: 60px 24px 100px;
+            overflow-y: auto;
+            background: linear-gradient(180deg, #0A0A0F 0%, #0d0d14 100%);
+        }
+        .glass-card {
+            background: rgba(18, 18, 26, 0.6);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .btn-primary {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #F4D03F 0%, #E5C158 100%);
+            border: none;
+            border-radius: 16px;
+            color: #0A0A0F;
+            font-size: 17px;
+            font-weight: 600;
+        }
+        .tab-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 83px;
+            background: rgba(18, 18, 26, 0.95);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 20px 20px;
+        }
+        .tab-item { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+        .tab-icon { font-size: 22px; color: #E5C158; }
+        .tab-icon-inactive { font-size: 22px; color: #A1A1AA; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Feature Screens</h1>
+        <p style="font-size: 20px; color: #888;">Learn • Meditate • Journal • Forecast</p>
+    </div>
+
+    <!-- LEARN -->
+    <div class="category">
+        <div class="category-title">Learn</div>
+        <div class="screens-row">
+            <div class="screen-container">
+                <div class="screen-label">Education Hub</div>
+                <div class="iphone">
+                    <div class="notch"></div>
+                    <div class="screen-content">
+                        <div style="font-size: 28px; font-weight: 700; color: #FAFAFA; margin-bottom: 24px;">Learn</div>
+                        
+                        <div class="glass-card" style="margin-bottom: 20px;">
+                            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                                <div style="font-size: 24px;">✨</div>
+                                <div style="font-size: 13px; font-weight: 600; color: #E5C158; text-transform: uppercase;">Daily Wisdom</div>
+                            </div>
+                            <div style="font-size: 18px; font-style: italic; color: #E5E5E5; line-height: 1.5;">"The numbers are the Universal language offered by the deity to humans as confirmation of the truth."</div>
+                            <div style="font-size: 15px; color: #A1A1AA; margin-top: 12px;">— St. Augustine</div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap;">
+                            <div style="padding: 10px 20px; background: #E5C158; border-radius: 20px; font-size: 15px; font-weight: 600; color: #0A0A0F;">All</div>
+                            <div style="padding: 10px 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; font-size: 15px; color: #FAFAFA;">Basics</div>
+                            <div style="padding: 10px 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; font-size: 15px; color: #FAFAFA;">Advanced</div>
+                        </div>
+                        
+                        <div style="background: linear-gradient(135deg, rgba(229,193,88,0.2), rgba(155,89,182,0.2)); border-radius: 20px; padding: 20px; margin-bottom: 20px;">
+                            <div style="height: 120px; background: linear-gradient(135deg, rgba(229,193,88,0.3), rgba(155,89,182,0.3)); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+                                <div style="font-size: 48px;">🔮</div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                                <div style="font-size: 10px; font-weight: 700; color: #0A0A0F; background: #E5C158; padding: 4px 8px; border-radius: 4px;">FEATURED</div>
+                                <div style="font-size: 13px; color: #A1A1AA;">15 min read</div>
+                            </div>
+                            <div style="font-size: 20px; font-weight: 700; color: #FAFAFA; margin-bottom: 8px;">Master Numbers</div>
+                            <div style="font-size: 15px; color: #A1A1AA;">Understanding 11, 22, and 33</div>
+                        </div>
+                        
+                        <div style="font-size: 20px; font-weight: 600; color: #FAFAFA; margin-bottom: 16px;">Continue Learning</div>
+                        
+                        <div class="glass-card" style="display: flex; align-items: center; gap: 16px;">
+                            <div style="width: 64px; height: 64px; border-radius: 16px; background: rgba(229,193,88,0.15); display: flex; align-items: center; justify-content: center; font-size: 32px;">🎯</div>
+                            
+                            <div style="flex: 1;">
+                                <div style="font-size: 17px; font-weight: 600; color: #FAFAFA; margin-bottom: 4px;">Life Path Numbers</div>
+                                <div style="font-size: 14px; color: #A1A1AA; margin-bottom: 8px;">Lesson 3 of 7</div>
+                                <div style="height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px;">
+                                    <div style="width: 43%; height: 100%; background: #E5C158; border-radius: 2px;"></div>
+                                </div>
+                            </div>
+                            
+                            <div style="font-size: 32px; color: #E5C158;">▶</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-bar">
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Today</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Chart</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Community</div></div>
+                        <div class="tab-item"><div class="tab-icon">◉</div><div style="font-size: 10px; color: #E5C158;">Learn</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Profile</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MEDITATION -->
+            <div class="screen-container">
+                <div class="screen-label">Meditation</div>
+                <div class="iphone">
+                    <div class="notch"></div>
+                    
+                    <div class="screen-content" style="background: linear-gradient(180deg, #0d0d1a 0%, #0A0A0F 100%);">
+                        <div style="font-size: 28px; font-weight: 700; color: #FAFAFA; margin-bottom: 24px;">Meditate</div>
+                        
+                        <div style="background: linear-gradient(135deg, rgba(155,89,182,0.3), rgba(52,152,219,0.2)); border-radius: 20px; padding: 24px; margin-bottom: 24px; position: relative; overflow: hidden;">
+                            <div style="position: absolute; top: -50%; right: -50%; width: 200px; height: 200px; background: radial-gradient(circle, rgba(229,193,88,0.2), transparent 70%);"></div>
+                            
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; position: relative; z-index: 1;">
+                                <div>
+                                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #E5C158; box-shadow: 0 0 10px #E5C158;"></div>
+                                        <div style="font-size: 12px; font-weight: 600; color: #E5C158; text-transform: uppercase;">Featured</div>
+                                    </div>
+                                    
+                                    <div style="font-size: 24px; font-weight: 700; color: #FAFAFA; margin-bottom: 8px;">Abundance Meditation</div>
+                                    
+                                    <div style="font-size: 15px; color: #E5E5E5; margin-bottom: 16px;">10 minutes • For Life Path 8</div>
+                                    
+                                    <div style="display: flex; align-items: center; gap: 8px;">
+                                        <div style="width: 40px; height: 40px; border-radius: 50%; background: #E5C158; display: flex; align-items: center; justify-content: center; font-size: 18px; color: #0A0A0F;">▶</div>
+                                        <span style="font-size: 15px; color: #FAFAFA;">Start Session</span>
+                                    </div>
+                                </div>
+                                
+                                <div style="font-size: 64px;">🧘</div>
+                            </div>
+                        </div>
+                        
+                        <div style="font-size: 20px; font-weight: 600; color: #FAFAFA; margin-bottom: 16px;">Categories</div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                            <div style="padding: 20px; background: rgba(18,18,26,0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; text-align: center;">
+                                <div style="font-size: 32px; margin-bottom: 8px;">🎯</div>
+                                <div style="font-size: 15px; font-weight: 600; color: #FAFAFA;">Focus</div>
+                            </div>
+                            
+                            <div style="padding: 20px; background: rgba(18,18,26,0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; text-align: center;">
+                                <div style="font-size: 32px; margin-bottom: 8px;">😴</div>
+                                <div style="font-size: 15px; font-weight: 600; color: #FAFAFA;">Sleep</div>
+                            </div>
+                            
+                            <div style="padding: 20px; background: rgba(18,18,26,0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; text-align: center;">
+                                <div style="font-size: 32px; margin-bottom: 8px;">😌</div>
+                                <div style="font-size: 15px; font-weight: 600; color: #FAFAFA;">Anxiety</div>
+                            </div>
+                            
+                            <div style="padding: 20px; background: rgba(18,18,26,0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; text-align: center;">
+                                <div style="font-size: 32px; margin-bottom: 8px;">⚡</div>
+                                <div style="font-size: 15px; font-weight: 600; color: #FAFAFA;">Energy</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-bar">
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Today</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Chart</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Community</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Learn</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Profile</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- JOURNAL -->
+            <div class="screen-container">
+                <div class="screen-label">Journal</div>
+                <div class="iphone">
+                    <div class="notch"></div>
+                    
+                    <div class="screen-content">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                            <div style="font-size: 28px; font-weight: 700; color: #FAFAFA;">Journal</div>
+                            <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #F4D03F, #E5C158); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #0A0A0F;">+</div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; margin-bottom: 24px;">
+                            <div style="text-align: center; padding: 8px;"><div style="font-size: 11px; color: #A1A1AA;">S</div></div>
+                            <div style="text-align: center; padding: 8px;"><div style="font-size: 11px; color: #A1A1AA;">M</div></div>
+                            <div style="text-align: center; padding: 8px;"><div style="font-size: 11px; color: #A1A1AA;">T</div></div>
+                            <div style="text-align: center; padding: 8px;"><div style="font-size: 11px; color: #A1A1AA;">W</div></div>
+                            <div style="text-align: center; padding: 8px;"><div style="font-size: 11px; color: #A1A1AA;">T</div></div>
+                            <div style="text-align: center; padding: 8px;"><div style="font-size: 11px; color: #A1A1AA;">F</div></div>
+                            <div style="text-align: center; padding: 8px;"><div style="font-size: 11px; color: #A1A1AA;">S</div></div>
+                            
+                            <div style="text-align: center; padding: 8px;"><div style="font-size: 14px; color: #FAFAFA;">9</div></div>
+                            <div style="text-align: center; padding: 8px;"><div style="font-size: 14px; color: #FAFAFA;">10</div></div>
+                            <div style="text-align: center; padding: 8px;"><div style="font-size: 14px; color: #FAFAFA;">11</div></div>
+                            <div style="text-align: center; padding: 8px;"><div style="font-size: 14px; color: #FAFAFA;">12</div></div>
+                            
+                            <div style="text-align: center; padding: 8px; background: #E5C158; border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; margin: 0 auto;"><div style="font-size: 14px; font-weight: 700; color: #0A0A0F;">13</div></div>
+                            
+                            <div style="text-align: center; padding: 8px;"><div style="font-size: 14px; color: #FAFAFA;">14</div></div>
+                            <div style="text-align: center; padding: 8px;"><div style="font-size: 14px; color: #FAFAFA;">15</div></div>
+                        </div>
+                        
+                        <div style="font-size: 20px; font-weight: 600; color: #FAFAFA; margin-bottom: 16px;">Recent Entries</div>
+                        
+                        <div class="glass-card" style="margin-bottom: 12px;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                                <div style="font-size: 13px; color: #A1A1AA;">Today • Personal Day 8</div>
+                                <div style="font-size: 20px;">😊</div>
+                            </div>
+                            
+                            <div style="font-size: 16px; color: #E5E5E5; line-height: 1.5;">Today I felt a strong sense of purpose. The energy of 8 is really helping me focus on my career goals...</div>
+                        </div>
+                        
+                        <div class="glass-card">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                                <div style="font-size: 13px; color: #A1A1AA;">Yesterday • Personal Day 7</div>
+                                <div style="font-size: 20px;">🤔</div>
+                            </div>
+                            
+                            <div style="font-size: 16px; color: #E5E5E5; line-height: 1.5;">A day of introspection. I spent time meditating and reflecting on my spiritual journey...</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-bar">
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Today</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Chart</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Community</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Learn</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Profile</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- YEARLY FORECAST -->
+            <div class="screen-container">
+                <div class="screen-label">Yearly Forecast</div>
+                <div class="iphone">
+                    <div class="notch"></div>
+                    
+                    <div class="screen-content">
+                        <div style="text-align: center; margin-bottom: 32px; padding-top: 20px;">
+                            <div style="font-size: 13px; color: #A1A1AA; margin-bottom: 8px;">Personal Year</div>
+                            
+                            <div style="font-size: 80px; font-weight: 700; background: linear-gradient(180deg, #F4D03F, #E5C158); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">9</div>
+                            
+                            <div style="display: inline-block; padding: 8px 16px; background: rgba(229,193,88,0.1); border: 1px solid rgba(229,193,88,0.2); border-radius: 20px; margin-top: 16px;">
+                                <span style="font-size: 15px; color: #E5C158;">Year of Completion</span>
+                            </div>
+                        </div>
+                        
+                        <div class="glass-card" style="margin-bottom: 20px;">
+                            <div style="font-size: 13px; font-weight: 600; color: #E5C158; text-transform: uppercase; margin-bottom: 12px;">2026 Theme</div>
+                            
+                            <div style="font-size: 18px; font-weight: 600; color: #FAFAFA; margin-bottom: 8px;">The Year of Inner Wisdom</div>
+                            
+                            <div style="font-size: 15px; color: #A1A1AA; line-height: 1.5;">A time to release what no longer serves you and prepare for a new cycle.</div>
+                        </div>
+                        
+                        <div style="font-size: 20px; font-weight: 600; color: #FAFAFA; margin-bottom: 16px;">Monthly Forecast</div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                            <div style="padding: 16px; background: rgba(18,18,26,0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px;">
+                                <div style="font-size: 13px; font-weight: 600; color: #E5C158; margin-bottom: 4px;">January</div>
+                                <div style="font-size: 15px; color: #FAFAFA;">New Beginnings</div>
+                            </div>
+                            
+                            <div style="padding: 16px; background: rgba(18,18,26,0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px;">
+                                <div style="font-size: 13px; font-weight: 600; color: #E5C158; margin-bottom: 4px;">February</div>
+                                <div style="font-size: 15px; color: #FAFAFA;">Relationships</div>
+                            </div>
+                            
+                            <div style="padding: 16px; background: rgba(18,18,26,0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px;">
+                                <div style="font-size: 13px; font-weight: 600; color: #E5C158; margin-bottom: 4px;">March</div>
+                                <div style="font-size: 15px; color: #FAFAFA;">Creative Expression</div>
+                            </div>
+                            
+                            <div style="padding: 16px; background: rgba(18,18,26,0.6); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px;">
+                                <div style="font-size: 13px; font-weight: 600; color: #E5C158; margin-bottom: 4px;">April</div>
+                                <div style="font-size: 15px; color: #FAFAFA;">Foundation Building</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-bar">
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Today</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Chart</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Community</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Learn</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Profile</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NAME ANALYSIS -->
+            <div class="screen-container">
+                <div class="screen-label">Name Analysis</div>
+                <div class="iphone">
+                    <div class="notch"></div>
+                    
+                    <div class="screen-content">
+                        <div style="font-size: 28px; font-weight: 700; color: #FAFAFA; margin-bottom: 24px;">Name Analysis</div>
+                        
+                        <div class="glass-card" style="margin-bottom: 24px;">
+                            <div style="font-size: 13px; font-weight: 600; color: #A1A1AA; text-transform: uppercase; margin-bottom: 8px;">Full Name</div>
+                            
+                            <div style="font-size: 20px; font-weight: 600; color: #FAFAFA;">Sarah Johnson</div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 8px; overflow-x: auto; margin-bottom: 24px; padding-bottom: 8px;">
+                            <div style="flex-shrink: 0; padding: 16px; background: rgba(229,193,88,0.1); border: 1px solid rgba(229,193,88,0.2); border-radius: 12px; text-align: center; min-width: 60px;">
+                                <div style="font-size: 20px; font-weight: 700; color: #E5C158;">S</div>
+                                <div style="font-size: 14px; color: #A1A1AA;">1</div>
+                            </div>
+                            
+                            <div style="flex-shrink: 0; padding: 16px; background: rgba(231,76,60,0.1); border: 1px solid rgba(231,76,60,0.2); border-radius: 12px; text-align: center; min-width: 60px;">
+                                <div style="font-size: 20px; font-weight: 700; color: #E74C3C;">a</div>
+                                <div style="font-size: 14px; color: #A1A1AA;">1</div>
+                            </div>
+                            
+                            <div style="flex-shrink: 0; padding: 16px; background: rgba(231,76,60,0.1); border: 1px solid rgba(231,76,60,0.2); border-radius: 12px; text-align: center; min-width: 60px;">
+                                <div style="font-size: 20px; font-weight: 700; color: #E74C3C;">r</div>
+                                <div style="font-size: 14px; color: #A1A1AA;">9</div>
+                            </div>
+                            
+                            <div style="flex-shrink: 0; padding: 16px; background: rgba(229,193,88,0.1); border: 1px solid rgba(229,193,88,0.2); border-radius: 12px; text-align: center; min-width: 60px;">
+                                <div style="font-size: 20px; font-weight: 700; color: #E5C158;">h</div>
+                                <div style="font-size: 14px; color: #A1A1AA;">8</div>
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px;">
+                            <div class="glass-card" style="border-color: rgba(231,76,60,0.3);">
+                                <div style="font-size: 13px; font-weight: 600; color: #E74C3C; margin-bottom: 8px;">Vowels (Soul Urge)</div>
+                                <div style="font-size: 32px; font-weight: 700; color: #E74C3C;">6</div>
+                            </div>
+                            
+                            <div class="glass-card" style="border-color: rgba(52,152,219,0.3);">
+                                <div style="font-size: 13px; font-weight: 600; color: #3498DB; margin-bottom: 8px;">Consonants</div>
+                                <div style="font-size: 32px; font-weight: 700; color: #3498DB;">3</div>
+                            </div>
+                        </div>
+                        
+                        <div class="glass-card">
+                            <div style="font-size: 13px; font-weight: 600; color: #E5C158; margin-bottom: 8px;">Expression Number</div>
+                            
+                            <div style="font-size: 48px; font-weight: 700; color: #E5C158;">9</div>
+                            
+                            <div style="font-size: 15px; color: #E5E5E5;">The Humanitarian</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-bar">
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Today</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Chart</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Community</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Learn</div></div>
+                        <div class="tab-item"><div class="tab-icon-inactive">○</div><div style="font-size: 10px; color: #A1A1AA;">Profile</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 80px; padding: 40px; color: #666; border-top: 1px solid rgba(255,255,255,0.1);">
+        <p style="font-size: 20px; margin-bottom: 8px;">QodeX Feature Screens</p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,307 @@
+{
+  "version": "1.0",
+  "type": "Personality Number",
+  "description": "Your Personality Number reveals how others perceive you at first meeting—the mask you wear and the impression you leave. Calculated from the consonants in your full birth name, it represents your outward social self.",
+  "meanings": {
+    "1": {
+      "number": 1,
+      "title": "The Confident Presence",
+      "firstImpression": "People immediately sense your self-assurance and leadership aura. You enter rooms with authority.",
+      "outwardPersona": {
+        "howOthersSeeYou": ["Confident and capable", "Independent and self-reliant", "Strong and decisive", "Competent and professional", "A natural leader"],
+        "energyYouProject": "Commanding, authoritative, and self-assured. Others feel your presence immediately.",
+        "physicalPresence": "Upright posture, direct eye contact, purposeful movements. You look like someone who knows where they're going."
+      },
+      "socialStyle": {
+        "inGroups": "You naturally take charge or stand apart. You're not a wallflower—you're either leading the conversation or observing from a position of strength.",
+        "inOneOnOne": "Direct and focused. You give people your full attention, which can feel both flattering and intense.",
+        "communication": "Clear, concise, and authoritative. You speak with certainty even when you're not certain."
+      },
+      "firstMeeting": {
+        "whatTheyNoticeFirst": "Your confidence and posture. You look like someone important before you say a word.",
+        "initialPerception": "Competent, perhaps intimidating. Others may assume you're more experienced or important than you are.",
+        "commonMisconception": "That you're arrogant or unapproachable. Your self-assurance can be read as aloofness."
+      },
+      "hiddenDepth": "Behind the confident exterior is someone who deeply cares about doing things right. Your strength masks vulnerability you rarely show.",
+      "makingItWork": "Let others see your confidence includes room for their ideas. A smile softens authority without weakening it.",
+      "atYourBest": "Inspiring leader who empowers others to find their own strength.",
+      "atYourWorst": "Domineering presence who makes others feel small.",
+      "affirmation": "I lead with confidence and connect with warmth. My strength lifts others up."
+    },
+    "2": {
+      "number": 2,
+      "title": "The Gentle Presence",
+      "firstImpression": "People immediately feel at ease with you. Your gentleness invites trust and openness.",
+      "outwardPersona": {
+        "howOthersSeeYou": ["Kind and approachable", "A good listener", "Gentle and sensitive", "Diplomatic and tactful", "Supportive and helpful"],
+        "energyYouProject": "Calm, receptive, and welcoming. Others feel they can tell you anything.",
+        "physicalPresence": "Soft movements, attentive posture, warm eyes. You lean in when others speak."
+      },
+      "socialStyle": {
+        "inGroups": "You're the harmonizer, noticing when someone feels left out and bringing them in. You avoid conflict and keep the peace.",
+        "inOneOnOne": "Deeply attentive and empathetic. You remember details others forget and make people feel truly heard.",
+        "communication": "Gentle, thoughtful, and considerate. You choose words carefully to avoid hurting feelings."
+      },
+      "firstMeeting": {
+        "whatTheyNoticeFirst": "Your warmth and attentiveness. You make people feel like the most important person in the room.",
+        "initialPerception": "Kind, gentle, and trustworthy. Others feel safe with you immediately.",
+        "commonMisconception": "That you're weak or indecisive. Your gentleness is often underestimated."
+      },
+      "hiddenDepth": "Behind the soft exterior is surprising inner strength. You endure what would break others, but quietly.",
+      "makingItWork": "Let your gentleness be seen as strength, not weakness. Practice expressing your opinions clearly.",
+      "atYourBest": "Diplomatic peacemaker who creates harmony wherever you go.",
+      "atYourWorst": "People-pleaser who loses yourself in keeping others happy.",
+      "affirmation": "I create harmony with strength and kindness. My sensitivity connects hearts."
+    },
+    "3": {
+      "number": 3,
+      "title": "The Charismatic Presence",
+      "firstImpression": "People are drawn to your sparkle and energy. You light up the room just by being in it.",
+      "outwardPersona": {
+        "howOthersSeeYou": ["Fun and entertaining", "Creative and expressive", "Optimistic and upbeat", "Charming and charismatic", "Youthful and playful"],
+        "energyYouProject": "Bright, buoyant, and contagious. Your enthusiasm lifts everyone's mood.",
+        "physicalPresence": "Expressive face, animated gestures, sparkling eyes. You're physically expressive and hard to miss."
+      },
+      "socialStyle": {
+        "inGroups": "The life of the party, storyteller, and connector. You bring people together through laughter and shared fun.",
+        "inOneOnOne": "Engaging and entertaining. You make even casual conversations feel special and memorable.",
+        "communication": "Colorful, humorous, and expressive. You paint pictures with words and make people laugh."
+      },
+      "firstMeeting": {
+        "whatTheyNoticeFirst": "Your smile and energy. You seem like someone who knows how to have fun.",
+        "initialPerception": "Fun, creative, and entertaining. Others want to be around you.",
+        "commonMisconception": "That you're superficial or not serious. Your lightness masks depth."
+      },
+      "hiddenDepth": "Behind the sparkle is someone who feels deeply. Your joy is real, but so is your sensitivity to pain.",
+      "makingItWork": "Let people see that your fun includes depth. Share your serious side when trust is established.",
+      "atYourBest": "Inspiring creative who brings joy and beauty into the world.",
+      "atYourWorst": "Scattered entertainer who avoids real connection through performance.",
+      "affirmation": "I shine my light authentically. My joy is a gift that inspires others."
+    },
+    "4": {
+      "number": 4,
+      "title": "The Reliable Presence",
+      "firstImpression": "People sense your stability and trustworthiness immediately. You look like someone who has it together.",
+      "outwardPersona": {
+        "howOthersSeeYou": ["Dependable and responsible", "Organized and prepared", "Practical and grounded", "Hardworking and disciplined", "Trustworthy and steady"],
+        "energyYouProject": "Solid, grounded, and reassuring. Others feel they can count on you.",
+        "physicalPresence": "Solid stance, organized appearance, methodical movements. You look prepared and put-together."
+      },
+      "socialStyle": {
+        "inGroups": "The reliable one others turn to when things need to get done. You're not the center of attention, but you're essential.",
+        "inOneOnOne": "Practical and helpful. You offer concrete solutions and follow through on promises.",
+        "communication": "Clear, factual, and straightforward. You say what you mean and mean what you say."
+      },
+      "firstMeeting": {
+        "whatTheyNoticeFirst": "Your preparedness and competence. You seem like someone who doesn't waste time.",
+        "initialPerception": "Reliable, serious, and capable. Others trust you with responsibilities.",
+        "commonMisconception": "That you're boring or rigid. Your stability is often mistaken for lack of imagination."
+      },
+      "hiddenDepth": "Behind the practical exterior is a heart that dreams big. Your reliability is the foundation for your ambitions.",
+      "makingItWork": "Let others see your methodical approach includes creativity. Share your dreams, not just your plans.",
+      "atYourBest": "Steady builder who creates lasting structures others can depend on.",
+      "atYourWorst": "Rigid traditionalist who can't adapt to changing circumstances.",
+      "affirmation": "I create stability with vision. My reliability is the foundation of my success."
+    },
+    "5": {
+      "number": 5,
+      "title": "The Dynamic Presence",
+      "firstImpression": "People feel your energy and sense of adventure. You look like someone interesting things happen to.",
+      "outwardPersona": {
+        "howOthersSeeYou": ["Adventurous and exciting", "Adaptable and versatile", "Curious and engaging", "Free-spirited and independent", "Magnetic and alluring"],
+        "energyYouProject": "Dynamic, restless, and exciting. Others feel more alive just being near you.",
+        "physicalPresence": "Quick movements, alert eyes, ready stance. You look like you're about to go somewhere interesting."
+      },
+      "socialStyle": {
+        "inGroups": "The connector who knows everyone and everything. You bring fresh perspectives and exciting stories.",
+        "inOneOnOne": "Engaging and stimulating. You make people feel like anything is possible.",
+        "communication": "Fast, varied, and enthusiastic. You jump between topics and keep conversations lively."
+      },
+      "firstMeeting": {
+        "whatTheyNoticeFirst": "Your energy and curiosity. You seem like someone who's lived many lives.",
+        "initialPerception": "Exciting, adventurous, and fun. Others want to join your adventures.",
+        "commonMisconception": "That you're flaky or unreliable. Your love of change is mistaken for lack of commitment."
+      },
+      "hiddenDepth": "Behind the adventurous exterior is someone who seeks meaning through experience. Your restlessness is a spiritual quest.",
+      "makingItWork": "Let others see that your love of freedom includes loyalty to what matters. Show up for the important things.",
+      "atYourBest": "Catalyst for change who inspires others to break free and live fully.",
+      "atYourWorst": "Restless wanderer who leaves before things get real.",
+      "affirmation": "I embrace life with courage and curiosity. My freedom inspires others to live authentically."
+    },
+    "6": {
+      "number": 6,
+      "title": "The Nurturing Presence",
+      "firstImpression": "People feel cared for in your presence. You emanate warmth and protective energy.",
+      "outwardPersona": {
+        "howOthersSeeYou": ["Warm and caring", "Responsible and protective", "Artistic and tasteful", "Nurturing and supportive", "Family-oriented"],
+        "energyYouProject": "Comforting, protective, and welcoming. Others feel mothered/fathered by your presence.",
+        "physicalPresence": "Open posture, warm expressions, attentive demeanor. You look like someone who takes care of others."
+      },
+      "socialStyle": {
+        "inGroups": "The host, caretaker, and emotional center. You notice who needs what and provide it without being asked.",
+        "inOneOnOne": "Deeply caring and supportive. You remember what's important to people and show you care.",
+        "communication": "Warm, considerate, and encouraging. You make people feel valued and understood."
+      },
+      "firstMeeting": {
+        "whatTheyNoticeFirst": "Your warmth and attentiveness. You seem like someone who would help in a crisis.",
+        "initialPerception": "Caring, responsible, and kind. Others feel safe with you.",
+        "commonMisception": "That you're only a caregiver with no needs of your own. Your nurturing masks your own complexity."
+      },
+      "hiddenDepth": "Behind the caring exterior is someone with big dreams and creative vision. You're more than just a supporter.",
+      "makingItWork": "Let others nurture you sometimes. Show that you're a complete person, not just a caregiver.",
+      "atYourBest": "Compassionate healer who creates safe spaces for others to grow.",
+      "atYourWorst": "Overbearing caretaker who smothers others with unwanted help.",
+      "affirmation": "I nurture others while honoring myself. My care creates healing spaces."
+    },
+    "7": {
+      "number": 7,
+      "title": "The Mysterious Presence",
+      "firstImpression": "People sense depth and mystery in you. You seem like someone with hidden knowledge.",
+      "outwardPersona": {
+        "howOthersSeeYou": ["Intelligent and thoughtful", "Mysterious and intriguing", "Analytical and perceptive", "Spiritual or philosophical", "Selective about company"],
+        "energyYouProject": "Reserved, observant, and slightly mysterious. Others are curious about what you're thinking.",
+        "physicalPresence": "Thoughtful stillness, perceptive gaze, contained movements. You look like you're always processing."
+      },
+      "socialStyle": {
+        "inGroups": "The quiet observer who occasionally delivers profound insights. You speak rarely but memorably.",
+        "inOneOnOne": "Deep and focused. You prefer meaningful conversations to small talk.",
+        "communication": "Thoughtful, precise, and substantive. You don't waste words on the trivial."
+      },
+      "firstMeeting": {
+        "whatTheyNoticeFirst": "Your reserve and perceptiveness. You seem like someone who sees more than they say.",
+        "initialPerception": "Intelligent, mysterious, and perhaps aloof. Others are intrigued but unsure how to approach you.",
+        "commonMisconception": "That you're cold or arrogant. Your reserve is often mistaken for disinterest."
+      },
+      "hiddenDepth": "Behind the analytical exterior is deep emotion and sensitivity. You feel more than you show.",
+      "makingItWork": "Offer something of yourself first to put others at ease. Let them know your reserve isn't rejection.",
+      "atYourBest": "Wise observer who offers profound insights at the right moments.",
+      "atYourWorst": "Isolated intellectual who disconnects from human connection.",
+      "affirmation": "I share my depth with those who appreciate it. My presence is a gift of wisdom."
+    },
+    "8": {
+      "number": 8,
+      "title": "The Authoritative Presence",
+      "firstImpression": "People sense your power and competence immediately. You look successful before you say a word.",
+      "outwardPersona": {
+        "howOthersSeeYou": ["Confident and capable", "Authoritative and commanding", "Successful and ambitious", "Efficient and decisive", "Powerful and influential"],
+        "energyYouProject": "Powerful, controlled, and commanding. Others feel your authority naturally.",
+        "physicalPresence": "Strong posture, direct gaze, efficient movements. You look like someone important."
+      },
+      "socialStyle": {
+        "inGroups": "The leader others naturally defer to. Your presence organizes the room.",
+        "inOneOnOne": "Direct and purposeful. You respect others' time and expect them to respect yours.",
+        "communication": "Concise, commanding, and confident. You speak with authority even in uncertainty."
+      },
+      "firstMeeting": {
+        "whatTheyNoticeFirst": "Your confidence and competence. You seem like someone who gets things done.",
+        "initialPerception": "Successful, powerful, and perhaps intimidating. Others assume you're in charge.",
+        "commonMisconception": "That you're cold or only care about success. Your ambition masks a caring heart."
+      },
+      "hiddenDepth": "Behind the powerful exterior is someone who deeply cares about using power well. Your strength is in service of others.",
+      "makingItWork": "Let warmth peek through your authority. Show that your power includes compassion.",
+      "atYourBest": "Empowered leader who lifts others as you rise.",
+      "atYourWorst": "Controlling executive who values results over people.",
+      "affirmation": "I lead with power and heart. My success serves the greater good."
+    },
+    "9": {
+      "number": 9,
+      "title": "The Compassionate Presence",
+      "firstImpression": "People feel your open heart and non-judgmental nature. You seem to accept everyone as they are.",
+      "outwardPersona": {
+        "howOthersSeeYou": ["Compassionate and understanding", "Wise and experienced", "Artistic and creative", "Idealistic and humanitarian", "Non-judgmental"],
+        "energyYouProject": "Open, accepting, and slightly otherworldly. Others feel truly seen by you.",
+        "physicalPresence": "Open posture, soft eyes, expressive face. You look like someone who has lived deeply."
+      },
+      "socialStyle": {
+        "inGroups": "The inclusive one who makes sure everyone feels welcome. You see the good in people others miss.",
+        "inOneOnOne": "Deeply empathetic and understanding. You make people feel accepted completely.",
+        "communication": "Warm, philosophical, and inclusive. You speak to the highest in people."
+      },
+      "firstMeeting": {
+        "whatTheyNoticeFirst": "Your openness and acceptance. You seem like someone who won't judge.",
+        "initialPerception": "Compassionate, wise, and artistic. Others feel safe to be authentic with you.",
+        "commonMisconception": "That you're naive or too idealistic. Your optimism is wisdom, not ignorance."
+      },
+      "hiddenDepth": "Behind the compassionate exterior is someone who has known deep pain. Your understanding comes from experience.",
+      "makingItWork": "Let people see your wisdom includes discernment. You're kind, not foolish.",
+      "atYourBest": "Universal friend who makes everyone feel valued and understood.",
+      "atYourWorst": "Lost idealist who sacrifices self for others' approval.",
+      "affirmation": "I embrace all with compassion and wisdom. My acceptance heals divisions."
+    },
+    "11": {
+      "number": 11,
+      "title": "The Illuminated Presence",
+      "firstImpression": "People sense something special about you—an intensity and perceptiveness that feels almost otherworldly.",
+      "outwardPersona": {
+        "howOthersSeeYou": ["Intuitive and perceptive", "Inspiring and charismatic", "Sensitive and artistic", "Spiritually aware", "Intense and focused"],
+        "energyYouProject": "Intense, magnetic, and slightly ethereal. Others feel drawn to your energy.",
+        "physicalPresence": "Penetrating gaze, sensitive features, electric energy. You look like someone who sees more than others."
+      },
+      "socialStyle": {
+        "inGroups": "The inspiring presence who elevates the conversation. You're not always comfortable, but you're always noticed.",
+        "inOneOnOne": "Deeply intuitive and insightful. You often say what the other person was thinking.",
+        "communication": "Inspiring, sometimes prophetic, and always authentic. You speak truth even when uncomfortable."
+      },
+      "firstMeeting": {
+        "whatTheyNoticeFirst": "Your intensity and perceptiveness. You seem like someone who sees through masks.",
+        "initialPerception": "Inspiring, intense, and perhaps overwhelming. Others feel seen, maybe too seen.",
+        "commonMisconception": "That you're 'too much' or too serious. Your depth is often misunderstood."
+      },
+      "hiddenDepth": "Behind the inspiring exterior is someone who needs grounding and rest. Your light requires fuel.",
+      "makingItWork": "Learn to modulate your intensity. Not every moment needs your full voltage.",
+      "atYourBest": "Spiritual lighthouse who guides others to their own truth.",
+      "atYourWorst": "Overwhelming presence that burns out others and self.",
+      "affirmation": "I shine my light with wisdom and care. My presence elevates those around me."
+    },
+    "22": {
+      "number": 22,
+      "title": "The Visionary Presence",
+      "firstImpression": "People sense your capability for big things. You seem like someone who could build empires.",
+      "outwardPersona": {
+        "howOthersSeeYou": ["Capable and visionary", "Practical and powerful", "Organized and systematic", "Ambitious yet grounded", "Influential and commanding"],
+        "energyYouProject": "Powerful, purposeful, and substantial. Others sense you can make big things happen.",
+        "physicalPresence": "Solid and purposeful, with an air of capability. You look like someone who doesn't back down from challenges."
+      },
+      "socialStyle": {
+        "inGroups": "The leader with a plan. You naturally organize and direct with quiet authority.",
+        "inOneOnOne": "Focused and strategic. You make people feel part of something bigger.",
+        "communication": "Clear, strategic, and inspiring. You paint big pictures and show how to build them."
+      },
+      "firstMeeting": {
+        "whatTheyNoticeFirst": "Your competence and vision. You seem like someone who gets impossible things done.",
+        "initialPerception": "Powerful, capable, and perhaps intimidating. Others sense your potential for massive impact.",
+        "commonMisconception": "That you're all work and no heart. Your ambition serves deeper purpose."
+      },
+      "hiddenDepth": "Behind the visionary exterior is someone who needs human connection and rest. Your strength needs support.",
+      "makingItWork": "Let others see the human behind the vision. Your vulnerability doesn't diminish your power.",
+      "atYourBest": "Master builder who manifests visions that serve humanity.",
+      "atYourWorst": "Overwhelmed idealist who takes on too much responsibility.",
+      "affirmation": "I manifest great visions with practical wisdom. My work serves generations."
+    },
+    "33": {
+      "number": 33,
+      "title": "The Christ Consciousness Presence",
+      "firstImpression": "People feel unconditionally accepted and loved in your presence. You emanate divine compassion.",
+      "outwardPersona": {
+        "howOthersSeeYou": ["Loving and accepting", "Wise and nurturing", "Selfless and giving", "Spiritually advanced", "Healing presence"],
+        "energyYouProject": "Loving, accepting, and almost divine. Others feel healed just being near you.",
+        "physicalPresence": "Radiant warmth, open heart, compassionate eyes. You look like love personified."
+      },
+      "socialStyle": {
+        "inGroups": "The loving center who accepts everyone. You create safe space for authentic expression.",
+        "inOneOnOne": "Deeply loving and accepting. You make people feel they can be completely themselves.",
+        "communication": "Loving, wise, and inclusive. You speak to the soul, not just the ear."
+      },
+      "firstMeeting": {
+        "whatTheyNoticeFirst": "Your unconditional acceptance. You seem to love without judgment.",
+        "initialPerception": "Loving, wise, and perhaps too good to be true. Others may wonder if you're real.",
+        "commonMisconception": "That you have no needs or boundaries. Your love is infinite, but your energy is not."
+      },
+      "hiddenDepth": "Behind the loving exterior is someone who needs fierce self-care. Your gift requires protection.",
+      "makingItWork": "Teach others to care for you too. Let your love include receiving as well as giving.",
+      "atYourBest": "Living embodiment of unconditional love who transforms everyone you meet.",
+      "atYourWorst": "Self-sacrificing martyr who loses self in service to others.",
+      "affirmation": "I am love incarnate. My compassion heals while my wisdom protects."
+    }
+  }
+}

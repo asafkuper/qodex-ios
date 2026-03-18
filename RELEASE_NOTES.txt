@@ -1,0 +1,38 @@
+QodeX v1.0 - Initial Release
+
+WHAT'S INCLUDED:
+• Complete numerology engine (Life Path, Destiny, Soul Urge, Personality)
+• Daily number forecasts with personalized insights
+• iOS 17 widgets (small, medium, lock screen)
+• AI-powered mentorship matching
+• Spiritual community with discussions
+• Live sessions platform
+• 15 achievements and XP system
+• Voice control with Siri integration
+• AR chart visualization
+• HealthKit wellness tracking
+• 14 language support
+• Enterprise-grade security
+
+PREMIUM FEATURES:
+• 9 esoteric systems (Numerology, Astrology, Tarot, Kabbalah, etc.)
+• Advanced chart analysis
+• 1-on-1 mentorship calls
+• Exclusive live sessions
+• PDF chart export
+
+SUBSCRIPTION TIERS:
+• Free: Basic calculations
+• Seeker ($19.99/mo): Full charts, community
+• Initiate ($49.99/mo): Live sessions, AI features
+• Master ($199.99/mo): 1-on-1 mentorship
+
+FEEDBACK:
+We'd love your feedback! Tap the button below to share your thoughts.
+
+KNOWN ISSUES:
+• None reported
+
+Enjoy your journey of self-discovery!
+
+Built with 💜 by the QodeX Team

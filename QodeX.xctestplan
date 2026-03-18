@@ -1,0 +1,84 @@
+{
+  "configurations" : [
+    {
+      "id" : "UnitTests",
+      "name" : "Unit Tests",
+      "options" : {
+        "testExecutionOrdering" : "random",
+        "testRepetitionMode" : "none"
+      }
+    },
+    {
+      "id" : "IntegrationTests",
+      "name" : "Integration Tests",
+      "options" : {
+        "testExecutionOrdering" : "random",
+        "testRepetitionMode" : "none"
+      }
+    },
+    {
+      "id" : "UITests",
+      "name" : "UI Tests",
+      "options" : {
+        "testExecutionOrdering" : "random",
+        "testRepetitionMode" : "none",
+        "uiTestingScreenshotsEnabled" : true
+      }
+    },
+    {
+      "id" : "AllTests",
+      "name" : "All Tests",
+      "options" : {
+        "testExecutionOrdering" : "random",
+        "testRepetitionMode" : "none"
+      }
+    },
+    {
+      "id" : "SmokeTests",
+      "name" : "Smoke Tests",
+      "options" : {
+        "testExecutionOrdering" : "random",
+        "testRepetitionMode" : "none"
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:QodeX.xcodeproj",
+          "identifier" : "academy.qodex.app",
+          "name" : "QodeX"
+        }
+      ]
+    },
+    "environmentVariableEntries" : [
+      {
+        "key" : "TESTING",
+        "value" : "1"
+      },
+      {
+        "key" : "FIRESTORE_EMULATOR_HOST",
+        "value" : "localhost:8080"
+      }
+    ],
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:QodeX.xcodeproj",
+      "identifier" : "academy.qodex.app.tests",
+      "name" : "QodeXTests"
+    },
+    "testExecutionOrdering" : "random",
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:QodeX.xcodeproj",
+        "identifier" : "academy.qodex.app.tests",
+        "name" : "QodeXTests"
+      }
+    }
+  ],
+  "version" : 1
+}

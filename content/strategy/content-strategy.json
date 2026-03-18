@@ -1,0 +1,120 @@
+{
+  "content_strategy": {
+    "agent": "Sage",
+    "role": "Content Strategist",
+    "created_at": "2026-03-15",
+    "content_pillars": [
+      {
+        "name": "Educational",
+        "description": "Teach numerology concepts clearly and accessibly",
+        "formats": ["blog_posts", "guides", "explainers"],
+        "frequency": "3x per week"
+      },
+      {
+        "name": "Inspirational",
+        "description": "Motivate and inspire spiritual growth",
+        "formats": ["quotes", "stories", "affirmations"],
+        "frequency": "daily"
+      },
+      {
+        "name": "Practical",
+        "description": "Actionable numerology tips for daily life",
+        "formats": ["daily_insights", "how_to", "tips"],
+        "frequency": "daily"
+      },
+      {
+        "name": "Community",
+        "description": "User stories, testimonials, engagement",
+        "formats": ["testimonials", "spotlights", "challenges"],
+        "frequency": "2x per week"
+      }
+    ],
+    "content_calendar": {
+      "monday": {
+        "theme": "Educational Deep Dive",
+        "blog_post": "Long-form educational content",
+        "social": "Carousel or educational post",
+        "email": "Weekly forecast newsletter"
+      },
+      "tuesday": {
+        "theme": "Tip Tuesday",
+        "social": "Quick numerology tip",
+        "engagement": "Respond to comments/questions"
+      },
+      "wednesday": {
+        "theme": "Wisdom Wednesday",
+        "social": "Quote or inspirational content",
+        "blog": "Mid-week shorter post"
+      },
+      "thursday": {
+        "theme": "Throwback/Story",
+        "social": "User story or testimonial",
+        "engagement": "Community spotlight"
+      },
+      "friday": {
+        "theme": "Fun Friday",
+        "social": "Quiz, poll, or interactive content",
+        "engagement": "Weekend engagement boost"
+      },
+      "saturday": {
+        "theme": "Weekend Wisdom",
+        "social": "Reflective content",
+        "email": "Weekend reflection (subscribers)"
+      },
+      "sunday": {
+        "theme": "Sunday Setup",
+        "social": "Weekly preparation content",
+        "email": "Sunday prep newsletter"
+      }
+    },
+    "kpis": {
+      "monthly_targets": {
+        "blog_posts": 12,
+        "social_posts": 60,
+        "email_newsletters": 4,
+        "user_generated_content": 20,
+        "average_engagement_rate": 0.15,
+        "email_open_rate": 0.25,
+        "email_click_rate": 0.05
+      }
+    },
+    "seo_strategy": {
+      "target_keywords": [
+        "life path number",
+        "numerology calculator",
+        "numerology compatibility",
+        "daily numerology",
+        "master numbers",
+        "1111 meaning",
+        "life path 7",
+        "numerology chart",
+        "birth date numerology",
+        "what is my life path number"
+      ],
+      "content_types_for_seo": [
+        "Complete guides (3000+ words)",
+        "How-to tutorials",
+        "Listicles",
+        "FAQ pages",
+        "Glossary/definitions"
+      ]
+    },
+    "lead_magnets": [
+      {
+        "name": "Life Path Calculator PDF",
+        "description": "Printable guide to calculate and understand your Life Path",
+        "promotion": "Blog sidebar, social bio, email signature"
+      },
+      {
+        "name": "30-Day Numerology Challenge",
+        "description": "Email course with daily practices",
+        "promotion": "Popup, exit intent, social ads"
+      },
+      {
+        "name": "2026 Numerology Forecast",
+        "description": "Yearly predictions based on Universal Year",
+        "promotion": "Year-end, new year campaign"
+      }
+    ]
+  }
+}

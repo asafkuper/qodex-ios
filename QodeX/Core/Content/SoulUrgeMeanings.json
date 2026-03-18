@@ -1,0 +1,248 @@
+{
+  "version": "1.0",
+  "type": "Soul Urge Number",
+  "aka": "Heart's Desire Number",
+  "description": "Your Soul Urge Number reveals your innermost desires, motivations, and what your heart truly craves. Calculated from the vowels in your full birth name, it represents the authentic you beneath all social masks.",
+  "meanings": {
+    "1": {
+      "number": 1,
+      "title": "The Independent Soul",
+      "coreDesire": "To lead, innovate, and express individuality without constraint",
+      "essence": "Your heart beats for freedom to be yourself, to pioneer new paths, and to stand as a unique force in the world.",
+      "innerMotivations": {
+        "primary": ["Desire for autonomy", "Need to prove capability", "Drive to be first/best", "Craving for recognition", "Longing for self-definition"],
+        "hidden": ["Fear of dependence on others", "Need to validate self-worth through achievement", "Desire to overcome feeling powerless"]
+      },
+      "emotionalNeeds": {
+        "essential": ["Freedom to make own choices", "Recognition of unique contributions", "Opportunities to lead", "Space for independent action"],
+        "inRelationships": ["Partner who respects autonomy", "Equal footing", "Admiration without control", "Freedom to pursue individual goals"],
+        "dealBreakers": ["Being controlled or dominated", "Having decisions made for you", "Being one of many (not special)", "Dependency on others"]
+      },
+      "soulLessons": ["True leadership includes collaboration", "Independence need not mean isolation", "Asking for help is strength, not weakness", "Your worth isn't only in what you achieve"],
+      "authenticExpression": "You feel most alive when trailblazing, creating something original, or standing confidently in your truth—even if alone.",
+      "shadowSide": "Fear of vulnerability may mask deep loneliness. Your desire for control can become a prison.",
+      "fulfillmentPath": "Find ways to lead that lift others up. Let your independence inspire rather than isolate.",
+      "affirmation": "I honor my unique path while remaining connected to others. My independence is my gift, not my defense."
+    },
+    "2": {
+      "number": 2,
+      "title": "The Harmonizing Soul",
+      "coreDesire": "To love, connect, and create peace in relationships",
+      "essence": "Your heart craves deep connection, harmony, and the beauty of two souls moving as one. You are love incarnate.",
+      "innerMotivations": {
+        "primary": ["Desire for partnership", "Need to be needed", "Drive to create harmony", "Craving for emotional intimacy", "Longing to belong"],
+        "hidden": ["Fear of abandonment", "Need for external validation", "Desire to avoid conflict at any cost"]
+      },
+      "emotionalNeeds": {
+        "essential": ["Deep emotional connection", "Peaceful environment", "Feeling valued and needed", "Partnership and collaboration"],
+        "inRelationships": ["Emotional attunement", "Gentle communication", "Shared peace", "Mutual support"],
+        "dealBreakers": ["Harshness or cruelty", "Conflict without resolution", "Feeling ignored", "Disloyalty"]
+      },
+      "soulLessons": ["Your needs matter as much as others'", "Conflict can lead to deeper intimacy", "Peace at any price is not peace", "You are whole, even alone"],
+      "authenticExpression": "You feel most alive when creating harmony, supporting a loved one, or experiencing the magic of true partnership.",
+      "shadowSide": "People-pleasing may mask resentment. Fear of rocking the boat can leave you stranded.",
+      "fulfillmentPath": "Practice speaking your truth with love. Let your desire for harmony include harmony with yourself.",
+      "affirmation": "I create loving connections while honoring my own heart. My sensitivity is my superpower."
+    },
+    "3": {
+      "number": 3,
+      "title": "The Expressive Soul",
+      "coreDesire": "To create, express joy, and inspire others through authentic self-expression",
+      "essence": "Your heart sings for beauty, creativity, and the freedom to be your vibrant, authentic self without filters or apology.",
+      "innerMotivations": {
+        "primary": ["Desire for creative expression", "Need to be seen and appreciated", "Drive to spread joy", "Craving for beauty", "Longing for playfulness"],
+        "hidden": ["Fear of being boring or forgettable", "Need to mask pain with positivity", "Desire to be loved for being entertaining"]
+      },
+      "emotionalNeeds": {
+        "essential": ["Creative outlets", "Audience for expression", "Beauty in surroundings", "Play and spontaneity", "Appreciation"],
+        "inRelationships": ["Partner who celebrates your uniqueness", "Shared laughter", "Creative collaboration", "Freedom to be silly"],
+        "dealBreakers": ["Criticism of creativity", "Boredom and routine", "Being made to feel 'too much'", "Suppression of expression"]
+      },
+      "soulLessons": ["Depth comes from staying, not just exploring", "Your worth isn't in your performance", "Silence can also be beautiful", "Joy includes all emotions, not just happy ones"],
+      "authenticExpression": "You feel most alive when creating something beautiful, making others laugh, or expressing your unique vision of the world.",
+      "shadowSide": "Constant performance may hide authentic pain. Scattered attention can prevent deep connection.",
+      "fulfillmentPath": "Let your creativity be a gift, not a mask. Find beauty in the ordinary, not just the spectacular.",
+      "affirmation": "I express my authentic self with joy. My creativity is a gift to the world."
+    },
+    "4": {
+      "number": 4,
+      "title": "The Grounded Soul",
+      "coreDesire": "To build security, create order, and establish lasting foundations",
+      "essence": "Your heart yearns for stability, security, and the satisfaction of work well done. You are the builder of dreams.",
+      "innerMotivations": {
+        "primary": ["Desire for security", "Need to create order from chaos", "Drive for achievement through effort", "Craving for respect", "Longing for permanence"],
+        "hidden": ["Fear of instability or poverty", "Need to prove worth through work", "Desire for control over uncertainty"]
+      },
+      "emotionalNeeds": {
+        "essential": ["Predictable routines", "Sense of accomplishment", "Financial security", "Respect for competence", "Orderly environment"],
+        "inRelationships": ["Loyalty and dependability", "Shared values around work", "Practical support", "Long-term commitment"],
+        "dealBreakers": ["Chaos and unpredictability", "Disrespect for hard work", "Financial irresponsibility", "Lack of follow-through"]
+      },
+      "soulLessons": ["Security is an inside job", "Flexibility strengthens foundations", "You are more than your productivity", "Rest is part of the work"],
+      "authenticExpression": "You feel most alive when creating something lasting, solving practical problems, or providing security for loved ones.",
+      "shadowSide": "Rigidity may mask fear of change. Work addiction can replace living.",
+      "fulfillmentPath": "Build structures that support life, not structures that become your life. Let your strength include flexibility.",
+      "affirmation": "I create stability with wisdom. My dedication builds foundations that last."
+    },
+    "5": {
+      "number": 5,
+      "title": "The Freedom Soul",
+      "coreDesire": "To experience life fully, embrace change, and maintain absolute freedom",
+      "essence": "Your heart craves adventure, variety, and the exhilarating feeling of limitless possibility. You are freedom itself.",
+      "innerMotivations": {
+        "primary": ["Desire for absolute freedom", "Need for constant stimulation", "Drive to experience everything", "Craving for change", "Longing for adventure"],
+        "hidden": ["Fear of entrapment or limitation", "Need to escape uncomfortable feelings", "Desire to avoid commitment"]
+      },
+      "emotionalNeeds": {
+        "essential": ["Variety and change", "Freedom of movement", "New experiences", "Flexibility in all things", "Sensory stimulation"],
+        "inRelationships": ["Partner who values freedom", "No possessiveness", "Shared adventures", "Space to be independent"],
+        "dealBreakers": ["Feeling trapped or confined", "Rigid routines", "Jealousy or control", "Boredom"]
+      },
+      "soulLessons": ["True freedom includes commitment to what matters", "Change for change's sake is empty", "Depth requires staying power", "Your restlessness is a teacher"],
+      "authenticExpression": "You feel most alive when exploring new territories, breaking conventions, or experiencing the thrill of the unknown.",
+      "shadowSide": "Constant motion may mask fear of stillness. Freedom can become isolation.",
+      "fulfillmentPath": "Choose your commitments wisely, then bring your full passion to them. Let freedom serve growth, not escape.",
+      "affirmation": "I embrace life's adventure with an open heart. My freedom inspires authentic living."
+    },
+    "6": {
+      "number": 6,
+      "title": "The Loving Soul",
+      "coreDesire": "To love unconditionally, nurture others, and create beauty through service",
+      "essence": "Your heart is an infinite well of love. You crave to give, to heal, and to make the world more beautiful through your care.",
+      "innerMotivations": {
+        "primary": ["Desire to love and be loved", "Need to nurture and protect", "Drive to create beauty", "Craving for family/connection", "Longing to serve"],
+        "hidden": ["Fear of being unlovable", "Need to earn love through giving", "Desire to fix others to feel worthy"]
+      },
+      "emotionalNeeds": {
+        "essential": ["Loving relationships", "Opportunities to care for others", "Beautiful surroundings", "Sense of belonging", "Appreciation for giving"],
+        "inRelationships": ["Deep emotional intimacy", "Shared commitment", "Appreciation for nurturing", "Stable home life"],
+        "dealBreakers": ["Selfishness", "Disrespect for family", "Taking without giving", "Chaos or instability"]
+      },
+      "soulLessons": ["You cannot pour from an empty cup", "Love includes receiving as well as giving", "Perfection is not required to be worthy", "Self-care is not selfish"],
+      "authenticExpression": "You feel most alive when caring for loved ones, creating something beautiful, or making someone feel truly seen and valued.",
+      "shadowSide": "Over-giving may mask neediness. Perfectionism in love can suffocate it.",
+      "fulfillmentPath": "Let your love flow from abundance, not desperation. Care for yourself with the same devotion you give others.",
+      "affirmation": "I love deeply and receive love graciously. My nurturing heart is my greatest gift."
+    },
+    "7": {
+      "number": 7,
+      "title": "The Seeking Soul",
+      "coreDesire": "To understand life's mysteries, find truth, and connect with deeper meaning",
+      "essence": "Your heart hungers for knowledge, truth, and the profound satisfaction of understanding what others miss. You are the eternal student of life.",
+      "innerMotivations": {
+        "primary": ["Desire for deep understanding", "Need for truth", "Drive to solve mysteries", "Craving for spiritual connection", "Longing for meaning"],
+        "hidden": ["Fear of superficiality", "Need to feel special through knowledge", "Desire to avoid emotional complexity through analysis"]
+      },
+      "emotionalNeeds": {
+        "essential": ["Intellectual stimulation", "Solitude for reflection", "Meaningful conversations", "Spiritual practice", "Truth and authenticity"],
+        "inRelationships": ["Mental/spiritual connection", "Respect for alone time", "Depth over breadth", "Intellectual equality"],
+        "dealBreakers": ["Superficiality", "Dishonesty of any kind", "Excessive social demands", "Closed-mindedness"]
+      },
+      "soulLessons": ["Some truths are felt, not analyzed", "Connection requires presence, not just understanding", "Not everything needs to be figured out", "Your depth is a gift, not a burden"],
+      "authenticExpression": "You feel most alive when discovering hidden truths, diving deep into a subject, or having a conversation that touches the soul.",
+      "shadowSide": "Analysis can become avoidance. Intellect may wall off the heart.",
+      "fulfillmentPath": "Let understanding lead to wisdom, not just more questions. Connect heart and mind in your search for truth.",
+      "affirmation": "I seek truth with an open heart and mind. My depth illuminates the path for others."
+    },
+    "8": {
+      "number": 8,
+      "title": "The Powerful Soul",
+      "coreDesire": "To achieve mastery, create abundance, and demonstrate integrity through success",
+      "essence": "Your heart burns for achievement, influence, and the power to make things happen. You are here to master the material realm.",
+      "innerMotivations": {
+        "primary": ["Desire for achievement", "Need for recognition and status", "Drive for financial security", "Craving for influence", "Longing for respect"],
+        "hidden": ["Fear of powerlessness", "Need to prove worth through success", "Desire to overcome past limitations"]
+      },
+      "emotionalNeeds": {
+        "essential": ["Opportunities for achievement", "Recognition of accomplishments", "Financial abundance", "Autonomy in decisions", "Respect from peers"],
+        "inRelationships": ["Partner who respects ambition", "Shared success mindset", "Independence within commitment", "Recognition of contributions"],
+        "dealBreakers": ["Disrespect or humiliation", "Financial instability", "Being controlled", "Laziness or lack of ambition"]
+      },
+      "soulLessons": ["True power empowers others", "Success without integrity is empty", "You are worthy regardless of achievement", "Vulnerability is true strength"],
+      "authenticExpression": "You feel most alive when achieving goals, overcoming challenges, or using your influence to create positive change.",
+      "shadowSide": "Achievement addiction may mask emptiness. Power can corrupt if not grounded in ethics.",
+      "fulfillmentPath": "Use your power to lift others. Let your success be measured by the good you create, not just what you accumulate.",
+      "affirmation": "I achieve with integrity and use my power for good. My success serves the highest good."
+    },
+    "9": {
+      "number": 9,
+      "title": "The Universal Soul",
+      "coreDesire": "To serve humanity, love unconditionally, and complete the soul's journey",
+      "essence": "Your heart expands to hold all of humanity. You crave to give, to heal, and to leave the world better than you found it.",
+      "innerMotivations": {
+        "primary": ["Desire to serve humanity", "Need for meaningful impact", "Drive to heal suffering", "Craving for universal connection", "Longing for completion"],
+        "hidden": ["Fear of separation", "Need to earn spiritual worth", "Desire to escape personal pain through service"]
+      },
+      "emotionalNeeds": {
+        "essential": ["Sense of purpose", "Opportunities to help others", "Creative expression", "Spiritual connection", "Feeling part of something greater"],
+        "inRelationships": ["Soul-deep connection", "Shared values", "Spiritual/emotional intimacy", "Mutual growth"],
+        "dealBreakers": ["Materialism without meaning", "Cruelty or indifference", "Shallow connections", "Resistance to growth"]
+      },
+      "soulLessons": ["You cannot save everyone", "Receiving is part of giving", "Letting go is a form of love", "Your pain is part of your gift"],
+      "authenticExpression": "You feel most alive when making a difference, creating something beautiful, or connecting with the universal human experience.",
+      "shadowSide": "Martyr tendencies may mask resentment. Idealism can lead to disappointment.",
+      "fulfillmentPath": "Serve from overflow, not depletion. Let your compassion include yourself.",
+      "affirmation": "I serve humanity with an open heart. My love transcends all boundaries."
+    },
+    "11": {
+      "number": 11,
+      "title": "The Illuminated Soul",
+      "coreDesire": "To awaken consciousness, inspire spiritual evolution, and bridge heaven and earth",
+      "essence": "Your heart resonates with higher frequencies. You crave to bring light, to inspire, and to help others remember their divine nature.",
+      "innerMotivations": {
+        "primary": ["Desire for spiritual awakening", "Need to inspire others", "Drive to heal energetic imbalances", "Craving for higher truth", "Longing for cosmic connection"],
+        "hidden": ["Fear of being 'too much'", "Need to validate intuitive gifts", "Desire to escape earthly challenges through spirituality"]
+      },
+      "emotionalNeeds": {
+        "essential": ["Spiritual practice", "Like-minded community", "Creative expression", "Time in nature", "Higher purpose"],
+        "inRelationships": ["Soul recognition", "Spiritual partnership", "Emotional safety for sensitivity", "Shared vision"],
+        "dealBreakers": ["Dismissal of intuition", "Materialism without depth", "Cruelty or negativity", "Resistance to growth"]
+      },
+      "soulLessons": ["Your sensitivity is your gift, not your weakness", "Ground your spiritual insights in practical action", "Not everyone is ready for your light", "Rest is essential for your nervous system"],
+      "authenticExpression": "You feel most alive when channeling inspiration, helping others awaken, or connecting with the divine.",
+      "shadowSide": "Intensity may overwhelm others. Spiritual bypassing may avoid earthly lessons.",
+      "fulfillmentPath": "Let your light shine without attachment to results. Trust that your presence alone is healing.",
+      "affirmation": "I am a channel for divine wisdom. My presence illuminates the path for others."
+    },
+    "22": {
+      "number": 22,
+      "title": "The Visionary Soul",
+      "coreDesire": "To manifest grand visions, build systems that serve humanity, and demonstrate practical mastery",
+      "essence": "Your heart holds enormous vision. You crave to build what others say is impossible and to leave a lasting legacy of service.",
+      "innerMotivations": {
+        "primary": ["Desire to manifest big dreams", "Need to create lasting impact", "Drive to build systems", "Craving for mastery", "Longing to serve at scale"],
+        "hidden": ["Fear of not living up to potential", "Need to prove capability", "Desire for recognition of unique gifts"]
+      },
+      "emotionalNeeds": {
+        "essential": ["Big challenges", "Autonomy in execution", "Recognition of vision", "Resources to build", "Support team"],
+        "inRelationships": ["Partner who believes in vision", "Practical support", "Emotional grounding", "Shared values"],
+        "dealBreakers": ["Dismissal of dreams", "Lack of follow-through", "Petty thinking", "Resistance to big ideas"]
+      },
+      "soulLessons": ["Even master builders need rest", "Delegation is not weakness", "Your worth isn't in what you build", "Small steps create big results"],
+      "authenticExpression": "You feel most alive when bringing massive visions to life, solving complex problems, or creating structures that outlast you.",
+      "shadowSide": "Perfectionism may paralyze action. Responsibility can become overwhelming.",
+      "fulfillmentPath": "Build with joy, not just duty. Let your legacy be measured by lives improved, not just structures built.",
+      "affirmation": "I manifest the impossible with practical wisdom. My work serves humanity for generations."
+    },
+    "33": {
+      "number": 33,
+      "title": "The Christ Consciousness Soul",
+      "coreDesire": "To demonstrate unconditional love, teach through compassionate example, and raise collective consciousness",
+      "essence": "Your heart is vast enough to hold all suffering and all joy. You crave to love completely, to heal deeply, and to be a living example of divine compassion.",
+      "innerMotivations": {
+        "primary": ["Desire to love unconditionally", "Need to heal and nurture", "Drive to teach through example", "Craving for universal harmony", "Longing for spiritual union"],
+        "hidden": ["Fear of not being loving enough", "Need to sacrifice self for worthiness", "Desire to avoid personal needs through service"]
+      },
+      "emotionalNeeds": {
+        "essential": ["Opportunities to love and serve", "Spiritual connection", "Creative expression of love", "Recognition of divine in all", "Harmonious environment"],
+        "inRelationships": ["Soul-level connection", "Mutual spiritual growth", "Complete acceptance", "Shared service"],
+        "dealBreakers": ["Cruelty or hatred", "Refusal to grow", "Taking without gratitude", "Disrespect for life"]
+      },
+      "soulLessons": ["Self-love is the foundation of universal love", "You cannot give what you don't have", "Boundaries enable sustainable service", "Your presence is the gift"],
+      "authenticExpression": "You feel most alive when loving without conditions, healing others' pain, or creating beauty that touches souls.",
+      "shadowSide": "Sacrifice may mask avoidance of self. Boundaries may feel like failures.",
+      "fulfillmentPath": "Fill your own cup first. Let your service flow from abundance, not desperation.",
+      "affirmation": "I am love incarnate. My compassion heals the world, starting with myself."
+    }
+  }
+}

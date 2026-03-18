@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QodeX v1.0 - Complete UI Kit (52 Screens)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+            background: #0A0A0F;
+            color: #FFFFFF;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(229, 193, 88, 0.1), rgba(229, 193, 88, 0.05));
+            border-radius: 24px;
+            border: 1px solid rgba(229, 193, 88, 0.3);
+        }
+        
+        .logo {
+            font-size: 72px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #E5C158, #F4D03F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 16px;
+            letter-spacing: -2px;
+        }
+        
+        .tagline {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 32px;
+        }
+        
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(229, 193, 88, 0.1);
+            padding: 12px 24px;
+            border-radius: 100px;
+            border: 1px solid rgba(229, 193, 88, 0.3);
+        }
+        
+        .brand-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #E5C158, #F4D03F);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #0A0A0F;
+        }
+        
+        .brand-text {
+            font-size: 16px;
+            color: #E5C158;
+            font-weight: 600;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 40px auto;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 24px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .stat-value {
+            font-size: 36px;
+            font-weight: 700;
+            color: #E5C158;
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .sections {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 24px;
+            padding: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+        
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .section-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, rgba(229, 193, 88, 0.2), rgba(229, 193, 88, 0.1));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        
+        .section-count {
+            background: rgba(229, 193, 88, 0.2);
+            color: #E5C158;
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .section-desc {
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 24px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        
+        .preview-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #E5C158, #F4D03F);
+            color: #0A0A0F;
+            padding: 16px 32px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .preview-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(229, 193, 88, 0.3);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .feature-check {
+            width: 24px;
+            height: 24px;
+            background: rgba(229, 193, 88, 0.2);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #E5C158;
+            font-size: 14px;
+        }
+        
+        .feature-name {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .languages {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 24px;
+        }
+        
+        .language-tag {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 60px 20px;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-text {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 24px;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #E5C158, #F4D03F);
+            color: #0A0A0F;
+            padding: 20px 48px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(229, 193, 88, 0.4);
+        }
+        
+        .gold-ring {
+            width: 120px;
+            height: 120px;
+            border: 3px solid #E5C158;
+            border-radius: 50%;
+            position: fixed;
+            top: -60px;
+            right: -60px;
+            opacity: 0.3;
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="gold-ring"></div>
+    
+    <div class="header">
+        <!-- QodeX Gold Logo SVG -->
+        <div class="logo-container">
+            <svg width="120" height="120" viewBox="0 0 120 120" class="qodex-logo">
+                <!-- Outer ring -->
+                <circle cx="60" cy="60" r="55" fill="none" stroke="#D4AF37" stroke-width="1.5" opacity="0.6"/>
+                <!-- Middle ring -->
+                <circle cx="60" cy="60" r="42" fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.8"/>
+                <!-- Inner hexagon -->
+                <polygon points="60,25 85,37.5 85,62.5 60,75 35,62.5 35,37.5" fill="none" stroke="#D4AF37" stroke-width="2"/>
+                <!-- Q letter -->
+                <text x="60" y="65" text-anchor="middle" fill="#D4AF37" font-family="-apple-system, serif" font-size="32" font-weight="600">Q</text>
+            </svg>
+        </div>
+        <div class="logo-text">QodeX</div>
+        <div class="tagline">INNER CIRCLE</div>
+        <div class="sub-tagline">Decode the energetic patterns that shape your life</div>
+        <div class="brand">
+            <div class="brand-icon">Q</div>
+            <div class="brand-text">@Qodex_Numerology.il</div>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-value">52</div>
+                <div class="stat-label">Screens</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">9</div>
+                <div class="stat-label">Disciplines</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">12</div>
+                <div class="stat-label">Languages</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">83K</div>
+                <div class="stat-label">Lines</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="sections">
+        <!-- Section 1: Onboarding -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-title">
+                    <div class="section-icon">🚀</div>
+                    1. Onboarding Flow
+                </div>
+                <div class="section-count">5 Screens</div>
+            </div>
+            <div class="section-desc">
+                Welcome new users, collect name and birthdate, preview their Life Path number, 
+                and complete onboarding with a personalized chart.
+            </div>
+            <a href="1_Onboarding_Flow.html" class="preview-link">
+                View Onboarding Screens →
+            </a>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-check">✓</div>
+                    <div class="feature-name">Welcome Screen</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check">✓</div>
+                    <div class="feature-name">Name Input</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check">✓</div>
+                    <div class="feature-name">Birthdate Picker</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check">✓</div>
+                    <div class="feature-name">Chart Preview</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check">✓</div>
+                    <div class="feature-name">Onboarding Complete</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section 2: Today & Chart -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-title">
+                    <div class="section-icon">📊</div>
+                    2. Today & Chart
+                </div>
+                <div class="section-count">4 Screens</div>
+            </div>
+            <div class="section-desc">
+                Daily personalized readings with rotating gold rings, complete numerology chart 
+                with 15+ numbers, and detailed number explanations.
+            </div>
+            <a href="2_Today_Chart.html" class="preview-link">
+                View Today & Chart →
+            </a>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-check">✓</div>
+                    <div class="feature-name">Today View (Daily Number)</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check">✓</div>
+                    <div class="feature-name">Chart View (Life Path)</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check">✓</div>
+                    <div class="feature-name">Number Detail</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check">✓</div>
+                    <div class="feature-name">Reading Detail</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section 3: Esoteric -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-title">
+                    <div class="section-icon">🔮</div>
+                    3. Esoteric Features
+                </div>
+                <div class="section-count">6 Screens</div>
+            </div>
+            <div class="section-desc">
+                Advanced esoteric disciplines: True sidereal astrology, 78-card tarot, 
+                periodic table alchemy, sacred geometry, Kabbalah Tree of Life, and playing cards.
+            </div>
+            <a href="3_Esoteric_Features.html" class="preview-link">
+                View Esoteric Screens →
+            </a>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-check">✓</div>
+                    <div class="feature-name">Sidereal Astrology (Lahiri)</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check">✓</div>
+                    <div class="feature-name">Tarot (78 Cards)</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check">✓</div>
+                    <div class="feature-name">Periodic Table (118 Elements)</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check">✓</div>
+                    <div class="feature-name">Sacred Geometry (Phi/Pi/Fibonacci)</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check">✓</div>
+                    <div class="feature-name">Kabbalah (Tree of Life)</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check">✓</div>
+                    <div class="feature-name">Playing Cards</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section 4: Social -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-title">
+                    <div class="section-icon">👥</div>
+                    4. Social Features
+                </div>
+                <div class="section-count">4 Screens</div>
+            </div>
+            <div class="section-desc">
+                Community feed with Life Path badges, user profiles with stats, 
+                compatibility matching, and live expert sessions.
+            </div>
+            <a href="4_Social_Features.html" class="preview-link">
+                View Social Screens →
+            </a>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-check">✓</div>
+                    <div class="feature-name">Community Feed</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check">✓</div>
+                    <div class="feature-name">Profile View</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check">✓</div>
+                    <div class="feature-name">Compatibility</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check">✓</div>
+                    <div class="feature-name">Live Sessions</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section 5: Tools -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-title">
+                    <div class="section-icon">🛠️</div>
+                    5. Tools & Utilities
+                </div>
+                <div class="section-count">6 Screens</div>
+            </div>
+            <div class="section-desc">
+                Personal growth tools: Journal for reflection, meditation with binaural beats, 
+                learning courses, universal search, achievements, and streak tracking.
+            </div>
+            <a href="5_Tools_Utility.html" class="preview-link">
+                View Tools & Utility →
+            </a>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-check">✓</div>
+                    <div class="feature-name">Journal</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check">✓</div>
+                    <div class="feature-name">Meditation</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check">✓</div>
+                    <div class="feature-name">Learn</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check">✓</div>
+                    <div class="feature-name">Search</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check">✓</div>
+                    <div class="feature-name">Achievements</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check">✓</div>
+                    <div class="feature-name">Streaks</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section 6: Additional -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-title">
+                    <div class="section-icon">➕</div>
+                    Additional Screens
+                </div>
+                <div class="section-count">27 Screens</div>
+            </div>
+            <div class="section-desc">
+                Paywall with 3 tiers, settings, forecast, name analysis, forecast, 
+                subscription management, and more utility screens.
+            </div>
+            <div class="features-grid">
+                <div class="feature-item"><div class="feature-check">✓</div><div class="feature-name">Paywall (3 Tiers)</div></div>
+                <div class="feature-item"><div class="feature-check">✓</div><div class="feature-name">Settings</div></div>
+                <div class="feature-item"><div class="feature-check">✓</div><div class="feature-name">Forecast</div></div>
+                <div class="feature-item"><div class="feature-check">✓</div><div class="feature-name">Name Analysis</div></div>
+                <div class="feature-item"><div class="feature-check">✓</div><div class="feature-name">Widget Preview</div></div>
+                <div class="feature-item"><div class="feature-check">✓</div><div class="feature-name">Subscription</div></div>
+                <div class="feature-item"><div class="feature-check">✓</div><div class="feature-name">Privacy</div></div>
+                <div class="feature-item"><div class="feature-check">✓</div><div class="feature-name">Export Data</div></div>
+                <div class="feature-item"><div class="feature-check">✓</div><div class="feature-name">+ 18 more...</div></div>
+            </div>
+        </div>
+        
+        <!-- Languages -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-title">
+                    <div class="section-icon">🌍</div>
+                    Supported Languages
+                </div>
+                <div class="section-count">12</div>
+            </div>
+            <div class="section-desc">
+                Full localization support for 12 languages including RTL (Hebrew, Arabic).
+            </div>
+            <div class="languages">
+                <div class="language-tag">🇺🇸 English</div>
+                <div class="language-tag">🇮🇱 Hebrew</div>
+                <div class="language-tag">🇪🇸 Spanish</div>
+                <div class="language-tag">🇫🇷 French</div>
+                <div class="language-tag">🇩🇪 German</div>
+                <div class="language-tag">🇨🇳 Chinese</div>
+                <div class="language-tag">🇧🇷 Portuguese</div>
+                <div class="language-tag">🇷🇺 Russian</div>
+                <div class="language-tag">🇯🇵 Japanese</div>
+                <div class="language-tag">🇮🇳 Hindi</div>
+                <div class="language-tag">🇰🇷 Korean</div>
+                <div class="language-tag">🇸🇦 Arabic</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div class="footer-text">
+            QodeX v1.0 • 177 Swift Files • 83,059 Lines • Ready for App Store
+        </div>
+        <a href="1_Onboarding_Flow.html" class="cta-button">
+            Start Preview →
+        </a>
+    </div>
+</body>
+</html>

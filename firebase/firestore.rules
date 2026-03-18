@@ -1,0 +1,325 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // ==================== HELPER FUNCTIONS ====================
+    
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    // Cache user role lookup to prevent N+1 queries
+    // IMPORTANT: Call this once per rule evaluation and reuse the result
+    function getUserRole() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role;
+    }
+    
+    // Check if user is admin - uses cached role lookup
+    function isAdmin() {
+      return isAuthenticated() && getUserRole() == 'admin';
+    }
+    
+    // Check if user is moderator or admin - uses cached role lookup
+    function isModerator() {
+      return isAuthenticated() && 
+        (getUserRole() == 'admin' || getUserRole() == 'moderator');
+    }
+    
+    // Combined role check for better performance
+    function hasRole(roles) {
+      return isAuthenticated() && request.auth.token.role in roles;
+    }
+    
+    function validString(value, minLength, maxLength) {
+      return value is string && 
+             value.size() >= minLength && 
+             value.size() <= maxLength;
+    }
+    
+    function validTimestamp(value) {
+      return value is timestamp;
+    }
+    
+    function validLifePath(value) {
+      return value is number && value >= 1 && value <= 9;
+    }
+    
+    // ==================== USERS COLLECTION ====================
+    
+    match /users/{userId} {
+      // Users can read their own data
+      // Admins can read all
+      allow read: if isOwner(userId) || isAdmin();
+      
+      // Users can create their own profile
+      allow create: if isOwner(userId) &&
+        validString(request.resource.data.email, 5, 255) &&
+        validString(request.resource.data.fullName, 1, 100) &&
+        (request.resource.data.birthDate == null || validTimestamp(request.resource.data.birthDate));
+      
+      // Users can update their own profile
+      // Admins can update any
+      allow update: if (isOwner(userId) || isAdmin()) &&
+        validString(request.resource.data.fullName, 1, 100);
+      
+      // Only admins can delete
+      allow delete: if isAdmin();
+      
+      // Subcollection: user notifications
+      match /notifications/{notificationId} {
+        allow read, write: if isOwner(userId);
+      }
+      
+      // Subcollection: user journal
+      match /journal/{entryId} {
+        allow read, write: if isOwner(userId);
+      }
+      
+      // Subcollection: user activity
+      match /activity/{activityId} {
+        allow read: if isOwner(userId);
+        allow write: if isOwner(userId) || isAdmin();
+      }
+      
+      // Subcollection: user readings/streaks
+      match /readings/{readingId} {
+        allow read, write: if isOwner(userId);
+      }
+      
+      // Subcollection: user subscriptions
+      match /subscriptions/{subscriptionId} {
+        allow read: if isOwner(userId);
+        allow write: if isAdmin(); // Only backend can modify subscriptions
+      }
+    }
+    
+    // ==================== DAILY QODES ====================
+    
+    match /daily_qodes/{dateId} {
+      // All authenticated users can read daily qodes
+      allow read: if isAuthenticated();
+      
+      // Only admins can create/update
+      allow write: if isAdmin();
+    }
+    
+    // ==================== QODE READS (Streak Tracking) ====================
+    
+    match /qode_reads/{readId} {
+      // Users can read their own streak data
+      allow read: if isAuthenticated() && 
+        (resource.data.userId == request.auth.uid || isAdmin());
+      
+      // Users can mark their own qodes as read
+      allow create: if isAuthenticated() && 
+        request.resource.data.userId == request.auth.uid;
+      
+      allow update, delete: if false; // Immutable records
+    }
+    
+    // ==================== LIVE SESSIONS ====================
+    
+    match /live_sessions/{sessionId} {
+      // All authenticated users can read
+      allow read: if isAuthenticated();
+      
+      // Only admins can create/update/delete
+      allow write: if isAdmin();
+      
+      // Subcollection: registrations
+      match /registrations/{registrationId} {
+        allow read: if isAuthenticated() && 
+          (resource.data.userId == request.auth.uid || isAdmin());
+        allow create: if isAuthenticated() && 
+          request.resource.data.userId == request.auth.uid;
+        allow update: if isAdmin();
+        allow delete: if isAuthenticated() && 
+          (resource.data.userId == request.auth.uid || isAdmin());
+      }
+      
+      // Subcollection: chat messages
+      match /messages/{messageId} {
+        allow read: if isAuthenticated();
+        allow create: if isAuthenticated() &&
+          validString(request.resource.data.text, 1, 500) &&
+          request.resource.data.userId == request.auth.uid;
+        allow update, delete: if isModerator();
+      }
+    }
+    
+    // ==================== COMMUNITY POSTS ====================
+    
+    match /community_posts/{postId} {
+      // All authenticated users can read
+      allow read: if isAuthenticated();
+      
+      // Authenticated users can create posts
+      allow create: if isAuthenticated() &&
+        validString(request.resource.data.title, 1, 200) &&
+        validString(request.resource.data.content, 1, 5000) &&
+        request.resource.data.authorId == request.auth.uid;
+      
+      // Authors can update their own posts
+      // Admins/moderators can update any
+      allow update: if (isAuthenticated() && resource.data.authorId == request.auth.uid) || 
+                     isModerator();
+      
+      // Authors can delete their own posts
+      // Admins/moderators can delete any
+      allow delete: if (isAuthenticated() && resource.data.authorId == request.auth.uid) || 
+                     isModerator();
+      
+      // Subcollection: comments
+      match /comments/{commentId} {
+        allow read: if isAuthenticated();
+        allow create: if isAuthenticated() &&
+          validString(request.resource.data.text, 1, 1000) &&
+          request.resource.data.authorId == request.auth.uid;
+        allow update: if (isAuthenticated() && resource.data.authorId == request.auth.uid) || 
+                       isModerator();
+        allow delete: if (isAuthenticated() && resource.data.authorId == request.auth.uid) || 
+                       isModerator();
+      }
+      
+      // Subcollection: likes
+      match /likes/{userId} {
+        allow read: if isAuthenticated();
+        allow create, delete: if isAuthenticated() && userId == request.auth.uid;
+      }
+    }
+    
+    // ==================== SUBSCRIPTIONS ====================
+    
+    match /subscriptions/{subscriptionId} {
+      // Users can read their own subscription
+      allow read: if isAuthenticated() && 
+        (resource.data.userId == request.auth.uid || isAdmin());
+      
+      // Only backend/RevenueCat webhook can write
+      allow write: if isAdmin();
+    }
+    
+    // ==================== TEACHINGS/LIBRARY ====================
+    
+    match /teachings/{teachingId} {
+      // All authenticated users can read
+      allow read: if isAuthenticated();
+      
+      // Only admins can write
+      allow write: if isAdmin();
+    }
+    
+    // ==================== NUMEROLOGY LIBRARY ====================
+    
+    match /numerology_library/{documentId} {
+      // All authenticated users can read
+      allow read: if isAuthenticated();
+      
+      // Only admins can write
+      allow write: if isAdmin();
+    }
+    
+    // ==================== CHALLENGES ====================
+    
+    match /challenges/{challengeId} {
+      // All authenticated users can read
+      allow read: if isAuthenticated();
+      
+      // Only admins can create/update
+      allow write: if isAdmin();
+      
+      // Subcollection: participant progress
+      match /participants/{userId} {
+        allow read: if isAuthenticated() && (userId == request.auth.uid || isAdmin());
+        allow write: if isAuthenticated() && userId == request.auth.uid;
+      }
+    }
+    
+    // ==================== ANALYTICS (Aggregated) ====================
+    
+    match /analytics/{documentId} {
+      // Only admins can read/write
+      allow read, write: if isAdmin();
+    }
+    
+    // ==================== ADMIN DATA ====================
+    
+    match /admin/{documentId} {
+      // Only admins can access
+      allow read, write: if isAdmin();
+    }
+    
+    // ==================== NOTIFICATIONS (System) ====================
+    
+    match /notifications_system/{notificationId} {
+      // Users can read their own system notifications
+      allow read: if isAuthenticated() && 
+        (resource.data.userId == request.auth.uid || isAdmin());
+      
+      // Only backend/functions can write
+      allow write: if isAdmin();
+    }
+    
+    // ==================== MENTORSHIP ====================
+    
+    match /mentorship_requests/{requestId} {
+      // Users can read their own requests
+      allow read: if isAuthenticated() && 
+        (resource.data.userId == request.auth.uid || isAdmin());
+      
+      // Users can create their own requests
+      allow create: if isAuthenticated() && 
+        request.resource.data.userId == request.auth.uid;
+      
+      // Only admins can update
+      allow update: if isAdmin();
+      
+      allow delete: if isAdmin();
+    }
+    
+    // ==================== COMPATIBILITY REPORTS ====================
+    
+    match /compatibility_reports/{reportId} {
+      // Users can read their own reports
+      allow read: if isAuthenticated() && 
+        (resource.data.userId == request.auth.uid || isAdmin());
+      
+      // Users can create reports
+      allow create: if isAuthenticated() && 
+        request.resource.data.userId == request.auth.uid;
+      
+      // Immutable - no updates
+      allow update, delete: if isAdmin();
+    }
+    
+    // ==================== USER DELETION QUEUE (GDPR) ====================
+    
+    match /deletion_queue/{requestId} {
+      // Users can create their own deletion requests
+      allow create: if isAuthenticated() && 
+        request.resource.data.userId == request.auth.uid;
+      
+      // Only admins/system can read/update/delete
+      allow read, update, delete: if isAdmin();
+    }
+    
+    // ==================== DATA EXPORTS (GDPR) ====================
+    
+    match /data_exports/{exportId} {
+      // Users can read their own exports
+      allow read: if isAuthenticated() && 
+        (resource.data.userId == request.auth.uid || isAdmin());
+      
+      // Users can create export requests
+      allow create: if isAuthenticated() && 
+        request.resource.data.userId == request.auth.uid;
+      
+      // Only admins/system can update/delete
+      allow update, delete: if isAdmin();
+    }
+  }
+}

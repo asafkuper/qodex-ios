@@ -1,0 +1,26 @@
+/* Russian (ru) Localization for QodeX iOS App */
+
+"app_name" = "QodeX";
+"welcome_title" = "Откройте свои числа";
+"welcome_subtitle" = "Раскройте секреты вашей нумерологии за 2 минуты";
+"get_started" = "Начать";
+"today_view" = "Сегодня";
+"chart_view" = "Карта";
+"community_view" = "Сообщество";
+"learn_view" = "Учиться";
+"profile_view" = "Профиль";
+"life_path" = "Путь жизни";
+"expression_number" = "Число выражения";
+"soul_urge" = "Стремление души";
+"daily_reading" = "Ежедневное чтение";
+"power_hours" = "Часы силы";
+"compatibility" = "Совместимость";
+"settings" = "Настройки";
+"premium" = "Премиум";
+"unlock_full" = "Разблокируйте полную карту";
+"continue" = "Продолжить";
+"save" = "Сохранить";
+"share" = "Поделиться";
+"done" = "Готово";
+"cancel" = "Отмена";
+"ok" = "ОК";

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QodeX Carousel 2 - Master Numbers</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #0a0a0f;
+            font-family: 'Heebo', 'Segoe UI', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .slide {
+            width: 1080px;
+            height: 1350px;
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a24 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px;
+            border: 1px solid #333;
+        }
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+        .logo {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ffd700;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+        h1 {
+            color: #fff;
+            font-size: 72px;
+            font-weight: 900;
+            text-align: center;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .crown {
+            font-size: 120px;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 0 40px rgba(255, 215, 0, 0.5));
+        }
+        .numbers {
+            font-size: 140px;
+            font-weight: bold;
+            color: #ffd700;
+            text-shadow: 0 0 60px rgba(255, 215, 0, 0.5);
+            margin: 30px 0;
+            letter-spacing: 30px;
+        }
+        .subtitle {
+            color: #ccc;
+            font-size: 48px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .arrow {
+            font-size: 80px;
+            margin-top: 30px;
+            color: #ffd700;
+        }
+        .content-box {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 20px;
+            padding: 50px;
+            width: 100%;
+        }
+        .section-title {
+            color: #ffd700;
+            font-size: 52px;
+            font-weight: bold;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .master-num {
+            font-size: 100px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .master-11 { color: #00ffff; text-shadow: 0 0 40px rgba(0, 255, 255, 0.4); }
+        .master-22 { color: #ff00ff; text-shadow: 0 0 40px rgba(255, 0, 255, 0.4); }
+        .master-33 { color: #ff4444; text-shadow: 0 0 40px rgba(255, 68, 68, 0.4); }
+        
+        .label {
+            font-size: 42px;
+            color: #ccc;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .traits {
+            color: #fff;
+            font-size: 38px;
+            line-height: 2;
+        }
+        .traits li {
+            margin-bottom: 15px;
+            list-style: none;
+        }
+        .traits li::before {
+            content: '•';
+            color: #ffd700;
+            margin-left: 15px;
+        }
+        .challenges {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .challenges-title {
+            color: #ff6b6b;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .check-box {
+            background: rgba(0,255,136,0.1);
+            border: 2px solid #00ff88;
+            border-radius: 15px;
+            padding: 20px 40px;
+            color: #00ff88;
+            font-size: 48px;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+        .cta-box {
+            text-align: center;
+        }
+        .cta-text {
+            color: #fff;
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        .cta-sub {
+            color: #aaa;
+            font-size: 36px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        .link-text {
+            color: #ffd700;
+            font-size: 44px;
+            font-weight: bold;
+        }
+        .save-icon {
+            font-size: 70px;
+            margin-top: 30px;
+        }
+        .percentage {
+            font-size: 64px;
+            color: #ffd700;
+            font-weight: bold;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- SLIDE 1: Cover -->
+<div class="slide">
+    <div class="crown">👑</div>
+    <h1>מספרי מאסטר</h1>
+    <div class="numbers">11 • 22 • 33</div>
+    <div class="subtitle">האם אתה אחד הנבחרים?</div>
+    <div class="arrow">←</div>
+    <div class="logo">QODE X</div>
+</div>
+
+<!-- SLIDE 2: What are Master Numbers -->
+<div class="slide">
+    <div class="section-title">מה זה מספר מאסטר?</div>
+    <div class="content-box">
+        <div style="color: #fff; font-size: 44px; line-height: 2; text-align: center; margin-bottom: 40px;">
+            <div style="margin-bottom: 20px;"><span style="color: #00ffff; font-weight: bold;">11</span> = 11 <span style="color: #888; font-size: 32px;">(לא 2)</span></div>
+            <div style="margin-bottom: 20px;"><span style="color: #ff00ff; font-weight: bold;">22</span> = 22 <span style="color: #888; font-size: 32px;">(לא 4)</span></div>
+            <div style="margin-bottom: 30px;"><span style="color: #ff4444; font-weight: bold;">33</span> = 33 <span style="color: #888; font-size: 32px;">(לא 6)</span></div>
+        </div>
+        
+        <div style="color: #ccc; font-size: 40px; line-height: 1.8; text-align: center; border-top: 1px solid rgba(255,215,0,0.2); padding-top: 30px;">
+            הם נושאים תדר גבוה יותר.<br>
+            יותר אנרגיה.<br>
+            יותר אחריות.<br>
+            יותר משמעות.
+        </div>
+    </div>
+    
+    <div class="percentage">רק 3-5% מהאוכלוסייה</div>
+    <div style="color: #888; font-size: 36px;">יש להם מספר מאסטר</div>
+    
+    <div class="logo">QODE X</div>
+</div>
+
+<!-- SLIDE 3: Master 11 -->
+<div class="slide">
+    <div class="master-num master-11">👁️ 11</div>
+    <div class="label">האינטואיטיבי</div>
+    
+    <div class="content-box" style="border-color: rgba(0,255,255,0.2);">
+        <div style="color: #00ffff; font-size: 36px; margin-bottom: 30px; font-weight: bold;">תכונות:</div>
+        <ul class="traits">
+            <li>ראייה רוחנית</li>
+            <li>אינטואיציה חזקה</li>
+            <li>חיבור לממדים אחרים</li>
+            <li>יכולת להוביל דרך השראה</li>
+        </ul>
+        
+        <div class="challenges">
+            <div class="challenges-title">אתגרים:</div>
+            <ul class="traits" style="font-size: 34px;">
+                <li>רגישות יתר</li>
+                <li>חרדה</li>
+                <li>צורך בהתבודדות</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div style="color: #ffd700; font-size: 38px; margin-top: 30px; text-align: center;">
+        נולדת ב-11 בחודש? יש לך פוטנציאל.
+    </div>
+    
+    <div class="logo">QODE X</div>
+</div>
+
+<!-- SLIDE 4: Master 22 -->
+<div class="slide">
+    <div class="master-num master-22">👑 22</div>
+    <div class="label">בונה המאסטרים</div>
+    
+    <div class="content-box" style="border-color: rgba(255,0,255,0.2);">
+        <div style="color: #ff00ff; font-size: 36px; margin-bottom: 30px; font-weight: bold;">תכונות:</div>
+        <ul class="traits">
+            <li>יכולת בנייה ענקית</li>
+            <li>ראייה פרקטית + רוחנית</li>
+            <li>מנהיגות דרך מעשים</li>
+            <li>הפיכת חלומות למציאות</li>
+        </ul>
+        
+        <div class="challenges">
+            <div class="challenges-title">אתגרים:</div>
+            <ul class="traits" style="font-size: 34px;">
+                <li>לחץ עצום</li>
+                <li>ציפיות גבוהות</li>
+                <li>קושי להתמיד</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div style="color: #ff00ff; font-size: 40px; margin-top: 30px; text-align: center; font-weight: bold;">
+        22 = מספר החזק ביותר בנומרולוגיה
+    </div>
+    
+    <div class="logo">QODE X</div>
+</div>
+
+<!-- SLIDE 5: Master 33 -->
+<div class="slide">
+    <div class="master-num master-33">❤️ 33</div>
+    <div class="label">מורה המאסטרים</div>
+    
+    <div class="content-box" style="border-color: rgba(255,68,68,0.2);">
+        <div style="color: #ff4444; font-size: 36px; margin-bottom: 30px; font-weight: bold;">תכונות:</div>
+        <ul class="traits">
+            <li>אהבה אוניברסלית</li>
+            <li>יכולת ריפוי</li>
+            <li>חוכמת לב</li>
+            <li>השפעה על ההמונים</li>
+        </ul>
+        
+        <div class="challenges">
+            <div class="challenges-title">אתגרים:</div>
+            <ul class="traits" style="font-size: 34px;">
+                <li>תקשורת אישית</li>
+                <li>גבולות בריאים</li>
+                <li>לא להקריב יותר מדי</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div style="color: #ff4444; font-size: 44px; margin-top: 30px; text-align: center; font-weight: bold;">
+        33 = הנדיר ביותר
+    </div>
+    
+    <div class="logo">QODE X</div>
+</div>
+
+<!-- SLIDE 6: CTA -->
+<div class="slide">
+    <div class="section-title">איך בודקים?</div>
+    
+    <div class="content-box">
+        <div style="color: #fff; font-size: 42px; text-align: center; margin-bottom: 40px;">
+            📅 חשבו את Life Path:<br>
+            <span style="color: #ffd700;">יום + חודש + שנה</span>
+        </div>
+        
+        <div style="color: #fff; font-size: 40px; line-height: 2; text-align: center; margin-bottom: 40px;">
+            אם התוצאה:<br>
+            <span style="color: #00ffff; font-weight: bold;">11</span> = מאסטר 11 <span style="color: #00ff88;">✅</span><br>
+            <span style="color: #ff00ff; font-weight: bold;">22</span> = מאסטר 22 <span style="color: #00ff88;">✅</span><br>
+            <span style="color: #ff4444; font-weight: bold;">33</span> = מאסטר 33 <span style="color: #00ff88;">✅</span>
+        </div>
+        
+        <div style="color: #888; font-size: 36px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px;">
+            אחרת = מספר רגיל <span style="color: #00ff88;">(גם טוב!)</span>
+        </div>
+    </div>
+    
+    <div style="margin-top: 40px; text-align: center;">
+        <div style="color: #fff; font-size: 40px; margin-bottom: 20px;">רוצה חישוב מדויק?</div>
+        <div style="color: #ffd700; font-size: 48px; font-weight: bold;">🔗 לינק בביו</div>
+    </div>
+    
+    <div class="save-icon">📌</div>
+    <div style="color: #888; font-size: 32px; margin-top: 10px;">שמור כדי לבדוק אחר כך</div>
+    
+    <div class="logo">QODE X</div>
+</div>
+
+</body>
+</html>
